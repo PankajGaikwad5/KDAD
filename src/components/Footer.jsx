@@ -15,7 +15,7 @@ const Footer = () => {
           </li>
           <li>
             <a
-              href='#'
+              href='/projects'
               className='hover:text-white hover:text-lg transition-all duration-300'
             >
               latest project

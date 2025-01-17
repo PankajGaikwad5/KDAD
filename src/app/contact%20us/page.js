@@ -1,11 +1,11 @@
 'use client';
-import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar';
+import Footer from '../../components/Footer';
+import Navbar from '../../components/Navbar';
 import React from 'react';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { Button } from '@/components/ui/button';
+import { Button } from '../../components/ui/button';
 import {
   Form,
   FormControl,
@@ -14,9 +14,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+} from '../../components/ui/form';
+import { Input } from '../../components/ui/input';
+import { Textarea } from '../../components/ui/textarea';
 
 const formSchema = z.object({
   name: z

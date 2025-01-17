@@ -4,6 +4,16 @@ import Footer from '../../components/Footer';
 import ProjectCard from '../../components/ProjectCard';
 
 const Collaborations = () => {
+  const imgArray = [
+    'https://www.logoai.com/oss/icons/2021/10/27/Uq3ZUB0h-aPQG6-.png',
+    'https://www.logoai.com/oss/icons/2021/10/27/Uq3ZUB0h-aPQG6-.png',
+    'https://www.logoai.com/oss/icons/2021/10/27/Uq3ZUB0h-aPQG6-.png',
+    'https://www.logoai.com/oss/icons/2021/10/27/Uq3ZUB0h-aPQG6-.png',
+    'https://www.logoai.com/oss/icons/2021/10/27/Uq3ZUB0h-aPQG6-.png',
+    'https://www.logoai.com/oss/icons/2021/10/27/Uq3ZUB0h-aPQG6-.png',
+    'https://www.logoai.com/oss/icons/2021/10/27/Uq3ZUB0h-aPQG6-.png',
+    'https://www.logoai.com/oss/icons/2021/10/27/Uq3ZUB0h-aPQG6-.png',
+  ];
   return (
     <div className='relative overflow-hidden md:pt-14 px-4 tracking-widest z-10'>
       <Navbar isBgBlack={true} />
@@ -12,41 +22,9 @@ const Collaborations = () => {
           Collaborations
         </h1>
         <div className='w-full relative max-w-xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-center my-4'>
-          <ProjectCard
-            img={
-              'https://www.logoai.com/oss/icons/2021/10/27/Uq3ZUB0h-aPQG6-.png'
-            }
-          />
-          <ProjectCard
-            img={
-              'https://www.logoai.com/oss/icons/2021/10/27/Uq3ZUB0h-aPQG6-.png'
-            }
-          />
-          <ProjectCard
-            img={
-              'https://www.logoai.com/oss/icons/2021/10/27/Uq3ZUB0h-aPQG6-.png'
-            }
-          />
-          <ProjectCard
-            img={
-              'https://www.logoai.com/oss/icons/2021/10/27/Uq3ZUB0h-aPQG6-.png'
-            }
-          />
-          <ProjectCard
-            img={
-              'https://www.logoai.com/oss/icons/2021/10/27/Uq3ZUB0h-aPQG6-.png'
-            }
-          />
-          <ProjectCard
-            img={
-              'https://www.logoai.com/oss/icons/2021/10/27/Uq3ZUB0h-aPQG6-.png'
-            }
-          />
-          <ProjectCard
-            img={
-              'https://www.logoai.com/oss/icons/2021/10/27/Uq3ZUB0h-aPQG6-.png'
-            }
-          />
+          {imgArray.map((img, index) => {
+            return <ProjectCard img={img} />;
+          })}
         </div>
       </div>
       <Footer />
