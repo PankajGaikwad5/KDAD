@@ -5,21 +5,31 @@ import Image from 'next/image';
 export default function Home() {
   return (
     // <div className='relative overflow-hidden'>
-    <div className='relative w-full h-screen overflow-hidden'>
+    <div className='relative w-full h-screen overflow-hidden '>
       <Navbar isBgBlack={true} isHomePage={true} />
       <div className='absolute inset-0 z-0 bg-cover bg-center  animate-bg-change'></div>
       <div className='relative z-10 font-semibold text-center top-1/2 -mt-12 lg:-mt-2 -translate-y-1/2 text-3xl sm:text-8xl text-white tracking-widest flex flex-col  justify-center items-center'>
-        <h1 className='text-center'>karan desai</h1>
+        {/* <h1 className='text-center'>karan desai</h1>
         <h1 className='text-2xl font-sans text-center uppercase font-thin linespace '>
           architecture + design
-        </h1>
+        </h1> */}
+        <img src='/assets/signature.gif' alt='' />
       </div>
-      <div className='w-full fixed left-[50%] bottom-[5%] translate-x-[-50%]  flex items-center text-black px-4 whitespace-nowrap overflow-hidden z-20'>
-        <div className=' w-full justify-center items-center hidden lg:flex space-x-4 flex-col'>
-          <h1 className='text-2xl tracking-widest text-white'>
+      {/* <div className='absolute right-0 top-0 -mt-12 z-30'>
+        <Image
+          src='/assets/newlogo.png'
+          alt='logo'
+          width={225}
+          height={225}
+          className='object-contain'
+        />
+      </div> */}
+      <div className='w-full fixed left-[50%] bottom-[2%] translate-x-[-50%]  flex items-center text-black px-4 whitespace-nowrap overflow-hidden z-20'>
+        <div className=' w-full justify-center items-center hidden lg:flex flex-col'>
+          <h1 className='text-2xl tracking-widest text-white -mb-10'>
             exclusive features
           </h1>
-          <div className='space-x-20 note flex px-4'>
+          <div className='space-x-20 note whitespace-nowrap flex-wrap flex px-4 '>
             <Image
               src='/features/hello-india.png'
               alt='hello india'
@@ -85,6 +95,13 @@ export default function Home() {
             />
             <Image
               src='/features/goodhomes.png'
+              alt='Logo 2'
+              width={170}
+              height={170}
+              className='object-contain'
+            />
+            <Image
+              src='/assets/aii.png'
               alt='Logo 2'
               width={170}
               height={170}

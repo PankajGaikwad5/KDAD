@@ -20,7 +20,7 @@ const About = () => {
 `}
           />
         </div>
-        <h1 className='text-3xl font-bold my-4'>meet the team</h1>
+        {/* <h1 className='text-3xl font-bold my-4'>meet the team</h1> */}
         <div className='max-w-2xl space-y-8 pb-8'>
           {/* <Card
             imagePosition={'left'}

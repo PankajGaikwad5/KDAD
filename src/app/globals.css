@@ -100,7 +100,7 @@ body {
 
 @keyframes note {
   0% {
-    transform: translate(0%, 0);
+    transform: translate(100%, 0);
   }
   100% {
     transform: translate(-100%, 0);
@@ -125,7 +125,7 @@ body {
 
 .animate-bg-change {
   /* animation: bgChange 10s infinite; */
-  background-image: url('/assets/bg-image1.jpg');
+  background-image: url('/Picture1.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -134,7 +134,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0.9;
+  opacity: 0.75;
   z-index: 0;
 }
 

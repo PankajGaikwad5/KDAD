@@ -98,7 +98,7 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
               href='karan desai homes'
               className='hover:text-gray-600 transition-all duration-300'
             >
-              karan desai homes
+              karan desai home
             </a>
           </li>
         </ul>
@@ -153,7 +153,7 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
                 isBgBlack ? 'hover:text-white' : 'hover:text-gray-400'
               }`}
             >
-              karan desai homes
+              karan desai home
             </a>
           </li>
         </ul>

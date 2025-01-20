@@ -13,13 +13,23 @@ const About = () => {
         <div className='my-4'>
           <iframe
             className='w-full md:w-[560px] md:h-[315px]'
-            src='https://www.youtube.com/embed/KFHhpnKexAg?si=3VqWfY09th-sx67u'
+            src='https://www.youtube.com/embed/nS3qDFHinbw?si=gbJct3hxMk5OkQ84'
             title='YouTube video player'
             frameBorder='0'
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
             referrerPolicy='strict-origin-when-cross-origin'
             allowFullScreen
           ></iframe>
+          {/* <iframe
+            width='560'
+            height='315'
+            src='https://www.youtube.com/embed/nS3qDFHinbw?si=gbJct3hxMk5OkQ84'
+            title='YouTube video player'
+            frameborder='0'
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+            referrerpolicy='strict-origin-when-cross-origin'
+            allowfullscreen
+          ></iframe> */}
         </div>
 
         <div className='my-4 p-4 max-w-xl'>
