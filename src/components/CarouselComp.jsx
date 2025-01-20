@@ -17,7 +17,7 @@ const CarouselComp = ({ imgArray }) => {
   };
 
   return (
-    <div className=' max-w-lg mx-auto'>
+    <div className=' max-w-lg max-h-[32rem] mx-auto '>
       {/* Main Carousel */}
       <Carousel
         className='w-full'
@@ -32,16 +32,20 @@ const CarouselComp = ({ imgArray }) => {
           }}
           className='transition-transform duration-500'
         >
-          {imgArray.map((img, index) => (
-            <CarouselItem key={index}>
+          {imgArray.map((item, index) => (
+            <CarouselItem key={item._id}>
               <div className='w-full'>
                 <Card>
                   <CardContent className='flex items-center justify-center'>
-                    <img
-                      src={img}
-                      alt={`Slide ${index + 1}`}
-                      className='w-full h-auto rounded-lg'
-                    />
+                    <a href={item.fileUrl} target='_blank'>
+                      <img
+                        loading='lazy'
+                        src={item.fileUrl}
+                        alt={`Slide ${index + 1}`}
+                        className='aspect-video rounded-lg'
+                        decoding='async'
+                      />
+                    </a>
                   </CardContent>
                 </Card>
               </div>
@@ -66,7 +70,7 @@ const CarouselComp = ({ imgArray }) => {
 
       {/* Thumbnails */}
       <div className='flex mt-4 gap-2 justify-center'>
-        {imgArray.map((img, index) => (
+        {imgArray.map((item, index) => (
           <button
             key={index}
             onClick={() => handleThumbnailClick(index)}
@@ -75,7 +79,7 @@ const CarouselComp = ({ imgArray }) => {
             }`}
           >
             <img
-              src={img}
+              src={item.fileUrl}
               alt={`Thumbnail ${index + 1}`}
               className='w-full h-full object-cover'
             />

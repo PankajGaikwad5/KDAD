@@ -1,9 +1,35 @@
+'use client';
 import ProjectCard from '../../components/ProjectCard';
 import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Projects = () => {
+  const [imgArray, setImgArray] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Fetch topics from the API
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch('/api/projects');
+        const data = await response.json();
+        console.log(data);
+
+        setImgArray(data.projects);
+        console.log(imgArray);
+        setTimeout(() => {
+          setLoading(false);
+        }, 2000);
+      } catch (error) {
+        console.error('Error fetching topics:', error);
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
   return (
     <div className='relative overflow-hidden md:pt-14 px-4 tracking-widest z-10'>
       <Navbar isBgBlack={true} />
@@ -11,17 +37,31 @@ const Projects = () => {
         <h1 className='text-3xl font-bold mb-8 tracking-widest font-sans uppercase \'>
           Projects
         </h1>
-        <div className='w-full relative max-w-xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center my-4'>
-          <ProjectCard img={'/assets/moon1.jpg'} />
-          <ProjectCard img={'/assets/moon1.jpg'} />
-          <ProjectCard img={'/assets/moon1.jpg'} />
-          <ProjectCard img={'/assets/moon1.jpg'} />
-          <ProjectCard img={'/assets/moon1.jpg'} />
-          <ProjectCard img={'/assets/moon1.jpg'} />
-          <ProjectCard img={'/assets/moon1.jpg'} />
-          <ProjectCard img={'/assets/moon1.jpg'} />
-          <ProjectCard img={'/assets/moon1.jpg'} />
-        </div>
+        {/* <div className='w-full relative max-w-3xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-center my-4'>
+          {imgArray.map((items) => {
+            const { _id, images, title } = items;
+            return (
+              <ProjectCard key={_id} title={title} img={images[0].fileUrl} />
+            );
+          })}
+        </div> */}
+        {loading ? ( // Show a loading indicator while fetching
+          <div>Loading...</div>
+        ) : (
+          <div className='w-full relative max-w-3xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-center my-4'>
+            {imgArray.map((items) => {
+              const { _id, images, title } = items;
+              return (
+                <ProjectCard
+                  key={_id}
+                  id={_id}
+                  title={title}
+                  img={images[0].fileUrl}
+                />
+              );
+            })}
+          </div>
+        )}
       </div>
       <Footer />
     </div>

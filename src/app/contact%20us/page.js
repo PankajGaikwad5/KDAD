@@ -17,12 +17,13 @@ import {
 } from '../../components/ui/form';
 import { Input } from '../../components/ui/input';
 import { Textarea } from '../../components/ui/textarea';
+import { FaWhatsapp, FaPhone } from 'react-icons/fa';
 
 const formSchema = z.object({
   name: z
     .string()
-    .min(2, 'Username must be at least 2 characters')
-    .max(50, 'Username must be at most 50 characters'),
+    .min(2, 'name must be at least 2 characters')
+    .max(50, 'name must be at most 50 characters'),
   email: z.string().email('Invalid email address').min(2).max(50),
   message: z
     .string()
@@ -34,7 +35,7 @@ const Contact = () => {
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: '',
+      name: '',
       email: '',
       message: '',
     },
@@ -55,7 +56,8 @@ const Contact = () => {
           </p>
           <Form {...form}>
             <form
-              onSubmit={form.handleSubmit(onSubmit)}
+              action='https://getform.io/f/bjjjprgb'
+              method='POST'
               className='space-y-4 font-sans'
             >
               <FormField
@@ -65,7 +67,11 @@ const Contact = () => {
                   <FormItem>
                     <FormLabel>Name</FormLabel>
                     <FormControl>
-                      <Input placeholder='Enter your username' {...field} />
+                      <Input
+                        className='text-black'
+                        placeholder='Enter your name'
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -78,7 +84,11 @@ const Contact = () => {
                   <FormItem>
                     <FormLabel>Email</FormLabel>
                     <FormControl>
-                      <Input placeholder='Enter your email' {...field} />
+                      <Input
+                        className='text-black'
+                        placeholder='Enter your email'
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -93,7 +103,7 @@ const Contact = () => {
                     <FormControl>
                       <Textarea
                         placeholder='Enter your message'
-                        className='input textarea'
+                        className='input textarea text-black'
                         rows={5}
                         {...field}
                       />
@@ -113,38 +123,56 @@ const Contact = () => {
         </div>
         <div className='w-full max-w-lg text-xs font-thin p-4 flex flex-col space-y-2 my-12 py-10'>
           <div className='flex gap-8'>
-            <p className='flex flex-col justify-items-start font-sans'>
-              Via Villa Mirabello 6 <a href='tel:+3902603048'>+3902603048</a>
-            </p>
-            <h1 className='text-4xl tracking-widest '>karan</h1>
-            <p>&nbsp;</p>
-          </div>
-          <div className='flex gap-10 items-center'>
             <a
               href='mailto:info@karandesai.in'
-              className='flex flex-col  font-sans'
+              className='flex flex-col underline pt-2 font-sans'
             >
               info@karandesai.in
             </a>
-            <h1 className='text-4xl ml-20 tracking-widest '>desai</h1>
-            <p className='font-sans'>
-              Give us a call at:{' '}
-              <a href='tel:+917977112242' className='font-semibold'>
-                +917977112242
+
+            <h1 className='text-4xl tracking-widest '>karan</h1>
+            <p>&nbsp;</p>
+          </div>
+          <div className='flex gap-10 items-center pb-4'>
+            <p className='flex flex-col justify-items-start font-sans'>
+              <a
+                href='https://maps.app.goo.gl/d7pKStvstVpiA4WN9'
+                className='underline'
+                target='_blank'
+              >
+                shah industrial estate, 1001 PARINEE I, 7-A, Andheri West,
+                Mumbai, Maharashtra 400053
               </a>
             </p>
+            <h1 className='text-4xl tracking-widest '>desai</h1>
+            <div className='font-sans flex flex-col space-y-2'>
+              {/* Give us a call at:{' '} */}
+              <a
+                href='tel:+917977112242'
+                className='font-semibold text-md underline'
+              >
+                +917977112242
+              </a>
+              <div className='flex gap-2'>
+                <a href='https://wa.me/+917977112242' target='_blank'>
+                  <FaWhatsapp size={30} className='text-green-700' />
+                </a>
+                <a href='tel:+917977112242' target='_blank'>
+                  <FaPhone size={27} className='text-blue-700' />
+                </a>
+              </div>
+            </div>
           </div>
-          <div className='flex gap-6 font-sans'>
+          <div className='flex gap-6 font-sans '>
             <p>
-              Non siamo un team normale di architetti ed interior designer, ma
-              un movimento unificato di innovatori e creatori di esperienze di
-              design uniche. Offriamo straordinarie soluzioni di design
+              We are not a normal team of architects and interior designers, but
+              a unified movement of innovators and creators of unique design
+              experiences. We offer extraordinary design solutions
             </p>
             <p>
-              che contribuiscono al benessere dei nostri clienti e apportano un
-              valore reale alla loro vita e al loro lavoro. Entrando nello
-              spazio che abbiamo creato, vi sentirete come se foste nella vostra
-              immaginazione.
+              which contribute to the well-being of our customers and bring real
+              value to their life and work. By entering the space we created,
+              you will feel as if you were in your imagination.
             </p>
           </div>
         </div>

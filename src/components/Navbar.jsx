@@ -1,10 +1,45 @@
 'use client';
+import Image from 'next/image';
 import React from 'react';
 import { useState } from 'react';
 
-const Navbar = ({ isBgBlack }) => {
+const Navbar = ({ isBgBlack, isHomePage }) => {
   const [nav, setNav] = useState(false);
+  const newNavTopics = [
+    {
+      id: 1,
+      name: 'home',
+      path: '/',
+    },
+    {
+      id: 2,
+      name: 'about us',
+      path: 'about us',
+    },
+    {
+      id: 3,
+      name: 'projects',
+      path: 'projects',
+    },
+    {
+      id: 4,
+      name: 'collaborations',
+      path: 'collaborations',
+    },
+    {
+      id: 5,
+      name: 'features',
+      path: 'features',
+    },
+    {
+      id: 6,
+      name: 'contact us',
+      path: 'contact us',
+    },
+  ];
+
   const navTopics = [
+    `${isHomePage ? '' : 'home'}`,
     'about us',
     'projects',
     'collaborations',
@@ -16,7 +51,7 @@ const Navbar = ({ isBgBlack }) => {
   return (
     <>
       <div
-        className={`md:hidden w-full relative m-6 font-mono font-extralight text-xs uppercase tracking-wider text-gray-800 navMenu z-30  ${
+        className={`lg:hidden w-full relative m-6 font-mono font-extralight text-xs uppercase tracking-wider text-gray-800 navMenu z-30  ${
           nav && 'open'
         }`}
         onClick={() => setNav(!nav)}
@@ -31,25 +66,26 @@ const Navbar = ({ isBgBlack }) => {
         className={
           !nav
             ? 'absolute w-full h-screen top-0 left-[100%] flex flex-col justify-center text-gray-300 items-center duration-500'
-            : `absolute w-full h-screen top-0 left-0 flex flex-col md:hidden ${
+            : `absolute w-full h-screen top-0 left-0 flex flex-col lg:hidden ${
                 isBgBlack ? 'text-gray-300' : 'text-gray-800'
               } text-3xl justify-center items-center bg-black/40 z-20 duration-500`
         }
       >
         <ul className='flex flex-col gap-2'>
-          {navTopics.map((items, index) => {
+          {newNavTopics.map((items) => {
+            const { id, name, path } = items;
             return (
-              <li key={index}>
+              <li key={id}>
                 <a
-                  href={items}
+                  href={path}
                   className='hover:text-gray-600 transition-all duration-300'
                 >
-                  {items}
+                  {name}
                 </a>
               </li>
             );
           })}
-          <li>
+          <li className='border-t border-dotted pt-4'>
             <a
               href='shukhabar'
               className='hover:text-gray-600 transition-all duration-300'
@@ -57,31 +93,50 @@ const Navbar = ({ isBgBlack }) => {
               shukhabar
             </a>
           </li>
+          <li>
+            <a
+              href='karan desai homes'
+              className='hover:text-gray-600 transition-all duration-300'
+            >
+              karan desai homes
+            </a>
+          </li>
         </ul>
       </ul>
       {/* </div> */}
 
       <div
-        className={`fixed hidden md:block top-0 ml-14 mt-14 font-mono font-extralight text-xs uppercase z-30 tracking-wider ${
-          isBgBlack ? 'text-gray-300' : 'text-gray-800'
+        className={`fixed hidden lg:flex flex-col space-y-2 top-0 ml-14 mt-6 font-mono font-extralight text-xs uppercase z-30 tracking-wider ${
+          isBgBlack ? 'text-gray-200' : 'text-gray-800'
         }`}
       >
+        {/* <a href='/'>
+          <Image
+            src='/assets/logo.png'
+            alt='Logo 1'
+            width={120}
+            height={120}
+            className='object-contain mb-6'
+          />
+        </a> */}
+
         <ul className='flex flex-col gap-2'>
-          {navTopics.map((items, index) => {
+          {newNavTopics.map((items) => {
+            const { id, name, path } = items;
             return (
-              <li key={index}>
+              <li key={id}>
                 <a
-                  href={items}
+                  href={path}
                   className={`transition-all duration-300 hover:text-lg ${
                     isBgBlack ? 'hover:text-white' : 'hover:text-gray-400'
                   }`}
                 >
-                  {items}
+                  {name}
                 </a>
               </li>
             );
           })}
-          <li>
+          <li className='border-t border-dotted pt-4'>
             <a
               href='shukhabar'
               className={`transition-all duration-300 hover:text-lg ${
@@ -89,6 +144,16 @@ const Navbar = ({ isBgBlack }) => {
               }`}
             >
               shukhabar
+            </a>
+          </li>
+          <li>
+            <a
+              href='karan desai homes'
+              className={`transition-all duration-300 hover:text-lg ${
+                isBgBlack ? 'hover:text-white' : 'hover:text-gray-400'
+              }`}
+            >
+              karan desai homes
             </a>
           </li>
         </ul>
