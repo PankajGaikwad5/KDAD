@@ -95,8 +95,11 @@ body {
   66% {
     background-image: url('/assets/3.jpg');
   }
-  100% {
+  90% {
     background-image: url('/assets/4.jpg');
+  }
+  100% {
+    background-image: url('/Picture1.png');
   }
 }
 
@@ -139,7 +142,7 @@ body {
 }
 
 .animate-bg-change {
-  animation: bgChange 10s infinite;
+  animation: bgChange 15s infinite;
   /* background-image: url('/Picture1.png'); */
   background-size: cover;
   background-position: center;
