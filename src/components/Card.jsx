@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Card = ({ imagePosition, title, text, img }) => {
+const Card = ({ imagePosition, title, text, img, desc }) => {
   return (
     //  {/* Team Member Card */}
     <div
@@ -20,7 +20,10 @@ const Card = ({ imagePosition, title, text, img }) => {
       </div>
       {/* Text Section */}
       <div className='space-y-2'>
-        <h2 className='text-xl font-semibold tracking-widest'>{title}</h2>
+        <h2 className='text-xl font-bold tracking-widest font-sans'>{title}</h2>
+        <h6 className='text-base font-semibold tracking-widest font-sans'>
+          {desc}
+        </h6>
         {/* <p className='text-sm text-gray-300 font-sans'>
           John is an experienced architect with a passion for innovative design
           solutions that blend form and function. Lorem ipsum dolor sit amet,
