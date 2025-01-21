@@ -96,8 +96,8 @@ const CursorTrail = () => {
         .circle {
           position: absolute;
           display: block;
-          width: 30px;
-          height: 30px;
+          width: 20px;
+          height: 20px;
           border-radius: 20px;
           background-color: #fff;
         }
