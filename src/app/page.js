@@ -24,95 +24,345 @@ export default function Home() {
           className='object-contain'
         />
       </div> */}
-      <div className='w-full fixed left-[50%] bottom-[2%] translate-x-[-50%]  flex items-center text-black px-4 whitespace-nowrap overflow-hidden z-20 m-0'>
+      <div className='w-full fixed left-[50%] bottom-[2%] translate-x-[-50%]  flex items-center text-black px-4  overflow-hidden z-20 m-0'>
         <div className=' w-full justify-center items-center hidden lg:flex flex-col'>
           <h1 className='text-2xl tracking-widest text-white -mb-10'>
             exclusive features
           </h1>
-          <div className='space-x-20 note whitespace-nowrap flex-wrap flex px-4 '>
-            <Image
-              src='/features/hello-india.png'
-              alt='hello india'
-              width={120}
-              height={120}
-              className='object-contain'
-            />
-            <Image
-              src='/features/living-etc.png'
-              alt='Logo 2'
-              width={120}
-              height={120}
-              className='object-contain'
-            />
-            <Image
-              src='/features/elle-decor.png'
-              alt='Logo 2'
-              width={100}
-              height={100}
-              className='object-contain'
-            />
-            <Image
-              src='/features/ad.png'
-              alt='Logo 2'
-              width={80}
-              height={80}
-              className='object-contain'
-            />
-            <Image
-              src='/features/a+d.png'
-              alt='Logo 2'
-              width={120}
-              height={120}
-              className='object-contain'
-            />
-            <Image
-              src='/features/india-today.png'
-              alt='Logo 2'
-              width={120}
-              height={120}
-              className='object-contain'
-            />
-            <Image
-              src='/features/better-interiors.png'
-              alt='Logo 2'
-              width={120}
-              height={120}
-              className='object-contain'
-            />
-            <Image
-              src='/features/h&d.png'
-              alt='Logo 2'
-              width={160}
-              height={160}
-              className='object-contain'
-            />
-            <Image
-              src='/features/trends.png'
-              alt='Logo 2'
-              width={120}
-              height={120}
-              className='object-contain'
-            />
-            <Image
-              src='/features/goodhomes.png'
-              alt='Logo 2'
-              width={170}
-              height={170}
-              className='object-contain'
-            />
-            <Image
-              src='/features/aii.png'
-              alt='Logo 2'
-              width={170}
-              height={170}
-              className='object-contain'
-            />
+          <div className='overflow-hidden w-full'>
+            <div className='flex space-x-20 animate-marquee'>
+              <div className='flex-shrink-0 flex space-x-20'>
+                <Image
+                  src='/features/hello-india.png'
+                  alt='hello india'
+                  width={120}
+                  height={120}
+                  className='object-contain'
+                />
+                <Image
+                  src='/features/living-etc.png'
+                  alt='Logo 2'
+                  width={120}
+                  height={120}
+                  className='object-contain'
+                />
+                <Image
+                  src='/features/elle-decor.png'
+                  alt='Logo 2'
+                  width={100}
+                  height={100}
+                  className='object-contain'
+                />
+                <Image
+                  src='/features/ad.png'
+                  alt='Logo 2'
+                  width={80}
+                  height={80}
+                  className='object-contain'
+                />
+                <Image
+                  src='/features/a+d.png'
+                  alt='Logo 2'
+                  width={120}
+                  height={120}
+                  className='object-contain'
+                />{' '}
+                <Image
+                  src='/features/india-today.png'
+                  alt='Logo 2'
+                  width={120}
+                  height={120}
+                  className='object-contain'
+                />
+                <Image
+                  src='/features/better-interiors.png'
+                  alt='Logo 2'
+                  width={120}
+                  height={120}
+                  className='object-contain'
+                />
+                <Image
+                  src='/features/h&d.png'
+                  alt='Logo 2'
+                  width={160}
+                  height={160}
+                  className='object-contain'
+                />
+                <Image
+                  src='/features/trends.png'
+                  alt='Logo 2'
+                  width={120}
+                  height={120}
+                  className='object-contain'
+                />
+                <Image
+                  src='/features/goodhomes.png'
+                  alt='Logo 2'
+                  width={170}
+                  height={170}
+                  className='object-contain'
+                />
+                <Image
+                  src='/features/aii.png'
+                  alt='Logo 2'
+                  width={170}
+                  height={170}
+                  className='object-contain'
+                />
+              </div>
+              <div className='flex-shrink-0 flex space-x-20'>
+                <Image
+                  src='/features/hello-india.png'
+                  alt='hello india'
+                  width={120}
+                  height={120}
+                  className='object-contain'
+                />
+                <Image
+                  src='/features/living-etc.png'
+                  alt='Logo 2'
+                  width={120}
+                  height={120}
+                  className='object-contain'
+                />
+                <Image
+                  src='/features/elle-decor.png'
+                  alt='Logo 2'
+                  width={100}
+                  height={100}
+                  className='object-contain'
+                />
+                <Image
+                  src='/features/ad.png'
+                  alt='Logo 2'
+                  width={80}
+                  height={80}
+                  className='object-contain'
+                />
+                <Image
+                  src='/features/a+d.png'
+                  alt='Logo 2'
+                  width={120}
+                  height={120}
+                  className='object-contain'
+                />{' '}
+                <Image
+                  src='/features/india-today.png'
+                  alt='Logo 2'
+                  width={120}
+                  height={120}
+                  className='object-contain'
+                />
+                <Image
+                  src='/features/better-interiors.png'
+                  alt='Logo 2'
+                  width={120}
+                  height={120}
+                  className='object-contain'
+                />
+                <Image
+                  src='/features/h&d.png'
+                  alt='Logo 2'
+                  width={160}
+                  height={160}
+                  className='object-contain'
+                />
+                <Image
+                  src='/features/trends.png'
+                  alt='Logo 2'
+                  width={120}
+                  height={120}
+                  className='object-contain'
+                />
+                <Image
+                  src='/features/goodhomes.png'
+                  alt='Logo 2'
+                  width={170}
+                  height={170}
+                  className='object-contain'
+                />
+                <Image
+                  src='/features/aii.png'
+                  alt='Logo 2'
+                  width={170}
+                  height={170}
+                  className='object-contain'
+                />
+              </div>
+            </div>
           </div>
+          {/* <div
+            className='
+          flex overflow-hidden space-x-16 
+          '
+          >
+            <div className='flex space-x-20 animate-loop-scroll '>
+              <Image
+                src='/features/hello-india.png'
+                alt='hello india'
+                width={120}
+                height={120}
+                className='object-contain'
+              />
+              <Image
+                src='/features/living-etc.png'
+                alt='Logo 2'
+                width={120}
+                height={120}
+                className='object-contain'
+              />
+              <Image
+                src='/features/elle-decor.png'
+                alt='Logo 2'
+                width={100}
+                height={100}
+                className='object-contain'
+              />
+              <Image
+                src='/features/ad.png'
+                alt='Logo 2'
+                width={80}
+                height={80}
+                className='object-contain'
+              />
+              <Image
+                src='/features/a+d.png'
+                alt='Logo 2'
+                width={120}
+                height={120}
+                className='object-contain'
+              />{' '}
+              <Image
+                src='/features/india-today.png'
+                alt='Logo 2'
+                width={120}
+                height={120}
+                className='object-contain'
+              />
+              <Image
+                src='/features/better-interiors.png'
+                alt='Logo 2'
+                width={120}
+                height={120}
+                className='object-contain'
+              />
+              <Image
+                src='/features/h&d.png'
+                alt='Logo 2'
+                width={160}
+                height={160}
+                className='object-contain'
+              />
+              <Image
+                src='/features/trends.png'
+                alt='Logo 2'
+                width={120}
+                height={120}
+                className='object-contain'
+              />
+              <Image
+                src='/features/goodhomes.png'
+                alt='Logo 2'
+                width={170}
+                height={170}
+                className='object-contain'
+              />
+              <Image
+                src='/features/aii.png'
+                alt='Logo 2'
+                width={170}
+                height={170}
+                className='object-contain'
+              />
+            </div>
+            <div
+              className='flex space-x-20 animate-loop-scroll'
+              aria-hidden='true'
+            >
+              <Image
+                src='/features/hello-india.png'
+                alt='hello india'
+                width={120}
+                height={120}
+                className='object-contain'
+              />
+              <Image
+                src='/features/living-etc.png'
+                alt='Logo 2'
+                width={120}
+                height={120}
+                className='object-contain'
+              />
+              <Image
+                src='/features/elle-decor.png'
+                alt='Logo 2'
+                width={100}
+                height={100}
+                className='object-contain'
+              />
+              <Image
+                src='/features/ad.png'
+                alt='Logo 2'
+                width={80}
+                height={80}
+                className='object-contain'
+              />
+              <Image
+                src='/features/a+d.png'
+                alt='Logo 2'
+                width={120}
+                height={120}
+                className='object-contain'
+              />{' '}
+              <Image
+                src='/features/india-today.png'
+                alt='Logo 2'
+                width={120}
+                height={120}
+                className='object-contain'
+              />
+              <Image
+                src='/features/better-interiors.png'
+                alt='Logo 2'
+                width={120}
+                height={120}
+                className='object-contain'
+              />
+              <Image
+                src='/features/h&d.png'
+                alt='Logo 2'
+                width={160}
+                height={160}
+                className='object-contain'
+              />
+              <Image
+                src='/features/trends.png'
+                alt='Logo 2'
+                width={120}
+                height={120}
+                className='object-contain'
+              />
+              <Image
+                src='/features/goodhomes.png'
+                alt='Logo 2'
+                width={170}
+                height={170}
+                className='object-contain'
+              />
+              <Image
+                src='/features/aii.png'
+                alt='Logo 2'
+                width={170}
+                height={170}
+                className='object-contain'
+              />
+            </div>
+          </div> */}
         </div>
-      </div>
 
-      <Footer />
+        <Footer />
+      </div>
+      //{' '}
     </div>
-    // </div>
   );
 }

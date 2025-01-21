@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono, Bebas_Neue } from 'next/font/google';
 import './globals.css';
+import CursorTrail from '../components/CursorTrail';
 
 // Importing Geist Sans
 const geistSans = Geist({
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
     <html lang='en'>
       <head></head>
       <body className={`${bebasNueRegular.variable}  antialiased`}>
+        <CursorTrail />
         {children}
       </body>
     </html>

@@ -9,12 +9,12 @@ export default {
   theme: {
     extend: {
       animation: {
-        'infinite-scroll': 'infinite-scroll 25s linear infinite',
+        marquee: 'marquee 20s linear infinite',
       },
       keyframes: {
-        'infinite-scroll': {
+        marquee: {
           from: { transform: 'translateX(0)' },
-          to: { transform: 'translateX(-100%)' },
+          to: { transform: 'translateX(-171%)' },
         },
       },
       colors: {
