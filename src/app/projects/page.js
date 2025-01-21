@@ -6,7 +6,20 @@ import React, { useEffect, useState } from 'react';
 
 const Projects = () => {
   const [imgArray, setImgArray] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+
+  const newImgArray = [
+    '/projects/1.jpg',
+    '/projects/2.jpg',
+    '/projects/3.jpg',
+    '/projects/4.jpg',
+    '/projects/5.jpg',
+    '/projects/6.jpg',
+    '/projects/7.jpg',
+    '/projects/8.jpg',
+    '/projects/9.jpg',
+    '/projects/10.jpg',
+  ];
 
   useEffect(() => {
     // Fetch topics from the API
@@ -49,16 +62,10 @@ const Projects = () => {
           <div>Loading...</div>
         ) : (
           <div className='w-full relative max-w-3xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-center my-4'>
-            {imgArray.map((items) => {
-              const { _id, images, title } = items;
-              return (
-                <ProjectCard
-                  key={_id}
-                  id={_id}
-                  title={title}
-                  img={images[0].fileUrl}
-                />
-              );
+            {newImgArray.map((items, index) => {
+              // const { _id, images, title } = items;
+
+              return <ProjectCard key={index} img={items} />;
             })}
           </div>
         )}

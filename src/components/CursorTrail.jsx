@@ -76,7 +76,7 @@ const CursorTrail = () => {
 
   return (
     <>
-      <div className='cursor'>
+      <div className='cursor hidden md:block'>
         {Array.from({ length: 20 }).map((_, index) => (
           <div className='circle' key={index}></div>
         ))}
