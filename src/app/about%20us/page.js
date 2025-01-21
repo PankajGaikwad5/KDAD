@@ -11,7 +11,7 @@ const About = () => {
         <h1 className='text-3xl font-bold mb-8'>About Us</h1>
         <div className='max-w-2xl space-y-8 pb-8 border-b border-gray-600 border-dashed'>
           <Card
-            img={'/assets/profile.jpg'}
+            img={'/assets/profile.JPG'}
             imagePosition={'left'}
             title={
               'Architecture + Design | Award Winning Architect | TedX Speaker'
