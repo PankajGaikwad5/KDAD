@@ -87,10 +87,10 @@ body {
 
 @keyframes bgChange {
   0% {
-    background-image: url('/Picture1.png');
+    background-image: url('/assets/2.jpg');
   }
   33% {
-    background-image: url('/assets/2.jpg');
+    background-image: url('/Picture1.png');
   }
   66% {
     background-image: url('/assets/3.jpg');
@@ -152,7 +152,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0.75;
+  /* opacity: 0.75; */
   z-index: 0;
 }
 
