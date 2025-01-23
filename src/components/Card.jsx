@@ -6,7 +6,7 @@ const Card = ({ imagePosition, title, text, img, desc }) => {
     <div
       className={`flex ${
         imagePosition === 'left' ? 'flex-row' : 'flex-row-reverse'
-      } items-start gap-6 p-4 border border-gray-600 rounded-lg shadow-lg hover:shadow-2xl hover:border-white transition-all duration-500 hover:bg-zinc-800 cursor-pointer`}
+      } items-start gap-6 p-4 border border-gray-600 rounded-lg shadow-lg hover:shadow-2xl hover:border-white transition-all duration-500 `}
     >
       {/* Image Section */}
       <div className='w-32 h-36 flex-shrink-0'>

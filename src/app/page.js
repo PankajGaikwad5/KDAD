@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Image from 'next/image';
 import LogoComp from '../components/LogoComp';
 import { useState, useEffect } from 'react';
+import CursorTrail from '../components/CursorTrail';
 
 export default function Home() {
   const [gifKey, setGifKey] = useState('');
@@ -19,10 +20,11 @@ export default function Home() {
   return (
     // <div className='relative overflow-hidden'>
     <div className='relative w-full h-screen overflow-hidden m-0 p-0'>
+      <CursorTrail />
       <Navbar isBgBlack={true} isHomePage={true} />
       <div
         className={`absolute inset-0 z-0 bg-cover bg-center ${
-          !logoLoaded ? 'opacity-20' : 'opacity-65'
+          !logoLoaded ? 'opacity-20' : 'opacity-90'
         } animate-bg-change transition-all duration-700`}
       ></div>
       <div className='relative z-10 font-semibold text-center top-1/2 -mt-12 lg:-mt-2 -translate-y-1/2 text-3xl sm:text-8xl text-white tracking-widest flex flex-col  justify-center items-center mb-0'>
@@ -31,7 +33,11 @@ export default function Home() {
           architecture + design
         </h1> */}
         {/* <img src='/assets/signature.gif' alt='' /> */}
-        <img src={`/assets/signature.gif${gifKey}`} alt='Signature Animation' />
+        <img
+          src={`/assets/signature.gif${gifKey}`}
+          className={`${!logoLoaded ? 'opacity-100' : 'opacity-30'}`}
+          alt='Signature Animation'
+        />
       </div>
       {/* <div className='absolute right-0 top-0 -mt-12 z-30'>
         <Image

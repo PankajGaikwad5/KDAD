@@ -31,7 +31,6 @@ export default function RootLayout({ children }) {
     <html lang='en'>
       <head></head>
       <body className={`${bebasNueRegular.variable}  antialiased`}>
-        <CursorTrail />
         {children}
       </body>
     </html>

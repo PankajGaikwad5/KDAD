@@ -62,10 +62,17 @@ const Projects = () => {
           <div>Loading...</div>
         ) : (
           <div className='w-full relative max-w-3xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-center my-4'>
-            {newImgArray.map((items, index) => {
-              // const { _id, images, title } = items;
+            {imgArray.map((items, index) => {
+              const { _id, images, title } = items;
 
-              return <ProjectCard key={index} img={items} />;
+              return (
+                <ProjectCard
+                  key={index}
+                  img={images[0].fileUrl}
+                  id={_id}
+                  title={title}
+                />
+              );
             })}
           </div>
         )}

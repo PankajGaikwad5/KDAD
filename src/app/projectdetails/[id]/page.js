@@ -19,33 +19,25 @@ const getTopicById = async (id) => {
 };
 
 const ProjectDetails = async ({ params }) => {
-  const { id } = params;
+  const { id } = await params;
   const { projects } = await getTopicById(id);
   const { title, images } = await projects;
-  console.log(title, images);
-  const imgArray = [
-    '/assets/1.jpg',
-    '/assets/2.jpg',
-    '/assets/3.jpg',
-    '/assets/1.jpg',
-    '/assets/2.jpg',
-    '/assets/3.jpg',
-  ];
+
   return (
     <div className='relative'>
-      <h1 className='text-3xl tracking-wider'>{title}</h1>
+      {/* <h1 className='text-3xl tracking-wider mb-4'>{title}</h1> */}
       <div className='absolute left-3 top-3'>
         <a href='/projects'>
           <ChevronLeft
-            className='text-white absolute left-2 top-2'
+            className='text-white'
             size={50}
             strokeWidth={0.9}
             absoluteStrokeWidth
           />
         </a>
       </div>
-      <div className=' h-screen items-center flex justify-center p-4'>
-        <CarouselComp imgArray={images} />
+      <div className='h-screen items-center flex justify-center'>
+        <CarouselComp imgArray={images.map((image) => image.fileUrl)} />
       </div>
     </div>
   );

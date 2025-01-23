@@ -136,7 +136,7 @@ const Contact = () => {
           <div className='flex gap-10 items-center pb-4'>
             <p className='flex flex-col justify-items-start font-sans'>
               <a
-                href='https://maps.app.goo.gl/d7pKStvstVpiA4WN9'
+                href='https://maps.app.goo.gl/LDt3TN9yLwB5n6yg7'
                 className='underline'
                 target='_blank'
               >
@@ -145,21 +145,21 @@ const Contact = () => {
               </a>
             </p>
             <h1 className='text-4xl tracking-widest '>desai</h1>
-            <div className='font-sans flex flex-col space-y-2'>
+            <div className='font-sans flex items-center space-x-2'>
               {/* Give us a call at:{' '} */}
-              <a
-                href='tel:+917977112242'
-                className='font-semibold text-md underline'
-              >
-                +917977112242
+              <a href='https://wa.me/+917977112242' target='_blank'>
+                <FaWhatsapp size={30} className='text-green-700' />
               </a>
               <div className='flex gap-2'>
-                <a href='https://wa.me/+917977112242' target='_blank'>
-                  <FaWhatsapp size={30} className='text-green-700' />
+                <a
+                  href='https://wa.me/+917977112242'
+                  className='font-semibold text-md '
+                >
+                  +917977112242
                 </a>
-                <a href='tel:+917977112242' target='_blank'>
+                {/* <a href='tel:+917977112242' target='_blank'>
                   <FaPhone size={27} className='text-blue-700' />
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
