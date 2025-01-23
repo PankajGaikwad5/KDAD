@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 
 const Projects = () => {
   const [imgArray, setImgArray] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const newImgArray = [
     '/projects/1.jpg',
@@ -31,9 +31,9 @@ const Projects = () => {
 
         setImgArray(data.projects);
         console.log(imgArray);
-        setTimeout(() => {
-          setLoading(false);
-        }, 2000);
+        // setTimeout(() => {
+        setLoading(false);
+        // }, 2000);
       } catch (error) {
         console.error('Error fetching topics:', error);
         setLoading(false);
