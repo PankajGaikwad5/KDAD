@@ -11,7 +11,7 @@ const Features = () => {
     // Fetch topics from the API
     const fetchProjects = async () => {
       try {
-        const response = await fetch(`${process.env.BASE_URL}/api/features`);
+        const response = await fetch(`/api/features`);
         const data = await response.json();
         console.log(data);
 
