@@ -137,7 +137,7 @@ const CarouselComp = ({ imgArray }) => {
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
         zoom={true}
-        keyboard={{ enabled: true }}
+        keyboard={{ enabled: true, onlyInViewport: true }}
       >
         {imgArray.map((img, index) => (
           <SwiperSlide key={index}>
