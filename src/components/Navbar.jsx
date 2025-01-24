@@ -72,6 +72,12 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
         }
       >
         <ul className='flex flex-col gap-2'>
+          <a
+            href='home'
+            className={`hover:text-gray-600 transition-all duration-300`}
+          >
+            home
+          </a>
           {newNavTopics.map((items) => {
             const { id, name, path } = items;
             return (
@@ -112,11 +118,13 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
       >
         <a href='/'>
           <Image
-            src='/assets/sign.png'
-            alt='Logo 1'
+            src='/assets/signlogo.png'
+            alt='Logo'
             width={120}
             height={120}
-            className='object-contain mb-6'
+            className='object-contain m-0 p-0 
+            
+            '
           />
         </a>
 

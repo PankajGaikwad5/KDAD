@@ -121,49 +121,53 @@ const Contact = () => {
             </form>
           </Form>
         </div>
-        <div className='w-full max-w-lg text-xs font-thin p-4 flex flex-col space-y-2 my-12 py-10'>
-          <div className='flex gap-8'>
+        {/*  */}
+        <div className='w-full max-w-lg text-xs font-thin p-4 flex flex-col space-y-4 my-12 py-10'>
+          <div className='flex flex-wrap items-center gap-8 text-center '>
             <a
               href='mailto:info@karandesai.in'
               className='flex flex-col underline pt-2 font-sans'
             >
               info@karandesai.in
             </a>
-
-            <h1 className='text-4xl tracking-widest '>karan</h1>
-            <p>&nbsp;</p>
+            <h1 className='text-3xl sm:text-4xl tracking-widest hidden md:flex -mb-4'>
+              karan
+            </h1>
           </div>
-          <div className='flex gap-10 items-center pb-4'>
-            <p className='flex flex-col justify-items-start font-sans'>
+
+          <div className='flex flex-col sm:flex-row gap-4 sm:gap-12 items-start sm:items-center pb-4 text-center sm:text-left'>
+            <p className='flex flex-col font-sans'>
               <a
                 href='https://maps.app.goo.gl/LDt3TN9yLwB5n6yg7'
                 className='underline'
                 target='_blank'
               >
-                shah industrial estate, 1001 PARINEE I, 7-A, Andheri West,
+                Shah Industrial Estate, 1001 PARINEE I, 7-A, Andheri West,
                 Mumbai, Maharashtra 400053
               </a>
             </p>
-            <h1 className='text-4xl tracking-widest '>desai</h1>
-            <div className='font-sans flex items-center space-x-2'>
-              {/* Give us a call at:{' '} */}
+            <div className='flex  gap-4'>
+              <h1 className='text-3xl sm:text-4xl tracking-widest md:hidden'>
+                karan
+              </h1>
+              <h1 className='text-3xl sm:text-4xl tracking-widest md:-mr-4'>
+                desai
+              </h1>
+            </div>
+            <div className='font-sans flex items-center space-x-2 justify-center sm:justify-start'>
               <a href='https://wa.me/+917977112242' target='_blank'>
-                <FaWhatsapp size={30} className='text-green-700' />
+                <FaWhatsapp size={25} className='text-green-700' />
               </a>
-              <div className='flex gap-2'>
-                <a
-                  href='https://wa.me/+917977112242'
-                  className='font-semibold text-md '
-                >
-                  +917977112242
-                </a>
-                {/* <a href='tel:+917977112242' target='_blank'>
-                  <FaPhone size={27} className='text-blue-700' />
-                </a> */}
-              </div>
+              <a
+                href='https://wa.me/+917977112242'
+                className='font-semibold text-sm sm:text-md'
+              >
+                +917977112242
+              </a>
             </div>
           </div>
-          <div className='flex gap-6 font-sans '>
+
+          <div className='flex flex-col gap-4 sm:flex-row sm:gap-6 font-sans text-center sm:text-left'>
             <p>
               We are not a normal team of architects and interior designers, but
               a unified movement of innovators and creators of unique design
