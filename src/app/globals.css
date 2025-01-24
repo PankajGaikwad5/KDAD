@@ -9,6 +9,7 @@ body {
   animation: fadeIn 0.9s ease-in-out forwards;
   margin: 0;
   padding: 0;
+  background-image: url(/assets/21.jpg);
 }
 @keyframes fadeIn {
   from {
@@ -84,7 +85,7 @@ body {
     @apply border-border;
   }
   body {
-    @apply text-foreground bg-[#172b39];
+    @apply text-foreground;
   }
 }
 
