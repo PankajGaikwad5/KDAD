@@ -131,7 +131,7 @@ const CarouselComp = ({ imgArray }) => {
       >
         {imgArray.map((img, index) => (
           <SwiperSlide key={index}>
-            <div className='w-full h-full zoom-container flex items-center justify-center'>
+            <div className='w-full h-full swiper-zoom-container flex items-center justify-center'>
               <img
                 src={img}
                 alt={`Slide ${index}`}
