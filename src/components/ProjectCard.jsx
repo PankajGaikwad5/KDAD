@@ -1,11 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
 
-const ProjectCard = ({ img, feature, id, title }) => {
+const ProjectCard = ({ img, feature, id, title, projects }) => {
   return (
     <div className=''>
       <div className='relative group rounded-2xl '>
-        {id ? (
+        {projects ? (
           <a href={`/projectdetails/${id}`}>
             {/* <h3 className='absolute inset-0 flex items-center justify-center tracking-widest text-white text-lg font-bold bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity z-10'>
               {title}
@@ -20,7 +20,7 @@ const ProjectCard = ({ img, feature, id, title }) => {
             />
           </a>
         ) : (
-          <a href='#'>
+          <a href={`/featuredetails/${id}`}>
             {/* <h3 className='absolute inset-0 flex items-center justify-center tracking-widest text-white text-lg font-bold bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity z-10'>
             &nbsp;
           </h3> */}
@@ -28,8 +28,8 @@ const ProjectCard = ({ img, feature, id, title }) => {
               src={img}
               alt=''
               className={`${
-                feature ? 'aspect-[8/11]' : 'aspect-video'
-              } rounded-3xl transform group-hover:scale-105 transition-transform duration-500 `}
+                feature ? 'aspect-[8/11]' : ''
+              } transform  group-hover:scale-105 transition-transform duration-500 `}
               loading='lazy'
             />
           </a>

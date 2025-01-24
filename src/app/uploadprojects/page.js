@@ -6,6 +6,8 @@ import { UploadButton } from '../../utils/uploadthing';
 export default function NewProject() {
   const [title, setTitle] = useState('');
   const [images, setImages] = useState([]);
+  const projectsUrl = '/api/projects';
+  const featuresUrl = '/api/features';
 
   const handleUploadComplete = (res) => {
     if (res) {
@@ -23,7 +25,7 @@ export default function NewProject() {
     const payload = { title, images };
 
     try {
-      const response = await fetch('/api/projects', {
+      const response = await fetch(featuresUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -31,6 +31,16 @@ const About = () => {
           <Card imagePosition={'left'} />
           <Card /> */}
         </div>
+        <div className='w-full max-w-2xl space-y-8 pb-8 tracking-widest border-b border-gray-600 border-dashed text-center'>
+          <h1 className='text-3xl font-bold mb-8'>Shu Khabar</h1>
+          {/* <Card
+            imagePosition={'left'}
+            
+          /> */}
+          {/* <Card />
+          <Card imagePosition={'left'} />
+          <Card /> */}
+        </div>
       </div>
       <Footer />
     </div>

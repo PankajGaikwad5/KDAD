@@ -6,11 +6,11 @@ import { useState } from 'react';
 const Navbar = ({ isBgBlack, isHomePage }) => {
   const [nav, setNav] = useState(false);
   const newNavTopics = [
-    {
-      id: 1,
-      name: 'home',
-      path: '/',
-    },
+    // {
+    //   id: 1,
+    //   name: 'home',
+    //   path: '/',
+    // },
     {
       id: 2,
       name: 'about us',
@@ -110,17 +110,17 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
           isBgBlack ? 'text-gray-200' : 'text-gray-800'
         }`}
       >
-        {/* <a href='/'>
+        <a href='/'>
           <Image
-            src='/assets/logo.png'
+            src='/assets/sign.png'
             alt='Logo 1'
             width={120}
             height={120}
             className='object-contain mb-6'
           />
-        </a> */}
+        </a>
 
-        <ul className='flex flex-col gap-2'>
+        <ul className='flex flex-col'>
           {newNavTopics.map((items) => {
             const { id, name, path } = items;
             return (

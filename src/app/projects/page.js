@@ -47,7 +47,7 @@ const Projects = () => {
     <div className='relative overflow-hidden md:pt-14 px-4 tracking-widest z-10'>
       <Navbar isBgBlack={true} />
       <div className='text-white flex flex-col items-center justify-center mb-8'>
-        <h1 className='text-3xl font-bold mb-8 tracking-widest font-sans uppercase \'>
+        <h1 className='text-3xl  border-b-4 border-pink-800 font-bold mb-8 tracking-widest font-sans uppercase \'>
           Projects
         </h1>
         {/* <div className='w-full relative max-w-3xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-center my-4'>
@@ -71,6 +71,7 @@ const Projects = () => {
                   img={images[0].fileUrl}
                   id={_id}
                   title={title}
+                  projects={true}
                 />
               );
             })}

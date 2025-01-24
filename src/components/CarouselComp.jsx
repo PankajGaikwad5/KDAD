@@ -102,20 +102,24 @@ import {
   Pagination,
   Scrollbar,
   A11y,
+  Zoom,
 } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
+import 'swiper/css/zoom';
+import 'swiper/css/pagination';
+// import 'swiper/css/scrollbar';
 
 const CarouselComp = ({ imgArray }) => {
   const [thumbsSwiper, setThumbsSwiper] = React.useState(null);
 
   return (
-    <div className='relative w-full max-w-screen-lg mx-auto'>
+    <div className='relative w-full max-w-screen-lg  mx-auto'>
       {/* Main Carousel */}
       <Swiper
         lazy={'true'}
-        modules={[Navigation, Thumbs, Pagination, Scrollbar, A11y]}
+        modules={[Navigation, Thumbs, Pagination, Scrollbar, A11y, Zoom]}
         navigation
         thumbs={{ swiper: thumbsSwiper }}
         spaceBetween={10}
@@ -123,10 +127,11 @@ const CarouselComp = ({ imgArray }) => {
         className='w-full h-[60vh] md:h-[70vh]'
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
+        zoom={true}
       >
         {imgArray.map((img, index) => (
           <SwiperSlide key={index}>
-            <div className='w-full h-full flex items-center justify-center'>
+            <div className='w-full h-full zoom-container flex items-center justify-center'>
               <img
                 src={img}
                 alt={`Slide ${index}`}
