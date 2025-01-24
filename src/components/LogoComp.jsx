@@ -81,7 +81,7 @@ const LogoComp = () => {
               className='object-contain'
             />
             <Image
-              src='/features/aii.png'
+              src='/features/aaii.png'
               alt='Logo 2'
               width={170}
               height={170}
