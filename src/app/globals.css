@@ -76,12 +76,15 @@ body {
   }
 }
 
+/* 6c2415 */
+/* 53051b */
+
 @layer base {
   * {
     @apply border-border;
   }
   body {
-    @apply text-foreground bg-black/90;
+    @apply text-foreground bg-[#172b39];
   }
 }
 
