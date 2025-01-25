@@ -145,6 +145,7 @@ const CarouselComp = ({ imgArray }) => {
               <img
                 src={img}
                 alt={`Slide ${index}`}
+                loading='lazy'
                 className='max-w-full max-h-full object-contain'
               />
             </div>
@@ -169,6 +170,7 @@ const CarouselComp = ({ imgArray }) => {
                 src={img}
                 alt={`Thumbnail ${index}`}
                 className='w-full h-full object-cover cursor-pointer rounded-lg'
+                loading='lazy'
               />
             </div>
           </SwiperSlide>
