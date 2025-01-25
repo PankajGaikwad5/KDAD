@@ -64,7 +64,7 @@ const Features = () => {
           {loading ? ( // Show a loading indicator while fetching
             <div>Loading...</div>
           ) : (
-            <div className='w-full relative max-w-4xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 text-center my-4'>
+            <div className='w-full relative max-w-4xl grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 text-center my-4'>
               {/* {imgArray.map((item, index) => {
             return <ProjectCard key={index} img={item} feature={true} />;
           })} */}

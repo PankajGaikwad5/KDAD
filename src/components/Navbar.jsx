@@ -51,7 +51,7 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
   return (
     <>
       <div
-        className={`lg:hidden w-full relative m-6 font-mono font-extralight text-xs uppercase tracking-wider text-gray-800 navMenu z-30  ${
+        className={`xl:hidden w-full relative m-6 font-mono font-extralight text-xs uppercase tracking-wider text-gray-800 navMenu z-30  ${
           nav && 'open'
         }`}
         onClick={() => setNav(!nav)}
@@ -65,8 +65,8 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
       <ul
         className={
           !nav
-            ? 'absolute w-full h-screen top-0 left-[100%] lg:hidden flex flex-col justify-center text-gray-300 items-center duration-500'
-            : `absolute w-full h-screen top-0 left-0 flex flex-col lg:hidden ${
+            ? 'absolute w-full h-screen top-0 left-[100%] xl:hidden flex flex-col justify-center text-gray-300 items-center duration-500'
+            : `absolute w-full h-screen top-0 left-0 flex flex-col xl:hidden ${
                 isBgBlack ? 'text-gray-300' : 'text-gray-800'
               } text-3xl justify-center items-center bg-black/40 z-20 duration-500 `
         }
@@ -112,7 +112,7 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
       {/* </div> */}
 
       <div
-        className={`fixed hidden lg:flex flex-col space-y-2 top-0 ml-14 mt-6 font-mono font-extralight text-xs uppercase z-30 tracking-wider ${
+        className={`fixed hidden xl:flex flex-col space-y-2 top-0 ml-14 mt-6 font-mono font-extralight text-xs uppercase z-30 tracking-wider ${
           isBgBlack ? 'text-gray-200' : 'text-gray-800'
         }`}
       >
