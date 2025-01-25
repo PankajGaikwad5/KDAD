@@ -111,6 +111,10 @@ body {
   
 } */
 
+.project-bg {
+  background-image: url('/assets/21.jpg');
+}
+
 @keyframes note {
   0% {
     transform: translate(100%, 0);
