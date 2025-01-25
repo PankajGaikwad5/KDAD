@@ -1,36 +1,49 @@
-import React from 'react';
-import Image from 'next/image';
+import React, { useState } from 'react';
 
 const ProjectCard = ({ img, feature, id, title, projects }) => {
+  const [isLoaded, setIsLoaded] = useState(false); // Track the loading state of the image
+
+  const handleImageLoad = () => {
+    setIsLoaded(true); // Set to true when the image finishes loading
+  };
+
   return (
-    <div className=''>
-      <div className='relative group rounded-2xl '>
+    <div>
+      <div className='relative group rounded-sm overflow-hidden'>
         {projects ? (
           <a href={`/projectdetails/${id}`}>
-            {/* <h3 className='absolute inset-0 flex items-center justify-center tracking-widest text-white text-lg font-bold bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity z-10'>
-              {title}
-            </h3> */}
+            {/* Placeholder while loading */}
+            {!isLoaded && (
+              <div className='flex items-center justify-center rounded-3xl bg-gray-600 animate-pulse aspect-video'>
+                <p className='text-gray-500'>Loading...</p>
+              </div>
+            )}
+            {/* Actual image */}
             <img
               src={img}
-              alt=''
+              alt={title || 'Project Image'}
               loading='lazy'
-              className={`${
-                feature ? 'aspect-[8/11]' : 'aspect-video'
-              } rounded-3xl transform group-hover:scale-105 transition-transform duration-500 `}
+              className={`rounded-3xl transform transition-transform duration-500 ${
+                isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+              }`}
+              onLoad={handleImageLoad}
             />
           </a>
         ) : (
           <a href={`/featuredetails/${id}`}>
-            {/* <h3 className='absolute inset-0 flex items-center justify-center tracking-widest text-white text-lg font-bold bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity z-10'>
-            &nbsp;
-          </h3> */}
+            {!isLoaded && (
+              <div className='flex items-center justify-center bg-gray-600 animate-pulse aspect-[8/11]'>
+                <p className='text-gray-500'></p>
+              </div>
+            )}
             <img
               src={img}
-              alt=''
-              className={`${
-                feature ? 'aspect-[8/11]' : ''
-              } transform  group-hover:scale-105 transition-transform duration-500 `}
+              alt={title || 'Feature Image'}
               loading='lazy'
+              className={` transform transition-transform duration-500 ${
+                isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+              }`}
+              onLoad={handleImageLoad}
             />
           </a>
         )}

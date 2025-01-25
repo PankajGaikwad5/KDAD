@@ -111,6 +111,11 @@ body {
   
 } */
 
+.loader {
+  border-color: #e5e7eb;
+  border-top-color: #3b82f6; /* Spinner color */
+}
+
 .project-bg {
   background-image: url('/assets/21.jpg');
   background-size: cover;
