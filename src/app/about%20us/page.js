@@ -30,7 +30,7 @@ const About = () => {
           <Card /> */}
         </div>
         <div className='w-full max-w-2xl space-y-8 pb-8 tracking-widest border-b border-gray-600 border-dashed text-center'>
-          <h1 className='text-3xl font-bold mt-8'>karan desai homes</h1>
+          <h1 className='text-3xl font-bold mt-8'>karan desai home</h1>
           <p className='font-sans text-start flex flex-col space-y-4'>
             <span>
               "Imagine transforming everyday spaces into rich, immersive
