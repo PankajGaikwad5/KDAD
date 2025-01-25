@@ -48,7 +48,7 @@ const Contact = () => {
 
   return (
     <div>
-      <div className='project-bg fixed w-full h-full m-0 p-0 z-0 opacity-25'></div>
+      <div className='project-bg fixed w-full h-full m-0 p-0 z-0 opacity-25 blur-md'></div>
       <div className='relative w-full overflow-hidden md:pt-32 px-4 tracking-widest'>
         <Navbar isBgBlack={true} />
         <div className='w-full text-gray-200 flex justify-center items-center flex-col'>

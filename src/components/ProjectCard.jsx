@@ -24,7 +24,7 @@ const ProjectCard = ({ img, feature, id, title, projects }) => {
               src={img}
               alt={title || 'Project Image'}
               loading='lazy'
-              className={`rounded-3xl transform transition-transform duration-500 ${
+              className={`rounded-xl transform transition-transform duration-500 ${
                 isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
               }`}
               onLoad={handleImageLoad}

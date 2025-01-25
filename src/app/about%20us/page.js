@@ -6,12 +6,14 @@ import React from 'react';
 const About = () => {
   return (
     <div>
-      <div className='project-bg fixed w-full h-full m-0 p-0 z-0 opacity-25'></div>
+      <div className='project-bg fixed w-full h-full m-0 p-0 z-0 opacity-25 blur-md'></div>
 
       <div className='relative overflow-hidden md:pt-14 px-4 tracking-widest z-10'>
         <Navbar isBgBlack={true} isHomePage={true} />
         <div className='text-white flex flex-col items-center justify-center'>
-          <h1 className='text-3xl font-bold mb-8'>About Us</h1>
+          <h1 className='text-3xl font-bold mb-8  border-b-4 border-pink-800'>
+            About Us
+          </h1>
           <div className='max-w-2xl space-y-8 pb-8 border-b border-gray-600 border-dashed'>
             <Card
               img={'/assets/profile.JPG'}
@@ -62,16 +64,31 @@ const About = () => {
               </span>
             </p>
           </div>
-          <div className='w-full max-w-2xl space-y-8 py-8 tracking-widest border-b border-gray-600 border-dashed text-center'>
+          <div className='w-full max-w-2xl space-y-8 py-8 tracking-widest border-b border-gray-600 border-dashed text-center '>
             <h1 className='text-3xl font-bold'>Shu Khabar</h1>
+            <h4 className='text-xl tracking-widest'>
+              "Shu (Shun)" = What ﻿"Khabar"= The latest information; news.
+            </h4>
             <p className='font-sans text-start'>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi
-              exercitationem hic, voluptate, assumenda culpa eum porro
-              asperiores iure minima ipsa fuga eligendi sapiente reprehenderit
-              dignissimos quis labore. Illum corrupti modi, dolores perspiciatis
-              fugiat, incidunt aliquid iusto voluptate dolore autem aliquam unde
-              animi dolor dolorem ratione, placeat aut beatae tenetur quidem.
+              You've seen their blueprints, you've marveled at their
+              skyscrapers—now it's time to spill the real tea! Welcome to
+              Shukhabar, where we unravel the juicy secrets, epic fails, and
+              hidden life hacks of industry moguls from the field of design.
+              Fasten your seatbelts for an exhilarating rollercoaster of gossip,
+              games, and golden advice. This isn't just an interview—it's your
+              VIP backstage pass to the lives they'd rather you didn't see!
             </p>
+            <div className='w-full justify-center text-center items-center'>
+              <iframe
+                className='w-full md:w-[560px] md:h-[315px]'
+                src='https://www.youtube.com/embed/nS3qDFHinbw?si=gbJct3hxMk5OkQ84'
+                title='YouTube video player'
+                frameBorder='0'
+                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                referrerPolicy='strict-origin-when-cross-origin'
+                allowFullScreen
+              ></iframe>
+            </div>
           </div>
         </div>
         <Footer />

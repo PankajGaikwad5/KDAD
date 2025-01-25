@@ -73,7 +73,7 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
       >
         <ul className='flex flex-col gap-2'>
           <a
-            href='home'
+            href='/'
             className={`hover:text-gray-600 transition-all duration-300`}
           >
             home
