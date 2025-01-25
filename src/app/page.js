@@ -28,7 +28,7 @@ export default function Home() {
             !logoLoaded ? 'opacity-20' : 'opacity-90'
           } animate-bg-change transition-all duration-700`}
         ></div>
-        <div className='relative z-10 font-semibold text-center top-1/2 -mt-24 lg:-mt-8 -translate-y-1/2 text-3xl sm:text-8xl text-white tracking-widest flex flex-col  justify-center items-center mb-0'>
+        <div className='relative z-10 font-semibold text-center top-1/2 -mt-28 lg:-mt-8 -translate-y-1/2 text-3xl sm:text-8xl text-white tracking-widest flex flex-col  justify-center items-center mb-0'>
           {/* <h1 className='text-center'>karan desai</h1>
         <h1 className='text-2xl font-sans text-center uppercase font-thin linespace '>
           architecture + design
