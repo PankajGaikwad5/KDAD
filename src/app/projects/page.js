@@ -45,7 +45,7 @@ const Projects = () => {
 
   return (
     <div>
-      <div className='project-bg fixed w-full h-full m-0 p-0 z-0 opacity-25'></div>
+      <div className='project-bg fixed w-full h-full m-0 p-0 z-0 opacity-25 '></div>
       <div className='relative overflow-hidden md:pt-14 px-4 tracking-widest z-10'>
         <Navbar isBgBlack={true} />
         <div className='text-white flex flex-col items-center justify-center mb-8'>
