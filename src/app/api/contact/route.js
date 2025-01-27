@@ -21,7 +21,7 @@ export async function POST(req) {
   };
   try {
     await transporter.sendMail(mailOptions);
-    return NextResponse.status.json(
+    return NextResponse.json(
       {
         message: 'Email sent successfully!',
       },
