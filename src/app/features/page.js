@@ -6,39 +6,22 @@ import ProjectCard from '../../components/ProjectCard';
 
 const Features = () => {
   const [imgArray, setImgArray] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const fetchFeatures = async () => {
+    try {
+      const response = await fetch('/api/features');
+      const data = await response.json();
+      setImgArray(data.features);
+    } catch (error) {
+      console.error('Error fetching features:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const preloadImages = (imageUrls) => {
-      return Promise.all(
-        imageUrls.map((url) => {
-          return new Promise((resolve, reject) => {
-            const img = new Image();
-            img.src = url;
-            img.onload = resolve; // Resolve the promise when the image is loaded
-            img.onerror = reject; // Reject if there’s an error loading the image
-          });
-        })
-      );
-    };
-
-    const fetchAndPreloadFeatures = async () => {
-      try {
-        const response = await fetch('/api/features');
-        const data = await response.json();
-        const featureImages = data.features.map(
-          (feature) => feature.images[0].fileUrl
-        );
-
-        // Preload all feature images before updating the state
-        await preloadImages(featureImages);
-
-        setImgArray(data.features); // Only update the state after preloading is complete
-      } catch (error) {
-        console.error('Error fetching or preloading features:', error);
-      }
-    };
-
-    fetchAndPreloadFeatures();
+    fetchFeatures();
   }, []);
 
   return (
@@ -50,20 +33,23 @@ const Features = () => {
           <h1 className='text-3xl font-bold border-b-4 border-pink-800 mb-8 tracking-widest font-sans uppercase'>
             Features
           </h1>
-          <div className='w-full relative max-w-4xl grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 text-center my-4'>
-            {imgArray.map((items, index) => {
-              const { _id, images, title } = items;
-
-              return (
-                <ProjectCard
-                  key={index}
-                  img={images[0].fileUrl}
-                  id={_id}
-                  title={title}
-                />
-              );
-            })}
-          </div>
+          {loading ? (
+            <p>Loading features...</p>
+          ) : (
+            <div className='w-full relative max-w-4xl grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 text-center my-4'>
+              {imgArray.map((item, index) => {
+                const { _id, images, title } = item;
+                return (
+                  <ProjectCard
+                    key={index}
+                    img={images[0].fileUrl}
+                    id={_id}
+                    title={title}
+                  />
+                );
+              })}
+            </div>
+          )}
         </div>
         <Footer />
       </div>

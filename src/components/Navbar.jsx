@@ -118,7 +118,7 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
       >
         <a href='/'>
           <Image
-            src='/assets/signlogo.png'
+            src='/assets/logo.png'
             alt='Logo'
             width={120}
             height={120}
