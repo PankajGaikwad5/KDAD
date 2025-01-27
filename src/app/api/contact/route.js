@@ -25,7 +25,7 @@ export async function POST(req) {
       {
         message: 'Email sent successfully!',
       },
-      { status: 500 }
+      { status: 200 }
     );
 
     // await connectMongoDB();

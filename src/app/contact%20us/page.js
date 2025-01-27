@@ -54,6 +54,14 @@ const Contact = () => {
           values,
         }),
       });
+
+      if (response.ok) {
+        alert('Message sent successfully!');
+        // Refresh the page
+        window.location.reload();
+      } else {
+        alert('Failed to send the message. Please try again.');
+      }
     } catch (error) {
       console.log(error);
     }
