@@ -163,6 +163,7 @@ const Contact = () => {
                 <a
                   href='https://wa.me/+917977112242'
                   className='font-semibold text-sm sm:text-md'
+                  target='_blank'
                 >
                   +917977112242
                 </a>
