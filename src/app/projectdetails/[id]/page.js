@@ -2,30 +2,41 @@ import React from 'react';
 import CarouselComp from '../../../components/CarouselComp';
 import { ChevronLeft } from 'lucide-react';
 
-const getTopicById = async (id) => {
+const getFeatureById = async (id) => {
   try {
     const res = await fetch(`${process.env.BASE_URL}/api/projects/${id}`, {
       cache: 'no-store',
     });
 
     if (!res.ok) {
-      throw new Error('Failed to fetch topic');
+      throw new Error('Failed to fetch feature');
     }
 
-    return res.json();
+    return await res.json();
   } catch (error) {
-    console.log(error);
+    console.error('Error fetching feature:', error);
+    return null;
   }
 };
 
-const ProjectDetails = async ({ params }) => {
-  const { id } = await params;
-  const { projects } = await getTopicById(id);
-  const { title, images } = await projects;
+const FeatureDetails = async ({ params }) => {
+  const { id } = params;
+  const featureData = await getFeatureById(id);
+
+  if (!featureData) {
+    return (
+      <div className='flex items-center justify-center h-screen'>
+        <p className='text-red-500 text-lg'>Failed to load feature details.</p>
+      </div>
+    );
+  }
+
+  const { projects } = featureData;
+  const { title, images } = projects;
 
   return (
     <div className='relative'>
-      {/* <h1 className='text-3xl tracking-wider mb-4'>{title}</h1> */}
+      {/* Back Button */}
       <div className='absolute left-3 top-3'>
         <a href='/projects'>
           <ChevronLeft
@@ -36,11 +47,19 @@ const ProjectDetails = async ({ params }) => {
           />
         </a>
       </div>
-      <div className='h-screen items-center flex justify-center'>
-        <CarouselComp imgArray={images.map((image) => image.fileUrl)} />
+
+      {/* Carousel */}
+      <div className='h-screen flex items-center justify-center'>
+        {images && images.length > 0 ? (
+          <CarouselComp imgArray={images.map((image) => image.fileUrl)} />
+        ) : (
+          <p className='text-gray-500 text-lg'>
+            No images available for this feature.
+          </p>
+        )}
       </div>
     </div>
   );
 };
 
-export default ProjectDetails;
+export default FeatureDetails;

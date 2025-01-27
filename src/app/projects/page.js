@@ -112,7 +112,7 @@ const Projects = () => {
           {loading ? (
             <p>Loading projects...</p>
           ) : (
-            <div className='w-full relative max-w-3xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-center my-4'>
+            <div className='w-full relative max-w-3xl 2xl:max-w-[80%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-center my-4'>
               {imgArray.map((item, index) => {
                 const { _id, images, title } = item;
 

@@ -2,19 +2,20 @@ import Card from '../../components/Card';
 import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
 import React from 'react';
+import Image from 'next/image';
 
 const About = () => {
   return (
     <div>
       <div className='project-bg fixed w-full h-full m-0 p-0 z-0 opacity-25 blur-md'></div>
 
-      <div className='relative overflow-hidden md:pt-14 px-4 tracking-widest z-10'>
+      <div className='relative overflow-hidden md:pt-14 px-4 tracking-widest z-10 mb-6'>
         <Navbar isBgBlack={true} isHomePage={true} />
         <div className='text-white flex flex-col items-center justify-center'>
           <h1 className='text-3xl font-bold mb-8  border-b-4 border-pink-800'>
             About Us
           </h1>
-          <div className='max-w-2xl space-y-8 pb-8 border-b border-gray-600 border-dashed'>
+          <div className='max-w-2xl 2xl:max-w-[80%] space-y-8 pb-8 border-b border-gray-600 border-dashed'>
             <Card
               img={'/assets/profile.JPG'}
               imagePosition={'left'}
@@ -27,7 +28,7 @@ const About = () => {
             />
           </div>
           {/* <h1 className='text-3xl font-bold my-4'>meet the team</h1> */}
-          <div className='max-w-2xl space-y-8 pb-8'>
+          <div className='max-w-2xl 2xl:max-w-[80%] space-y-8 pb-8'>
             {/* <Card
             imagePosition={'left'}
             
@@ -36,8 +37,17 @@ const About = () => {
           <Card imagePosition={'left'} />
           <Card /> */}
           </div>
-          <div className='w-full max-w-2xl space-y-8 pb-8 tracking-widest border-b border-gray-600 border-dashed text-center'>
-            <h1 className='text-3xl font-bold mt-8'>karan desai home</h1>
+          <div className='w-full max-w-2xl 2xl:max-w-[80%] space-y-8 pb-8 tracking-widest border-b border-gray-600 border-dashed text-center'>
+            {/* <h1 className='text-3xl font-bold mt-8'>karan desai home</h1> */}
+            <Image
+              src='/assets/kdhlogo.png'
+              alt='Logo'
+              width={200}
+              height={200}
+              className=' flex justify-self-center object-contain m-0 p-0 
+                        
+                        '
+            />
             <p className='font-sans text-start flex flex-col space-y-4'>
               <span>
                 "Imagine transforming everyday spaces into rich, immersive
@@ -64,7 +74,7 @@ const About = () => {
               </span>
             </p>
           </div>
-          <div className='w-full max-w-2xl space-y-8 py-8 tracking-widest border-b border-gray-600 border-dashed text-center '>
+          <div className='w-full max-w-2xl 2xl:max-w-[80%] space-y-8 py-8 tracking-widest  text-center '>
             <h1 className='text-3xl font-bold'>Shu Khabar</h1>
             <h4 className='text-xl tracking-widest'>
               "Shu (Shun)" = What ﻿"Khabar"= The latest information; news.
@@ -80,7 +90,7 @@ const About = () => {
             </p>
             <div className='w-full justify-center text-center items-center'>
               <iframe
-                className='w-full md:w-[560px] md:h-[315px]'
+                className=' md:w-[560px] md:h-[315px] justify-self-center'
                 src='https://www.youtube.com/embed/nS3qDFHinbw?si=gbJct3hxMk5OkQ84'
                 title='YouTube video player'
                 frameBorder='0'

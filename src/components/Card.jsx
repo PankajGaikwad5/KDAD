@@ -14,7 +14,7 @@ const Card = ({ imagePosition, title, text, img, desc }) => {
           // src='https://imgs.search.brave.com/FzIb_7_K0GtKCiCYvBH7ZoMI7buSHhwfON2RHP7kliA/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9j/cmF6eS1tYW4tbG9v/a2luZy1jYW1lcmFf/MjMtMjE0NzgwODE1/MC5qcGc_c2VtdD1h/aXNfaHlicmlk'
           src={img}
           alt='Person 1'
-          className='w-40 h-40  object-cover rounded-lg'
+          className='w-52 h-52    object-cover rounded-sm'
           style={{ aspectRatio: '3 / 4' }}
         />
       </div>
