@@ -68,7 +68,7 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
             ? 'absolute w-full h-screen top-0 left-[100%] xl:hidden flex flex-col justify-center text-gray-300 items-center duration-500'
             : `absolute w-full h-screen top-0 left-0 flex flex-col xl:hidden ${
                 isBgBlack ? 'text-gray-300' : 'text-gray-800'
-              } text-3xl justify-center items-center bg-black/40 z-20 duration-500 `
+              } text-3xl justify-center items-center bg-black/60 z-20 duration-500 `
         }
       >
         <ul className='flex flex-col gap-2'>
@@ -122,7 +122,7 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
             alt='Logo'
             width={120}
             height={120}
-            className='object-contain m-0 p-0 
+            className='object-contain -ml-1 m-0 p-0 
             
             '
           />

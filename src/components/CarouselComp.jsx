@@ -60,11 +60,18 @@ const CarouselComp = ({ imgArray }) => {
         {imgArray.map((img, index) => (
           <SwiperSlide key={index}>
             <div className='w-full h-20 md:h-24 flex items-center justify-center'>
-              <img
+              {/* <img
                 src={img}
                 alt={`Thumbnail ${index}`}
                 className='w-full h-full object-cover cursor-pointer rounded-lg'
                 loading='lazy' // Lazy load thumbnails
+              /> */}
+              <img
+                src={img} // Use the same image URL for now, since you're not using multiple resolutions
+                alt={`Thumbnail ${index}`}
+                className='w-full h-full object-cover cursor-pointer rounded-lg'
+                loading='lazy' // Lazy load the image
+                sizes='(max-width: 480px) 150px, (max-width: 800px) 300px, 300px' // Sizes based on screen width
               />
             </div>
           </SwiperSlide>

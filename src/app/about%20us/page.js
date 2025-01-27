@@ -90,15 +90,6 @@ const About = () => {
               <br />
               "Khabar"= The latest information; news.
             </h4>
-            <p className='font-sans text-start'>
-              You've seen their blueprints, you've marveled at their
-              skyscrapers—now it's time to spill the real tea! Welcome to
-              Shukhabar, where we unravel the juicy secrets, epic fails, and
-              hidden life hacks of industry moguls from the field of design.
-              Fasten your seatbelts for an exhilarating rollercoaster of gossip,
-              games, and golden advice. This isn't just an interview—it's your
-              VIP backstage pass to the lives they'd rather you didn't see!
-            </p>
             <div className='w-full justify-center text-center items-center'>
               <iframe
                 className=' md:w-[560px] md:h-[315px] justify-self-center'
@@ -110,6 +101,15 @@ const About = () => {
                 allowFullScreen
               ></iframe>
             </div>
+            <p className='font-sans text-start'>
+              You've seen their blueprints, you've marveled at their
+              skyscrapers—now it's time to spill the real tea! Welcome to
+              Shukhabar, where we unravel the juicy secrets, epic fails, and
+              hidden life hacks of industry moguls from the field of design.
+              Fasten your seatbelts for an exhilarating rollercoaster of gossip,
+              games, and golden advice. This isn't just an interview—it's your
+              VIP backstage pass to the lives they'd rather you didn't see!
+            </p>
           </div>
         </div>
         <Footer />

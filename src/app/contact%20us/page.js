@@ -128,7 +128,7 @@ const Contact = () => {
             <div className='flex flex-wrap items-center gap-8 text-center '>
               <a
                 href='mailto:info@karandesai.in'
-                className='flex flex-col underline pt-2 font-sans'
+                className='flex flex-col underline pt-2 font-sans text-xl md:text-xs'
               >
                 info@karandesai.in
               </a>
@@ -137,8 +137,8 @@ const Contact = () => {
               </h1>
             </div>
 
-            <div className='flex flex-col sm:flex-row gap-4 sm:gap-12 items-start sm:items-center pb-4 text-center sm:text-left'>
-              <p className='flex flex-col font-sans'>
+            <div className='flex flex-col sm:flex-row gap-4 sm:gap-12 items-start sm:items-center pb-4 text-start sm:text-left'>
+              <p className='flex flex-col font-sans text-xl md:text-xs'>
                 <a
                   href='https://maps.app.goo.gl/LDt3TN9yLwB5n6yg7'
                   className='underline'
