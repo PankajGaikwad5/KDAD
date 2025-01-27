@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {
   Navigation,
@@ -18,6 +18,13 @@ import 'swiper/css/pagination';
 
 const CarouselComp = ({ imgArray }) => {
   const [thumbsSwiper, setThumbsSwiper] = React.useState(null);
+  const [thumbnail, setThumbnail] = useState(false);
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setThumbnail(true);
+  //   }, 2000);
+  // }, []);
 
   return (
     <div className='relative w-full max-w-screen-lg mx-auto'>
@@ -49,6 +56,7 @@ const CarouselComp = ({ imgArray }) => {
       </Swiper>
 
       {/* Thumbnail Navigation */}
+      {/* {thumbnail && ( */}
       <Swiper
         modules={[Thumbs]}
         onSwiper={setThumbsSwiper}
@@ -60,14 +68,8 @@ const CarouselComp = ({ imgArray }) => {
         {imgArray.map((img, index) => (
           <SwiperSlide key={index}>
             <div className='w-full h-20 md:h-24 flex items-center justify-center'>
-              {/* <img
-                src={img}
-                alt={`Thumbnail ${index}`}
-                className='w-full h-full object-cover cursor-pointer rounded-lg'
-                loading='lazy' // Lazy load thumbnails
-              /> */}
               <img
-                src={img} // Use the same image URL for now, since you're not using multiple resolutions
+                src={img}
                 alt={`Thumbnail ${index}`}
                 className='w-full h-full object-cover cursor-pointer rounded-lg'
                 loading='lazy' // Lazy load the image
@@ -77,6 +79,7 @@ const CarouselComp = ({ imgArray }) => {
           </SwiperSlide>
         ))}
       </Swiper>
+      {/* )} */}
     </div>
   );
 };
