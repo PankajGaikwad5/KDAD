@@ -75,9 +75,20 @@ const About = () => {
             </p>
           </div>
           <div className='w-full max-w-2xl 2xl:max-w-[80%] space-y-8 py-8 tracking-widest  text-center '>
-            <h1 className='text-3xl font-bold'>Shu Khabar</h1>
+            {/* <h1 className='text-3xl font-bold'>Shu Khabar</h1> */}
+            <Image
+              src='/assets/shukhabar.png'
+              alt='Logo'
+              width={250}
+              height={250}
+              className=' flex justify-self-center object-contain m-0 p-0 
+                        
+                        '
+            />
             <h4 className='text-xl tracking-widest'>
-              "Shu (Shun)" = What ﻿"Khabar"= The latest information; news.
+              "Shu (Shun)" = What ﻿
+              <br />
+              "Khabar"= The latest information; news.
             </h4>
             <p className='font-sans text-start'>
               You've seen their blueprints, you've marveled at their

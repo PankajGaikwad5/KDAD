@@ -1,6 +1,7 @@
 import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
 import React from 'react';
+import Image from 'next/image';
 
 const About = () => {
   return (
@@ -9,12 +10,22 @@ const About = () => {
       <div className='relative overflow-hidden md:pt-14 px-4 tracking-widest z-10'>
         <Navbar isBgBlack={true} />
         <div className='text-white flex flex-col items-center justify-center'>
-          <h1 className='text-3xl font-bold mb-8 tracking-widest font-sans uppercase  border-b-4 border-pink-800'>
+          {/* <h1 className='text-3xl font-bold mb-8 tracking-widest font-sans uppercase  border-b-4 border-pink-800'>
             Shukhabar
-          </h1>
+          </h1> */}
+
+          <Image
+            src='/assets/shukhabar.png'
+            alt='Logo'
+            width={250}
+            height={250}
+            className=' flex justify-self-center object-contain m-0 p-0 
+                                  
+                                  '
+          />
           <div className='my-4'>
             <iframe
-              className='w-full md:w-[560px] md:h-[315px]'
+              className='w-full md:w-[560px] md:h-[315px] '
               src='https://www.youtube.com/embed/nS3qDFHinbw?si=gbJct3hxMk5OkQ84'
               title='YouTube video player'
               frameBorder='0'
@@ -34,7 +45,7 @@ const About = () => {
           ></iframe> */}
           </div>
 
-          <div className='my-4 p-4 max-w-xl'>
+          <div className='my-4 p-4 max-w-2xl'>
             <div className='flex flex-col justify-center space-y-4 w-full'>
               {/* <p className='font-sans'>
                 Architecture + Design | Award Winning Architect | Featured in
@@ -46,8 +57,10 @@ const About = () => {
                 clients to deliver unique results and reflect personal tastes
                 while consolidating the studio’s vision.
               </p> */}
-              <h4 className='text-xl tracking-widest'>
-                "Shu (Shun)" = What ﻿"Khabar"= The latest information; news.
+              <h4 className='text-xl tracking-widest text-center'>
+                "Shu (Shun)" = What ﻿
+                <br />
+                "Khabar"= The latest information; news.
               </h4>
               <p className='font-sans text-start'>
                 You've seen their blueprints, you've marveled at their
