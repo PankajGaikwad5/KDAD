@@ -8,7 +8,7 @@ export async function POST(req) {
     service: 'gmail', // or another email provider
     auth: {
       user: process.env.EMAIL, // your email address
-      pass: process.env.PASS, // your email password or app-specific password
+      pass: process.env.PASS, // app-specific password
     },
   });
 
@@ -22,9 +22,7 @@ export async function POST(req) {
   try {
     await transporter.sendMail(mailOptions);
     return NextResponse.json(
-      {
-        message: 'Email sent successfully!',
-      },
+      { msg: 'Email sent successfully!' },
       { status: 200 }
     );
 
