@@ -41,9 +41,22 @@ const Contact = () => {
     },
   });
 
-  function onSubmit(values) {
+  async function onSubmit(values) {
     // Do something with the form values.
-    console.log(values);
+    // console.log(values);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          values,
+        }),
+      });
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -58,9 +71,10 @@ const Contact = () => {
             </p>
             <Form {...form}>
               <form
-                action='https://getform.io/f/bjjjprgb'
-                method='POST'
+                // action='https://getform.io/f/bjjjprgb'
+                // method='POST'
                 className='space-y-4 font-sans'
+                onSubmit={form.handleSubmit(onSubmit)}
               >
                 <FormField
                   control={form.control}
