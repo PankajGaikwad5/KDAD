@@ -5,6 +5,8 @@ import React from 'react';
 import Image from 'next/image';
 
 const About = () => {
+  const yt =
+    'absolute top-0 left-0 w-full h-full transition-transform duration-500 group-hover:scale-105';
   return (
     <div>
       <div className='project-bg fixed w-full h-full m-0 p-0 z-0 opacity-25 blur-md'></div>
@@ -12,7 +14,7 @@ const About = () => {
       <div className='relative overflow-hidden md:pt-14 px-4 tracking-widest z-10 mb-6'>
         <Navbar isBgBlack={true} isHomePage={true} />
         <div className='text-white flex flex-col items-center justify-center'>
-          <h1 className='text-3xl font-bold mb-8  border-b-4 border-pink-800'>
+          <h1 className='text-4xl font-bold mb-8  border-b-4 border-pink-800 tracking-[0.25rem]'>
             About Us
           </h1>
           <div className='max-w-2xl 2xl:max-w-[80%] space-y-8 pb-8 border-b border-gray-600 border-dashed'>
@@ -23,8 +25,7 @@ const About = () => {
               desc={
                 'Award Winning Architecture + Interior Design | TedX Speaker'
               }
-              text={`Born in 1987, a passionate founder of his eponymous studio, KARAN DESAI | Architecture + Design, focusing on Architecture, Interiors & furniture designing, KD started off with his individual practice right after he gave his Thesis in 2011 from Pillai’s college of architecture & founded the company in 2012. The internship under Ar. Ashiesh Shah during a year drop in 2007, carved a path for his career with a clear direction towards his goals & dreams which he lives today. The Studio has spread its wings in Mangalore, Goa, Delhi, Kullu - Manali, Uttarakhand, Kolkata, Chennai and plan to continue. Inspired by contemporary aesthetics and clean lines, the studio beautifies projects both residential and commercial on varying scales. From ideation rooms to offices , homes to private getaways, the team designs projects and products in close association with clients to deliver unique results and reflect personal tastes with consolidating the studio’s vision
-`}
+              // text={``}
             />
           </div>
           {/* <h1 className='text-3xl font-bold my-4'>meet the team</h1> */}
@@ -37,10 +38,10 @@ const About = () => {
           <Card imagePosition={'left'} />
           <Card /> */}
           </div>
-          <div className='w-full max-w-2xl 2xl:max-w-[80%] space-y-8 pb-8 tracking-widest border-b border-gray-600 border-dashed text-center'>
+          <div className='w-full max-w-2xl 2xl:max-w-[80%] space-y-8 pb-8 tracking-widest border-b border-gray-600  text-center items-start gap-6 p-4 border  rounded-lg shadow-lg hover:shadow-2xl hover:border-white transition-all duration-500'>
             {/* <h1 className='text-3xl font-bold mt-8'>karan desai home</h1> */}
             <Image
-              src='/assets/kdhlogo.png'
+              src='/assets/kdhlogoo.png'
               alt='Logo'
               width={200}
               height={200}
@@ -48,7 +49,7 @@ const About = () => {
                         
                         '
             />
-            <p className='font-sans text-start flex flex-col space-y-4'>
+            <p className='font-sans text-start flex flex-col space-y-4 '>
               <span>
                 "Imagine transforming everyday spaces into rich, immersive
                 experiences—what if art became a part of your daily life?" Karan
@@ -74,16 +75,14 @@ const About = () => {
               </span>
             </p>
           </div>
-          <div className='w-full max-w-2xl 2xl:max-w-[80%] space-y-8 py-8 tracking-widest  text-center '>
+          <div className='w-full max-w-2xl 2xl:max-w-[80%] space-y-8 py-8 tracking-widest  text-center items-start gap-6 p-4 border border-gray-600 rounded-lg shadow-lg hover:shadow-2xl hover:border-white transition-all duration-500 my-8'>
             {/* <h1 className='text-3xl font-bold'>Shu Khabar</h1> */}
             <Image
               src='/assets/shukhabar.png'
               alt='Logo'
               width={250}
               height={250}
-              className=' flex justify-self-center object-contain m-0 p-0 
-                        
-                        '
+              className=' flex justify-self-center object-contain m-0 p-0'
             />
             <h4 className='text-xl tracking-widest'>
               "Shu (Shun)" = What ﻿

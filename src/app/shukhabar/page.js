@@ -4,6 +4,8 @@ import React from 'react';
 import Image from 'next/image';
 
 const About = () => {
+  const yt =
+    'absolute top-0 left-0 w-full h-full transition-transform duration-500 group-hover:scale-105';
   return (
     <div>
       <div className='project-bg fixed w-full h-full m-0 p-0 z-0 opacity-25 blur-md'></div>
@@ -45,8 +47,8 @@ const About = () => {
           ></iframe> */}
           </div>
 
-          <div className='my-4 p-4 max-w-2xl'>
-            <div className='flex flex-col justify-center space-y-4 w-full'>
+          <div className='my-4 p-4 max-w-2xl '>
+            <div className='flex flex-col justify-center space-y-4 w-full border-b border-gray-500 border-dashed pb-6'>
               {/* <p className='font-sans'>
                 Architecture + Design | Award Winning Architect | Featured in
                 30+ Magazines | Public Speaker Inspired by contemporary
@@ -72,6 +74,122 @@ const About = () => {
                 interview—it's your VIP backstage pass to the lives they'd
                 rather you didn't see!
               </p>
+            </div>
+            <h1 className='text-4xl border-b-t2 m-8 border-b tracking-widest pb-2 border-pink-600 text-center'>
+              season one
+            </h1>
+            <div className='w-full grid grid-cols-1  2xl:grid-cols-3 gap-8 text-center my-8'>
+              <div className='relative group w-full aspect-video overflow-hidden bg-black rounded-lg shadow-md'>
+                <iframe
+                  className='absolute top-0 left-0 w-full h-full transition-transform duration-500 group-hover:scale-105'
+                  src='https://www.youtube.com/embed/dmfBO6w-x8g?si=inr6wid5Z85UNKwe'
+                  title='YouTube video player'
+                  frameBorder='0'
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                  referrerPolicy='strict-origin-when-cross-origin'
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className='relative group w-full aspect-video overflow-hidden bg-black rounded-lg shadow-md'>
+                <iframe
+                  className='absolute top-0 left-0 w-full h-full transition-transform duration-500 group-hover:scale-105'
+                  src='https://www.youtube.com/embed/UYRE4FW6peU?si=74DAqglOcaNPkrzm'
+                  title='YouTube video player'
+                  frameBorder='0'
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                  referrerPolicy='strict-origin-when-cross-origin'
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className='relative group w-full aspect-video overflow-hidden bg-black rounded-lg shadow-md'>
+                <iframe
+                  className='absolute top-0 left-0 w-full h-full transition-transform duration-500 group-hover:scale-105'
+                  src='https://www.youtube.com/embed/zzndETxG6I4?si=srXfVVK7Hlxh0hrX'
+                  title='YouTube video player'
+                  frameBorder='0'
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                  referrerPolicy='strict-origin-when-cross-origin'
+                  allowFullScreen
+                ></iframe>
+              </div>
+
+              <div className='relative group w-full aspect-video overflow-hidden bg-black rounded-lg shadow-md'>
+                <iframe
+                  className={yt}
+                  src='https://www.youtube.com/embed/MGUNaT7Ylg4?si=dJNNAq5YxAymWssS'
+                  title='YouTube video player'
+                  frameBorder='0'
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                  referrerPolicy='strict-origin-when-cross-origin'
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className='relative group w-full aspect-video overflow-hidden bg-black rounded-lg shadow-md'>
+                <iframe
+                  className={yt}
+                  src='https://www.youtube.com/embed/7Dmk8oRsuLY?si=TivFpzBp7CL9GnKR'
+                  title='YouTube video player'
+                  frameBorder='0'
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                  referrerPolicy='strict-origin-when-cross-origin'
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className='relative group w-full aspect-video overflow-hidden bg-black rounded-lg shadow-md'>
+                <iframe
+                  className={yt}
+                  src='https://www.youtube.com/embed/KFHhpnKexAg?si=a4WXvj-HfkVoQuyD'
+                  title='YouTube video player'
+                  frameBorder='0'
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                  referrerPolicy='strict-origin-when-cross-origin'
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className='relative group w-full aspect-video overflow-hidden bg-black rounded-lg shadow-md'>
+                <iframe
+                  className={yt}
+                  src='https://www.youtube.com/embed/uM32F84WAYQ?si=TwUepp33yhzqGwFW'
+                  title='YouTube video player'
+                  frameBorder='0'
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                  referrerPolicy='strict-origin-when-cross-origin'
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className='relative group w-full aspect-video overflow-hidden bg-black rounded-lg shadow-md'>
+                <iframe
+                  className={yt}
+                  src='https://www.youtube.com/embed/psA2KVtVgjk?si=c8ZRrFQEMdolXwcG'
+                  title='YouTube video player'
+                  frameBorder='0'
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                  referrerPolicy='strict-origin-when-cross-origin'
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className='relative group w-full aspect-video overflow-hidden bg-black rounded-lg shadow-md'>
+                <iframe
+                  className={yt}
+                  src='https://www.youtube.com/embed/jCyzx-7YlCU?si=AjrtzYUZQIbtDp-E'
+                  title='YouTube video player'
+                  frameBorder='0'
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                  referrerPolicy='strict-origin-when-cross-origin'
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className='relative group w-full aspect-video overflow-hidden bg-black rounded-lg shadow-md'>
+                <iframe
+                  className={yt}
+                  src='https://www.youtube.com/embed/LgFIBjinoRA?si=3b68SUrG9joew2Om'
+                  title='YouTube video player'
+                  frameBorder='0'
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                  referrerPolicy='strict-origin-when-cross-origin'
+                  allowFullScreen
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>

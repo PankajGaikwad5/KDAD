@@ -23,7 +23,7 @@ const Card = ({ imagePosition, title, text, img, desc }) => {
         <h2 className='text-2xl font-bold tracking-widest font-sans'>
           {title}
         </h2>
-        <h6 className='text-base font-semibold tracking-widest font-sans'>
+        <h6 className='text-base uppercase font-semibold tracking-widest font-sans'>
           {desc}
         </h6>
         {/* <p className='text-sm text-gray-300 font-sans'>
@@ -31,8 +31,25 @@ const Card = ({ imagePosition, title, text, img, desc }) => {
           solutions that blend form and function. Lorem ipsum dolor sit amet,
           consectetur adipisicing elit.
         </p> */}
-        <p className='text-sm tracking-widest text-gray-300 font-sans'>
-          {text}
+        <p className=' tracking-widest text-gray-300 font-sans'>
+          {/* {text} */}
+          Born in 1987, a passionate founder of his eponymous studio, KARAN
+          DESAI | Architecture + Design, focusing on Architecture, Interiors &
+          furniture designing, KD started off with his individual practice right
+          after he gave his Thesis in 2011 from Pillai’s college of architecture
+          & founded the company in 2012.
+          <br />
+          <br /> The internship under Ar. Ashiesh Shah during a year drop in
+          2007, carved a path for his career with a clear direction towards his
+          goals & dreams which he lives today. <br />
+          <br /> The Studio has spread its wings in Mangalore, Goa, Delhi, Kullu
+          - Manali, Uttarakhand, Kolkata, Chennai and plan to continue. Inspired
+          by contemporary aesthetics and clean lines, the studio beautifies
+          projects both residential and commercial on varying scales. From
+          ideation rooms to offices , homes to private getaways, the team
+          designs projects and products in close association with clients to
+          deliver unique results and reflect personal tastes with consolidating
+          the studio’s vision
           {/* Contact:{' '} */}
           {/* <a href='mailto:john.doe@example.com' className='text-blue-400'>
             john.doe@example.com */}

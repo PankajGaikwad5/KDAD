@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       animation: {
-        marquee: 'marquee 20s linear infinite',
+        marquee: 'marquee 50s linear infinite',
       },
       keyframes: {
         marquee: {
