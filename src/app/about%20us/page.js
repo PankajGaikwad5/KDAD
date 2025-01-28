@@ -23,7 +23,7 @@ const About = () => {
               imagePosition={'left'}
               title={'Karan Desai'}
               desc={
-                'Award Winning Architecture + Interior Design | TedX Speaker'
+                'Award Winning Architecture + Interior Design Studio | TedX Speaker'
               }
               // text={``}
             />
