@@ -41,7 +41,7 @@ const About = () => {
           <div className='w-full max-w-2xl 2xl:max-w-[80%] space-y-8 pb-8 tracking-widest border-b border-gray-600  text-center items-start gap-6 p-4 border  rounded-lg shadow-lg hover:shadow-2xl hover:border-white transition-all duration-500'>
             {/* <h1 className='text-3xl font-bold mt-8'>karan desai home</h1> */}
             <Image
-              src='/assets/kdhlogoo.png'
+              src='/assets/kdhLogoo.png'
               alt='Logo'
               width={200}
               height={200}
