@@ -63,7 +63,7 @@ const Collaborations = () => {
           <div className='flex flex-col '>
             <div className='image-container'>
               <img
-                src='/assets/monster.jpg'
+                src='/assets/monster.png'
                 className='rounded-lg image'
                 alt='collab'
               />
