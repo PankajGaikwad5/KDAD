@@ -106,6 +106,23 @@ body {
     background-image: url('/Picture1.png');
   }
 }
+@keyframes mobile-bgChange {
+  0% {
+    background-image: url('/assets/5.jpg');
+  }
+  33% {
+    background-image: url('/assets/6.jpg');
+  }
+  66% {
+    background-image: url('/assets/7.jpg');
+  }
+  85% {
+    background-image: url('/assets/8.jpg');
+  }
+  100% {
+    background-image: url('/assets/5.jpg');
+  }
+}
 
 /* .stock-ticker {
   
@@ -182,8 +199,26 @@ body {
   animation-iteration-count: infinite;
 }
 
-.animate-bg-change {
+.animate-bg {
+  animation: mobile-bgChange 15s infinite;
+}
+
+/* Animation for screens larger than sm (≥ 640px) */
+@media (min-width: 640px) {
+  .animate-bg {
+    animation: bgChange 15s infinite;
+  }
+}
+
+/* .animate-bg {
   animation: bgChange 15s infinite;
+}
+.animate-mobile-bg {
+  animation: mobile-bgChange 15s infinite;
+} */
+
+.animate-bg-change {
+  /* animation: bgChange 15s infinite; */
   /* background-image: url('/Picture1.png'); */
   background-size: cover;
   background-position: center;

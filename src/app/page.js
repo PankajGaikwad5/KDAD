@@ -26,7 +26,7 @@ export default function Home() {
         <div
           className={`absolute inset-0 z-0 bg-cover bg-center ${
             !logoLoaded ? 'opacity-20' : 'opacity-90'
-          } animate-bg-change transition-all duration-700`}
+          } animate-bg-change  animate-bg transition-all duration-700`}
         ></div>
         <div className='relative z-10 font-semibold text-center top-1/2 -mt-28 lg:-mt-8 -translate-y-1/2 text-3xl sm:text-8xl text-white tracking-widest flex flex-col  justify-center items-center mb-0'>
           {/* <h1 className='text-center'>karan desai</h1>
