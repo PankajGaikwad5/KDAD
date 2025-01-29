@@ -64,7 +64,12 @@ const Card = ({ imagePosition, title, text, img, desc }) => {
           ideation rooms to offices , homes to private getaways, the team
           designs projects and products in close association with clients to
           deliver unique results and reflect personal tastes with consolidating
-          the studio’s vision
+          the studio’s vision.
+          <br />
+          <br />
+          We're also doing projects internationally, We've completed working on
+          the order of 20,000 sq.ft. in Chicago and currently working on 15,000
+          sq.ft Mansion in Washington, D.C.
           {/* Contact:{' '} */}
           {/* <a href='mailto:john.doe@example.com' className='text-blue-400'>
             john.doe@example.com */}
