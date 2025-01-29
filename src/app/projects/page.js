@@ -112,18 +112,23 @@ const Projects = () => {
           {loading ? (
             <p>Loading please wait...</p>
           ) : (
-            <div className='w-full relative max-w-3xl 2xl:max-w-[80%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-center my-4'>
+            <div className='w-full relative max-w-3xl 2xl:max-w-[80%] sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-center my-4 flex overflow-x-auto md:overflow-visible pb-4 mt-28 sm:mt-auto'>
               {imgArray.map((item, index) => {
                 const { _id, images, title } = item;
 
                 return (
-                  <ProjectCard
+                  <div
+                    className='md:w-full min-w-[300px] md:min-w-0 mx-2'
                     key={index}
-                    img={images[0].fileUrl}
-                    id={_id}
-                    title={title}
-                    projects={true}
-                  />
+                  >
+                    <ProjectCard
+                      key={index}
+                      img={images[0].fileUrl}
+                      id={_id}
+                      title={title}
+                      projects={true}
+                    />
+                  </div>
                 );
               })}
             </div>
