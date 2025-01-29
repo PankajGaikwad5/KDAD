@@ -3,6 +3,18 @@ import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
 import React from 'react';
 import Image from 'next/image';
+import { Poppins, Montserrat } from 'next/font/google';
+
+// popins
+// montserrat
+const popins = Poppins({
+  subsets: ['latin'], // Specify subsets
+  weight: ['100', '200', '300', '400', '600', '700'], // Specify weight
+});
+const montserrat = Montserrat({
+  subsets: ['latin'], // Specify subsets
+  weight: ['100', '200', '300', '400', '600', '700'], // Specify weight
+});
 
 const About = () => {
   const yt =
@@ -14,8 +26,10 @@ const About = () => {
       <div className='relative overflow-hidden md:pt-14 px-4 tracking-widest z-10 mb-6'>
         <Navbar isBgBlack={true} isHomePage={true} />
         <div className='text-white flex flex-col items-center justify-center'>
-          <h1 className='text-4xl font-bold mb-8  border-b-4 border-pink-800 tracking-[0.25rem]'>
-            About Us
+          <h1
+            className={`text-3xl border-b-4 border-pink-800 tracking-wider mb-8 font-semibold uppercase ${montserrat.className}`}
+          >
+            about us
           </h1>
           <div className='max-w-2xl 2xl:max-w-[80%] space-y-8 pb-8 border-b border-gray-600 border-dashed'>
             <Card
@@ -49,7 +63,9 @@ const About = () => {
                         
                         '
             />
-            <p className='font-sans text-start flex flex-col space-y-4 '>
+            <p
+              className={`font-light text-start flex flex-col space-y-4 ${popins.className}`}
+            >
               <span>
                 "Imagine transforming everyday spaces into rich, immersive
                 experiences—what if art became a part of your daily life?" Karan
@@ -84,7 +100,7 @@ const About = () => {
               height={250}
               className=' flex justify-self-center object-contain m-0 p-0'
             />
-            <h4 className='text-xl tracking-widest'>
+            <h4 className={`text-xl `}>
               "Shu (Shun)" = What ﻿
               <br />
               "Khabar"= The latest information; news.
@@ -100,7 +116,7 @@ const About = () => {
                 allowFullScreen
               ></iframe>
             </div>
-            <p className='font-sans text-start'>
+            <p className={`font-light text-start ${popins.className}`}>
               You've seen their blueprints, you've marveled at their
               skyscrapers—now it's time to spill the real tea! Welcome to
               Shukhabar, where we unravel the juicy secrets, epic fails, and

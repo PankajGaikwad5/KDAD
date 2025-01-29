@@ -1,6 +1,19 @@
 import React from 'react';
+import { Poppins, Montserrat } from 'next/font/google';
+
+// popins
+// montserrat
+const popins = Poppins({
+  subsets: ['latin'], // Specify subsets
+  weight: ['400', '600', '700'], // Specify weight
+});
+const montserrat = Montserrat({
+  subsets: ['latin'], // Specify subsets
+  weight: ['400', '600', '700'], // Specify weight
+});
 
 const Card = ({ imagePosition, title, text, img, desc }) => {
+  const pFont = popins.className;
   return (
     //  {/* Team Member Card */}
     <div
@@ -20,10 +33,12 @@ const Card = ({ imagePosition, title, text, img, desc }) => {
       </div>
       {/* Text Section */}
       <div className='space-y-2'>
-        <h2 className='text-2xl font-bold tracking-widest font-sans'>
+        <h2 className={`text-2xl font-bold ${montserrat.className}`}>
           {title}
         </h2>
-        <h6 className='text-base uppercase font-semibold tracking-widest font-sans'>
+        <h6
+          className={`text-base uppercase font-semibold  ${montserrat.className} font-sans`}
+        >
           {desc}
         </h6>
         {/* <p className='text-sm text-gray-300 font-sans'>
@@ -31,7 +46,7 @@ const Card = ({ imagePosition, title, text, img, desc }) => {
           solutions that blend form and function. Lorem ipsum dolor sit amet,
           consectetur adipisicing elit.
         </p> */}
-        <p className=' tracking-widest text-gray-300 font-sans'>
+        <p className={`font-light text-gray-300 font-sans ${pFont}`}>
           {/* {text} */}
           Born in 1987, a passionate founder of his eponymous studio, KARAN
           DESAI | Architecture + Design, focusing on Architecture, Interiors &

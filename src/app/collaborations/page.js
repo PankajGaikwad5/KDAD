@@ -1,13 +1,27 @@
 import React from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import { Poppins, Montserrat } from 'next/font/google';
+
+// popins
+// montserrat
+const popins = Poppins({
+  subsets: ['latin'], // Specify subsets
+  weight: ['400', '600', '700'], // Specify weight
+});
+const montserrat = Montserrat({
+  subsets: ['latin'], // Specify subsets
+  weight: ['400', '600', '700'], // Specify weight
+});
 
 const Collaborations = () => {
   return (
     <div className='relative overflow-hidden md:pt-14 px-4 tracking-widest z-10'>
       <Navbar isBgBlack={true} />
       <div className='text-white flex flex-col items-center justify-center mb-8'>
-        <h1 className='text-3xl border-b-2 border-pink-800 font-bold mb-8 tracking-widest font-sans uppercase '>
+        <h1
+          className={`text-3xl border-b-4 tracking-wider border-pink-800 mb-8 font-semibold uppercase ${montserrat.className}`}
+        >
           Collaborations
         </h1>
         <div className='w-full relative p-8 rounded-2xl max-w-4xl 2xl:max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-center my-4'>

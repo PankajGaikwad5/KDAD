@@ -78,6 +78,18 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import ProjectCard from '../../components/ProjectCard';
+import { Poppins, Montserrat } from 'next/font/google';
+
+// popins
+// montserrat
+const popins = Poppins({
+  subsets: ['latin'], // Specify subsets
+  weight: ['400', '600', '700'], // Specify weight
+});
+const montserrat = Montserrat({
+  subsets: ['latin'], // Specify subsets
+  weight: ['400', '600', '700'], // Specify weight
+});
 
 const Features = () => {
   const [imgArray, setImgArray] = useState([]);
@@ -105,8 +117,10 @@ const Features = () => {
       <div className='relative overflow-hidden md:pt-14 px-4 tracking-widest z-10'>
         <Navbar isBgBlack={true} />
         <div className='text-white flex flex-col items-center justify-center mb-8 md:ml-12'>
-          <h1 className='text-3xl font-bold border-b-4 border-pink-800 mb-8 tracking-widest font-sans uppercase'>
-            Features
+          <h1
+            className={`text-3xl tracking-wider border-b-4 border-pink-800 mb-8 font-semibold uppercase ${montserrat.className}`}
+          >
+            features
           </h1>
           {loading ? (
             <p>Loading please wait...</p>

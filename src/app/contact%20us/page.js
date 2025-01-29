@@ -18,6 +18,18 @@ import {
 import { Input } from '../../components/ui/input';
 import { Textarea } from '../../components/ui/textarea';
 import { FaWhatsapp, FaPhone } from 'react-icons/fa';
+import { Poppins, Montserrat } from 'next/font/google';
+
+// popins
+// montserrat
+const popins = Poppins({
+  subsets: ['latin'], // Specify subsets
+  weight: ['100', '200', '300', '400', '600', '700'], // Specify weight
+});
+const montserrat = Montserrat({
+  subsets: ['latin'], // Specify subsets
+  weight: ['400', '600', '700'], // Specify weight
+});
 
 const formSchema = z.object({
   name: z
@@ -74,14 +86,16 @@ const Contact = () => {
         <Navbar isBgBlack={true} />
         <div className='w-full text-gray-200 flex justify-center items-center flex-col'>
           <div className='w-full max-w-lg tracking-widest p-6 flex flex-col border shadow-md rounded-lg'>
-            <p className='font-sans text-xs font-bold mb-2'>
+            <p
+              className={`text-xs font-bold mb-2 ${montserrat.className} uppercase font-light`}
+            >
               By appointment only*
             </p>
             <Form {...form}>
               <form
                 // action='https://getform.io/f/bjjjprgb'
                 // method='POST'
-                className='space-y-4 font-sans'
+                className={`space-y-4 ${popins.className}`}
                 onSubmit={form.handleSubmit(onSubmit)}
               >
                 <FormField
@@ -138,7 +152,7 @@ const Contact = () => {
                 />
                 <Button
                   type='submit'
-                  className='bg-white text-gray-900 hover:bg-black hover:text-gray-300 transition-all duration-500 ease-in-out'
+                  className='bg-white uppercase text-gray-900 hover:bg-black hover:text-gray-300 transition-all duration-500 ease-in-out'
                 >
                   Submit
                 </Button>
@@ -150,7 +164,7 @@ const Contact = () => {
             <div className='flex flex-wrap items-center gap-8 text-center '>
               <a
                 href='mailto:info@karandesai.in'
-                className='flex flex-col underline pt-2 font-sans text-xl md:text-xs'
+                className={`flex flex-col underline pt-2 text-xl md:text-xs ${popins.className} font-extralight`}
               >
                 info@karandesai.in
               </a>
@@ -160,7 +174,9 @@ const Contact = () => {
             </div>
 
             <div className='flex flex-col sm:flex-row gap-4 sm:gap-12 items-start sm:items-center pb-4 text-start sm:text-left'>
-              <p className='flex flex-col font-sans text-xl md:text-xs'>
+              <p
+                className={`flex flex-col ${popins.className} text-sm md:text-xs font-light`}
+              >
                 <a
                   href='https://maps.app.goo.gl/LDt3TN9yLwB5n6yg7'
                   className='underline'
@@ -171,10 +187,12 @@ const Contact = () => {
                 </a>
               </p>
               <div className='flex  gap-4'>
-                <h1 className='text-3xl sm:text-4xl tracking-widest md:hidden'>
+                <h1
+                  className={`text-3xl sm:text-4xl tracking-widest md:hidden`}
+                >
                   karan
                 </h1>
-                <h1 className='text-3xl sm:text-4xl tracking-widest md:-mr-4'>
+                <h1 className={`text-3xl sm:text-4xl tracking-widest md:-mr-4`}>
                   desai
                 </h1>
               </div>
@@ -192,7 +210,9 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className='flex flex-col gap-4 sm:flex-row sm:gap-6 font-sans text-center sm:text-left'>
+            <div
+              className={`flex flex-col gap-4 sm:flex-row sm:gap-6 font-light text-center sm:text-left ${popins.className} tracking-widest`}
+            >
               <p>
                 We are not a normal team of architects and interior designers,
                 but a unified movement of innovators and creators of unique

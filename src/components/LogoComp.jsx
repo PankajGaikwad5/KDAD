@@ -1,10 +1,24 @@
 import React from 'react';
 import Image from 'next/image';
+import { Poppins, Montserrat } from 'next/font/google';
+
+// popins
+// montserrat
+const popins = Poppins({
+  subsets: ['latin'], // Specify subsets
+  weight: ['100', '200', '300', '400', '600', '700'], // Specify weight
+});
+const montserrat = Montserrat({
+  subsets: ['latin'], // Specify subsets
+  weight: ['100', '200', '300', '400', '600', '700'], // Specify weight
+});
 
 const LogoComp = () => {
   return (
     <div className=' w-full justify-center items-center flex flex-col'>
-      <h1 className='text-2xl tracking-widest text-white -mb-10'>
+      <h1
+        className={`text-2xl tracking-widest text-white -mb-10 line-clamp-5 ${montserrat.className} uppercase font-extrabold`}
+      >
         exclusive features
       </h1>
       <div className='overflow-hidden w-full'>

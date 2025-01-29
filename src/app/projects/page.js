@@ -79,6 +79,18 @@ import ProjectCard from '../../components/ProjectCard';
 import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
 import React, { useEffect, useState } from 'react';
+import { Poppins, Montserrat } from 'next/font/google';
+
+// popins
+// montserrat
+const popins = Poppins({
+  subsets: ['latin'], // Specify subsets
+  weight: ['400', '600', '700'], // Specify weight
+});
+const montserrat = Montserrat({
+  subsets: ['latin'], // Specify subsets
+  weight: ['400', '600', '700'], // Specify weight
+});
 
 const Projects = () => {
   const [imgArray, setImgArray] = useState([]);
@@ -106,7 +118,9 @@ const Projects = () => {
       <div className='relative overflow-hidden md:pt-14 px-4 tracking-widest z-10'>
         <Navbar isBgBlack={true} />
         <div className='text-white flex flex-col items-center justify-center mb-8'>
-          <h1 className='text-3xl font-bold border-b-4 border-pink-800 mb-8 tracking-widest font-sans uppercase'>
+          <h1
+            className={`text-3xl border-b-4 tracking-wider border-pink-800 mb-8 font-semibold uppercase ${montserrat.className}`}
+          >
             Projects
           </h1>
           {loading ? (

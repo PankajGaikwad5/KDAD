@@ -2,6 +2,18 @@ import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
 import React from 'react';
 import Image from 'next/image';
+import { Poppins, Montserrat } from 'next/font/google';
+
+// popins
+// montserrat
+const popins = Poppins({
+  subsets: ['latin'], // Specify subsets
+  weight: ['400', '600', '700'], // Specify weight
+});
+const montserrat = Montserrat({
+  subsets: ['latin'], // Specify subsets
+  weight: ['400', '600', '700'], // Specify weight
+});
 
 const About = () => {
   const yt =
@@ -64,7 +76,7 @@ const About = () => {
                 <br />
                 "Khabar"= The latest information; news.
               </h4>
-              <p className='font-sans text-start'>
+              <p className={`font-sans text-start ${popins.className}`}>
                 You've seen their blueprints, you've marveled at their
                 skyscrapers—now it's time to spill the real tea! Welcome to
                 Shukhabar, where we unravel the juicy secrets, epic fails, and
@@ -75,7 +87,9 @@ const About = () => {
                 rather you didn't see!
               </p>
             </div>
-            <h1 className='text-4xl border-b-t2 m-8 border-b tracking-widest pb-2 border-pink-600 text-center'>
+            <h1
+              className={`text-4xl border-b-t2 m-8 border-b-2 tracking-widest pb-2 border-pink-600 text-center ${montserrat.className} uppercase font-bold`}
+            >
               season one
             </h1>
             <div className='w-full grid grid-cols-1  2xl:grid-cols-3 gap-8 text-center my-8'>

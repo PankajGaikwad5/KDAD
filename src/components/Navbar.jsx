@@ -2,6 +2,18 @@
 import Image from 'next/image';
 import React from 'react';
 import { useState } from 'react';
+import { Poppins, Montserrat } from 'next/font/google';
+
+// popins
+// montserrat
+const popins = Poppins({
+  subsets: ['latin'], // Specify subsets
+  weight: ['100', '200', '300', '400', '600', '700'], // Specify weight
+});
+const montserrat = Montserrat({
+  subsets: ['latin'], // Specify subsets
+  weight: ['100', '200', '300', '400', '600', '700'], // Specify weight
+});
 
 const Navbar = ({ isBgBlack, isHomePage }) => {
   const [nav, setNav] = useState(false);
@@ -71,7 +83,7 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
               } text-3xl justify-center items-center bg-black/60 z-20 duration-500 `
         }
       >
-        <ul className='flex flex-col gap-2'>
+        <ul className={`flex flex-col gap-2 `}>
           <a
             href='/'
             className={`hover:text-gray-600 transition-all duration-300`}
@@ -128,7 +140,9 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
           />
         </a>
 
-        <ul className='flex flex-col'>
+        <ul
+          className={`flex flex-col ${montserrat.className} font-semibold tracking-widest`}
+        >
           {newNavTopics.map((items) => {
             const { id, name, path } = items;
             return (
