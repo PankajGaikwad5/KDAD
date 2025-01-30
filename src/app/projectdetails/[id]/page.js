@@ -1,6 +1,18 @@
 import React from 'react';
 import CarouselComp from '../../../components/CarouselComp';
 import { ChevronLeft } from 'lucide-react';
+import { Poppins, Montserrat } from 'next/font/google';
+
+// popins
+// montserrat
+const popins = Poppins({
+  subsets: ['latin'], // Specify subsets
+  weight: ['400', '600', '700'], // Specify weight
+});
+const montserrat = Montserrat({
+  subsets: ['latin'], // Specify subsets
+  weight: ['400', '600', '700'], // Specify weight
+});
 
 const getFeatureById = async (id) => {
   try {
@@ -35,7 +47,12 @@ const FeatureDetails = async ({ params }) => {
   const { title, images } = projects;
 
   return (
-    <div className='relative'>
+    <div className='relative text-center '>
+      <h1
+        className={`text-3xl text-center tracking-wider border-b border-zinc-800 text-white  mt-6 font-semibold uppercase ${montserrat.className}`}
+      >
+        {title}
+      </h1>
       {/* Back Button */}
       <div className='absolute left-3 top-3'>
         <a href='/projects'>

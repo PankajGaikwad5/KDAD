@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import Image from 'next/image';
 import LogoComp from '../components/LogoComp';
 import { useState, useEffect } from 'react';
-import CursorTrail from '../components/CursorTrail';
+// import CursorTrail from '../components/CursorTrail';
 
 export default function Home() {
   const [gifKey, setGifKey] = useState('');
@@ -21,7 +21,7 @@ export default function Home() {
     <div className='bg-black/90'>
       {/* // <div className='relative overflow-hidden'> */}
       <div className='relative w-full h-screen overflow-hidden m-0 p-0'>
-        <CursorTrail />
+        {/* <CursorTrail /> */}
         <Navbar isBgBlack={true} isHomePage={true} />
         <div
           className={`absolute inset-0 z-0 bg-cover bg-center ${
