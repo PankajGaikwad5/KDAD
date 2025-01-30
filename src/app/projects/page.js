@@ -98,7 +98,7 @@ const Projects = () => {
 
   const fetchProjects = async () => {
     try {
-      const response = await fetch('/api/projects');
+      const response = await fetch(`/api/projects`);
       const data = await response.json();
       setImgArray(data.projects);
     } catch (error) {

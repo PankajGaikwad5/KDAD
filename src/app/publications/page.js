@@ -120,12 +120,12 @@ const Features = () => {
           <h1
             className={`text-3xl tracking-wider border-b-4 border-pink-800 mb-8 font-semibold uppercase ${montserrat.className}`}
           >
-            features
+            publications
           </h1>
           {loading ? (
             <p>Loading please wait...</p>
           ) : (
-            <div className='w-full relative max-w-4xl 2xl:max-w-[80%] grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 text-center my-4'>
+            <div className='w-full relative max-w-[54rem] 2xl:max-w-[80%] grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 text-center my-4'>
               {imgArray.map((item, index) => {
                 const { _id, images, title } = item;
                 return (

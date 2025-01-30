@@ -52,7 +52,7 @@ export default function Home() {
         <div className='w-full fixed left-[50%] bottom-[2%] translate-x-[-50%]  flex items-center text-black px-4  overflow-hidden z-10 m-0'>
           <LogoComp />
 
-          <Footer />
+          <Footer home={true} />
         </div>
         //{' '}
       </div>

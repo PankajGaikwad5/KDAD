@@ -40,8 +40,8 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
     },
     {
       id: 5,
-      name: 'features',
-      path: 'features',
+      name: 'publications',
+      path: 'publications',
     },
     {
       id: 6,
@@ -55,7 +55,7 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
     'about us',
     'projects',
     'collaborations',
-    'features',
+    'publications',
     'contact us',
   ];
   // karan desai homes
