@@ -178,10 +178,42 @@ const CarouselComp = ({ imgArray }) => {
         )}
       </button>
 
+      {/* Main Carousel */}
+      <Swiper
+        lazy={'true'}
+        modules={[Navigation, Thumbs, Pagination, A11y, Zoom, Keyboard]}
+        navigation
+        thumbs={{ swiper: thumbsSwiper }}
+        spaceBetween={10}
+        slidesPerView={1}
+        className={`w-full ${
+          isFullscreen ? 'h-[100vh]' : 'h-[60vh] md:h-[70vh]'
+        }`}
+        pagination={{ clickable: true }}
+        zoom={true}
+        keyboard={{ enabled: true, onlyInViewport: true }}
+      >
+        {imgArray.map((img, index) => (
+          <SwiperSlide key={index}>
+            <div className='w-full h-full swiper-zoom-container flex items-center justify-center'>
+              <img
+                src={img}
+                alt={`Slide ${index}`}
+                loading='lazy'
+                className='max-w-full max-h-full object-contain'
+              />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      {/* Thumbnail Navigation */}
       {/* Thumbnail Navigation - Positioned above main carousel */}
       <div
-        className={`absolute bottom-4 left-0 right-0 z-20 px-4 hidden sm:block ${
-          isFullscreen ? 'opacity-75 hover:opacity-100 transition-opacity' : ''
+        className={` bottom-4 left-0 right-0 z-20 px-4  ${
+          isFullscreen
+            ? ' absolute opacity-75 hover:opacity-100 transition-opacity '
+            : ' mt-2 sm:mt-4'
         }`}
       >
         <Swiper
@@ -203,7 +235,7 @@ const CarouselComp = ({ imgArray }) => {
                     //   : 'h-20 md:h-24'
                     ''
                   }
-                 flex items-center h-20 md:h-24 justify-center cursor-pointer transition-all`}
+                 flex items-center h-20 md:h-24  justify-center cursor-pointer transition-all`}
               >
                 <img
                   src={img}
@@ -218,38 +250,7 @@ const CarouselComp = ({ imgArray }) => {
           ))}
         </Swiper>
       </div>
-
-      {/* Main Carousel */}
-      <Swiper
-        lazy={'true'}
-        modules={[Navigation, Thumbs, Pagination, A11y, Zoom, Keyboard]}
-        navigation
-        thumbs={{ swiper: thumbsSwiper }}
-        spaceBetween={10}
-        slidesPerView={1}
-        className={`w-full ${
-          isFullscreen ? 'h-[calc(100vh)]' : 'h-[60vh] md:h-[70vh]'
-        }`}
-        pagination={{ clickable: true }}
-        zoom={true}
-        keyboard={{ enabled: true, onlyInViewport: true }}
-      >
-        {imgArray.map((img, index) => (
-          <SwiperSlide key={index}>
-            <div className='w-full h-full swiper-zoom-container flex items-center justify-center'>
-              <img
-                src={img}
-                alt={`Slide ${index}`}
-                loading='lazy'
-                className='max-w-full max-h-full object-contain'
-              />
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-
-      {/* Thumbnail Navigation */}
-      <div className='sm:hidden'>
+      {/* <div className=''>
         <Swiper
           modules={[Thumbs]}
           onSwiper={setThumbsSwiper}
@@ -271,7 +272,7 @@ const CarouselComp = ({ imgArray }) => {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </div> */}
     </div>
   );
 };
