@@ -46,7 +46,7 @@ const FeatureDetails = async ({ params }) => {
 
   // const { projects } = featureData;
   // const { title, images } = projects;
-  const { id } = params;
+  const { id } = await params;
 
   // Find the feature by _id
   const projectData = projects.find((project) => project._id.$oid === id);
@@ -63,11 +63,11 @@ const FeatureDetails = async ({ params }) => {
 
   return (
     <div className='relative text-center '>
-      <h1
+      {/* <h1
         className={`text-3xl text-center tracking-wider border-b border-zinc-800 text-white  mt-6 font-semibold uppercase ${montserrat.className}`}
       >
         {title}
-      </h1>
+      </h1> */}
       {/* Back Button */}
       <div className='absolute left-3 top-3'>
         <a href='/projects'>
