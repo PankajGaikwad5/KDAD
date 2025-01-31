@@ -39,7 +39,7 @@ const FeatureDetails = async ({ params }) => {
     <div className='relative'>
       {/* <h1 className='text-3xl tracking-wider mb-4'>{title}</h1> */}
       <div className='absolute left-3 top-3'>
-        <a href='/features'>
+        <a href='/publications'>
           <ChevronLeft
             className='text-white'
             size={50}

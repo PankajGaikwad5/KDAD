@@ -161,7 +161,7 @@ export const projects = [
       },
       {
         fileName: '3',
-        fileUrl: '/project/2.jpg',
+        fileUrl: '/partypad/2.jpg',
       },
       {
         fileName: 'new1.jpg',

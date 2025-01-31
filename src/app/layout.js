@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono, Bebas_Neue } from 'next/font/google';
 import './globals.css';
 import CursorTrail from '../components/CursorTrail';
+import { Analytics } from '@vercel/analytics/react';
 
 // Importing Geist Sans
 const geistSans = Geist({
