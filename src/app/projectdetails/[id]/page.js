@@ -81,7 +81,7 @@ const FeatureDetails = async ({ params }) => {
       </div>
 
       {/* Carousel */}
-      <div className='h-screen flex items-center justify-center'>
+      <div className='h-screen  flex items-center justify-center'>
         {images && images.length > 0 ? (
           <CarouselComp imgArray={images.map((image) => image.fileUrl)} />
         ) : (

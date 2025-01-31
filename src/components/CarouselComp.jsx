@@ -142,7 +142,7 @@ const CarouselComp = ({ imgArray }) => {
       {/* Fullscreen Button */}
       <button
         onClick={toggleFullscreen}
-        className='absolute top-4 right-4 z-10 p-2 bg-black/50 rounded-full hover:bg-black/75 transition-colors hidden sm:block'
+        className='absolute top-4 right-4 z-10 p-2 bg-black/50 rounded-full hover:bg-black/75 transition-colors'
         aria-label={isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}
       >
         {isFullscreen ? (
