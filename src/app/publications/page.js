@@ -131,6 +131,7 @@ const Features = () => {
                 return (
                   <ProjectCard
                     key={index}
+                    priority={index < 3}
                     img={images[0].fileUrl}
                     id={_id}
                     title={title}
