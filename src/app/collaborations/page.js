@@ -38,7 +38,11 @@ const Collaborations = () => {
             </h3>
             <p className='text-center uppercase  font-sans my-2 tracking-normal'>
               Collab with{' '}
-              <a href='https://www.quarry.asia/' className=' underline '>
+              <a
+                href='https://www.quarry.asia/'
+                className=' underline '
+                target='_blank'
+              >
                 The Quarry
               </a>
             </p>
@@ -60,7 +64,11 @@ const Collaborations = () => {
             </h3>
             <p className='text-center uppercase  font-sans my-2 tracking-normal'>
               Collab with{' '}
-              <a href='https://www.serafini.com/' className=' underline '>
+              <a
+                href='https://www.serafini.com/'
+                className=' underline '
+                target='_blank'
+              >
                 Serafini
               </a>
             </p>
@@ -87,7 +95,11 @@ const Collaborations = () => {
             </h3>
             <p className='text-center uppercase  font-sans my-2 tracking-normal'>
               Collab with{' '}
-              <a href='https://www.topbrewernyc.com/' className=' underline '>
+              <a
+                href='https://www.topbrewernyc.com/'
+                className=' underline '
+                target='_blank'
+              >
                 Top Brewer
               </a>
             </p>
@@ -113,7 +125,11 @@ const Collaborations = () => {
             </h3>
             <p className='text-center uppercase  font-sans my-2 tracking-normal'>
               Collab with{' '}
-              <a href='https://casawalls.com/' className=' underline '>
+              <a
+                href='https://casawalls.com/'
+                className=' underline '
+                target='_blank'
+              >
                 Casa Walls
               </a>
             </p>
@@ -142,6 +158,7 @@ const Collaborations = () => {
               <a
                 href='https://www.bharatfloorings.com/'
                 className=' underline '
+                target='_blank'
               >
                 Bharat Flooring
               </a>
@@ -161,7 +178,11 @@ const Collaborations = () => {
             </h3>
             <p className='text-center uppercase  font-sans my-2 tracking-normal'>
               Collab with{' '}
-              <a href='https://foremostmarbles.com/' className=' underline '>
+              <a
+                href='https://foremostmarbles.com/'
+                className=' underline '
+                target='_blank'
+              >
                 Foremost Marbles
               </a>
             </p>
@@ -180,7 +201,11 @@ const Collaborations = () => {
             </h3>
             <p className='text-center uppercase  font-sans my-2 tracking-normal'>
               Collab with{' '}
-              <a href='https://www.arjunrathi.com/' className=' underline '>
+              <a
+                href='https://www.arjunrathi.com/'
+                className=' underline '
+                target='_blank'
+              >
                 Arjun Rathi
               </a>
             </p>
