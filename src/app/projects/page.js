@@ -135,6 +135,7 @@ const Projects = () => {
                   <ProjectCard
                     key={index}
                     img={images[0].fileUrl}
+                    priority={index < 3}
                     id={_id}
                     title={title}
                     projects={true}
