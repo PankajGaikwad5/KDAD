@@ -80,6 +80,7 @@ import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
 import React, { useEffect, useState } from 'react';
 import { Poppins, Montserrat } from 'next/font/google';
+import { projects } from '../../components/projects';
 
 // popins
 // montserrat
@@ -94,23 +95,23 @@ const montserrat = Montserrat({
 
 const Projects = () => {
   const [imgArray, setImgArray] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
-  const fetchProjects = async () => {
-    try {
-      const response = await fetch(`/api/projects`);
-      const data = await response.json();
-      setImgArray(data.projects);
-    } catch (error) {
-      console.error('Error fetching projects:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  // const fetchProjects = async () => {
+  //   try {
+  //     const response = await fetch(`/api/projects`);
+  //     const data = await response.json();
+  //     setImgArray(data.projects);
+  //   } catch (error) {
+  //     console.error('Error fetching projects:', error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchProjects();
-  }, []);
+  // useEffect(() => {
+  //   fetchProjects();
+  // }, []);
 
   return (
     <div>
@@ -127,7 +128,7 @@ const Projects = () => {
             <p>Loading please wait...</p>
           ) : (
             <div className='w-full relative max-w-3xl 2xl:max-w-[80%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-center my-4'>
-              {imgArray.map((item, index) => {
+              {projects.map((item, index) => {
                 const { _id, images, title } = item;
 
                 return (

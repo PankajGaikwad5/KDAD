@@ -1,27 +1,39 @@
 import React from 'react';
 import CarouselComp from '../../../components/CarouselComp';
 import { ChevronLeft } from 'lucide-react';
+import { features } from '../../../components/features';
 
-const getTopicById = async (id) => {
-  try {
-    const res = await fetch(`${process.env.BASE_URL}/api/features/${id}`, {
-      cache: 'no-store',
-    });
+// const getTopicById = async (id) => {
+//   try {
+//     const res = await fetch(`${process.env.BASE_URL}/api/features/${id}`, {
+//       cache: 'no-store',
+//     });
 
-    if (!res.ok) {
-      throw new Error('Failed to fetch topic');
-    }
+//     if (!res.ok) {
+//       throw new Error('Failed to fetch topic');
+//     }
 
-    return res.json();
-  } catch (error) {
-    console.log(error);
-  }
-};
+//     return res.json();
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
 
 const FeatureDetails = async ({ params }) => {
   const { id } = await params;
-  const { features } = await getTopicById(id);
-  const { title, images } = await features;
+  const projectData = features.find((project) => project._id.$oid === id);
+
+  if (!projectData) {
+    return (
+      <div className='flex items-center justify-center h-screen'>
+        <p className='text-red-500 text-lg'>Feature not found.</p>
+      </div>
+    );
+  }
+
+  const { title, images } = projectData;
+  // const { features } = await getTopicById(id);
+  // const { title, images } = await features;
 
   return (
     <div className='relative'>

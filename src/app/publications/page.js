@@ -79,6 +79,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import ProjectCard from '../../components/ProjectCard';
 import { Poppins, Montserrat } from 'next/font/google';
+import { features } from '../../components/features';
 
 // popins
 // montserrat
@@ -93,23 +94,23 @@ const montserrat = Montserrat({
 
 const Features = () => {
   const [imgArray, setImgArray] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
-  const fetchFeatures = async () => {
-    try {
-      const response = await fetch('/api/features');
-      const data = await response.json();
-      setImgArray(data.features);
-    } catch (error) {
-      console.error('Error fetching features:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  // const fetchFeatures = async () => {
+  //   try {
+  //     const response = await fetch('/api/features');
+  //     const data = await response.json();
+  //     setImgArray(data.features);
+  //   } catch (error) {
+  //     console.error('Error fetching features:', error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchFeatures();
-  }, []);
+  // useEffect(() => {
+  //   fetchFeatures();
+  // }, []);
 
   return (
     <div>
@@ -126,7 +127,7 @@ const Features = () => {
             <p>Loading please wait...</p>
           ) : (
             <div className='w-full relative max-w-[54rem] 2xl:max-w-[80%] grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 text-center my-4'>
-              {imgArray.map((item, index) => {
+              {features.map((item, index) => {
                 const { _id, images, title } = item;
                 return (
                   <ProjectCard

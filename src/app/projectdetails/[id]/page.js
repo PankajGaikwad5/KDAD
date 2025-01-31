@@ -2,6 +2,7 @@ import React from 'react';
 import CarouselComp from '../../../components/CarouselComp';
 import { ChevronLeft } from 'lucide-react';
 import { Poppins, Montserrat } from 'next/font/google';
+import { projects } from '../../../components/projects';
 
 // popins
 // montserrat
@@ -14,37 +15,51 @@ const montserrat = Montserrat({
   weight: ['400', '600', '700'], // Specify weight
 });
 
-const getFeatureById = async (id) => {
-  try {
-    const res = await fetch(`${process.env.BASE_URL}/api/projects/${id}`, {
-      cache: 'no-store',
-    });
+// const getFeatureById = async (id) => {
+//   try {
+//     const res = await fetch(`${process.env.BASE_URL}/api/projects/${id}`, {
+//       cache: 'no-store',
+//     });
 
-    if (!res.ok) {
-      throw new Error('Failed to fetch feature');
-    }
+//     if (!res.ok) {
+//       throw new Error('Failed to fetch feature');
+//     }
 
-    return await res.json();
-  } catch (error) {
-    console.error('Error fetching feature:', error);
-    return null;
-  }
-};
+//     return await res.json();
+//   } catch (error) {
+//     console.error('Error fetching feature:', error);
+//     return null;
+//   }
+// };
 
 const FeatureDetails = async ({ params }) => {
-  const { id } = params;
-  const featureData = await getFeatureById(id);
+  // const { id } = params;
+  // const featureData = await getFeatureById(id);
 
-  if (!featureData) {
+  // if (!featureData) {
+  //   return (
+  //     <div className='flex items-center justify-center h-screen'>
+  //       <p className='text-red-500 text-lg'>Failed to load feature details.</p>
+  //     </div>
+  //   );
+  // }
+
+  // const { projects } = featureData;
+  // const { title, images } = projects;
+  const { id } = params;
+
+  // Find the feature by _id
+  const projectData = projects.find((project) => project._id.$oid === id);
+
+  if (!projectData) {
     return (
       <div className='flex items-center justify-center h-screen'>
-        <p className='text-red-500 text-lg'>Failed to load feature details.</p>
+        <p className='text-red-500 text-lg'>Feature not found.</p>
       </div>
     );
   }
 
-  const { projects } = featureData;
-  const { title, images } = projects;
+  const { title, images } = projectData;
 
   return (
     <div className='relative text-center '>
