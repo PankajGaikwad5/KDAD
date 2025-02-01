@@ -62,33 +62,36 @@ const FeatureDetails = async ({ params }) => {
   const { title, images } = projectData;
 
   return (
-    <div className='relative text-center '>
-      {/* <h1
+    <div>
+      <div className='project-bg fixed w-full h-full m-0 p-0 z-0 opacity-25 blur-md'></div>
+      <div className='relative text-center '>
+        {/* <h1
         className={`text-3xl text-center tracking-wider border-b border-zinc-800 text-white  mt-6 font-semibold uppercase ${montserrat.className}`}
       >
         {title}
       </h1> */}
-      {/* Back Button */}
-      <div className='absolute left-3 top-3'>
-        <a href='/projects'>
-          <ChevronLeft
-            className='text-white'
-            size={50}
-            strokeWidth={0.9}
-            absoluteStrokeWidth
-          />
-        </a>
-      </div>
+        {/* Back Button */}
+        <div className='absolute left-3 top-3'>
+          <a href='/projects'>
+            <ChevronLeft
+              className='text-white'
+              size={50}
+              strokeWidth={0.9}
+              absoluteStrokeWidth
+            />
+          </a>
+        </div>
 
-      {/* Carousel */}
-      <div className='h-screen  flex items-center justify-center'>
-        {images && images.length > 0 ? (
-          <CarouselComp imgArray={images.map((image) => image.fileUrl)} />
-        ) : (
-          <p className='text-gray-500 text-lg'>
-            No images available for this feature.
-          </p>
-        )}
+        {/* Carousel */}
+        <div className='h-screen  flex items-center justify-center'>
+          {images && images.length > 0 ? (
+            <CarouselComp imgArray={images.map((image) => image.fileUrl)} />
+          ) : (
+            <p className='text-gray-500 text-lg'>
+              No images available for this feature.
+            </p>
+          )}
+        </div>
       </div>
     </div>
   );

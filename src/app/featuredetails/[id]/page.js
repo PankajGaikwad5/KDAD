@@ -36,20 +36,24 @@ const FeatureDetails = async ({ params }) => {
   // const { title, images } = await features;
 
   return (
-    <div className='relative'>
-      {/* <h1 className='text-3xl tracking-wider mb-4'>{title}</h1> */}
-      <div className='absolute left-3 top-3'>
-        <a href='/publications'>
-          <ChevronLeft
-            className='text-white'
-            size={50}
-            strokeWidth={0.9}
-            absoluteStrokeWidth
-          />
-        </a>
-      </div>
-      <div className='h-screen items-center flex justify-center'>
-        <CarouselComp imgArray={images.map((image) => image.fileUrl)} />
+    <div>
+      <div className='project-bg fixed w-full h-full m-0 p-0 z-0 opacity-25 blur-md'></div>
+
+      <div className='relative'>
+        {/* <h1 className='text-3xl tracking-wider mb-4'>{title}</h1> */}
+        <div className='absolute left-3 top-3'>
+          <a href='/publications'>
+            <ChevronLeft
+              className='text-white'
+              size={50}
+              strokeWidth={0.9}
+              absoluteStrokeWidth
+            />
+          </a>
+        </div>
+        <div className='h-screen items-center flex justify-center'>
+          <CarouselComp imgArray={images.map((image) => image.fileUrl)} />
+        </div>
       </div>
     </div>
   );
