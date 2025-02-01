@@ -152,7 +152,7 @@ const Contact = () => {
                 />
                 <Button
                   type='submit'
-                  className='bg-white uppercase text-gray-900 hover:bg-black hover:text-gray-300 transition-all duration-500 ease-in-out'
+                  className='bg-white uppercase text-gray-900 hover:bg-black hover:text-gray-300 transition-all duration-500 ease-in-out rounded-full px-5 tracking-normal font-medium'
                 >
                   Submit
                 </Button>
