@@ -26,7 +26,7 @@ const Collaborations = () => {
           >
             Collaborations
           </h1>
-          <div className='w-full relative p-8 rounded-2xl max-w-4xl 2xl:max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-center my-4'>
+          {/* <div className='w-full relative p-8 rounded-2xl max-w-4xl 2xl:max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-center my-4'>
             <div className='flex flex-col '>
               <div className='image-container'>
                 <img
@@ -55,13 +55,10 @@ const Collaborations = () => {
             <div className='flex flex-col '>
               <div className='image-container'>
                 <img
-                  src='/assets/collab.jpg'
+                  src='/collabs/query.png'
                   className='rounded-lg image'
                   alt='collab'
                 />
-                {/* {imgArray.map((img, index) => {
-            return <ProjectCard key={index} img={img} />;
-          })} */}
               </div>
               <h3 className='font-bold font-sans text-2xl capitalize my-3'>
                 Samaveta Bench
@@ -112,13 +109,6 @@ const Collaborations = () => {
               <h2 className='border border-zinc-700 bg-transparent p-2'>
                 2024
               </h2>
-              {/* <a
-              href='https://www.serafini.com/products-page/samaveta-luxury-marble-bench'
-              className='text-blue-700 m-2 capitalize'
-              target='_blank'
-            >
-              readmore
-            </a> */}
             </div>
             <div className='flex flex-col '>
               <div className='image-container'>
@@ -144,13 +134,6 @@ const Collaborations = () => {
               <h2 className='border border-zinc-700 bg-transparent p-2'>
                 2024
               </h2>
-              {/* <a
-              href='https://www.serafini.com/products-page/samaveta-luxury-marble-bench'
-              className='text-blue-700 m-2 capitalize'
-              target='_blank'
-            >
-              readmore
-            </a> */}
             </div>
             <div className='flex flex-col '>
               <div className='image-container'>
@@ -226,6 +209,46 @@ const Collaborations = () => {
               <h2 className='border border-zinc-700 bg-transparent p-2'>
                 2024
               </h2>
+            </div>
+          </div> */}
+          <div className='w-full relative p-8 rounded-2xl max-w-4xl 2xl:max-w-7xl grid grid-cols-1 sm:grid-cols-2  gap-12 text-center my-4'>
+            <div className='flex justify-center items-center'>
+              <img src='/collabs/query.png' alt='' className='object-cover' />
+            </div>
+            <div className='flex justify-center items-center mt-5'>
+              <img
+                src='https://www.topbrewernyc.com/wp-content/uploads/2023/06/TopBrewer-logo-white.png'
+                alt=''
+                className='object-cover'
+              />
+            </div>
+            <div className='flex justify-center items-center'>
+              <img
+                src='https://3.imimg.com/data3/CH/KI/MY-5246137/bharat-floorings-logo-120x120.jpg'
+                alt=''
+                className='object-cover'
+              />
+            </div>
+            <div className='flex justify-center items-center'>
+              <img
+                src='https://foremostmarbles.com/wp-content/uploads/2021/09/FM-LOGO-copy-1536x292.png'
+                alt=''
+                className='object-cover'
+              />
+            </div>
+            <div className='flex justify-center items-center'>
+              <img
+                src='https://casawalls.com/wp-content/uploads/2020/09/logo.png'
+                alt=''
+                className='object-cover'
+              />
+            </div>
+            <div className='flex justify-center items-center'>
+              <img
+                src='/collabs/serafini.png'
+                alt=''
+                className='object-cover'
+              />
             </div>
           </div>
         </div>
