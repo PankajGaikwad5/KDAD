@@ -237,17 +237,13 @@ const Collaborations = () => {
               />
             </div>
             <div className='flex justify-center items-center'>
-              <img
-                src='https://casawalls.com/wp-content/uploads/2020/09/logo.png'
-                alt=''
-                className='object-cover'
-              />
+              <img src='/collabs/casa.webp' alt='' className='object-cover' />
             </div>
-            <div className='flex justify-center items-center'>
+            <div className='flex justify-center items-center scale-150'>
               <img
                 src='/collabs/serafini.png'
                 alt=''
-                className='object-cover'
+                className='object-cover scale-150'
               />
             </div>
           </div>
