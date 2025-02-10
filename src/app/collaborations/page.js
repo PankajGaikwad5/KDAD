@@ -239,11 +239,11 @@ const Collaborations = () => {
             <div className='flex justify-center items-center'>
               <img src='/collabs/casa.webp' alt='' className='object-cover' />
             </div>
-            <div className='flex justify-center items-center scale-150'>
+            <div className='flex justify-center items-center '>
               <img
                 src='/collabs/serafini.png'
                 alt=''
-                className='object-cover scale-150'
+                className='object-cover '
               />
             </div>
           </div>
