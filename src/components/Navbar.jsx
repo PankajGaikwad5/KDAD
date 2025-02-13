@@ -158,7 +158,8 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
               </li>
             );
           })}
-          <li className='border-t border-dotted pt-4'>
+          <span className='border-t border-dotted pt-2 mt-1 w-40'></span>
+          <li className=''>
             <a
               href='shukhabar'
               className={`transition-all duration-300 hover:text-lg ${
