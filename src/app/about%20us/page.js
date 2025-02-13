@@ -63,7 +63,7 @@ const About = () => {
                         
                         '
             />
-            <div className='mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
+            <div className='mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-2 md:px-0'>
               <div className='relative overflow-hidden group rounded-lg shadow-lg'>
                 <Image
                   src='/kdh/gattoo.jpg'
