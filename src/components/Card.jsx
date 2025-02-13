@@ -18,6 +18,7 @@ const Card = ({ imagePosition, title, text, img, desc }) => {
   const pFont = popins.className;
   const MotionH2 = motion('h2');
   const MotionH6 = motion('h6');
+  const MotionP = motion('p');
   return (
     //  {/* Team Member Card */}
     <div
@@ -38,9 +39,9 @@ const Card = ({ imagePosition, title, text, img, desc }) => {
       {/* Text Section */}
       <div className='space-y-2'>
         <MotionH2
-          initial={{ opacity: 0, y: -100 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 2, x: 0 }}
+          transition={{ duration: 1 }}
           className={`text-2xl text-center font-bold ${montserrat.className}`}
         >
           {title}
@@ -53,11 +54,12 @@ const Card = ({ imagePosition, title, text, img, desc }) => {
         <MotionH6
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 1, delay: 0.8 }}
           className={`text-xs md:text-lg text-center uppercase font-semibold ${montserrat.className}`}
         >
           {desc}
         </MotionH6>
+
         {/* <h6
           className={`text-xs md:text-lg text-center uppercase font-semibold  ${montserrat.className} font-sans`}
         >
@@ -68,7 +70,15 @@ const Card = ({ imagePosition, title, text, img, desc }) => {
           solutions that blend form and function. Lorem ipsum dolor sit amet,
           consectetur adipisicing elit.
         </p> */}
-        <p className={`font-light text-gray-300 font-sans ${pFont}`}>
+
+        <MotionP
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 2, y: 0 }}
+          transition={{ duration: 1, delay: 1.2 }}
+          className={`font-light text-gray-300 font-sans ${pFont}`}
+        >
+          {title}
+          {/* <p className={`font-light text-gray-300 font-sans ${pFont}`}> */}
           {/* {text} */}
           Born in 1987, a passionate founder of his eponymous studio, KARAN
           DESAI | Architecture + Design, focusing on Architecture, Interiors &
@@ -96,7 +106,8 @@ const Card = ({ imagePosition, title, text, img, desc }) => {
           {/* <a href='mailto:john.doe@example.com' className='text-blue-400'>
             john.doe@example.com */}
           {/* </a> */}
-        </p>
+          {/* </p> */}
+        </MotionP>
       </div>
     </div>
   );

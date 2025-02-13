@@ -124,7 +124,7 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
       {/* </div> */}
 
       <div
-        className={`fixed hidden xl:flex flex-col space-y-2 top-0 ml-14 mt-6 font-mono font-extralight text-xs uppercase z-30 tracking-wider ${
+        className={`fixed hidden xl:flex flex-col space-y-2 top-0  ml-10 mt-6 font-mono font-extralight text-xs uppercase z-30 tracking-wider ${
           isBgBlack ? 'text-white hover:text-opacity-50' : 'text-gray-800'
         }`}
       >
@@ -141,7 +141,7 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
         </a>
 
         <ul
-          className={`flex flex-col ${montserrat.className} font-semibold tracking-widest`}
+          className={`flex flex-col ${montserrat.className} font-semibold tracking-widest `}
         >
           {newNavTopics.map((items) => {
             const { id, name, path } = items;

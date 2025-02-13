@@ -92,6 +92,18 @@ const FeatureDetails = async ({ params }) => {
             </p>
           )}
         </div>
+        <div className='flex justify-center pb-4 items-center'>
+          <div className='w-full max-w-3xl text-white tracking-widest '>
+            <p className={`${popins.className}`}>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
+              neque ut excepturi iusto aspernatur dicta tempore optio, iste ab,
+              necessitatibus id quisquam fugit, repudiandae esse velit in.
+              Libero, velit. Architecto, quod libero. Dignissimos quis facilis
+              accusantium tempore quibusdam laboriosam fuga, vitae totam alias,
+              omnis, quisquam neque harum? Consequatur, perspiciatis iste.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
