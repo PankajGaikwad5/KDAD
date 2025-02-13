@@ -1,5 +1,7 @@
+'use client';
 import React from 'react';
 import { Poppins, Montserrat } from 'next/font/google';
+import { motion } from 'framer-motion';
 
 // popins
 // montserrat
@@ -14,12 +16,14 @@ const montserrat = Montserrat({
 
 const Card = ({ imagePosition, title, text, img, desc }) => {
   const pFont = popins.className;
+  const MotionH2 = motion('h2');
+  const MotionH6 = motion('h6');
   return (
     //  {/* Team Member Card */}
     <div
       className={`flex ${
         imagePosition === 'left' ? 'flex-col' : 'flex-row-reverse'
-      } items-start gap-6 p-4 border border-gray-600 rounded-lg shadow-lg hover:shadow-2xl hover:border-white transition-all duration-500 `}
+      } items-start gap-6 p-2 md:p-4 border border-gray-600 rounded-lg shadow-lg hover:shadow-2xl hover:border-white transition-all duration-500 `}
     >
       {/* Image Section */}
       <div className='w-full flex justify-center flex-shrink-0'>
@@ -33,14 +37,32 @@ const Card = ({ imagePosition, title, text, img, desc }) => {
       </div>
       {/* Text Section */}
       <div className='space-y-2'>
-        <h2 className={`text-2xl font-bold ${montserrat.className}`}>
+        <MotionH2
+          initial={{ opacity: 0, y: -100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className={`text-2xl text-center font-bold ${montserrat.className}`}
+        >
           {title}
-        </h2>
-        <h6
-          className={`text-base uppercase font-semibold  ${montserrat.className} font-sans`}
+        </MotionH2>
+        {/* <h2
+          className={`text-2xl text-center font-bold ${montserrat.className}`}
+        >
+          {title}
+        </h2> */}
+        <MotionH6
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className={`text-xs md:text-lg text-center uppercase font-semibold ${montserrat.className}`}
         >
           {desc}
-        </h6>
+        </MotionH6>
+        {/* <h6
+          className={`text-xs md:text-lg text-center uppercase font-semibold  ${montserrat.className} font-sans`}
+        >
+          {desc}
+        </h6> */}
         {/* <p className='text-sm text-gray-300 font-sans'>
           John is an experienced architect with a passion for innovative design
           solutions that blend form and function. Lorem ipsum dolor sit amet,

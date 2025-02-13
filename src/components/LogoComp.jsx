@@ -17,7 +17,7 @@ const LogoComp = () => {
   return (
     <div className=' w-full justify-center items-center flex flex-col'>
       <h1
-        className={`text-2xl tracking-widest text-white -mb-10 line-clamp-5 ${montserrat.className} uppercase font-extrabold`}
+        className={`text-xl md:text-2xl tracking-widest text-white -mb-10 line-clamp-5 ${montserrat.className} uppercase font-extrabold`}
       >
         exclusive features
       </h1>

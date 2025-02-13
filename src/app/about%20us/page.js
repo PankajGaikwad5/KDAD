@@ -31,7 +31,7 @@ const About = () => {
           >
             about us
           </h1>
-          <div className='max-w-2xl 2xl:max-w-[80%] space-y-8 pb-8 border-b border-gray-600 border-dashed'>
+          <div className='max-w-2xl 2xl:max-w-[70%] space-y-8 pb-8 border-b border-gray-600 border-dashed'>
             <Card
               img={'/assets/profile.JPG'}
               imagePosition={'left'}
@@ -43,7 +43,7 @@ const About = () => {
             />
           </div>
           {/* <h1 className='text-3xl font-bold my-4'>meet the team</h1> */}
-          <div className='max-w-2xl 2xl:max-w-[80%] space-y-8 pb-8'>
+          <div className='max-w-2xl 2xl:max-w-[70%] space-y-8 pb-8'>
             {/* <Card
             imagePosition={'left'}
             
@@ -52,7 +52,7 @@ const About = () => {
           <Card imagePosition={'left'} />
           <Card /> */}
           </div>
-          <div className='w-full max-w-2xl 2xl:max-w-[80%] space-y-8 pb-8 tracking-widest border-b border-gray-600  text-center items-start gap-6 p-4 border  rounded-lg shadow-lg hover:shadow-2xl hover:border-white transition-all duration-500'>
+          <div className='w-full max-w-2xl 2xl:max-w-[70%] space-y-8 pb-8 tracking-widest border-b border-gray-600  text-center items-start gap-6 p-4 border  rounded-lg shadow-lg hover:shadow-2xl hover:border-white transition-all duration-500'>
             {/* <h1 className='text-3xl font-bold mt-8'>karan desai home</h1> */}
             <Image
               src='/assets/kdhLogoo.png'
@@ -63,6 +63,62 @@ const About = () => {
                         
                         '
             />
+            <div className='mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
+              <div className='relative overflow-hidden group rounded-lg shadow-lg'>
+                <Image
+                  src='/kdh/gattoo.jpg'
+                  alt='Gallery 1'
+                  width={300}
+                  height={200}
+                  className='object-cover transition-transform duration-500 group-hover:scale-105'
+                />
+              </div>
+              <div className='relative overflow-hidden group rounded-lg shadow-lg'>
+                <Image
+                  src='/kdh/console.jpg'
+                  alt='Gallery 2'
+                  width={300}
+                  height={200}
+                  className='object-cover transition-transform duration-500 group-hover:scale-105'
+                />
+              </div>
+              <div className='relative overflow-hidden group rounded-lg shadow-lg'>
+                <Image
+                  src='/kdh/gatoo2.jpg'
+                  alt='Gallery 3'
+                  width={300}
+                  height={200}
+                  className='object-cover transition-transform duration-500 group-hover:scale-105'
+                />
+              </div>
+              <div className='relative overflow-hidden group rounded-lg shadow-lg'>
+                <Image
+                  src='/kdh/monsformer.jpg'
+                  alt='Gallery 3'
+                  width={300}
+                  height={200}
+                  className='object-cover transition-transform duration-500 group-hover:scale-105'
+                />
+              </div>
+              <div className='relative overflow-hidden group rounded-lg shadow-lg'>
+                <Image
+                  src='/kdh/binty.jpg'
+                  alt='Gallery 3'
+                  width={300}
+                  height={200}
+                  className='object-cover transition-transform duration-500 group-hover:scale-105'
+                />
+              </div>
+              <div className='relative overflow-hidden group rounded-lg shadow-lg'>
+                <Image
+                  src='/kdh/brainy.jpg'
+                  alt='Gallery 3'
+                  width={300}
+                  height={200}
+                  className='object-cover transition-transform duration-500 group-hover:scale-105'
+                />
+              </div>
+            </div>
             <p
               className={`font-light text-start flex flex-col space-y-4 ${popins.className}`}
             >
@@ -91,7 +147,7 @@ const About = () => {
               </span>
             </p>
           </div>
-          <div className='w-full max-w-2xl 2xl:max-w-[80%] space-y-8 py-8 tracking-widest  text-center items-start gap-6 p-4 border border-gray-600 rounded-lg shadow-lg hover:shadow-2xl hover:border-white transition-all duration-500 my-8'>
+          <div className='w-full max-w-2xl 2xl:max-w-[70%] space-y-8 py-8 tracking-widest  text-center items-start gap-6 p-4 border border-gray-600 rounded-lg shadow-lg hover:shadow-2xl hover:border-white transition-all duration-500 my-8'>
             {/* <h1 className='text-3xl font-bold'>Shu Khabar</h1> */}
             <Image
               src='/assets/shukhabar.png'
@@ -107,7 +163,7 @@ const About = () => {
             </h4>
             <div className='w-full justify-center text-center items-center'>
               <iframe
-                className=' md:w-[560px] md:h-[315px] justify-self-center'
+                className='w-[250px] md:w-[560px] md:h-[315px] justify-self-center'
                 src='https://www.youtube.com/embed/nS3qDFHinbw?si=gbJct3hxMk5OkQ84'
                 title='YouTube video player'
                 frameBorder='0'
