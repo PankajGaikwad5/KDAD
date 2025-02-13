@@ -163,7 +163,7 @@ const About = () => {
             </h4>
             <div className='w-full justify-center text-center items-center'>
               <iframe
-                className='w-[250px] md:w-[560px] md:h-[315px] justify-self-center'
+                className='w-[270px] md:w-[560px] md:h-[315px] justify-self-center'
                 src='https://www.youtube.com/embed/nS3qDFHinbw?si=gbJct3hxMk5OkQ84'
                 title='YouTube video player'
                 frameBorder='0'
