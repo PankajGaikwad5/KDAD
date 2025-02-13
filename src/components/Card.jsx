@@ -23,7 +23,7 @@ const Card = ({ imagePosition, title, text, img, desc }) => {
     <div
       className={`flex ${
         imagePosition === 'left' ? 'flex-col' : 'flex-row-reverse'
-      } items-start gap-6 p-2 md:p-4 border border-gray-600 rounded-lg shadow-lg hover:shadow-2xl hover:border-white transition-all duration-500 `}
+      } items-start gap-6 pt-4 p-2 md:p-4 border border-gray-600 rounded-lg shadow-lg hover:shadow-2xl hover:border-white transition-all duration-500 `}
     >
       {/* Image Section */}
       <div className='w-full flex justify-center flex-shrink-0'>
