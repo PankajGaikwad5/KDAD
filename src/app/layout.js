@@ -22,9 +22,44 @@ const bebasNueRegular = Bebas_Neue({
   variable: '--font-bebas-nue', // Custom CSS variable
 });
 
+// export const metadata = {
+//   title: 'KDAD',
+//   description: 'Website for Karan Desai Architecture and Design (KDAD)',
+// };
+
 export const metadata = {
-  title: 'KDAD',
-  description: 'Website for Karan Desai Architecture and Design (KDAD)',
+  title: 'KDAD | Karan Desai Architecture and Design',
+  description:
+    'Discover the innovative architectural designs of Karan Desai Architecture and Design (KDAD).',
+  keywords: [
+    'KDAD',
+    'Karan Desai',
+    'Karan Desai Architecture and Design',
+    'modern architecture',
+    'contemporary architecture',
+    'innovative architecture',
+    'creative architecture',
+    'architectural design',
+    'modern design',
+    'sustainable architecture',
+    'eco-friendly design',
+    'residential architecture',
+    'commercial architecture',
+    'interior design',
+    'architectural portfolio',
+    'design studio',
+    'urban design',
+    'minimalist design',
+    'award-winning architecture',
+    'architecture firm',
+    'creative design solutions',
+    'luxury architecture',
+    'modern building design',
+    'architectural innovation',
+    'architectural trends',
+    'design inspiration',
+    'architectural projects',
+  ],
 };
 
 export default function RootLayout({ children }) {
