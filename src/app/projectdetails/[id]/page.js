@@ -85,7 +85,10 @@ const FeatureDetails = async ({ params }) => {
         {/* Carousel */}
         <div className='h-screen  flex items-center justify-center'>
           {images && images.length > 0 ? (
-            <CarouselComp imgArray={images.map((image) => image.fileUrl)} />
+            <CarouselComp
+              imgArray={images.map((image) => image.fileUrl)}
+              notcollab={true}
+            />
           ) : (
             <p className='text-gray-500 text-lg'>
               No images available for this feature.

@@ -52,7 +52,10 @@ const FeatureDetails = async ({ params }) => {
           </a>
         </div>
         <div className='h-screen items-center flex justify-center'>
-          <CarouselComp imgArray={images.map((image) => image.fileUrl)} />
+          <CarouselComp
+            imgArray={images.map((image) => image.fileUrl)}
+            notcollab={true}
+          />
         </div>
       </div>
     </div>
