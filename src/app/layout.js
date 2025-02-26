@@ -67,6 +67,33 @@ export default function RootLayout({ children }) {
     <html lang='en'>
       <head>
         <link rel='icon' href='/assets/signlogo.png' />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <meta
+          name='description'
+          content='Discover the innovative architectural designs of Karan Desai Architecture and Design (KDAD).'
+        />
+        <link rel='canonical' href='https://karandesai.in' />
+        <meta
+          property='og:title'
+          content='KDAD | Karan Desai Architecture and Design'
+        />
+        <meta
+          property='og:description'
+          content='Discover the innovative architectural designs of Karan Desai Architecture and Design (KDAD).'
+        />
+        <meta
+          property='og:image'
+          content='https://karandesai.in/assets/og-image.jpg'
+        />
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta
+          name='twitter:title'
+          content='KDAD | Karan Desai Architecture and Design'
+        />
+        <meta
+          name='twitter:description'
+          content='Discover the innovative architectural designs of Karan Desai Architecture and Design (KDAD).'
+        />
       </head>
       <body className={`${bebasNueRegular.variable}  antialiased`}>
         {children}
