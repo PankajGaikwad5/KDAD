@@ -20,11 +20,10 @@ export default function Home() {
   return (
     <div className='bg-black/90'>
       {/* // <div className='relative overflow-hidden'> */}
-      <span className='hidden'>
-        karan desai architecture and design, karan desai arhitecture + design,
-        karan desai, karan desai home, karann desai architect, karan desai
-        architecture, karan desai design
-      </span>
+      <h1 className='sr-only'>
+        Karan Desai Architecture and Design – Innovative, Modern, Sustainable
+        Design Solutions
+      </h1>
       <div className='relative w-full h-screen overflow-hidden m-0 p-0'>
         {/* <CursorTrail /> */}
         <Navbar isBgBlack={true} isHomePage={true} />
@@ -42,7 +41,7 @@ export default function Home() {
           <img
             src={`/assets/sign.gif${gifKey}`}
             className={`${!logoLoaded ? 'opacity-100' : 'opacity-30'}`}
-            alt='Signature Animation'
+            alt='Animated signature representing Karan Desai Architecture'
           />
         </div>
         {/* <div className='absolute right-0 top-0 -mt-12 z-30'>
