@@ -46,6 +46,8 @@ export default function Home() {
           <video
             src={`/assets/sign.webm${gifKey}`}
             autoPlay
+            muted
+            playsInline
             className={`${!logoLoaded ? 'opacity-100' : 'opacity-30'}`}
             alt='Animated signature representing Karan Desai Architecture'
           ></video>
