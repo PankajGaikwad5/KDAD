@@ -38,11 +38,17 @@ export default function Home() {
           architecture + design
         </h1> */}
           {/* <img src='/assets/signature.gif' alt='' /> */}
-          <img
+          {/* <img
             src={`/assets/sign.gif${gifKey}`}
             className={`${!logoLoaded ? 'opacity-100' : 'opacity-30'}`}
             alt='Animated signature representing Karan Desai Architecture'
-          />
+          /> */}
+          <video
+            src={`/assets/sign.webm${gifKey}`}
+            autoPlay
+            className={`${!logoLoaded ? 'opacity-100' : 'opacity-30'}`}
+            alt='Animated signature representing Karan Desai Architecture'
+          ></video>
         </div>
         {/* <div className='absolute right-0 top-0 -mt-12 z-30'>
         <Image

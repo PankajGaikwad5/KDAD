@@ -115,7 +115,7 @@ body {
     background-image: url('/assets/4.jpg');
   }
   100% {
-    background-image: url('/Picture1.png');
+    background-image: url('/Picture1.jpg');
   }
 }
 @keyframes mobile-bgChange {
