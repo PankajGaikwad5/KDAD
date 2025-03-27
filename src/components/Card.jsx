@@ -108,6 +108,20 @@ const Card = ({ imagePosition, title, text, img, desc }) => {
           {/* </a> */}
           {/* </p> */}
         </MotionP>
+        <div className='w-full justify-center text-center items-center my-4'>
+          <h2 className={` font-bold text-2xl hidden ${popins.className} `}>
+            TEDx Talks
+          </h2>
+          <iframe
+            className='w-[270px] md:w-[560px] md:h-[315px] justify-self-center'
+            src='https://www.youtube.com/embed/rvwzTtiinDg?si=lp_lwGVzxY2gdBF9'
+            title='YouTube video player'
+            frameBorder='0'
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+            referrerPolicy='strict-origin-when-cross-origin'
+            allowFullScreen
+          ></iframe>
+        </div>
       </div>
     </div>
   );
