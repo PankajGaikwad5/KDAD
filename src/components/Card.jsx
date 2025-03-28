@@ -80,11 +80,11 @@ const Card = ({ imagePosition, title, text, img, desc }) => {
           {title}
           {/* <p className={`font-light text-gray-300 font-sans ${pFont}`}> */}
           {/* {text} */}
-          Born in 1987, a passionate founder of his eponymous studio, KARAN
-          DESAI | Architecture + Design, focusing on Architecture, Interiors &
-          furniture designing, KD started off with his individual practice right
-          after he gave his Thesis in 2011 from Pillai’s college of architecture
-          & founded the company in 2012.
+          &nbsp; Born in 1987, a passionate founder of his eponymous studio,
+          KARAN DESAI | Architecture + Design, focusing on Architecture,
+          Interiors & furniture designing, KD started off with his individual
+          practice right after he gave his Thesis in 2011 from Pillai’s college
+          of architecture & founded the company in 2012.
           <br />
           <br /> The internship under Ar. Ashiesh Shah during a year drop in
           2007, carved a path for his career with a clear direction towards his
