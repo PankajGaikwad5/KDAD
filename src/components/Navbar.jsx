@@ -106,6 +106,7 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
           <li className='border-t border-dotted pt-4'>
             <a
               href='https://www.shukhabarwithkd.com/'
+              target='_blank'
               className='hover:text-gray-600 transition-all duration-300'
             >
               shukhabar
@@ -162,6 +163,7 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
           <li className=''>
             <a
               href='https://www.shukhabarwithkd.com/'
+              target='_blank'
               className={`transition-all duration-300 hover:text-lg ${
                 isBgBlack ? 'hover:text-white' : 'hover:text-gray-400'
               } w-full inline-block whitespace-nowrap overflow-hidden text-animate`}
