@@ -288,3 +288,21 @@ body {
 .navMenu.open > span:nth-child(3) {
   transform: translateY(-9px) rotate(90deg);
 }
+
+.scroll-custom::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scroll-custom::-webkit-scrollbar-thumb {
+  background-color: #9f7aea; /* Customize color */
+  border-radius: 9999px;
+}
+
+.scroll-custom::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-custom {
+  scrollbar-color: #9f7aea transparent;
+  scrollbar-width: thin;
+}
