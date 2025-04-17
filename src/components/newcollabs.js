@@ -79,10 +79,6 @@ export const id2025delhi = [
     people: 'lorem ipsum',
   },
   {
-    image: '/collab/ID_2025Delhi/10.jpg',
-    people: 'lorem ipsum',
-  },
-  {
     image: '/collab/ID_2025Delhi/11.jpg',
     people: 'lorem ipsum',
   },
