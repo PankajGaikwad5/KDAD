@@ -62,10 +62,10 @@ const Collaborations = () => {
           >
             Collaborations
           </h1>
-          <div className='gap-8'>
-            <div className=' max-w-5xl ml-28 flex  snap-x snap-mandatory flex-col gap-2 px-2 pb-4 '>
+          <div className='gap-8 '>
+            <div className=' max-w-5xl pl-[22.25rem] md:pl-28  flex  snap-x snap-mandatory flex-col gap-2 px-2 pb-4 '>
               <h1
-                className={`${popins.className} text-xl font-bold tracking-widest ml-[18.5rem] `}
+                className={`${popins.className} text-xl font-bold tracking-widest my-2 underline `}
               >
                 India Design 2025 Delhi
               </h1>
@@ -94,9 +94,9 @@ const Collaborations = () => {
                 ))}
               </div>
             </div>
-            <div className=' max-w-5xl ml-28 flex  snap-x snap-mandatory flex-col gap-2 px-2 pb-4 '>
+            <div className=' max-w-5xl pl-[22.25rem] md:pl-28  flex  snap-x snap-mandatory flex-col gap-2 px-2 pb-4 '>
               <h1
-                className={`${popins.className} text-xl font-bold tracking-widest ml-[18.5rem] `}
+                className={`${popins.className} text-xl font-bold tracking-widest my-2 underline `}
               >
                 India Design 2024 Mumbai
               </h1>
@@ -125,9 +125,9 @@ const Collaborations = () => {
                 ))}
               </div>
             </div>
-            <div className=' max-w-5xl ml-28 flex  snap-x snap-mandatory flex-col gap-2 px-2 pb-4 '>
+            <div className=' max-w-5xl pl-[22.25rem] md:pl-28  flex  snap-x snap-mandatory flex-col gap-2 px-2 pb-4 '>
               <h1
-                className={`${popins.className} text-xl font-bold tracking-widest ml-[18.5rem] `}
+                className={`${popins.className} text-xl font-bold tracking-widest my-2 underline `}
               >
                 India Design 2024 Delhi
               </h1>
@@ -156,9 +156,9 @@ const Collaborations = () => {
                 ))}
               </div>
             </div>
-            <div className=' max-w-5xl ml-28 flex  snap-x snap-mandatory flex-col gap-2 px-2 pb-4 '>
+            <div className=' max-w-5xl pl-[22.25rem] md:pl-28  flex  snap-x snap-mandatory flex-col gap-2 px-2 pb-4 '>
               <h1
-                className={`${popins.className} text-xl font-bold tracking-widest ml-[18.5rem] `}
+                className={`${popins.className} text-xl font-bold tracking-widest my-2 underline `}
               >
                 Karan x Quarry India Design 2022
               </h1>
