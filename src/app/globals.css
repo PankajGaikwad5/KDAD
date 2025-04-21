@@ -127,16 +127,16 @@ body {
     background-image: url('/assets/bg8.jpg');
   }
   72.8% {
-    background-image: url('/assets/bg9.jpg');
-  }
-  81.9% {
     background-image: url('/assets/bg10.jpg');
   }
-  91.0% {
+  81.9% {
     background-image: url('/assets/bg11.jpg');
   }
-  100% {
+  /* 91.0% {
     background-image: url('/assets/bg12.jpg');
+  } */
+  100% {
+    background-image: url('/Picture1.jpg');
   }
 }
 
