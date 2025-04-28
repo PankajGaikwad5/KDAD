@@ -14,7 +14,7 @@ export async function POST(req) {
 
   // Set up email options
   const mailOptions = {
-    from: email, // sender's email
+    from: `Karandesai.in Contact Form ${email}`, // sender's email
     to: `${process.env.REMAIL}, ${process.env.SECONDEMAIL}`, // recipient's email
     subject: 'Contact Form Submission',
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
