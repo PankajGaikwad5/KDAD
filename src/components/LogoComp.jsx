@@ -25,7 +25,7 @@ const LogoComp = () => {
         <div className='flex space-x-20 animate-marquee'>
           <div className='flex-shrink-0 flex space-x-20'>
             <Image
-              src='/features/hello-india.png'
+              src='/features/hello-india2.png'
               alt='hello india'
               width={120}
               height={120}
@@ -60,14 +60,14 @@ const LogoComp = () => {
               className='object-contain'
             />{' '}
             <Image
-              src='/features/india-today.png'
+              src='/features/india-today3.png'
               alt='Logo 2'
               width={120}
               height={120}
               className='object-contain'
             />
             <Image
-              src='/features/better-interiors.png'
+              src='/features/better-interiors2.png'
               alt='Logo 2'
               width={120}
               height={120}
@@ -104,7 +104,7 @@ const LogoComp = () => {
           </div>
           <div className='flex-shrink-0 flex space-x-20'>
             <Image
-              src='/features/hello-india.png'
+              src='/features/hello-india2.png'
               alt='hello india'
               width={120}
               height={120}
