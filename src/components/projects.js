@@ -535,6 +535,125 @@ export const projects = [
           $oid: '6791fe227a5dc4ac2d27e257',
         },
       },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/86/3.jpg',
+        _id: {
+          $oid: '6791fe227a5dc4ac2d27e257',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/86/4.jpg',
+        _id: {
+          $oid: '6791fe227a5dc4ac2d27e257',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/86/5.jpg',
+        _id: {
+          $oid: '6791fe227a5dc4ac2d27e257',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/86/6.jpg',
+        _id: {
+          $oid: '6791fe227a5dc4ac2d27e257',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/86/9.jpg',
+        _id: {
+          $oid: '6791fe227a5dc4ac2d27e257',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/86/11.jpg',
+        _id: {
+          $oid: '6791fe227a5dc4ac2d27e257',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/86/13.jpg',
+        _id: {
+          $oid: '6791fe227a5dc4ac2d27e257',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/86/15.jpg',
+        _id: {
+          $oid: '6791fe227a5dc4ac2d27e257',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/86/16.jpg',
+        _id: {
+          $oid: '6791fe227a5dc4ac2d27e257',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/86/17.jpg',
+        _id: {
+          $oid: '6791fe227a5dc4ac2d27e257',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/86/18.jpg',
+        _id: {
+          $oid: '6791fe227a5dc4ac2d27e257',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/86/19.jpg',
+        _id: {
+          $oid: '6791fe227a5dc4ac2d27e257',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/86/20.jpg',
+        _id: {
+          $oid: '6791fe227a5dc4ac2d27e257',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/86/21.jpg',
+        _id: {
+          $oid: '6791fe227a5dc4ac2d27e257',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/86/22.jpg',
+        _id: {
+          $oid: '6791fe227a5dc4ac2d27e257',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/86/23.jpg',
+        _id: {
+          $oid: '6791fe227a5dc4ac2d27e257',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/86/24.jpg',
+        _id: {
+          $oid: '6791fe227a5dc4ac2d27e257',
+        },
+      },
     ],
     __v: 0,
   },
@@ -607,6 +726,90 @@ export const projects = [
       {
         fileName: 'new8.jpg',
         fileUrl: '/partypad/10.jpg',
+        _id: {
+          $oid: '6791fe767a5dc4ac2d27e262',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/partypad/1.jpg',
+        _id: {
+          $oid: '6791fe767a5dc4ac2d27e262',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/partypad/3.jpg',
+        _id: {
+          $oid: '6791fe767a5dc4ac2d27e262',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/partypad/5.jpg',
+        _id: {
+          $oid: '6791fe767a5dc4ac2d27e262',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/partypad/6.jpg',
+        _id: {
+          $oid: '6791fe767a5dc4ac2d27e262',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/partypad/11.jpg',
+        _id: {
+          $oid: '6791fe767a5dc4ac2d27e262',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/partypad/12.jpg',
+        _id: {
+          $oid: '6791fe767a5dc4ac2d27e262',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/partypad/13.jpg',
+        _id: {
+          $oid: '6791fe767a5dc4ac2d27e262',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/partypad/14.jpg',
+        _id: {
+          $oid: '6791fe767a5dc4ac2d27e262',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/partypad/15.jpg',
+        _id: {
+          $oid: '6791fe767a5dc4ac2d27e262',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/partypad/17.jpg',
+        _id: {
+          $oid: '6791fe767a5dc4ac2d27e262',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/partypad/22.png',
+        _id: {
+          $oid: '6791fe767a5dc4ac2d27e262',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/partypad/23.png',
         _id: {
           $oid: '6791fe767a5dc4ac2d27e262',
         },
@@ -687,6 +890,160 @@ export const projects = [
           $oid: '6791fef67a5dc4ac2d27e26d',
         },
       },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/kiahmoi/1.webp',
+        _id: {
+          $oid: '6791fef67a5dc4ac2d27e26d',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/kiahmoi/2.webp',
+        _id: {
+          $oid: '6791fef67a5dc4ac2d27e26d',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/kiahmoi/3.webp',
+        _id: {
+          $oid: '6791fef67a5dc4ac2d27e26d',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/kiahmoi/4.webp',
+        _id: {
+          $oid: '6791fef67a5dc4ac2d27e26d',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/kiahmoi/5.webp',
+        _id: {
+          $oid: '6791fef67a5dc4ac2d27e26d',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/kiahmoi/6.webp',
+        _id: {
+          $oid: '6791fef67a5dc4ac2d27e26d',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/kiahmoi/8.webp',
+        _id: {
+          $oid: '6791fef67a5dc4ac2d27e26d',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/kiahmoi/9.webp',
+        _id: {
+          $oid: '6791fef67a5dc4ac2d27e26d',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/kiahmoi/10.webp',
+        _id: {
+          $oid: '6791fef67a5dc4ac2d27e26d',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/kiahmoi/11.webp',
+        _id: {
+          $oid: '6791fef67a5dc4ac2d27e26d',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/kiahmoi/13.webp',
+        _id: {
+          $oid: '6791fef67a5dc4ac2d27e26d',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/kiahmoi/17.webp',
+        _id: {
+          $oid: '6791fef67a5dc4ac2d27e26d',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/kiahmoi/18.webp',
+        _id: {
+          $oid: '6791fef67a5dc4ac2d27e26d',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/kiahmoi/19.webp',
+        _id: {
+          $oid: '6791fef67a5dc4ac2d27e26d',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/kiahmoi/22.webp',
+        _id: {
+          $oid: '6791fef67a5dc4ac2d27e26d',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/kiahmoi/24.webp',
+        _id: {
+          $oid: '6791fef67a5dc4ac2d27e26d',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/kiahmoi/25.webp',
+        _id: {
+          $oid: '6791fef67a5dc4ac2d27e26d',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/kiahmoi/26.webp',
+        _id: {
+          $oid: '6791fef67a5dc4ac2d27e26d',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/kiahmoi/27.webp',
+        _id: {
+          $oid: '6791fef67a5dc4ac2d27e26d',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/kiahmoi/28.webp',
+        _id: {
+          $oid: '6791fef67a5dc4ac2d27e26d',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/kiahmoi/29.webp',
+        _id: {
+          $oid: '6791fef67a5dc4ac2d27e26d',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/kiahmoi/30.webp',
+        _id: {
+          $oid: '6791fef67a5dc4ac2d27e26d',
+        },
+      },
     ],
     __v: 0,
   },
@@ -759,6 +1116,48 @@ export const projects = [
       {
         fileName: 'new8.jpg',
         fileUrl: '/project101/10.jpg',
+        _id: {
+          $oid: '6791ff417a5dc4ac2d27e278',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/101/1.webp',
+        _id: {
+          $oid: '6791ff417a5dc4ac2d27e278',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/101/2.webp',
+        _id: {
+          $oid: '6791ff417a5dc4ac2d27e278',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/101/3.webp',
+        _id: {
+          $oid: '6791ff417a5dc4ac2d27e278',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/101/6.webp',
+        _id: {
+          $oid: '6791ff417a5dc4ac2d27e278',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/101/12.webp',
+        _id: {
+          $oid: '6791ff417a5dc4ac2d27e278',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/101/14.webp',
         _id: {
           $oid: '6791ff417a5dc4ac2d27e278',
         },
@@ -839,6 +1238,41 @@ export const projects = [
           $oid: '6791ff907a5dc4ac2d27e283',
         },
       },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/agrafort/3.webp',
+        _id: {
+          $oid: '6791ff907a5dc4ac2d27e283',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/agrafort/4.webp',
+        _id: {
+          $oid: '6791ff907a5dc4ac2d27e283',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/agrafort/8.webp',
+        _id: {
+          $oid: '6791ff907a5dc4ac2d27e283',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/agrafort/10.webp',
+        _id: {
+          $oid: '6791ff907a5dc4ac2d27e283',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/agrafort/13.webp',
+        _id: {
+          $oid: '6791ff907a5dc4ac2d27e283',
+        },
+      },
     ],
     __v: 0,
   },
@@ -915,6 +1349,20 @@ export const projects = [
           $oid: '6791ffd37a5dc4ac2d27e28e',
         },
       },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/redfort/4.webp',
+        _id: {
+          $oid: '6791ffd37a5dc4ac2d27e28e',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/redfort/5.webp',
+        _id: {
+          $oid: '6791ffd37a5dc4ac2d27e28e',
+        },
+      },
     ],
     __v: 0,
   },
@@ -987,6 +1435,55 @@ export const projects = [
       {
         fileName: 'new8.jpg',
         fileUrl: '/project704/10.jpg',
+        _id: {
+          $oid: '6792000c7a5dc4ac2d27e299',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/704/2.webp',
+        _id: {
+          $oid: '6792000c7a5dc4ac2d27e299',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/704/3.webp',
+        _id: {
+          $oid: '6792000c7a5dc4ac2d27e299',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/704/5.webp',
+        _id: {
+          $oid: '6792000c7a5dc4ac2d27e299',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/704/6.webp',
+        _id: {
+          $oid: '6792000c7a5dc4ac2d27e299',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/704/8.webp',
+        _id: {
+          $oid: '6792000c7a5dc4ac2d27e299',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/704/13.webp',
+        _id: {
+          $oid: '6792000c7a5dc4ac2d27e299',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/704/15.webp',
         _id: {
           $oid: '6792000c7a5dc4ac2d27e299',
         },
