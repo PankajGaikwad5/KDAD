@@ -70,11 +70,11 @@ const MediaRenderer = ({ url, alt }) => {
 const CarouselComp = ({ imgArray, notcollab }) => {
   const [thumbsSwiper, setThumbsSwiper] = React.useState(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const carouselRef = React.useRef(null);
 
   // detect if video
   const isVideo = (url) => /\.(mp4|webm|ogg)$/i.test(url);
-  // console.log(isVideo);
 
   // Fullscreen toggle handler
   const toggleFullscreen = () => {
@@ -145,6 +145,11 @@ const CarouselComp = ({ imgArray, notcollab }) => {
         )}
       </button>
 
+      {/* Slide Counter */}
+      <div className='absolute top-4 left-4 md:left-auto md:right-16 z-10 bg-black/60 text-white px-3 py-1 rounded-full text-sm font-medium select-none'>
+        {currentIndex + 1} / {imgArray.length}
+      </div>
+
       {/* Main Carousel */}
       <Swiper
         lazy={'true'}
@@ -159,31 +164,12 @@ const CarouselComp = ({ imgArray, notcollab }) => {
         pagination={{ clickable: true }}
         zoom={true}
         keyboard={{ enabled: true, onlyInViewport: true }}
+        onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
+        onSwiper={(swiper) => setCurrentIndex(swiper.realIndex)}
       >
         {imgArray.map((img, index) => (
           <SwiperSlide key={index}>
             <div className='w-full h-full swiper-zoom-container flex items-center justify-center'>
-              {/* <img
-                src={img}
-                alt={`Slide ${index}`}
-                loading='lazy'
-                className='max-w-full max-h-full object-contain'
-              /> */}
-
-              {/* {isVideo(img) ? (
-                <video
-                  src={img}
-                  controls
-                  className='max-w-full max-h-full object-contain'
-                />
-              ) : (
-                <img
-                  src={img}
-                  alt={`Slider ${index}`}
-                  loading='lazy'
-                  className='max-w-full max-h-full object-contain'
-                />
-              )} */}
               <MediaRenderer url={img} alt={`Slide ${index}`} />
             </div>
           </SwiperSlide>
@@ -191,7 +177,6 @@ const CarouselComp = ({ imgArray, notcollab }) => {
       </Swiper>
 
       {/* Thumbnail Navigation */}
-      {/* Thumbnail Navigation - Positioned above main carousel */}
       {notcollab && (
         <div
           className={` bottom-4 left-0 right-0 z-20 px-4  ${
@@ -213,12 +198,6 @@ const CarouselComp = ({ imgArray, notcollab }) => {
               <SwiperSlide key={index}>
                 <div
                   className={`
-                  ${
-                    // isFullscreen
-                    //   ? 'h-16 w-16 p-1 bg-white/10 backdrop-blur-sm rounded-lg'
-                    //   : 'h-20 md:h-24'
-                    ''
-                  }
                  flex items-center h-20 md:h-24  justify-center cursor-pointer transition-all`}
                 >
                   <img

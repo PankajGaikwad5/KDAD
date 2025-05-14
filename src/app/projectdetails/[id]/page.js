@@ -15,37 +15,7 @@ const montserrat = Montserrat({
   weight: ['400', '600', '700'], // Specify weight
 });
 
-// const getFeatureById = async (id) => {
-//   try {
-//     const res = await fetch(`${process.env.BASE_URL}/api/projects/${id}`, {
-//       cache: 'no-store',
-//     });
-
-//     if (!res.ok) {
-//       throw new Error('Failed to fetch feature');
-//     }
-
-//     return await res.json();
-//   } catch (error) {
-//     console.error('Error fetching feature:', error);
-//     return null;
-//   }
-// };
-
 const FeatureDetails = async ({ params }) => {
-  // const { id } = params;
-  // const featureData = await getFeatureById(id);
-
-  // if (!featureData) {
-  //   return (
-  //     <div className='flex items-center justify-center h-screen'>
-  //       <p className='text-red-500 text-lg'>Failed to load feature details.</p>
-  //     </div>
-  //   );
-  // }
-
-  // const { projects } = featureData;
-  // const { title, images } = projects;
   const { id } = await params;
 
   // Find the feature by _id
@@ -95,18 +65,6 @@ const FeatureDetails = async ({ params }) => {
             </p>
           )}
         </div>
-        {/* <div className='flex justify-center pb-4 items-center'>
-          <div className='w-full max-w-3xl text-white text-start p-4 '>
-            <p className={`${popins.className}`}>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-              neque ut excepturi iusto aspernatur dicta tempore optio, iste ab,
-              necessitatibus id quisquam fugit, repudiandae esse velit in.
-              Libero, velit. Architecto, quod libero. Dignissimos quis facilis
-              accusantium tempore quibusdam laboriosam fuga, vitae totam alias,
-              omnis, quisquam neque harum? Consequatur, perspiciatis iste.
-            </p>
-          </div>
-        </div> */}
       </div>
     </div>
   );

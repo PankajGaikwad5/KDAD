@@ -18,7 +18,7 @@ import {
 import { Input } from '../../components/ui/input';
 import { Textarea } from '../../components/ui/textarea';
 import { FaWhatsapp, FaPhone } from 'react-icons/fa';
-import { Poppins, Montserrat } from 'next/font/google';
+import { Poppins, Montserrat, Work_Sans } from 'next/font/google';
 
 // popins
 // montserrat
@@ -29,6 +29,11 @@ const popins = Poppins({
 const montserrat = Montserrat({
   subsets: ['latin'], // Specify subsets
   weight: ['400', '600', '700'], // Specify weight
+});
+
+const worksans = Work_Sans({
+  subsets: ['latin'],
+  weight: ['400'],
 });
 
 const formSchema = z.object({
@@ -164,7 +169,7 @@ const Contact = () => {
             <div className='flex flex-wrap items-center gap-8 text-center '>
               <a
                 href='mailto:info@karandesai.in'
-                className={`flex flex-col underline pt-2 text-xl md:text-xs ${popins.className} font-extralight`}
+                className={`flex flex-col underline pt-2 text-xl md:text-xs ${worksans.className} font-extralight`}
               >
                 info@karandesai.in
               </a>
@@ -175,7 +180,7 @@ const Contact = () => {
 
             <div className='flex flex-col sm:flex-row gap-4 sm:gap-12 items-start sm:items-center pb-4 text-start sm:text-left'>
               <p
-                className={`flex flex-col ${popins.className} text-sm md:text-xs font-light`}
+                className={`flex flex-col ${worksans.className} text-sm md:text-xs font-light`}
               >
                 <a
                   href='https://maps.app.goo.gl/LDt3TN9yLwB5n6yg7'
@@ -211,7 +216,7 @@ const Contact = () => {
             </div>
 
             <div
-              className={`flex flex-col gap-4 sm:flex-row sm:gap-6 font-light  sm:text-left  ${popins.className} tracking-widest`}
+              className={`flex flex-col gap-4 sm:flex-row sm:gap-6 font-light  sm:text-left  ${worksans.className} tracking-widest`}
             >
               <p className='text-green-400'>
                 We are not a normal team of architects and interior designers,
