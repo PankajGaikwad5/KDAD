@@ -3,22 +3,19 @@ import CarouselComp from '../../../components/CarouselComp';
 import { ChevronLeft } from 'lucide-react';
 import { Poppins, Montserrat } from 'next/font/google';
 import { projects } from '../../../components/projects';
+import ClickOutsideWrapper from '../../../components/ClickOutsideWrapper'; // Adjust path as needed
 
-// popins
-// montserrat
 const popins = Poppins({
-  subsets: ['latin'], // Specify subsets
-  weight: ['400', '600', '700'], // Specify weight
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
 });
 const montserrat = Montserrat({
-  subsets: ['latin'], // Specify subsets
-  weight: ['400', '600', '700'], // Specify weight
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
 });
 
 const FeatureDetails = async ({ params }) => {
   const { id } = await params;
-
-  // Find the feature by _id
   const projectData = projects.find((project) => project._id.$oid === id);
 
   if (!projectData) {
@@ -34,14 +31,8 @@ const FeatureDetails = async ({ params }) => {
   return (
     <div>
       <div className='project-bg fixed w-full h-full m-0 p-0 z-0 opacity-25 blur-md'></div>
-      <div className='relative text-center '>
-        {/* <h1
-        className={`text-3xl text-center tracking-wider border-b border-zinc-800 text-white  mt-6 font-semibold uppercase ${montserrat.className}`}
-      >
-        {title}
-      </h1> */}
-        {/* Back Button */}
-        <div className='absolute left-3 top-3'>
+      <div className='relative text-center'>
+        <div className='absolute left-3 top-3 z-10'>
           <a href='/projects'>
             <ChevronLeft
               className='text-white'
@@ -52,8 +43,7 @@ const FeatureDetails = async ({ params }) => {
           </a>
         </div>
 
-        {/* Carousel */}
-        <div className='h-screen  flex items-center justify-center'>
+        <ClickOutsideWrapper>
           {images && images.length > 0 ? (
             <CarouselComp
               imgArray={images.map((image) => image.fileUrl)}
@@ -64,7 +54,7 @@ const FeatureDetails = async ({ params }) => {
               No images available for this feature.
             </p>
           )}
-        </div>
+        </ClickOutsideWrapper>
       </div>
     </div>
   );
