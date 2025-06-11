@@ -105,21 +105,21 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
             );
           })}
           <li className='border-t border-dotted pt-4'>
-            <Link
+            <a
               href='https://www.shukhabarwithkd.com/'
               target='_blank'
               className='hover:text-gray-600 transition-all duration-300'
             >
               shukhabar
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
+            <a
               href='https://karandesaihome.com/'
               className='hover:text-gray-600 transition-all duration-300'
             >
               karan desai home
-            </Link>
+            </a>
           </li>
         </ul>
       </ul>
@@ -162,7 +162,7 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
           })}
           <span className='border-t border-dotted pt-2 mt-1 w-40'></span>
           <li className=''>
-            <Link
+            <a
               href='https://www.shukhabarwithkd.com/'
               target='_blank'
               className={`transition-all duration-300 hover:text-lg ${
@@ -170,17 +170,18 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
               } w-full inline-block whitespace-nowrap overflow-hidden text-animate`}
             >
               shukhabar
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
+            <a
               href='https://karandesaihome.com/'
+              target='_blank'
               className={`transition-all duration-300 hover:text-lg ${
                 isBgBlack ? 'hover:text-white' : 'hover:text-gray-400'
               } w-full inline-block whitespace-nowrap overflow-hidden text-animate`}
             >
               karan desai home
-            </Link>
+            </a>
           </li>
         </ul>
       </div>
