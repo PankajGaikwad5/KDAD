@@ -3,6 +3,7 @@ import Image from 'next/image';
 import React from 'react';
 import { useState } from 'react';
 import { Poppins, Montserrat } from 'next/font/google';
+import Link from 'next/link';
 
 // popins
 // montserrat
@@ -84,41 +85,41 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
         }
       >
         <ul className={`flex flex-col gap-2 `}>
-          <a
+          <Link
             href='/'
             className={`hover:text-gray-600 transition-all duration-300`}
           >
             home
-          </a>
+          </Link>
           {newNavTopics.map((items) => {
             const { id, name, path } = items;
             return (
               <li key={id}>
-                <a
+                <Link
                   href={path}
                   className='hover:text-gray-600 transition-all duration-300 '
                 >
                   {name}
-                </a>
+                </Link>
               </li>
             );
           })}
           <li className='border-t border-dotted pt-4'>
-            <a
+            <Link
               href='https://www.shukhabarwithkd.com/'
               target='_blank'
               className='hover:text-gray-600 transition-all duration-300'
             >
               shukhabar
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href='https://karandesaihome.com/'
               className='hover:text-gray-600 transition-all duration-300'
             >
               karan desai home
-            </a>
+            </Link>
           </li>
         </ul>
       </ul>
@@ -129,7 +130,7 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
           isBgBlack ? 'text-white hover:text-opacity-50' : 'text-gray-800'
         }`}
       >
-        <a href='/'>
+        <Link href='/'>
           <Image
             src='/assets/signlogo.png'
             alt='Logo'
@@ -139,7 +140,7 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
             
             '
           />
-        </a>
+        </Link>
 
         <ul
           className={`flex flex-col ${montserrat.className} font-semibold tracking-widest `}
@@ -148,20 +149,20 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
             const { id, name, path } = items;
             return (
               <li key={id}>
-                <a
+                <Link
                   href={path}
                   className={`transition-all duration-300 hover:text-lg ${
                     isBgBlack ? 'hover:text-white' : 'hover:text-gray-400'
                   } w-full inline-block whitespace-nowrap overflow-hidden text-animate`}
                 >
                   {name}
-                </a>
+                </Link>
               </li>
             );
           })}
           <span className='border-t border-dotted pt-2 mt-1 w-40'></span>
           <li className=''>
-            <a
+            <Link
               href='https://www.shukhabarwithkd.com/'
               target='_blank'
               className={`transition-all duration-300 hover:text-lg ${
@@ -169,17 +170,17 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
               } w-full inline-block whitespace-nowrap overflow-hidden text-animate`}
             >
               shukhabar
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href='https://karandesaihome.com/'
               className={`transition-all duration-300 hover:text-lg ${
                 isBgBlack ? 'hover:text-white' : 'hover:text-gray-400'
               } w-full inline-block whitespace-nowrap overflow-hidden text-animate`}
             >
               karan desai home
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

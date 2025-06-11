@@ -1,5 +1,6 @@
 import React from 'react';
 import { Poppins, Montserrat } from 'next/font/google';
+import Link from 'next/link';
 
 // popins
 // montserrat
@@ -31,20 +32,20 @@ const Footer = ({ home }) => {
             </a>
           </li>
           <li>
-            <a
+            <Link
               href='/projects'
               className='hover:text-white hover:text-lg transition-all duration-300'
             >
               latest project
-            </a>
+            </Link>
           </li>
         </ul>
-        <a
+        <Link
           href='contact us'
           className='hover:text-white hover:text-lg transition-all duration-300'
         >
           contact us
-        </a>
+        </Link>
       </div>
     </div>
   );
