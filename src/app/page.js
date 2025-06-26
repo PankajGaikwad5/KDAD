@@ -4,39 +4,59 @@ import Navbar from '../components/Navbar';
 import LogoComp from '../components/LogoComp';
 import { useState, useEffect, useRef } from 'react';
 
-const IMAGES = [
+// Define separate image sets
+const IMAGES_DESKTOP = [
   '/Picture1.jpg',
   '/tdpextras/6.jpg',
-  // '/tdpextras/31.jpg',
   '/project86/3.jpg',
   '/extras/agrafort/8.webp',
   '/extras/redfort/5.webp',
   '/bluehouse/3.jpg',
 ];
 
+const IMAGES_MOBILE = [
+  '/partypad/3.jpg',
+  '/partypad/8.jpg',
+  '/kiahmoi/7.jpg',
+  '/tdpextras/21.jpg',
+];
+
 export default function Home() {
   const [gifKey, setGifKey] = useState('');
   const [logoLoaded, setLogoLoaded] = useState(false);
   const [currentBg, setCurrentBg] = useState(0);
+  const [images, setImages] = useState(IMAGES_DESKTOP);
   const bgInterval = useRef();
 
   useEffect(() => {
-    // GIF cache-bust
-    setGifKey(`?reload=${Date.now()}`);
+    // Detect screen size and choose image set
+    const isMobile = () => window.innerWidth <= 768;
 
-    // after 3.5s, reveal your logo/video
+    const updateImages = () => {
+      setImages(isMobile() ? IMAGES_MOBILE : IMAGES_DESKTOP);
+    };
+
+    updateImages(); // run on first load
+    window.addEventListener('resize', updateImages);
+
+    return () => {
+      window.removeEventListener('resize', updateImages);
+    };
+  }, []);
+
+  useEffect(() => {
+    setGifKey(`?reload=${Date.now()}`);
     const logoTimer = setTimeout(() => setLogoLoaded(true), 3500);
 
-    // start cycling backgrounds immediately
     bgInterval.current = setInterval(() => {
-      setCurrentBg((i) => (i + 1) % IMAGES.length);
+      setCurrentBg((i) => (i + 1) % images.length);
     }, 3500);
 
     return () => {
       clearTimeout(logoTimer);
       clearInterval(bgInterval.current);
     };
-  }, []);
+  }, [images]); // restart animation if image set changes
 
   return (
     <div className='bg-black/90'>
@@ -50,8 +70,8 @@ export default function Home() {
       <div className='relative w-full h-screen overflow-hidden m-0 p-0'>
         <Navbar isBgBlack={true} isHomePage={true} />
 
-        {/* stacked backgrounds with dark overlay until `logoLoaded` */}
-        {IMAGES.map((src, idx) => {
+        {/* Background image stack */}
+        {images.map((src, idx) => {
           const isActive = idx === currentBg;
           const baseOpacity = isActive
             ? logoLoaded
@@ -72,6 +92,7 @@ export default function Home() {
           );
         })}
 
+        {/* Logo animation */}
         <div className='relative z-10 font-semibold text-center top-1/2 -mt-28 lg:-mt-8 -translate-y-1/2 text-3xl sm:text-8xl text-white tracking-widest flex flex-col justify-center items-center mb-0'>
           <img
             src={`/assets/sign.gif${gifKey}`}
@@ -82,6 +103,7 @@ export default function Home() {
           />
         </div>
 
+        {/* Footer and LogoComp */}
         <div className='w-full fixed left-[50%] bottom-[2%] translate-x-[-50%] flex items-center text-black px-4 overflow-hidden z-10 m-0'>
           <LogoComp />
           <Footer home={true} />
