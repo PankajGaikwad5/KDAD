@@ -176,6 +176,17 @@ body {
   }
 }
 
+.animate-bg {
+  animation: mobile-bgChange 15s infinite;
+}
+
+/* Animation for screens larger than sm (≥ 640px) */
+@media (min-width: 640px) {
+  .animate-bg {
+    animation: bgChange 40s infinite;
+  }
+}
+
 /* .stock-ticker {
   
 } */
@@ -255,16 +266,7 @@ body {
   animation-iteration-count: infinite;
 }
 
-.animate-bg {
-  animation: mobile-bgChange 15s infinite;
-}
 
-/* Animation for screens larger than sm (≥ 640px) */
-@media (min-width: 640px) {
-  .animate-bg {
-    animation: bgChange 40s infinite;
-  }
-}
 
 /* .animate-bg {
   animation: bgChange 15s infinite;
