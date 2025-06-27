@@ -1,57 +1,52 @@
 'use client';
 
-import React, { useEffect, useState, useCallback, useRef, memo } from 'react';
-import dynamic from 'next/dynamic';
+import React, { useEffect, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import {
+  Navigation,
+  Thumbs,
+  Pagination,
+  A11y,
+  Zoom,
+  Keyboard,
+} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 import 'swiper/css/zoom';
 import 'swiper/css/pagination';
-import 'swiper/css/virtual';
 
-// Dynamically import Swiper modules to reduce initial JS
-const SwiperCore = dynamic(
-  () =>
-    import('swiper').then((mod) => {
-      mod.Virtual.use([
-        mod.Navigation,
-        mod.Thumbs,
-        mod.Pagination,
-        mod.Zoom,
-        mod.Keyboard,
-      ]);
-      return mod;
-    }),
-  { ssr: false }
-);
-const Swiper = dynamic(() => import('swiper/react').then((mod) => mod.Swiper), {
-  ssr: false,
-});
-const SwiperSlide = dynamic(
-  () => import('swiper/react').then((mod) => mod.SwiperSlide),
-  { ssr: false }
-);
-const Image = dynamic(() => import('next/image'), { ssr: false });
+const MediaRenderer = ({ url, alt }) => {
+  const [mediaType, setMediaType] = useState(() => {
+    // Check based on file extension first.
+    if (/\.(mp4|webm|ogg)$/i.test(url)) return 'video';
+    if (/\.(jpe?g|png|gif|bmp|svg)$/i.test(url)) return 'image';
+    return 'unknown';
+  });
 
-// Static image renderer optimized for Next.js
-const ImageRenderer = ({ url, alt, priority }) => (
-  <Image
-    src={url}
-    alt={alt}
-    fill
-    sizes='(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 50vw'
-    quality={75}
-    placeholder='blur'
-    blurDataURL='/placeholder-blur.png'
-    priority={priority}
-    style={{ objectFit: 'contain' }}
-  />
-);
+  useEffect(() => {
+    if (mediaType === 'unknown') {
+      // Attempt a HEAD request to determine the content type.
+      fetch(url, { method: 'HEAD' })
+        .then((response) => {
+          const contentType = response.headers.get('content-type');
+          if (contentType && contentType.includes('video')) {
+            setMediaType('video');
+          } else if (contentType && contentType.includes('image')) {
+            setMediaType('image');
+          } else {
+            // Fallback: assume image if we're not sure.
+            setMediaType('image');
+          }
+        })
+        .catch(() => {
+          // If the HEAD request fails, fallback to image.
+          setMediaType('image');
+        });
+    }
+  }, [url, mediaType]);
 
-// Memoized media renderer
-const MediaRenderer = memo(({ url, alt, priority }) => {
-  // Video if extension indicates; skip HEAD for images
-  if (/\.(mp4|webm|ogg)$/i.test(url)) {
+  if (mediaType === 'video') {
     return (
       <video
         src={url}
@@ -60,149 +55,169 @@ const MediaRenderer = memo(({ url, alt, priority }) => {
       />
     );
   }
-  return <ImageRenderer url={url} alt={alt} priority={priority} />;
-});
 
-const CarouselComp = ({ imgArray = [], notcollab = false }) => {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  // Default to image.
+  return (
+    <img
+      src={url}
+      alt={alt}
+      loading='lazy'
+      className='max-w-full max-h-full object-contain'
+    />
+  );
+};
+
+const CarouselComp = ({ imgArray, notcollab }) => {
+  const [thumbsSwiper, setThumbsSwiper] = React.useState(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const carouselRef = useRef(null);
+  const carouselRef = React.useRef(null);
 
-  const onSlideChange = useCallback(
-    (swiper) => setCurrentIndex(swiper.realIndex),
-    []
-  );
-  const onSwiperInit = useCallback(
-    (swiper) => setCurrentIndex(swiper.realIndex),
-    []
-  );
+  // detect if video
+  const isVideo = (url) => /\.(mp4|webm|ogg)$/i.test(url);
 
+  // Fullscreen toggle handler
   const toggleFullscreen = () => {
     if (!document.fullscreenElement) {
-      carouselRef.current.requestFullscreen?.();
+      carouselRef.current.requestFullscreen?.().catch((err) => {
+        console.error(`Error attempting to enable fullscreen: ${err.message}`);
+      });
     } else {
       document.exitFullscreen?.();
     }
   };
 
+  // Fullscreen change listener
   useEffect(() => {
-    const onFull = () => setIsFullscreen(!!document.fullscreenElement);
-    document.addEventListener('fullscreenchange', onFull);
-    return () => document.removeEventListener('fullscreenchange', onFull);
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
   }, []);
 
   return (
     <div
-      className={`${
-        isFullscreen ? 'w-screen h-screen' : 'w-screen max-w-screen-lg m-0 p-0'
+      className={`relative ${
+        isFullscreen
+          ? 'w-screen h-screen'
+          : 'w-screen max-w-screen-lg 2xl:max-w-none m-0 p-0'
       }`}
       ref={carouselRef}
     >
+      {/* Fullscreen Button */}
       <button
         onClick={toggleFullscreen}
         className='absolute top-4 right-4 z-10 p-2 bg-black/50 rounded-full hover:bg-black/75 transition-colors'
         aria-label={isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}
       >
-        {/* SVG icons */}
+        {isFullscreen ? (
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            className='h-6 w-6 text-white'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke='currentColor'
+          >
+            <path
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              strokeWidth={2}
+              d='M6 18L18 6M6 6l12 12'
+            />
+          </svg>
+        ) : (
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            className='h-6 w-6 text-white'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke='currentColor'
+          >
+            <path
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              strokeWidth={2}
+              d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'
+            />
+          </svg>
+        )}
       </button>
 
+      {/* Slide Counter */}
       <div className='absolute top-4 left-4 md:left-auto md:right-16 z-10 bg-black/60 text-white px-3 py-1 rounded-full text-sm font-medium select-none'>
         {currentIndex + 1} / {imgArray.length}
       </div>
 
+      {/* Main Carousel */}
       <Swiper
-        ref={carouselRef}
-        modules={[
-          Navigation,
-          Thumbs,
-          Pagination,
-          A11y,
-          Zoom,
-          Keyboard,
-          Virtual,
-        ]}
-        virtual
-        lazy={{
-          enabled: true,
-          loadPrevNext: true,
-          loadPrevNextAmount: 1,
-          loadOnTransitionStart: true,
-        }}
-        preloadImages={false}
+        lazy={'true'}
+        modules={[Navigation, Thumbs, Pagination, A11y, Zoom, Keyboard]}
         navigation
         thumbs={{ swiper: thumbsSwiper }}
         spaceBetween={10}
         slidesPerView={1}
-        zoom
-        keyboard={{ enabled: true, onlyInViewport: true }}
+        className={`w-full ${
+          isFullscreen ? 'h-[100vh]' : 'h-[60vh] md:h-[70vh]'
+        }`}
         pagination={{ clickable: true }}
-        onSlideChange={onSlideChange}
-        onSwiper={onSwiperInit}
-        className={`${isFullscreen ? 'h-[100vh]' : 'h-[60vh] md:h-[70vh]'}`}
+        zoom={true}
+        keyboard={{ enabled: true, onlyInViewport: true }}
+        onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
+        onSwiper={(swiper) => setCurrentIndex(swiper.realIndex)}
       >
-        {imgArray.map((url, idx) => (
-          <SwiperSlide key={idx} virtualIndex={idx}>
+        {imgArray.map((img, index) => (
+          <SwiperSlide key={index}>
             <div className='w-full h-full swiper-zoom-container flex items-center justify-center'>
-              <MediaRenderer
-                url={url}
-                alt={`Slide ${idx}`}
-                priority={idx === 0}
-              />
+              <MediaRenderer url={img} alt={`Slide ${index}`} />
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
 
+      {/* Thumbnail Navigation */}
       {notcollab && (
-        <ClientOnly>
-          <div
-            className={`${
-              isFullscreen ? 'hidden' : 'mt-2 sm:mt-4'
-            } bottom-4 left-0 right-0 z-20 px-4`}
+        <div
+          className={` bottom-4 left-0 right-0 z-20 px-4  ${
+            isFullscreen
+              ? ' hidden opacity-75 hover:opacity-100 transition-opacity '
+              : ' mt-2 sm:mt-4'
+          }`}
+        >
+          <Swiper
+            modules={[Thumbs]}
+            onSwiper={setThumbsSwiper}
+            spaceBetween={isFullscreen ? 8 : 10}
+            slidesPerView={isFullscreen ? 8 : 5}
+            className='thumbnail-swiper'
+            lazy={'true'}
+            watchSlidesProgress
           >
-            <Swiper
-              modules={[Thumbs, Virtual]}
-              virtual
-              onSwiper={setThumbsSwiper}
-              spaceBetween={isFullscreen ? 8 : 10}
-              slidesPerView={isFullscreen ? 8 : 5}
-              watchSlidesProgress
-              freeMode
-              className='thumbnail-swiper'
-            >
-              {imgArray.map((url, idx) => (
-                <SwiperSlide key={idx} virtualIndex={idx}>
-                  <div className='flex items-center h-20 md:h-24 justify-center cursor-pointer transition-all'>
-                    <ImageRenderer
-                      url={url}
-                      alt={`Thumbnail ${idx}`}
-                      priority={idx === 0}
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </ClientOnly>
+            {imgArray.map((img, index) => (
+              <SwiperSlide key={index}>
+                <div
+                  className={`
+                 flex items-center h-20 md:h-24  justify-center cursor-pointer transition-all`}
+                >
+                  <img
+                    src={img}
+                    alt={`Thumbnail ${index}`}
+                    className={`w-full h-full object-cover rounded ${
+                      isFullscreen ? 'border-2 border-white/20' : ''
+                    }`}
+                    loading='lazy'
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       )}
-
-      <style jsx global>{`
-        .swiper-slide,
-        .swiper-zoom-container {
-          backface-visibility: hidden;
-          will-change: transform, opacity;
-        }
-      `}</style>
     </div>
   );
 };
 
 export default CarouselComp;
-
-// ClientOnly wrapper to defer non-critical UI
-function ClientOnly({ children }) {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-  return mounted ? children : null;
-}
