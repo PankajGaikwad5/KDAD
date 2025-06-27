@@ -13,7 +13,7 @@ const ClickOutsideWrapper = ({ children, carouselElement }) => {
   return (
     <div
       onClick={handleClick}
-      className='h-screen flex items-center justify-center '
+      className='w-full h-screen flex items-center justify-center '
     >
       <div onClick={(e) => e.stopPropagation()}>{children}</div>
     </div>

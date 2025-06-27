@@ -102,7 +102,9 @@ const CarouselComp = ({ imgArray, notcollab }) => {
   return (
     <div
       className={`relative ${
-        isFullscreen ? 'w-screen h-screen' : 'w-full max-w-screen-lg m-0 p-0'
+        isFullscreen
+          ? 'w-screen h-screen'
+          : 'w-screen max-w-screen-lg 2xl:max-w-none m-0 p-0'
       }`}
       ref={carouselRef}
     >

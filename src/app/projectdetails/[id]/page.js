@@ -31,7 +31,7 @@ const FeatureDetails = async ({ params }) => {
   return (
     <div>
       <div className='project-bg fixed w-full h-full m-0 p-0 z-0 opacity-25 blur-md'></div>
-      <div className='relative text-center'>
+      <div className='relative text-center w-full'>
         <div className='absolute left-3 top-3 z-10'>
           <a href='/projects'>
             <ChevronLeft
