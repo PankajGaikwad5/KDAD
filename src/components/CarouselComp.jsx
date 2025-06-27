@@ -62,7 +62,7 @@ const MediaRenderer = ({ url, alt }) => {
       src={url}
       alt={alt}
       loading='lazy'
-      className='max-w-full max-h-full object-contain'
+      className='max-w-full max-h-full object-contain select-none'
     />
   );
 };
