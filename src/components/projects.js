@@ -1254,6 +1254,13 @@ export const projects = [
       },
       {
         fileName: 'new8.jpg',
+        fileUrl: '/extras/agrafort/13.webp',
+        _id: {
+          $oid: '6791ff907a5dc4ac2d27e283',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
         fileUrl: '/extras/agrafort/3.webp',
         _id: {
           $oid: '6791ff907a5dc4ac2d27e283',
@@ -1276,13 +1283,6 @@ export const projects = [
       {
         fileName: 'new8.jpg',
         fileUrl: '/extras/agrafort/10.webp',
-        _id: {
-          $oid: '6791ff907a5dc4ac2d27e283',
-        },
-      },
-      {
-        fileName: 'new8.jpg',
-        fileUrl: '/extras/agrafort/13.webp',
         _id: {
           $oid: '6791ff907a5dc4ac2d27e283',
         },
@@ -1315,6 +1315,28 @@ export const projects = [
         },
       },
       {
+        fileName: 'new7.jpg',
+        fileUrl: '/redfort/9.jpg',
+        _id: {
+          $oid: '6791ffd37a5dc4ac2d27e28d',
+        },
+      },
+      {
+        fileName: 'new5.jpg',
+        fileUrl: '/redfort/7.jpg',
+        _id: {
+          $oid: '6791ffd37a5dc4ac2d27e28b',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/redfort/10.jpg',
+        _id: {
+          $oid: '6791ffd37a5dc4ac2d27e28e',
+        },
+      },
+
+      {
         fileName: 'new2.jpg',
         fileUrl: '/redfort/4.jpg',
         _id: {
@@ -1335,13 +1357,7 @@ export const projects = [
           $oid: '6791ffd37a5dc4ac2d27e28a',
         },
       },
-      {
-        fileName: 'new5.jpg',
-        fileUrl: '/redfort/7.jpg',
-        _id: {
-          $oid: '6791ffd37a5dc4ac2d27e28b',
-        },
-      },
+
       {
         fileName: 'new6.jpg',
         fileUrl: '/redfort/8.jpg',
@@ -1349,20 +1365,7 @@ export const projects = [
           $oid: '6791ffd37a5dc4ac2d27e28c',
         },
       },
-      {
-        fileName: 'new7.jpg',
-        fileUrl: '/redfort/9.jpg',
-        _id: {
-          $oid: '6791ffd37a5dc4ac2d27e28d',
-        },
-      },
-      {
-        fileName: 'new8.jpg',
-        fileUrl: '/redfort/10.jpg',
-        _id: {
-          $oid: '6791ffd37a5dc4ac2d27e28e',
-        },
-      },
+
       {
         fileName: 'new8.jpg',
         fileUrl: '/extras/redfort/4.webp',
