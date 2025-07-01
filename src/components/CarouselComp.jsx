@@ -20,9 +20,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/virtual';
 import 'swiper/css/free-mode';
 
-// Optimized MediaRenderer with memoization
-const MediaRenderer = React.memo(({ url, alt }) => {
-  // Simplified media type detection using file extensions
+const MediaRenderer = React.memo(({ url, alt, onLoad, priority = false }) => {
   const isVideo = /\.(mp4|webm|ogg)$/i.test(url);
 
   return isVideo ? (
@@ -32,14 +30,16 @@ const MediaRenderer = React.memo(({ url, alt }) => {
       className='max-w-full max-h-full object-contain'
       playsInline
       preload='metadata'
+      onLoadedData={onLoad}
     />
   ) : (
     <img
       src={url}
       alt={alt}
-      loading='lazy'
+      loading={priority ? 'eager' : 'lazy'}
       className='max-w-full max-h-full object-contain select-none'
       decoding='async'
+      onLoad={onLoad}
     />
   );
 });
@@ -49,9 +49,19 @@ const CarouselComp = ({ imgArray, notcollab }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [imageLoading, setImageLoading] = useState(true);
   const carouselRef = React.useRef(null);
 
-  // Fullscreen toggle handler
+  useEffect(() => {
+    if (imgArray?.length) {
+      setImageLoading(false);
+    }
+  }, [imgArray]);
+
+  const handleSlideChange = useCallback((swiper) => {
+    setCurrentIndex(swiper.realIndex);
+  }, []);
+
   const toggleFullscreen = useCallback(() => {
     if (!document.fullscreenElement) {
       carouselRef.current?.requestFullscreen?.().catch(console.error);
@@ -60,7 +70,6 @@ const CarouselComp = ({ imgArray, notcollab }) => {
     }
   }, []);
 
-  // Fullscreen change listener
   useEffect(() => {
     const handleFullscreenChange = () => {
       setIsFullscreen(!!document.fullscreenElement);
@@ -72,9 +81,8 @@ const CarouselComp = ({ imgArray, notcollab }) => {
     };
   }, []);
 
-  // Optimized thumbnail rendering
   const renderThumbnails = useCallback(() => {
-    if (!notcollab) return null;
+    if (!notcollab || !imgArray?.length) return null;
 
     return (
       <div
@@ -83,31 +91,29 @@ const CarouselComp = ({ imgArray, notcollab }) => {
         }`}
       >
         <Swiper
-          modules={[Thumbs, Virtual, FreeMode]}
+          modules={[Thumbs, FreeMode, Virtual]}
           onSwiper={setThumbsSwiper}
           spaceBetween={isFullscreen ? 8 : 10}
           slidesPerView={isFullscreen ? 8 : 5}
           className='thumbnail-swiper'
-          watchSlidesProgress
-          virtual
+          watchSlidesProgress={false}
+          virtual={{
+            enabled: true,
+            slides: imgArray,
+          }}
           freeMode={{
             enabled: true,
-            momentum: true,
+            momentum: false,
             momentumBounce: false,
-            minimumVelocity: 0.1,
           }}
           breakpoints={{
-            640: {
-              slidesPerView: 6,
-            },
-            1024: {
-              slidesPerView: isFullscreen ? 10 : 8,
-            },
+            640: { slidesPerView: 6 },
+            1024: { slidesPerView: isFullscreen ? 10 : 8 },
           }}
         >
           {imgArray.map((img, index) => (
             <SwiperSlide key={index} virtualIndex={index}>
-              <div className='flex items-center h-20 md:h-24 justify-center cursor-pointer'>
+              <div className='flex items-center h-16 md:h-20 justify-center cursor-pointer'>
                 <img
                   src={img}
                   alt={`Thumbnail ${index}`}
@@ -127,6 +133,14 @@ const CarouselComp = ({ imgArray, notcollab }) => {
     );
   }, [notcollab, isFullscreen, imgArray, currentIndex]);
 
+  if (!imgArray?.length) {
+    return (
+      <div className='w-full h-[60vh] flex items-center justify-center'>
+        <p>No images available</p>
+      </div>
+    );
+  }
+
   return (
     <div
       className={`relative ${
@@ -136,7 +150,15 @@ const CarouselComp = ({ imgArray, notcollab }) => {
       }`}
       ref={carouselRef}
     >
-      {/* Fullscreen Button */}
+      {imageLoading && (
+        <div className='absolute inset-0 flex items-center justify-center z-30 bg-black/50'>
+          <div className='flex flex-col items-center gap-4'>
+            <div className='animate-spin rounded-full h-8 w-8 border-b-2 border-white'></div>
+            <p className='text-sm text-gray-400'>Loading...</p>
+          </div>
+        </div>
+      )}
+
       <button
         onClick={toggleFullscreen}
         className='absolute top-4 right-4 z-10 p-2 bg-black/50 rounded-full hover:bg-black/75 transition-colors'
@@ -175,22 +197,12 @@ const CarouselComp = ({ imgArray, notcollab }) => {
         )}
       </button>
 
-      {/* Slide Counter */}
       <div className='absolute top-4 left-4 md:left-auto md:right-16 z-10 bg-black/60 text-white px-3 py-1 rounded-full text-sm font-medium select-none'>
         {currentIndex + 1} / {imgArray.length}
       </div>
 
-      {/* Main Carousel */}
       <Swiper
-        modules={[
-          Navigation,
-          Thumbs,
-          Pagination,
-          A11y,
-          Zoom,
-          Keyboard,
-          Virtual,
-        ]}
+        modules={[Navigation, Thumbs, Pagination, A11y, Zoom, Keyboard]}
         navigation
         thumbs={{ swiper: thumbsSwiper }}
         spaceBetween={10}
@@ -211,21 +223,26 @@ const CarouselComp = ({ imgArray, notcollab }) => {
           enabled: true,
           onlyInViewport: true,
         }}
-        onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
+        onSlideChange={handleSlideChange}
         onSwiper={(swiper) => setCurrentIndex(swiper.realIndex)}
-        speed={500}
-        virtual
+        speed={200}
+        lazy={'true'}
+        watchSlidesProgress={false}
+        allowTouchMove={true}
       >
         {imgArray.map((img, index) => (
-          <SwiperSlide key={index} virtualIndex={index}>
+          <SwiperSlide key={index}>
             <div className='w-full h-full swiper-zoom-container flex items-center justify-center'>
-              <MediaRenderer url={img} alt={`Slide ${index}`} />
+              <MediaRenderer
+                url={img}
+                alt={`Slide ${index}`}
+                priority={index === 0}
+              />
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
 
-      {/* Thumbnail Navigation */}
       {renderThumbnails()}
     </div>
   );

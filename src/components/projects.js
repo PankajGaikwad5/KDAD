@@ -6,453 +6,462 @@ export const projects = [
     title: 'the dream project',
     images: [
       {
-        fileName: '1.jpg',
+        fileName: '1312',
         fileUrl: '/tdp/1.jpg',
         _id: {
           $oid: '6791f5807a5dc4ac2d27e20f',
         },
       },
       {
-        fileName: 'new',
+        fileName: '2123',
         fileUrl: '/tdp/2.png',
         _id: '123',
       },
       {
-        fileName: 'new1.jpg',
+        fileName: '1',
+        fileUrl: '/tdpextras/1.jpg',
+        _id: {
+          $oid: '3',
+        },
+      },
+
+      {
+        fileName: '2',
         fileUrl: '/tdp/3.jpg',
         _id: {
           $oid: '6791f5807a5dc4ac2d27e210',
         },
       },
       {
-        fileName: 'new2.jpg',
-        fileUrl: '/tdp/4.jpg',
+        fileName: '3',
+        fileUrl: '/tdpextras/38.jpg',
         _id: {
-          $oid: '6791f5807a5dc4ac2d27e211',
+          $oid: '13',
         },
       },
       {
-        fileName: 'new3.jpg',
+        fileName: '4',
         fileUrl: '/tdp/5.jpg',
         _id: {
           $oid: '6791f5807a5dc4ac2d27e212',
         },
       },
       {
-        fileName: 'new4.jpg',
-        fileUrl: '/tdp/6.jpg',
-        _id: {
-          $oid: '6791f5807a5dc4ac2d27e213',
-        },
-      },
-      {
-        fileName: 'new5.jpg',
-        fileUrl: '/tdp/7.jpg',
-        _id: {
-          $oid: '6791f5807a5dc4ac2d27e214',
-        },
-      },
-      {
-        fileName: 'new6.jpg',
-        fileUrl: '/tdp/8.jpg',
-        _id: {
-          $oid: '6791f5807a5dc4ac2d27e215',
-        },
-      },
-      {
-        fileName: 'new7.jpg',
-        fileUrl: '/tdp/9.jpg',
-        _id: {
-          $oid: '6791f5807a5dc4ac2d27e216',
-        },
-      },
-      {
-        fileName: 'new7.jpg',
-        fileUrl: '/tdpextras/1.jpg',
-        _id: {
-          $oid: '3',
-        },
-      },
-      {
-        fileName: 'new7.jpg',
+        fileName: '5',
         fileUrl: '/tdpextras/3.jpg',
         _id: {
-          $oid: '13',
-        },
-      },
-      {
-        fileName: 'new7.jpg',
-        fileUrl: '/tdpextras/5.jpg',
-        _id: {
-          $oid: '323',
-        },
-      },
-      {
-        fileName: 'new7.jpg',
-        fileUrl: '/tdpextras/6.jpg',
-        _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
-        fileUrl: '/tdpextras/8.jpg',
-        _id: {
-          $oid: '3',
-        },
-      },
-      {
-        fileName: 'new7.jpg',
+        fileName: '6',
         fileUrl: '/tdpextras/9.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
-        fileUrl: '/tdpextras/10.jpg',
+        fileName: '7',
+        fileUrl: '/tdpextras/8.jpg',
+        _id: {
+          $oid: '3',
+        },
+      },
+
+      {
+        fileName: '8',
+        fileUrl: '/tdp/4.jpg',
+        _id: {
+          $oid: '6791f5807a5dc4ac2d27e211',
+        },
+      },
+
+      {
+        fileName: '9',
+        fileUrl: '/tdpextras/5.jpg',
+        _id: {
+          $oid: '323',
+        },
+      },
+      {
+        fileName: '10',
+        fileUrl: '/tdpextras/6.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
-        fileUrl: '/tdpextras/12.jpg',
-        _id: {
-          $oid: '3',
-        },
-      },
-      {
-        fileName: 'new7.jpg',
+        fileName: '11',
         fileUrl: '/tdpextras/13.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '12',
         fileUrl: '/tdpextras/14.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
-        fileUrl: '/tdpextras/15.jpg',
+        fileName: '13',
+        fileUrl: '/tdp/6.jpg',
         _id: {
-          $oid: '3',
+          $oid: '6791f5807a5dc4ac2d27e213',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '14',
         fileUrl: '/tdpextras/16.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '15',
         fileUrl: '/tdpextras/17.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '16',
         fileUrl: '/tdpextras/18.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '17',
+        fileUrl: '/tdp/9.jpg',
+        _id: {
+          $oid: '6791f5807a5dc4ac2d27e216',
+        },
+      },
+
+      // {
+      //   fileName: 'new7.jpg',
+      //   fileUrl: '/tdpextras/10.jpg',
+      //   _id: {
+      //     $oid: '3',
+      //   },
+      // },
+      {
+        fileName: '18',
+        fileUrl: '/tdpextras/12.jpg',
+        _id: {
+          $oid: '3',
+        },
+      },
+
+      // {
+      //   fileName: 'new7.jpg',
+      //   fileUrl: '/tdpextras/15.jpg',
+      //   _id: {
+      //     $oid: '3',
+      //   },
+      // },
+
+      {
+        fileName: '19',
         fileUrl: '/tdpextras/20.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '20',
         fileUrl: '/tdpextras/21.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '21',
         fileUrl: '/tdpextras/22.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '22',
         fileUrl: '/tdpextras/24.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '23',
         fileUrl: '/tdpextras/25.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '24',
         fileUrl: '/tdpextras/26.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
-        fileUrl: '/tdpextras/28.jpg',
-        _id: {
-          $oid: '3',
-        },
-      },
-      {
-        fileName: 'new7.jpg',
-        fileUrl: '/tdpextras/29.jpg',
-        _id: {
-          $oid: '3',
-        },
-      },
-      {
-        fileName: 'new7.jpg',
-        fileUrl: '/tdpextras/31.jpg',
-        _id: {
-          $oid: '3',
-        },
-      },
-      {
-        fileName: 'new7.jpg',
-        fileUrl: '/tdpextras/32.jpg',
-        _id: {
-          $oid: '3',
-        },
-      },
-      {
-        fileName: 'new7.jpg',
-        fileUrl: '/tdpextras/33.jpg',
-        _id: {
-          $oid: '3',
-        },
-      },
-      {
-        fileName: 'new7.jpg',
+        fileName: '25',
         fileUrl: '/tdpextras/34.jpg',
         _id: {
           $oid: '3',
         },
       },
+      // {
+      //   fileName: 'new7.jpg',
+      //   fileUrl: '/tdpextras/35.jpg',
+      //   _id: {
+      //     $oid: '3',
+      //   },
+      // },
       {
-        fileName: 'new7.jpg',
-        fileUrl: '/tdpextras/35.jpg',
-        _id: {
-          $oid: '3',
-        },
-      },
-      {
-        fileName: 'new7.jpg',
+        fileName: '26',
         fileUrl: '/tdpextras/36.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '27',
         fileUrl: '/tdpextras/37.jpg',
         _id: {
           $oid: '3',
         },
       },
+
       {
-        fileName: 'new7.jpg',
-        fileUrl: '/tdpextras/38.jpg',
+        fileName: '28',
+        fileUrl: '/tdp/7.jpg',
+        _id: {
+          $oid: '6791f5807a5dc4ac2d27e214',
+        },
+      },
+
+      {
+        fileName: '29',
+        fileUrl: '/tdpextras/28.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '30',
+        fileUrl: '/tdpextras/29.jpg',
+        _id: {
+          $oid: '3',
+        },
+      },
+      {
+        fileName: '31',
+        fileUrl: '/tdpextras/31.jpg',
+        _id: {
+          $oid: '3',
+        },
+      },
+      {
+        fileName: '33',
+        fileUrl: '/tdpextras/32.jpg',
+        _id: {
+          $oid: '3',
+        },
+      },
+      // {
+      //   fileName: 'new7.jpg',
+      //   fileUrl: '/tdpextras/33.jpg',
+      //   _id: {
+      //     $oid: '3',
+      //   },
+      // },
+
+      {
+        fileName: '34',
         fileUrl: '/tdpextras/39.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '35',
         fileUrl: '/tdpextras/40.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '36',
         fileUrl: '/tdpextras/41.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '37',
         fileUrl: '/tdpextras/42.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '38',
         fileUrl: '/tdpextras/43.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '39',
+        fileUrl: '/tdp/8.jpg',
+        _id: {
+          $oid: '6791f5807a5dc4ac2d27e215',
+        },
+      },
+      {
+        fileName: '40',
         fileUrl: '/tdpextras/44.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '41',
         fileUrl: '/tdpextras/45.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '42',
         fileUrl: '/tdpextras/46.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '43',
         fileUrl: '/tdpextras/47.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '44',
         fileUrl: '/tdpextras/48.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '45',
         fileUrl: '/tdpextras/49.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '46',
         fileUrl: '/tdpextras/50.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '47',
         fileUrl: '/tdpextras/51.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '48',
         fileUrl: '/tdpextras/52.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '49',
         fileUrl: '/tdpextras/53.jpg',
         _id: {
           $oid: '3',
         },
       },
+      // {
+      //   fileName: 'new7.jpg',
+      //   fileUrl: '/tdpextras/54.jpg',
+      //   _id: {
+      //     $oid: '3',
+      //   },
+      // },
       {
-        fileName: 'new7.jpg',
-        fileUrl: '/tdpextras/54.jpg',
-        _id: {
-          $oid: '3',
-        },
-      },
-      {
-        fileName: 'new7.jpg',
+        fileName: '50',
         fileUrl: '/tdpextras/55.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '51',
         fileUrl: '/tdpextras/56.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '52',
         fileUrl: '/tdpextras/59.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '53',
         fileUrl: '/tdpextras/60.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '54',
         fileUrl: '/tdpextras/61.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '55',
         fileUrl: '/tdpextras/62.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '56',
         fileUrl: '/tdpextras/63.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '57',
         fileUrl: '/tdpextras/64.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '58',
         fileUrl: '/tdpextras/65.jpg',
         _id: {
           $oid: '3',
         },
       },
       {
-        fileName: 'new7.jpg',
+        fileName: '59',
         fileUrl: '/tdpextras/66.jpg',
         _id: {
           $oid: '3',
