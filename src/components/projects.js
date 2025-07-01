@@ -503,19 +503,35 @@ export const projects = [
         },
       },
       {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/86/3.jpg',
+        _id: {
+          $oid: '6791fe227a5dc4ac2d27e257',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/project86/10.jpg',
+        _id: {
+          $oid: '6791fe227a5dc4ac2d27e257',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/86/6.jpg',
+        _id: {
+          $oid: '6791fe227a5dc4ac2d27e257',
+        },
+      },
+
+      {
         fileName: 'new3.jpg',
         fileUrl: '/project86/5.jpg',
         _id: {
           $oid: '6791fe227a5dc4ac2d27e252',
         },
       },
-      {
-        fileName: 'new4.jpg',
-        fileUrl: '/project86/6.jpg',
-        _id: {
-          $oid: '6791fe227a5dc4ac2d27e253',
-        },
-      },
+
       {
         fileName: 'new5.jpg',
         fileUrl: '/project86/7.jpg',
@@ -531,24 +547,24 @@ export const projects = [
         },
       },
       {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/86/9.jpg',
+        _id: {
+          $oid: '6791fe227a5dc4ac2d27e257',
+        },
+      },
+      {
+        fileName: 'new4.jpg',
+        fileUrl: '/project86/6.jpg',
+        _id: {
+          $oid: '6791fe227a5dc4ac2d27e253',
+        },
+      },
+      {
         fileName: 'new7.jpg',
         fileUrl: '/project86/9.jpg',
         _id: {
           $oid: '6791fe227a5dc4ac2d27e256',
-        },
-      },
-      {
-        fileName: 'new8.jpg',
-        fileUrl: '/project86/10.jpg',
-        _id: {
-          $oid: '6791fe227a5dc4ac2d27e257',
-        },
-      },
-      {
-        fileName: 'new8.jpg',
-        fileUrl: '/extras/86/3.jpg',
-        _id: {
-          $oid: '6791fe227a5dc4ac2d27e257',
         },
       },
       {
@@ -565,20 +581,7 @@ export const projects = [
           $oid: '6791fe227a5dc4ac2d27e257',
         },
       },
-      {
-        fileName: 'new8.jpg',
-        fileUrl: '/extras/86/6.jpg',
-        _id: {
-          $oid: '6791fe227a5dc4ac2d27e257',
-        },
-      },
-      {
-        fileName: 'new8.jpg',
-        fileUrl: '/extras/86/9.jpg',
-        _id: {
-          $oid: '6791fe227a5dc4ac2d27e257',
-        },
-      },
+
       {
         fileName: 'new8.jpg',
         fileUrl: '/extras/86/11.jpg',
@@ -691,31 +694,10 @@ export const projects = [
         },
       },
       {
-        fileName: 'new2.png',
-        fileUrl: '/partypad/4.jpg',
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/partypad/17.jpg',
         _id: {
-          $oid: '6791fe767a5dc4ac2d27e25c',
-        },
-      },
-      {
-        fileName: 'new3.png',
-        fileUrl: '/partypad/5.jpg',
-        _id: {
-          $oid: '6791fe767a5dc4ac2d27e25d',
-        },
-      },
-      {
-        fileName: 'new4.jpg',
-        fileUrl: '/partypad/6.jpg',
-        _id: {
-          $oid: '6791fe767a5dc4ac2d27e25e',
-        },
-      },
-      {
-        fileName: 'new5.jpg',
-        fileUrl: '/partypad/7.jpg',
-        _id: {
-          $oid: '6791fe767a5dc4ac2d27e25f',
+          $oid: '6791fe767a5dc4ac2d27e262',
         },
       },
       {
@@ -726,22 +708,15 @@ export const projects = [
         },
       },
       {
-        fileName: 'new7.png',
-        fileUrl: '/partypad/9.jpg',
-        _id: {
-          $oid: '6791fe767a5dc4ac2d27e261',
-        },
-      },
-      {
         fileName: 'new8.jpg',
-        fileUrl: '/partypad/10.jpg',
+        fileUrl: '/extras/partypad/11.jpg',
         _id: {
           $oid: '6791fe767a5dc4ac2d27e262',
         },
       },
       {
         fileName: 'new8.jpg',
-        fileUrl: '/extras/partypad/1.jpg',
+        fileUrl: '/extras/partypad/22.png',
         _id: {
           $oid: '6791fe767a5dc4ac2d27e262',
         },
@@ -760,20 +735,7 @@ export const projects = [
           $oid: '6791fe767a5dc4ac2d27e262',
         },
       },
-      {
-        fileName: 'new8.jpg',
-        fileUrl: '/extras/partypad/6.jpg',
-        _id: {
-          $oid: '6791fe767a5dc4ac2d27e262',
-        },
-      },
-      {
-        fileName: 'new8.jpg',
-        fileUrl: '/extras/partypad/11.jpg',
-        _id: {
-          $oid: '6791fe767a5dc4ac2d27e262',
-        },
-      },
+
       {
         fileName: 'new8.jpg',
         fileUrl: '/extras/partypad/12.jpg',
@@ -781,6 +743,67 @@ export const projects = [
           $oid: '6791fe767a5dc4ac2d27e262',
         },
       },
+      {
+        fileName: 'new4.jpg',
+        fileUrl: '/partypad/6.jpg',
+        _id: {
+          $oid: '6791fe767a5dc4ac2d27e25e',
+        },
+      },
+      {
+        fileName: 'new2.png',
+        fileUrl: '/partypad/4.jpg',
+        _id: {
+          $oid: '6791fe767a5dc4ac2d27e25c',
+        },
+      },
+
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/partypad/10.jpg',
+        _id: {
+          $oid: '6791fe767a5dc4ac2d27e262',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/partypad/6.jpg',
+        _id: {
+          $oid: '6791fe767a5dc4ac2d27e262',
+        },
+      },
+
+      {
+        fileName: 'new3.png',
+        fileUrl: '/partypad/5.jpg',
+        _id: {
+          $oid: '6791fe767a5dc4ac2d27e25d',
+        },
+      },
+      {
+        fileName: 'new5.jpg',
+        fileUrl: '/partypad/7.jpg',
+        _id: {
+          $oid: '6791fe767a5dc4ac2d27e25f',
+        },
+      },
+
+      {
+        fileName: 'new7.png',
+        fileUrl: '/partypad/9.jpg',
+        _id: {
+          $oid: '6791fe767a5dc4ac2d27e261',
+        },
+      },
+
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/partypad/1.jpg',
+        _id: {
+          $oid: '6791fe767a5dc4ac2d27e262',
+        },
+      },
+
       {
         fileName: 'new8.jpg',
         fileUrl: '/extras/partypad/13.jpg',
@@ -802,20 +825,7 @@ export const projects = [
           $oid: '6791fe767a5dc4ac2d27e262',
         },
       },
-      {
-        fileName: 'new8.jpg',
-        fileUrl: '/extras/partypad/17.jpg',
-        _id: {
-          $oid: '6791fe767a5dc4ac2d27e262',
-        },
-      },
-      {
-        fileName: 'new8.jpg',
-        fileUrl: '/extras/partypad/22.png',
-        _id: {
-          $oid: '6791fe767a5dc4ac2d27e262',
-        },
-      },
+
       {
         fileName: 'new8.jpg',
         fileUrl: '/extras/partypad/23.png',
