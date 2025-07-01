@@ -1090,11 +1090,12 @@ export const projects = [
           $oid: '6791ff417a5dc4ac2d27e271',
         },
       },
+
       {
-        fileName: 'new2.jpg',
-        fileUrl: '/project101/4.jpg',
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/101/6.webp',
         _id: {
-          $oid: '6791ff417a5dc4ac2d27e272',
+          $oid: '6791ff417a5dc4ac2d27e278',
         },
       },
       {
@@ -1119,10 +1120,38 @@ export const projects = [
         },
       },
       {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/101/1.webp',
+        _id: {
+          $oid: '6791ff417a5dc4ac2d27e278',
+        },
+      },
+      // {
+      //   fileName: 'new8.jpg',
+      //   fileUrl: '/extras/101/2.webp',
+      //   _id: {
+      //     $oid: '6791ff417a5dc4ac2d27e278',
+      //   },
+      // },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/101/3.webp',
+        _id: {
+          $oid: '6791ff417a5dc4ac2d27e278',
+        },
+      },
+      {
         fileName: 'new6.jpg',
         fileUrl: '/project101/8.jpg',
         _id: {
           $oid: '6791ff417a5dc4ac2d27e276',
+        },
+      },
+      {
+        fileName: 'new8.jpg',
+        fileUrl: '/extras/101/12.webp',
+        _id: {
+          $oid: '6791ff417a5dc4ac2d27e278',
         },
       },
       {
@@ -1139,48 +1168,14 @@ export const projects = [
           $oid: '6791ff417a5dc4ac2d27e278',
         },
       },
-      {
-        fileName: 'new8.jpg',
-        fileUrl: '/extras/101/1.webp',
-        _id: {
-          $oid: '6791ff417a5dc4ac2d27e278',
-        },
-      },
-      {
-        fileName: 'new8.jpg',
-        fileUrl: '/extras/101/2.webp',
-        _id: {
-          $oid: '6791ff417a5dc4ac2d27e278',
-        },
-      },
-      {
-        fileName: 'new8.jpg',
-        fileUrl: '/extras/101/3.webp',
-        _id: {
-          $oid: '6791ff417a5dc4ac2d27e278',
-        },
-      },
-      {
-        fileName: 'new8.jpg',
-        fileUrl: '/extras/101/6.webp',
-        _id: {
-          $oid: '6791ff417a5dc4ac2d27e278',
-        },
-      },
-      {
-        fileName: 'new8.jpg',
-        fileUrl: '/extras/101/12.webp',
-        _id: {
-          $oid: '6791ff417a5dc4ac2d27e278',
-        },
-      },
-      {
-        fileName: 'new8.jpg',
-        fileUrl: '/extras/101/14.webp',
-        _id: {
-          $oid: '6791ff417a5dc4ac2d27e278',
-        },
-      },
+
+      // {
+      //   fileName: 'new8.jpg',
+      //   fileUrl: '/extras/101/14.webp',
+      //   _id: {
+      //     $oid: '6791ff417a5dc4ac2d27e278',
+      //   },
+      // },
     ],
     __v: 0,
   },
