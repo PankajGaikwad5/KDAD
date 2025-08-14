@@ -115,12 +115,12 @@ const Collaborations = () => {
                         className='object-cover aspect-square'
                       />
                     </a>
-                    <div className='p-3 text-center'>
+                    {/* <div className='p-3 text-center'>
                       <h2 className='text-sm text-gray-200 font-medium tracking-wide'>
                         in picture:{' '}
                         <span className='text-pink-400'>{item.people}</span>
                       </h2>
-                    </div>
+                    </div> */}
                   </div>
                 ))}
               </div>
@@ -146,12 +146,12 @@ const Collaborations = () => {
                         className='object-cover aspect-square'
                       />
                     </a>
-                    <div className='p-3 text-center'>
+                    {/* <div className='p-3 text-center'>
                       <h2 className='text-sm text-gray-200 font-medium tracking-wide'>
                         in picture:{' '}
                         <span className='text-pink-400'>{item.people}</span>
                       </h2>
-                    </div>
+                    </div> */}
                   </div>
                 ))}
               </div>
@@ -177,12 +177,12 @@ const Collaborations = () => {
                         className='object-cover aspect-square'
                       />
                     </a>
-                    <div className='p-3 text-center'>
+                    {/* <div className='p-3 text-center'>
                       <h2 className='text-sm text-gray-200 font-medium tracking-wide'>
                         in picture:{' '}
                         <span className='text-pink-400'>{item.people}</span>
                       </h2>
-                    </div>
+                    </div> */}
                   </div>
                 ))}
               </div>
