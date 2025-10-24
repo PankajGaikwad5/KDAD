@@ -23,12 +23,6 @@ const bebasNueRegular = Bebas_Neue({
   weight: '400', // Specify weight
   variable: '--font-bebas-nue', // Custom CSS variable
 });
-
-// export const metadata = {
-//   title: 'KDAD',
-//   description: 'Website for Karan Desai Architecture and Design (KDAD)',
-// };
-
 export const metadata = {
   title: 'KDAD | Karan Desai Architecture and Design',
   description: `Discover the innovative architectural designs of Karan Desai Home. Karan Desai Award Winning Architecture + Interior Design Studio | TedX
@@ -108,16 +102,6 @@ export const metadata = {
     'architects do what',
     'home architects',
     'make architecture',
-    'playing store app',
-    'google play gift card',
-    'redeem google play code',
-    'google play store console developer',
-    'google play card gift card',
-    'console playstore',
-    'google play gift certificate',
-    'google app store gift card',
-    'console google play store',
-    'google play store dev console',
     'home to design',
     'luxury interior design',
     'interior design website',
@@ -185,10 +169,6 @@ export const metadata = {
     'karan desai architecture design',
     'mumbai design',
     'architecture inc',
-    'lab in a lab',
-    'lab in lab',
-    'lab to lab',
-    'lab re',
     'diagnostic centre in',
     'kitchen furniture',
     'kitchen sets',
