@@ -16,11 +16,11 @@ const montserrat = Montserrat({
 const LogoComp = () => {
   return (
     <div className=' w-full justify-center items-center flex flex-col'>
-      <h1
+      <h2
         className={`text-xl md:text-2xl tracking-widest text-white -mb-10 line-clamp-5 ${montserrat.className} uppercase font-extrabold`}
       >
         exclusive features
-      </h1>
+      </h2>
       <div className='overflow-hidden w-full'>
         <div className='flex space-x-20 animate-marquee'>
           <div className='flex-shrink-0 flex space-x-20'>
