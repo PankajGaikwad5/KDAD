@@ -95,7 +95,7 @@ export default function Home() {
         {/* Logo animation */}
         <div className='relative z-10 font-semibold text-center top-1/2 -mt-28 lg:-mt-8 -translate-y-1/2 text-3xl sm:text-8xl text-white tracking-widest flex flex-col justify-center items-center mb-0'>
           <img
-            src={`/assets/sign.gif${gifKey}`}
+            src={`/assets/optimizedsign.gif${gifKey}`}
             className={`${
               !logoLoaded ? 'opacity-100' : 'opacity-50'
             } transition-opacity duration-700`}
