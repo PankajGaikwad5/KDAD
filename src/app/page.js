@@ -6,19 +6,19 @@ import { useState, useEffect, useRef } from 'react';
 
 // Define separate image sets
 const IMAGES_DESKTOP = [
-  '/Picture1.jpg',
-  '/tdpextras/6.jpg',
-  '/project86/3.jpg',
-  '/extras/agrafort/8.webp',
-  '/extras/redfort/5.webp',
-  '/bluehouse/3.jpg',
+  '/Picture1.webp',
+  '/desktopbg/tdpextras6.webp',
+  '/desktopbg/project86_3.webp',
+  '/desktopbg/extrasagrafort8.webp',
+  '/desktopbg/extrasredfort5.webp',
+  '/desktopbg/bluehouse3.webp',
 ];
 
 const IMAGES_MOBILE = [
-  '/partypad/3.jpg',
-  '/partypad/8.jpg',
-  '/kiahmoi/7.jpg',
-  '/tdpextras/21.jpg',
+  '/mobilebg/partypad3.webp',
+  '/mobilebg/partypad8.webp',
+  '/mobilebg/kiahmoi7.webp',
+  '/mobilebg/tdpextras21.webp',
 ];
 
 export default function Home() {
