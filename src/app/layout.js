@@ -237,23 +237,23 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <Head>
-        {/* External script */}
-        <Script
+      <head>
+        <script
           src='https://seo-fixer.writesonic.com/site-audit/fixer-script/index.js'
           id='wsAiSeoMb'
-          strategy='afterInteractive'
+          type='application/javascript'
         />
-
-        {/* Inline config script */}
-        <Script id='wsAiSeoInitScript' strategy='afterInteractive'>
-          {`
-            wsSEOfixer.configure({
-              hostURL: 'https://seo-fixer.writesonic.com',
-              siteID: '68fc86a19dc7d2449c142b76'
-            });
-          `}
-        </Script>
+        <script
+          id='wsAiSeoInitScript'
+          dangerouslySetInnerHTML={{
+            __html: `
+              wsSEOfixer.configure({
+                hostURL: 'https://seo-fixer.writesonic.com',
+                siteID: '68fc86a19dc7d2449c142b76'
+              });
+            `,
+          }}
+        />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta
           name='description'
@@ -327,7 +327,23 @@ export default function RootLayout({ children }) {
           name='twitter:description'
           content='Discover the innovative architectural designs of Karan Desai Home.'
         />
-      </Head>
+      </head>
+      <script
+        src='https://seo-fixer.writesonic.com/site-audit/fixer-script/index.js'
+        id='wsAiSeoMb'
+        type='application/javascript'
+      />
+      <script
+        id='wsAiSeoInitScript'
+        dangerouslySetInnerHTML={{
+          __html: `
+              wsSEOfixer.configure({
+                hostURL: 'https://seo-fixer.writesonic.com',
+                siteID: '68fc86a19dc7d2449c142b76'
+              });
+            `,
+        }}
+      />
       <body className={`${bebasNueRegular.variable}  antialiased`}>
         {/* Meta Pixel Script */}
         <Script id='meta-pixel' strategy='afterInteractive'>
