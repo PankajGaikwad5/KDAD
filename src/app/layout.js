@@ -34,6 +34,9 @@ export const metadata = {
           Ar. Ashiesh Shah during a year drop in 2007, carved a path for his
           career with a clear direction towards his goals & dreams which he
           lives today.`,
+  alternates: {
+    canonical: 'https://karandesai.in',
+  },
   keywords: [
     'KDAD',
     'Karan Desai',
