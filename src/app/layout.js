@@ -316,13 +316,13 @@ export default function RootLayout({ children }) {
           currently working on 15,000 sq.ft Mansion in Washington, D.C."
         />
         <meta property='og:type' content='website' />
-        <meta property='og:url' content='https://karandesaihome.com' />
-        <meta
-          property='og:image'
-          content='https://karandesaihome.com/og-image.jpg'
-        />
+        <meta property='og:url' content='https://karandesai.in' />
+        <meta property='og:image' content='/assets/signlogo.png' />
         <meta name='twitter:card' content='summary_large_image' />
-        <meta name='twitter:title' content='Karan Desai Home' />
+        <meta
+          name='twitter:title'
+          content='Karan Desai Architecture + Design'
+        />
         <meta
           name='twitter:description'
           content='Discover the innovative architectural designs of Karan Desai Home.'
