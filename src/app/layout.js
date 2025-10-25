@@ -238,6 +238,22 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <Head>
+        {/* External script */}
+        <Script
+          src='https://seo-fixer.writesonic.com/site-audit/fixer-script/index.js'
+          id='wsAiSeoMb'
+          strategy='afterInteractive'
+        />
+
+        {/* Inline config script */}
+        <Script id='wsAiSeoInitScript' strategy='afterInteractive'>
+          {`
+            wsSEOfixer.configure({
+              hostURL: 'https://seo-fixer.writesonic.com',
+              siteID: '68fc86a19dc7d2449c142b76'
+            });
+          `}
+        </Script>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta
           name='description'
