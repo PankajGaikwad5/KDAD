@@ -89,7 +89,7 @@ const Contact = () => {
       <div className='project-bg fixed w-full h-full m-0 p-0 z-0 opacity-25 blur-md'></div>
       <div className='relative w-full overflow-hidden md:pt-32 px-4 tracking-widest'>
         <Navbar isBgBlack={true} />
-        <div className='w-full text-gray-200 flex justify-center items-center flex-col'>
+        <div className='w-full text-gray-200 flex justify-center items-center flex-col min-h-[85vh]'>
           <div className='w-full max-w-lg tracking-widest p-6 flex flex-col border shadow-md rounded-lg'>
             <p
               className={`text-xs font-bold mb-2 ${montserrat.className} uppercase font-light`}
@@ -165,7 +165,7 @@ const Contact = () => {
             </Form>
           </div>
           {/*  */}
-          <div className='w-full max-w-lg text-xs font-thin p-4 flex flex-col space-y-4 my-12 py-10'>
+          <div className='w-full max-w-lg 2xl:max-w-3xl text-xs font-thin p-4 flex flex-col space-y-4 my-12 py-10'>
             <div className='flex flex-wrap items-center gap-8 text-center '>
               <a
                 href='mailto:info@karandesai.in'
@@ -216,7 +216,7 @@ const Contact = () => {
             </div>
 
             <div
-              className={`flex flex-col gap-4 sm:flex-row sm:gap-6 font-light  sm:text-left  ${worksans.className} tracking-widest`}
+              className={`flex flex-col gap-4 sm:flex-row sm:gap-6 font-light  sm:text-left 2xl:text-lg  ${worksans.className} tracking-widest`}
             >
               <p className='text-green-400'>
                 We are not a normal team of architects and interior designers,

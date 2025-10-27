@@ -57,9 +57,9 @@ const ProjectCard = ({ img, id, title, projects }) => {
               )}
               {inView && (
                 <CardItem
-                  translateZ='100'
-                  rotateX={20}
-                  rotateZ={-10}
+                  // translateZ='100'
+                  // rotateX={20}
+                  // rotateZ={-10}
                   className='w-full '
                 >
                   <img
