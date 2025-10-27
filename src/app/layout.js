@@ -1,4 +1,3 @@
-'use client';
 import { Geist, Geist_Mono, Bebas_Neue } from 'next/font/google';
 import './globals.css';
 import CursorTrail from '../components/CursorTrail';
