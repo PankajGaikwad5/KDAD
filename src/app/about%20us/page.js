@@ -1,11 +1,11 @@
-'use client';
-import React, { useRef, useEffect, useState } from 'react';
+// app/about/page.js
 import Image from 'next/image';
 import { Poppins, Montserrat } from 'next/font/google';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import AboutVideoSection from '../../components/AboutVideoSection';
 
-// Font configurations with improved weight selection
+// Fonts
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600'],
@@ -16,43 +16,13 @@ const montserrat = Montserrat({
   weight: ['400', '500', '600', '700'],
 });
 
-const About = () => {
-  const lastVideoRef = useRef(null);
-  const [isMuted, setIsMuted] = useState(true);
+export const metadata = {
+  title: 'About Us | Karan Desai | Architecture + Design',
+  description:
+    'Learn about Karan Desai, an award-winning architect and TEDx speaker. Discover his design philosophy, projects, and collaborations with global brands.',
+};
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!lastVideoRef.current) return;
-
-        const playerWindow = lastVideoRef.current.contentWindow;
-        if (!playerWindow) return;
-
-        // Play or pause based on visibility
-        const cmd = entry.isIntersecting ? 'playVideo' : 'pauseVideo';
-        playerWindow.postMessage(
-          JSON.stringify({ event: 'command', func: cmd, args: [] }),
-          '*'
-        );
-      },
-      { threshold: 0.5 }
-    );
-
-    if (lastVideoRef.current) observer.observe(lastVideoRef.current);
-    return () => observer.disconnect();
-  }, []);
-
-  const toggleMute = () => {
-    if (!lastVideoRef.current) return;
-    const playerWindow = lastVideoRef.current.contentWindow;
-    const cmd = isMuted ? 'unMute' : 'mute';
-    playerWindow.postMessage(
-      JSON.stringify({ event: 'command', func: cmd, args: [] }),
-      '*'
-    );
-    setIsMuted(!isMuted);
-  };
-
+export default function AboutPage() {
   return (
     <div className='relative'>
       {/* Background Blur Overlay */}
@@ -97,9 +67,8 @@ const About = () => {
                   <Image
                     src='/assets/profile.JPG'
                     alt='Karan Desai'
-                    layout='fill'
-                    objectFit='cover'
-                    className='rounded-full border-4 border-pink-500/50 shadow-2xl'
+                    fill
+                    className='rounded-full border-4 border-pink-500/50 shadow-2xl object-cover'
                   />
                 </div>
               </div>
@@ -121,7 +90,7 @@ const About = () => {
                   eponymous studio, KARAN DESAI | Architecture + Design.
                   Specializing in Architecture, Interiors & Furniture Design, he
                   established his individual practice immediately after
-                  completing his thesis in 2011 from Pillai's College of
+                  completing his thesis in 2011 from Pillai&apos;s College of
                   Architecture.
                   <br />
                   <br />
@@ -155,8 +124,8 @@ const About = () => {
                 <p
                   className={`text-center text-sm sm:text-base leading-relaxed text-gray-300 ${poppins.className}`}
                 >
-                  "Transforming everyday spaces into immersive experiences
-                  through meticulously crafted furniture and design."
+                  &quot;Transforming everyday spaces into immersive experiences
+                  through meticulously crafted furniture and design.&quot;
                 </p>
               </div>
               <div className='bg-gray-800/50 backdrop-blur-sm rounded-xl p-6'>
@@ -165,7 +134,7 @@ const About = () => {
                 >
                   KDH specializes in creating art pieces that are both visually
                   striking and functionally superior. Since the success of our
-                  Monster collection in 2022, we've expanded our portfolio
+                  Monster collection in 2022, we&apos;ve expanded our portfolio
                   through collaborations with industry leaders like The Quarry,
                   Casa Walls, and Bharat Flooring.
                   <br />
@@ -186,61 +155,13 @@ const About = () => {
               </div>
             </section>
 
-            {/* Shukhabar Section */}
-            <section className='mb-12 bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 sm:p-8'>
-              <div className='relative rounded-xl overflow-hidden mb-6'>
-                <iframe
-                  ref={lastVideoRef}
-                  className='w-full aspect-video'
-                  src='https://www.youtube.com/embed/nS3qDFHinbw?si=nN81Ph4EZhx0cL-k&enablejsapi=1&autoplay=0&mute=1'
-                  title='Shukhabar Video'
-                  frameBorder='0'
-                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-                  allowFullScreen
-                ></iframe>
-                <button
-                  onClick={toggleMute}
-                  className='absolute bottom-4 right-4 bg-gray-900/50 hover:bg-gray-700/50 text-white p-3 rounded-full transition-all duration-300 ease-in-out'
-                >
-                  {isMuted ? 'Unmute' : 'Mute'}
-                </button>
-              </div>
-
-              <div className='flex flex-col items-center mb-6 text-center justify-center md:flex-row '>
-                <Image
-                  src='/assets/shukhabar.png'
-                  alt='Shukhabar Logo'
-                  width={150}
-                  height={150}
-                  className='mb-4 md:mb-0 md:mr-6'
-                />
-                <h4
-                  className={`text-base sm:text-xl text-pink-400 ${montserrat.className}`}
-                >
-                  "Shu (Shun)" = What <br />
-                  "Khabar" = The latest information; news
-                </h4>
-              </div>
-
-              <p
-                className={`text-sm sm:text-base leading-relaxed text-gray-300 ${poppins.className}`}
-              >
-                Shukhabar is your exclusive backstage pass to the design world!
-                We go beyond blueprints and skyscrapers, delivering candid
-                insights, industry secrets, and unfiltered conversations with
-                design moguls. It's more than an interview—it's a raw,
-                unscripted journey through the lives and minds of creative
-                professionals.
-              </p>
-            </section>
+            {/* Shukhabar Section (Client Component for interaction) */}
+            <AboutVideoSection poppins={poppins} montserrat={montserrat} />
           </div>
         </main>
 
-        {/* Footer */}
         <Footer />
       </div>
     </div>
   );
-};
-
-export default About;
+}
