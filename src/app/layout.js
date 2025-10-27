@@ -240,8 +240,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <head>
-        <script
+      <Head>
+        {/* <script
           src='https://seo-fixer.writesonic.com/site-audit/fixer-script/index.js'
           id='wsAiSeoMb'
           type='application/javascript'
@@ -256,7 +256,7 @@ export default function RootLayout({ children }) {
               });
             `,
           }}
-        />
+        /> */}
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta
           name='description'
@@ -330,8 +330,8 @@ export default function RootLayout({ children }) {
           name='twitter:description'
           content='Discover the innovative architectural designs of Karan Desai Home.'
         />
-      </head>
-      <script
+      </Head>
+      {/* <script
         src='https://seo-fixer.writesonic.com/site-audit/fixer-script/index.js'
         id='wsAiSeoMb'
         type='application/javascript'
@@ -346,7 +346,7 @@ export default function RootLayout({ children }) {
               });
             `,
         }}
-      />
+      /> */}
       <body className={`${bebasNueRegular.variable}  antialiased`}>
         {/* Meta Pixel Script */}
         <Script id='meta-pixel' strategy='afterInteractive'>
