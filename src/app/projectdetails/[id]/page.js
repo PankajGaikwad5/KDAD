@@ -20,7 +20,6 @@ const montserrat = Montserrat({
 export async function generateMetadata({ params }) {
   const { id } = params;
   const projectData = projects.find((p) => {
-    // support both string id or mongodb $oid shape
     const pid = p._id?.$oid ?? p._id ?? p.id;
     return String(pid) === String(id);
   });
@@ -175,4 +174,3 @@ const FeatureDetails = async ({ params }) => {
 };
 
 export default FeatureDetails;
-// ...existing code...
