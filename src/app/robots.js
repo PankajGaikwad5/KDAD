@@ -12,6 +12,16 @@ export default function robots() {
         allow: '/',
         disallow: ['/api/'],
       },
+      {
+        userAgent: 'Applebot',
+        allow: '/',
+        disallow: ['/api/'],
+      },
+      {
+        userAgent: 'Bingbot',
+        allow: '/',
+        disallow: ['/api/'],
+      },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
   };

@@ -100,6 +100,7 @@ export default function Home() {
               !logoLoaded ? 'opacity-100' : 'opacity-50'
             } transition-opacity duration-700`}
             alt='Animated signature representing Karan Desai Architecture'
+            fetchPriority='high'
           />
         </div>
 

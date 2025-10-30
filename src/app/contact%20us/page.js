@@ -90,7 +90,7 @@ const Contact = () => {
       <div className='relative w-full overflow-hidden md:pt-32 px-4 tracking-widest'>
         <Navbar isBgBlack={true} />
         <div className='w-full text-gray-200 flex justify-center items-center flex-col min-h-[85vh]'>
-          <div className='w-full max-w-lg tracking-widest p-6 flex flex-col border shadow-md rounded-lg'>
+          <div className='w-full max-w-lg 2xl:max-w-2xl tracking-widest p-6 flex flex-col border shadow-md rounded-lg'>
             <p
               className={`text-xs font-bold mb-2 ${montserrat.className} uppercase font-light`}
             >
