@@ -4,11 +4,13 @@ import PublicationsClient from '../../components/ClientComponents/PublicationsCl
 import { features } from '../../components/features';
 
 export const metadata = {
-  title: 'Publications | KDAD',
-  description: 'Explore our featured articles and magazine publications',
+  title: 'Karan Desai Publications | Articles and Magazines',
+  description:
+    'Explore the published articles, magazine features, and media coverage of Karan Desai Architecture + Design. Discover award-winning architectural and interior design projects by Karan Desai, featured in leading publications showcasing innovation, luxury, and timeless design.',
   openGraph: {
-    title: 'Publications | KDAD',
-    description: 'Explore our featured articles and magazine publications',
+    title: 'Karan Desai Publications | Articles and Magazines',
+    description:
+      'Explore the published articles, magazine features, and media coverage of Karan Desai Architecture + Design. Discover award-winning architectural and interior design projects by Karan Desai, featured in leading publications showcasing innovation, luxury, and timeless design.',
     type: 'website',
   },
   keywords: [
@@ -17,7 +19,28 @@ export const metadata = {
     'publications',
     'articles',
     'magazines',
-    'KDAD',
+    'kdad',
+    'kiakMoi',
+    'elle decor',
+    'archhello',
+    'commercial design',
+    'design essentia',
+    'goodhomes india',
+    'livingetc',
+    'architecture + design',
+    'surfaces reporter',
+    'volume zero',
+    'vol zero',
+    'architect and interiors india',
+    'india today',
+    'ace design sense',
+    'asian paints',
+    'realityplus',
+    'rethinking the future',
+    'hotelier india',
+    'india design',
+    'house digest',
+    'hello india',
   ],
 };
 

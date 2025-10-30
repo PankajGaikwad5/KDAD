@@ -21,21 +21,35 @@ export const metadata = {
   title: 'About Us | Karan Desai | Architecture & Interior Design',
   description:
     'Learn about Karan Desai — award-winning architect, TEDx speaker and founder of KARAN DESAI | Architecture + Design. See projects, philosophy, collaborations and contact details.',
-  keywords:
-    'Karan Desai, architecture, interior design, furniture design, award-winning architect, TEDx speaker, KARAN DESAI, KDH, design studio, collaborations',
+  keywords: [
+    'Karan Desai',
+    'architecture',
+    'interior design',
+    'furniture design',
+    'award-winning architect',
+    'TEDx speaker',
+    'KARAN DESAI',
+    'KDH',
+    'design studio',
+    'collaborations',
+    'kdh',
+    'karan desai architecture + design',
+    'tedx',
+    'luxury',
+  ],
   alternates: {
-    canonical: 'https://karandesaihome.com/about',
+    canonical: 'https://www.karandesai.in/about%20us',
   },
   openGraph: {
     title: 'Karan Desai | Architecture + Design — About',
     description:
       'Karan Desai is an award-winning architect and founder of KARAN DESAI | Architecture + Design. Explore his projects, studio philosophy and collaborations.',
-    url: 'https://karandesaihome.com/about',
+    url: 'https://www.karandesai.in/about%20us',
     siteName: 'Karan Desai Architecture + Design',
     type: 'website',
     images: [
       {
-        url: 'https://karandesaihome.com/assets/og-about.jpg',
+        url: '/assets/signlogo.png',
         width: 1200,
         height: 630,
         alt: 'Karan Desai — Architecture + Design',
@@ -47,7 +61,7 @@ export const metadata = {
     title: 'About Karan Desai | Architecture + Design',
     description:
       'Award-winning architect and TEDx speaker. Learn about Karan Desai’s work, studio and collaborations.',
-    images: ['https://karandesaihome.com/assets/og-about.jpg'],
+    images: ['/assets/signlogo.png'],
   },
   robots: {
     index: true,
@@ -70,11 +84,11 @@ export default function AboutPage() {
       {
         '@type': 'Organization',
         name: 'KARAN DESAI | Architecture + Design',
-        url: 'https://karandesaihome.com/',
-        logo: 'https://karandesaihome.com/assets/logo.png',
+        url: 'https://www.karandesai.in/about%20us',
+        logo: 'https://karandesai.in/assets/signlogo.png',
         sameAs: [
-          'https://www.instagram.com/karandesaiofficial/',
-          'https://www.linkedin.com/in/karan-desai-architecture/',
+          'https://www.instagram.com/karandesai_a.d/',
+          // 'https://www.linkedin.com/in/karan-desai-architecture/',
         ],
         description:
           'KARAN DESAI is a design studio specializing in architecture, interiors and furniture design led by award-winning architect Karan Desai.',
@@ -87,7 +101,7 @@ export default function AboutPage() {
           '@type': 'Organization',
           name: 'KARAN DESAI | Architecture + Design',
         },
-        url: 'https://karandesai.in/about',
+        url: 'https://karandesai.in/about%20us',
       },
       {
         '@type': 'BreadcrumbList',
@@ -102,7 +116,7 @@ export default function AboutPage() {
             '@type': 'ListItem',
             position: 2,
             name: 'About',
-            item: 'https://karandesai.in/about',
+            item: 'https://karandesai.in/about%20us',
           },
         ],
       },

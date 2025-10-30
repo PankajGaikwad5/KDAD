@@ -5,11 +5,28 @@ import { projects } from '../../components/projects';
 import { Metadata } from 'next';
 
 export const metadata = {
-  title: 'Projects | KDAD',
-  description: 'Explore our portfolio of creative projects and works',
+  title: 'Projects By Karan Desai Architecture + Design ',
+  description:
+    'Explore the diverse portfolio of creative projects and design works by Karan Desai Architecture + Design. Discover innovative architecture and interior design that blend artistry, functionality, and timeless elegance.',
+  keywords: [
+    'projects',
+    'karan desai',
+    'tdp',
+    'the dream project',
+    'project 86',
+    'party pad',
+    'kiahmoi',
+    'project 101',
+    'agra fort project',
+    'red fort project',
+    'project 704',
+    'project 904',
+    'blue house project',
+  ],
   openGraph: {
-    title: 'Projects | KDAD',
-    description: 'Explore our portfolio of creative projects and works',
+    title: 'Projects By Karan Desai Architecture + Design ',
+    description:
+      'Explore the diverse portfolio of creative projects and design works by Karan Desai Architecture + Design. Discover innovative architecture and interior design that blend artistry, functionality, and timeless elegance.',
     type: 'website',
   },
 };
