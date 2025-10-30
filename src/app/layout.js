@@ -251,6 +251,7 @@ export default function RootLayout({ children }) {
           currently working on 15,000 sq.ft Mansion in Washington, D.C."
         />
         <link rel='canonical' href='https://karandesai.in' />
+        <link rel='apple-touch-icon' href='/signlogo.png'></link>
         <meta
           property='og:title'
           content='Karan Desai Home "Imagine transforming everyday spaces into rich, immersive
