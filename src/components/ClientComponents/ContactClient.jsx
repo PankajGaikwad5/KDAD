@@ -281,7 +281,7 @@ const ContactClient = () => {
         </div>
 
         <div
-          className={`flex flex-col gap-4 sm:flex-row sm:gap-6 font-light sm:text-left 2xl:text-lg ${worksans.className} tracking-widest`}
+          className={`flex flex-col gap-4 sm:flex-row sm:gap-6 font-light sm:text-left 2xl:text-lg 2xl:leading-5 ${worksans.className} tracking-widest`}
         >
           <p className='text-green-400'>
             We are not a normal team of architects and interior designers, but a
