@@ -3,37 +3,47 @@ import nodemailer from 'nodemailer';
 
 export async function POST(req) {
   const { values } = await req.json();
-  const { name, email, message } = values;
+  const { name, email, message, type, position } = values;
+
   const transporter = nodemailer.createTransport({
-    service: 'gmail', // or another email provider
+    service: 'gmail',
     auth: {
-      user: process.env.EMAIL, // your email address
-      pass: process.env.PASS, // app-specific password
+      user: process.env.EMAIL,
+      pass: process.env.PASS,
     },
   });
 
-  // Set up email options
+  // Choose recipient based on type
+  const recipient =
+    type === 'career'
+      ? `${process.env.CAREER}, ${process.env.SECONDEMAIL}`
+      : `${process.env.INFO}, ${process.env.SECONDEMAIL}`;
+
   const mailOptions = {
-    from: `Karandesai.in Contact Form ${email}`, // sender's email
-    to: `${process.env.REMAIL}, ${process.env.SECONDEMAIL}`, // recipient's email
-    subject: 'Contact Form Submission',
-    text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+    from: `Karandesai.in Contact Form <${email}>`,
+    to: recipient,
+    subject:
+      type === 'career'
+        ? `Career Application - ${position || 'Unknown Position'}`
+        : 'Contact Form Submission',
+    text: `
+Type: ${type}
+Name: ${name}
+Email: ${email}
+${type === 'career' ? `Position: ${position}\n` : ''}
+Message: ${message}
+    `,
   };
+
   try {
     await transporter.sendMail(mailOptions);
+
     return NextResponse.json(
       { msg: 'Email sent successfully!' },
       { status: 200 }
     );
-
-    // await connectMongoDB();
-
-    return NextResponse.json({ msg: 'Project saved successfully' });
   } catch (error) {
-    console.error('Error saving project:', error);
-    return NextResponse.json(
-      { error: 'Error saving project' },
-      { status: 500 }
-    );
+    console.error('Error sending email:', error);
+    return NextResponse.json({ error: 'Error sending email' }, { status: 500 });
   }
 }

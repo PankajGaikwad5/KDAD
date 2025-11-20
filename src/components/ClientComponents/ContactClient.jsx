@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
@@ -17,6 +17,7 @@ import { Textarea } from '../../components/ui/textarea';
 import { FaWhatsapp } from 'react-icons/fa';
 import { Poppins, Montserrat, Work_Sans } from 'next/font/google';
 
+// fonts
 const popins = Poppins({
   subsets: ['latin'],
   weight: ['100', '200', '300', '400', '600', '700'],
@@ -32,25 +33,26 @@ const worksans = Work_Sans({
   weight: ['400'],
 });
 
+// Updated schema
 const formSchema = z.object({
-  name: z
-    .string()
-    .min(2, 'name must be at least 2 characters')
-    .max(50, 'name must be at most 50 characters'),
-  email: z.string().email('Invalid email address').min(2).max(50),
-  message: z
-    .string()
-    .min(10, 'Message must be at least 10 characters')
-    .max(500, 'Message cannot exceed 500 characters'),
+  name: z.string().min(2).max(50),
+  email: z.string().email().min(2).max(50),
+  message: z.string().min(10).max(500),
+  type: z.enum(['connect', 'career']),
+  position: z.string().optional(),
 });
 
 const ContactClient = () => {
+  const [selectedType, setSelectedType] = useState('connect');
+
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: '',
       email: '',
       message: '',
+      type: 'connect',
+      position: '',
     },
   });
 
@@ -61,9 +63,7 @@ const ContactClient = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          values,
-        }),
+        body: JSON.stringify({ values }),
       });
 
       if (response.ok) {
@@ -85,11 +85,77 @@ const ContactClient = () => {
         >
           By appointment only*
         </p>
+
         <Form {...form}>
           <form
             className={`space-y-4 ${popins.className}`}
             onSubmit={form.handleSubmit(onSubmit)}
           >
+            {/* TYPE SELECT (Radio Buttons) */}
+            <FormField
+              control={form.control}
+              name='type'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Reason</FormLabel>
+                  <FormControl>
+                    <div className='flex gap-6 text-sm text-white'>
+                      <label className='flex items-center gap-2 cursor-pointer'>
+                        <input
+                          type='radio'
+                          value='connect'
+                          checked={field.value === 'connect'}
+                          onChange={(e) => {
+                            field.onChange(e.target.value);
+                            setSelectedType(e.target.value);
+                          }}
+                          className='h-4 w-4'
+                        />
+                        Connect with Designers
+                      </label>
+
+                      <label className='flex items-center gap-2 cursor-pointer'>
+                        <input
+                          type='radio'
+                          value='career'
+                          checked={field.value === 'career'}
+                          onChange={(e) => {
+                            field.onChange(e.target.value);
+                            setSelectedType(e.target.value);
+                          }}
+                          className='h-4 w-4'
+                        />
+                        Apply for Career
+                      </label>
+                    </div>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            {/* POSITION TITLE - only for career */}
+            {selectedType === 'career' && (
+              <FormField
+                control={form.control}
+                name='position'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Position Title</FormLabel>
+                    <FormControl>
+                      <Input
+                        className='text-black'
+                        placeholder='Enter position title'
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            )}
+
+            {/* NAME */}
             <FormField
               control={form.control}
               name='name'
@@ -107,6 +173,8 @@ const ContactClient = () => {
                 </FormItem>
               )}
             />
+
+            {/* EMAIL */}
             <FormField
               control={form.control}
               name='email'
@@ -124,6 +192,8 @@ const ContactClient = () => {
                 </FormItem>
               )}
             />
+
+            {/* MESSAGE */}
             <FormField
               control={form.control}
               name='message'
@@ -142,6 +212,7 @@ const ContactClient = () => {
                 </FormItem>
               )}
             />
+
             <Button
               type='submit'
               className='bg-white uppercase text-gray-900 hover:bg-black hover:text-gray-300 transition-all duration-500 ease-in-out rounded-full px-5 tracking-normal font-medium'
@@ -152,6 +223,7 @@ const ContactClient = () => {
         </Form>
       </div>
 
+      {/* FOOTER SECTION (unchanged) */}
       <div className='w-full max-w-lg 2xl:max-w-3xl text-xs font-thin p-4 flex flex-col space-y-4 my-12 py-10'>
         <div className='flex flex-wrap items-center gap-8 text-center'>
           <a
@@ -179,14 +251,16 @@ const ContactClient = () => {
               Maharashtra 400053
             </a>
           </p>
+
           <div className='flex gap-4'>
-            <h1 className={`text-3xl sm:text-4xl tracking-widest md:hidden`}>
+            <h1 className='text-3xl sm:text-4xl tracking-widest md:hidden'>
               karan
             </h1>
-            <h1 className={`text-3xl sm:text-4xl tracking-widest md:-mr-4`}>
+            <h1 className='text-3xl sm:text-4xl tracking-widest md:-mr-4'>
               desai
             </h1>
           </div>
+
           <div className='font-sans flex items-center space-x-2 justify-center sm:justify-start'>
             <a
               href='https://wa.me/+917977112242'
