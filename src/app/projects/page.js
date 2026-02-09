@@ -5,12 +5,16 @@ import { projects } from '../../components/projects';
 import { Metadata } from 'next';
 
 export const metadata = {
-  title: 'Projects By Karan Desai Architecture + Design ',
+  title: 'Architecture Portfolio | Luxury Projects by KDAD',
   description:
-    'Explore the diverse portfolio of creative projects and design works by Karan Desai Architecture + Design. Discover innovative architecture and interior design that blend artistry, functionality, and timeless elegance.',
+    'Explore our award-winning architecture and interior design projects across India and internationally. From luxury residences to commercial spaces, discover innovative designs.',
   keywords: [
-    'projects',
-    'karan desai',
+    'architecture portfolio',
+    'luxury projects',
+    'karan desai projects',
+    'residential architecture',
+    'commercial design',
+    'interior design portfolio',
     'tdp',
     'the dream project',
     'project 86',
@@ -22,12 +26,31 @@ export const metadata = {
     'project 704',
     'project 904',
     'blue house project',
+    'luxury home projects Mumbai',
+    'award-winning architecture',
   ],
   openGraph: {
-    title: 'Projects By Karan Desai Architecture + Design ',
+    title: 'Architecture Portfolio | Luxury Projects by KDAD',
     description:
-      'Explore the diverse portfolio of creative projects and design works by Karan Desai Architecture + Design. Discover innovative architecture and interior design that blend artistry, functionality, and timeless elegance.',
+      'Explore our award-winning architecture and interior design projects across India and internationally. From luxury residences to commercial spaces.',
+    url: 'https://karandesai.in/projects',
+    siteName: 'Karan Desai Architecture + Design',
+    images: [
+      {
+        url: '/signlogo.png',
+        width: 1200,
+        height: 630,
+        alt: 'KDAD Projects Portfolio',
+      },
+    ],
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Architecture Portfolio | Luxury Projects by KDAD',
+    description:
+      'Explore our award-winning architecture and interior design projects.',
+    images: ['/signlogo.png'],
   },
 };
 

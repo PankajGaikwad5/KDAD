@@ -99,7 +99,9 @@ export default function Home() {
             className={`${
               !logoLoaded ? 'opacity-100' : 'opacity-50'
             } transition-opacity duration-700`}
-            alt='Animated signature representing Karan Desai Architecture'
+            alt='Karan Desai Architecture signature logo - Award-winning architect and TEDx speaker'
+            width='600'
+            height='400'
             fetchPriority='high'
           />
         </div>

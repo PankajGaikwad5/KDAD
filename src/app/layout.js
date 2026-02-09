@@ -2,7 +2,6 @@ import { Geist, Geist_Mono, Bebas_Neue } from 'next/font/google';
 import './globals.css';
 import CursorTrail from '../components/CursorTrail';
 import { Analytics } from '@vercel/analytics/react';
-import Head from 'next/head';
 import Script from 'next/script';
 
 // Importing Geist Sans
@@ -105,8 +104,10 @@ const jsonLd = {
 };
 
 export const metadata = {
+  metadataBase: new URL('https://karandesai.in'),
   title: 'KDAD | Karan Desai Architecture and Design',
-  description: `Discover award-winning architecture and interior designs by Karan Desai Studio — crafting luxurious homes and spaces in India and worldwide.`,
+  description:
+    'Award-winning architecture and interior design studio in Mumbai. Specializing in luxury residential and commercial projects across India and internationally.',
   alternates: {
     canonical: 'https://karandesai.in',
   },
@@ -182,8 +183,28 @@ export const metadata = {
     'international architecture firm',
   ],
   openGraph: {
-    title: 'Karan Desai Architecture + Design',
+    title: 'KDAD | Karan Desai Architecture and Design',
+    description:
+      'Award-winning architecture and interior design studio in Mumbai. Specializing in luxury residential and commercial projects across India and internationally.',
+    url: 'https://karandesai.in',
+    siteName: 'Karan Desai Architecture + Design',
+    images: [
+      {
+        url: '/signlogo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Karan Desai Architecture + Design Logo',
+      },
+    ],
+    locale: 'en_IN',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'KDAD | Karan Desai Architecture and Design',
+    description:
+      'Award-winning architecture and interior design studio in Mumbai. Specializing in luxury residential and commercial projects.',
+    images: ['/signlogo.png'],
   },
   robots: {
     index: true,
@@ -197,109 +218,29 @@ export const metadata = {
       'max-video-preview': -1,
     },
   },
+  verification: {
+    google: 'your-google-verification-code',
+    yandex: 'your-yandex-verification-code',
+    bing: 'your-bing-verification-code',
+  },
+  manifest: '/manifest.json',
+  icons: {
+    icon: '/signlogo.png',
+    apple: '/signlogo.png',
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <Head>
+      <body className={`${bebasNueRegular.variable} antialiased`}>
+        {/* JSON-LD Structured Data */}
         <Script
           id='json-ld'
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          strategy='beforeInteractive'
         />
-        {/* <script
-          src='https://seo-fixer.writesonic.com/site-audit/fixer-script/index.js'
-          id='wsAiSeoMb'
-          type='application/javascript'
-        />
-        <script
-          id='wsAiSeoInitScript'
-          dangerouslySetInnerHTML={{
-            __html: `
-              wsSEOfixer.configure({
-                hostURL: 'https://seo-fixer.writesonic.com',
-                siteID: '68fc86a19dc7d2449c142b76'
-              });
-            `,
-          }}
-        /> */}
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <meta
-          name='description'
-          content="Discover the innovative architectural designs of Karan Desai Home. Karan Desai Award Winning Architecture + Interior Design Studio | TedX
-          Speaker Karan DesaiBorn in 1987, a passionate founder of his eponymous
-          studio, KARAN DESAI | Architecture + Design, focusing on Architecture,
-          Interiors & furniture designing, KD started off with his individual
-          practice right after he gave his Thesis in 2011 from Pillai’s college
-          of architecture & founded the company in 2012. The internship under
-          Ar. Ashiesh Shah during a year drop in 2007, carved a path for his
-          career with a clear direction towards his goals & dreams which he
-          lives today. The Studio has spread its wings in Mangalore, Goa, Delhi,
-          Kullu - Manali, Uttarakhand, Kolkata, Chennai and plan to continue.
-          Inspired by contemporary aesthetics and clean lines, the studio
-          beautifies projects both residential and commercial on varying scales.
-          From ideation rooms to offices , homes to private getaways, the team
-          designs projects and products in close association with clients to
-          deliver unique results and reflect personal tastes with consolidating
-          the studio’s vision. We're also doing projects internationally, We've
-          completed working on the order of 20,000 sq.ft. in Chicago and
-          currently working on 15,000 sq.ft Mansion in Washington, D.C."
-        />
-        <link rel='canonical' href='https://karandesai.in' />
-        <link rel='apple-touch-icon' href='/signlogo.png'></link>
-        <meta property='og:title' content='Karan Desai Architecture + Design' />
-        <meta
-          property='og:description'
-          content={`Discover the innovative architectural designs of Karan Desai Home. Karan Desai Award Winning Architecture + Interior Design Studio | TedX
-          Speaker Karan DesaiBorn in 1987, a passionate founder of his eponymous
-          studio, KARAN DESAI | Architecture + Design, focusing on Architecture,
-          Interiors & furniture designing, KD started off with his individual
-          practice right after he gave his Thesis in 2011 from Pillai’s college
-          of architecture & founded the company in 2012. The internship under
-          Ar. Ashiesh Shah during a year drop in 2007, carved a path for his
-          career with a clear direction towards his goals & dreams which he
-          lives today. The Studio has spread its wings in Mangalore, Goa, Delhi,
-          Kullu - Manali, Uttarakhand, Kolkata, Chennai and plan to continue.
-          Inspired by contemporary aesthetics and clean lines, the studio
-          beautifies projects both residential and commercial on varying scales.
-          From ideation rooms to offices , homes to private getaways, the team
-          designs projects and products in close association with clients to
-          deliver unique results and reflect personal tastes with consolidating
-          the studio’s vision. We're also doing projects internationally, We've
-          completed working on the order of 20,000 sq.ft. in Chicago and
-          currently working on 15,000 sq.ft Mansion in Washington, D.C.`}
-        />
-        <meta property='og:type' content='website' />
-        <meta property='og:url' content='https://karandesai.in' />
-        <meta property='og:image' content='/assets/signlogo.png' />
-        <meta name='twitter:card' content='summary_large_image' />
-        <meta
-          name='twitter:title'
-          content='Karan Desai Architecture + Design'
-        />
-        <meta
-          name='twitter:description'
-          content='Discover the innovative architectural designs of Karan Desai Home.'
-        />
-      </Head>
-      {/* <script
-        src='https://seo-fixer.writesonic.com/site-audit/fixer-script/index.js'
-        id='wsAiSeoMb'
-        type='application/javascript'
-      />
-      <script
-        id='wsAiSeoInitScript'
-        dangerouslySetInnerHTML={{
-          __html: `
-              wsSEOfixer.configure({
-                hostURL: 'https://seo-fixer.writesonic.com',
-                siteID: '68fc86a19dc7d2449c142b76'
-              });
-            `,
-        }}
-      /> */}
-      <body className={`${bebasNueRegular.variable}  antialiased`}>
         {/* Meta Pixel Script */}
         <Script id='meta-pixel' strategy='afterInteractive'>
           {`
