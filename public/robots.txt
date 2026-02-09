@@ -1,0 +1,13 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /test/
+Disallow: /example_upload/
+Disallow: /uploadprojects/
+
+# Host
+Host: https://www.karandesai.in
+
+# Sitemaps
+Sitemap: https://www.karandesai.in/sitemap.xml

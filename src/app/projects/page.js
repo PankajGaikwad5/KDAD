@@ -2,7 +2,6 @@ import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
 import ProjectsClient from '../../components/ClientComponents/ProjectsClient';
 import { projects } from '../../components/projects';
-import { Metadata } from 'next';
 
 export const metadata = {
   title: 'Architecture Portfolio | Luxury Projects by KDAD',
