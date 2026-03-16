@@ -1,7 +1,22 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import {
+  validateName,
+  validateEmail,
+  validateMessage,
+  checkRateLimit,
+} from '../../../utils/spamDetection';
 
 export async function POST(req) {
+  // Rate limiting based on IP
+  const forwardedFor = req.headers.get('x-forwarded-for');
+  const ip = forwardedFor ? forwardedFor.split(',')[0] : (req.ip || 'unknown');
+  
+  const rateLimitResult = checkRateLimit(ip);
+  if (!rateLimitResult.allowed) {
+    return NextResponse.json({ error: rateLimitResult.reason }, { status: 429 });
+  }
+
   let name, email, message, type, position, file;
   try {
     const formData = await req.formData();
@@ -13,6 +28,22 @@ export async function POST(req) {
     file = formData.get('file');
   } catch (e) {
     return NextResponse.json({ error: 'Invalid form data' }, { status: 400 });
+  }
+
+  // Spam detection checks
+  const nameValidation = validateName(name);
+  if (!nameValidation.valid) {
+    return NextResponse.json({ error: nameValidation.reason }, { status: 400 });
+  }
+  
+  const emailValidation = validateEmail(email);
+  if (!emailValidation.valid) {
+    return NextResponse.json({ error: emailValidation.reason }, { status: 400 });
+  }
+  
+  const messageValidation = validateMessage(message);
+  if (!messageValidation.valid) {
+    return NextResponse.json({ error: messageValidation.reason }, { status: 400 });
   }
 
   const transporter = nodemailer.createTransport({
