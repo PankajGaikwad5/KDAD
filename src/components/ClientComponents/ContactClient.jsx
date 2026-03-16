@@ -44,6 +44,7 @@ const formSchema = z.object({
 
 const ContactClient = () => {
   const [selectedType, setSelectedType] = useState('connect');
+  const [file, setFile] = useState(null);
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -58,12 +59,21 @@ const ContactClient = () => {
 
   async function onSubmit(values) {
     try {
+      const formData = new FormData();
+      formData.append('name', values.name);
+      formData.append('email', values.email);
+      formData.append('message', values.message);
+      formData.append('type', values.type);
+      if (values.position) {
+        formData.append('position', values.position);
+      }
+      if (selectedType === 'career' && file) {
+        formData.append('file', file);
+      }
+
       const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ values }),
+        body: formData,
       });
 
       if (response.ok) {
@@ -153,6 +163,31 @@ const ContactClient = () => {
                   </FormItem>
                 )}
               />
+            )}
+
+            {/* FILE UPLOAD - only for career */}
+            {selectedType === 'career' && (
+              <FormItem>
+                <FormLabel>Resume/Portfolio (Max 5MB)</FormLabel>
+                <FormControl>
+                  <Input
+                    type='file'
+                    className='text-black bg-white file:text-black file:bg-gray-100 hover:file:bg-gray-200 file:border-0 file:rounded-md file:px-2 file:cursor-pointer p-0 h-auto'
+                    accept='.pdf,.doc,.docx,.jpg,.jpeg,.png'
+                    onChange={(e) => {
+                      const selectedFile = e.target.files[0];
+                      if (selectedFile && selectedFile.size > 5 * 1024 * 1024) {
+                        alert('File size exceeds 5MB limit.');
+                        e.target.value = null; // Reset input
+                        setFile(null);
+                      } else {
+                        setFile(selectedFile);
+                      }
+                    }}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
             )}
 
             {/* NAME */}
