@@ -1,9 +1,10 @@
 'use client';
 import Image from 'next/image';
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Poppins, Montserrat } from 'next/font/google';
 import Link from 'next/link';
+import { gsap } from 'gsap';
 
 // popins
 // montserrat
@@ -18,6 +19,41 @@ const montserrat = Montserrat({
 
 const Navbar = ({ isBgBlack, isHomePage }) => {
   const [nav, setNav] = useState(false);
+  const logoRef = useRef(null);
+  const navLinksRef = useRef([]);
+  const hamburgerRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+      // Logo slides in from left + fades in
+      tl.fromTo(
+        logoRef.current,
+        { x: -30, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.7 }
+      );
+
+      // Nav links stagger up (start slightly below, move to position)
+      tl.fromTo(
+        navLinksRef.current.filter(Boolean),
+        { y: 18, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.5, stagger: 0.07 },
+        '-=0.3'
+      );
+    });
+
+    // Hamburger fade in on mobile
+    if (hamburgerRef.current) {
+      gsap.fromTo(
+        hamburgerRef.current,
+        { opacity: 0, y: -10 },
+        { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', delay: 0.2 }
+      );
+    }
+
+    return () => ctx.revert();
+  }, []);
   const newNavTopics = [
     // {
     //   id: 1,
@@ -64,6 +100,7 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
   return (
     <>
       <div
+        ref={hamburgerRef}
         className={`xl:hidden w-full relative m-6 font-mono font-extralight text-xs uppercase tracking-wider text-gray-800 navMenu z-30  ${
           nav && 'open'
         }`}
@@ -130,14 +167,14 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
           isBgBlack ? 'text-white hover:text-opacity-50' : 'text-gray-800'
         }`}
       >
-        <Link href='/'>
+        <Link href='/' ref={logoRef}>
           <Image
             src='/assets/signlogo.png'
             alt='Logo'
             width={120}
             height={120}
-            className='object-contain -ml-1 m-0 p-0 
-            
+            className='object-contain -ml-1 m-0 p-0
+
             '
           />
         </Link>
@@ -145,10 +182,10 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
         <ul
           className={`flex flex-col ${montserrat.className} font-semibold tracking-widest `}
         >
-          {newNavTopics.map((items) => {
+          {newNavTopics.map((items, index) => {
             const { id, name, path } = items;
             return (
-              <li key={id}>
+              <li key={id} ref={(el) => (navLinksRef.current[index] = el)}>
                 <Link
                   href={path}
                   className={`transition-all duration-300 hover:text-lg ${
@@ -161,7 +198,7 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
             );
           })}
           <span className='border-t border-dotted pt-2 mt-1 w-40'></span>
-          <li className=''>
+          <li ref={(el) => (navLinksRef.current[newNavTopics.length] = el)}>
             <a
               href='https://www.shukhabarwithkd.com/'
               target='_blank'
@@ -172,7 +209,7 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
               shukhabar
             </a>
           </li>
-          <li>
+          <li ref={(el) => (navLinksRef.current[newNavTopics.length + 1] = el)}>
             <a
               href='https://karandesaihome.com/'
               target='_blank'

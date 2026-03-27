@@ -5,6 +5,7 @@ import { Poppins, Montserrat } from 'next/font/google';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import AboutVideoSection from '../../components/AboutVideoSection';
+import AboutPageAnimations from '../../components/AboutPageAnimations';
 
 // Fonts
 const poppins = Poppins({
@@ -128,6 +129,9 @@ export default function AboutPage() {
       {/* Background Blur Overlay */}
       <div className='project-bg fixed inset-0 z-0 opacity-25 blur-md' />
 
+      {/* GSAP animations (client, renders nothing) */}
+      <AboutPageAnimations />
+
       {/* Content Wrapper */}
       <div className='relative z-10 flex flex-col min-h-screen bg-transparent'>
         {/* Navbar */}
@@ -144,11 +148,12 @@ export default function AboutPage() {
             <header>
               <div className='text-center mb-8'>
                 <h1
+                  data-gsap='title'
                   className={`text-2xl sm:text-3xl font-semibold uppercase tracking-wider text-white border-b-4 border-pink-800 inline-block mb-4 ${montserrat.className}`}
                 >
                   About Us
                 </h1>
-                <p className={`text-sm text-gray-300 ${poppins.className}`}>
+                <p data-gsap='subtitle' className={`text-sm text-gray-300 ${poppins.className}`}>
                   Architect, designer and studio information — projects,
                   philosophy and collaborations.
                 </p>
@@ -157,6 +162,7 @@ export default function AboutPage() {
 
             {/* Intro Video */}
             <section
+              data-gsap='section'
               className='mb-12 shadow-2xl rounded-xl overflow-hidden'
               aria-labelledby='intro-video-heading'
             >
@@ -178,6 +184,7 @@ export default function AboutPage() {
 
             {/* Profile Section */}
             <section
+              data-gsap='section'
               className='mb-12 bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-lg p-6 sm:p-8 flex flex-col md:flex-row items-center'
               aria-labelledby='profile-heading'
             >
@@ -186,7 +193,7 @@ export default function AboutPage() {
               </h2>
 
               <div className='w-2/3 md:w-1/3 mx-auto md:mx-0 mb-6 md:mb-0'>
-                <div className='relative w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 mx-auto'>
+                <div data-gsap='profile-img' className='relative w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 mx-auto'>
                   <Image
                     src='/assets/profile.JPG'
                     alt='Portrait of Karan Desai'
@@ -234,7 +241,7 @@ export default function AboutPage() {
               className='grid grid-cols-1 md:grid-cols-2 gap-8 mb-12'
               aria-label='KDH — furniture and collaborations'
             >
-              <div className='bg-gray-800/50 backdrop-blur-sm rounded-xl md:p-6 flex flex-col items-center'>
+              <div data-gsap='card' className='bg-gray-800/50 backdrop-blur-sm rounded-xl md:p-6 flex flex-col items-center'>
                 <Image
                   src='/assets/kdhLogoo.png'
                   alt='KDH Logo'
@@ -259,7 +266,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className='bg-gray-800/50 backdrop-blur-sm rounded-xl p-6'>
+              <div data-gsap='card' className='bg-gray-800/50 backdrop-blur-sm rounded-xl p-6'>
                 <p
                   className={`text-sm sm:text-base leading-relaxed text-gray-300 ${poppins.className}`}
                 >

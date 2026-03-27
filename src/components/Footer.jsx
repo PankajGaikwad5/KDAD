@@ -1,6 +1,8 @@
-import React from 'react';
+'use client';
+import React, { useEffect, useRef } from 'react';
 import { Poppins, Montserrat } from 'next/font/google';
 import Link from 'next/link';
+import { gsap } from 'gsap';
 
 // popins
 // montserrat
@@ -14,8 +16,28 @@ const montserrat = Montserrat({
 });
 
 const Footer = ({ home }) => {
+  const footerRef = useRef(null);
+
+  useEffect(() => {
+    if (!footerRef.current) return;
+    const links = footerRef.current.querySelectorAll('a, [href]');
+    gsap.fromTo(
+      links,
+      { y: 16, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.55,
+        stagger: 0.1,
+        ease: 'power3.out',
+        delay: 0.8,
+      }
+    );
+  }, []);
+
   return (
     <div
+      ref={footerRef}
       className={`${
         home && 'fixed'
       } z-30 w-full bottom-0 right-0 text-white px-4 lg:px-8 tracking-widest text-xs py-4  uppercase`}

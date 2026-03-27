@@ -1,6 +1,8 @@
-import React from 'react';
+'use client';
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { Poppins, Montserrat } from 'next/font/google';
+import { gsap } from 'gsap';
 
 // popins
 // montserrat
@@ -14,14 +16,33 @@ const montserrat = Montserrat({
 });
 
 const LogoComp = () => {
+  const headingRef = useRef(null);
+  const marqueeRef = useRef(null);
+
+  useEffect(() => {
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+    tl.fromTo(
+      headingRef.current,
+      { clipPath: 'inset(100% 0 0 0)' },
+      { clipPath: 'inset(0% 0 0 0)', duration: 1.6, delay: 1, ease: 'power2.inOut' }
+    ).fromTo(
+      marqueeRef.current,
+      { clipPath: 'inset(100% 0 0 0)' },
+      { clipPath: 'inset(0% 0 0 0)', duration: 1.8, ease: 'power2.inOut' },
+      '-=0.4'
+    );
+  }, []);
+
   return (
     <div className=' w-full justify-center items-center flex flex-col'>
       <h2
+        ref={headingRef}
         className={`text-xl md:text-2xl tracking-widest text-white -mb-10 line-clamp-5 ${montserrat.className} uppercase font-extrabold`}
       >
         exclusive features
       </h2>
-      <div className='overflow-hidden w-full'>
+      <div ref={marqueeRef} className='overflow-hidden w-full'>
         <div className='flex space-x-20 animate-marquee'>
           <div className='flex-shrink-0 flex space-x-20'>
             <Image

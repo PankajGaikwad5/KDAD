@@ -1,5 +1,9 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
@@ -45,6 +49,40 @@ const formSchema = z.object({
 const ContactClient = () => {
   const [selectedType, setSelectedType] = useState('connect');
   const [file, setFile] = useState(null);
+  const formRef = useRef(null);
+  const infoRef = useRef(null);
+
+  useEffect(() => {
+    // Form card slides up + fades in on load
+    gsap.fromTo(
+      formRef.current,
+      { y: 35, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.75, ease: 'power3.out', delay: 0.15 }
+    );
+
+    // Info section items stagger up on scroll
+    if (infoRef.current) {
+      const items = infoRef.current.querySelectorAll('[data-gsap-info]');
+      gsap.fromTo(
+        items,
+        { y: 20, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.55,
+          stagger: 0.1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: infoRef.current,
+            start: 'top 88%',
+            once: true,
+          },
+        }
+      );
+    }
+
+    return () => ScrollTrigger.getAll().forEach((t) => t.kill());
+  }, []);
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -89,7 +127,7 @@ const ContactClient = () => {
 
   return (
     <div className='w-full text-gray-200 flex justify-center items-center flex-col min-h-[85vh]'>
-      <div className='w-full max-w-lg 2xl:max-w-2xl tracking-widest p-6 flex flex-col border shadow-md rounded-lg'>
+      <div ref={formRef} className='w-full max-w-lg 2xl:max-w-2xl tracking-widest p-6 flex flex-col border shadow-md rounded-lg'>
         <p
           className={`text-xs font-bold mb-2 ${montserrat.className} uppercase font-light`}
         >
@@ -258,9 +296,9 @@ const ContactClient = () => {
         </Form>
       </div>
 
-      {/* FOOTER SECTION (unchanged) */}
-      <div className='w-full max-w-lg 2xl:max-w-3xl text-xs font-thin p-4 flex flex-col space-y-4 my-12 py-10'>
-        <div className='flex flex-wrap items-center gap-8 text-center'>
+      {/* FOOTER SECTION */}
+      <div ref={infoRef} className='w-full max-w-lg 2xl:max-w-3xl text-xs font-thin p-4 flex flex-col space-y-4 my-12 py-10'>
+        <div data-gsap-info className='flex flex-wrap items-center gap-8 text-center'>
           <a
             href='mailto:info@karandesai.in'
             className={`flex flex-col underline pt-2 text-xl md:text-xs ${worksans.className} font-extralight`}
@@ -272,7 +310,7 @@ const ContactClient = () => {
           </h1>
         </div>
 
-        <div className='flex flex-col sm:flex-row gap-4 sm:gap-12 items-start sm:items-center pb-4 text-start sm:text-left'>
+        <div data-gsap-info className='flex flex-col sm:flex-row gap-4 sm:gap-12 items-start sm:items-center pb-4 text-start sm:text-left'>
           <p
             className={`flex flex-col ${worksans.className} text-sm md:text-xs font-light`}
           >
@@ -316,6 +354,7 @@ const ContactClient = () => {
         </div>
 
         <div
+          data-gsap-info
           className={`flex flex-col gap-4 sm:flex-row sm:gap-6 font-light sm:text-left 2xl:text-lg 2xl:leading-5 ${worksans.className} tracking-widest`}
         >
           <p className='text-green-400'>
