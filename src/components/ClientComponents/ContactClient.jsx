@@ -20,6 +20,7 @@ import { Input } from '../../components/ui/input';
 import { Textarea } from '../../components/ui/textarea';
 import { FaWhatsapp } from 'react-icons/fa';
 import { Poppins, Montserrat, Work_Sans } from 'next/font/google';
+import Link from 'next/link';
 
 // fonts
 const popins = Poppins({
@@ -285,6 +286,17 @@ const ContactClient = () => {
                 </FormItem>
               )}
             />
+
+            <p className="text-[10px] text-gray-400 mt-2 tracking-normal leading-normal font-light normal-case">
+              By submitting this form, you acknowledge that your data will be processed in accordance with our{' '}
+              <Link href="/privacy-policy" className="underline hover:text-white transition-colors duration-300">
+                Privacy Policy
+              </Link>{' '}
+              and agree to our{' '}
+              <Link href="/terms-and-conditions" className="underline hover:text-white transition-colors duration-300">
+                Terms & Conditions
+              </Link>.
+            </p>
 
             <Button
               type='submit'

@@ -42,8 +42,8 @@ const Footer = ({ home }) => {
         home && 'fixed'
       } z-30 w-full bottom-0 right-0 text-white px-4 lg:px-8 tracking-widest text-xs py-4  uppercase`}
     >
-      <div className='flex justify-between items-center gap-8 text-gray-400'>
-        <ul className='flex justify-between items-center gap-8'>
+      <div className='flex justify-between items-center gap-8 text-gray-400 flex-wrap sm:flex-nowrap'>
+        <ul className='flex justify-start items-center gap-6 sm:gap-8 flex-wrap'>
           <li>
             <a
               href='https://www.instagram.com/karandesai_a.d/'
@@ -61,10 +61,26 @@ const Footer = ({ home }) => {
               latest project
             </Link>
           </li>
+          <li>
+            <Link
+              href='/privacy-policy'
+              className='hover:text-white hover:text-lg transition-all duration-300 text-[10px] sm:text-xs'
+            >
+              privacy policy
+            </Link>
+          </li>
+          <li>
+            <Link
+              href='/terms-and-conditions'
+              className='hover:text-white hover:text-lg transition-all duration-300 text-[10px] sm:text-xs'
+            >
+              terms & conditions
+            </Link>
+          </li>
         </ul>
         <Link
           href='contact us'
-          className='hover:text-white hover:text-lg transition-all duration-300'
+          className='hover:text-white hover:text-lg transition-all duration-300 whitespace-nowrap'
         >
           contact us
         </Link>
