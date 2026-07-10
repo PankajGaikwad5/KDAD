@@ -30,7 +30,7 @@ const localMagazines = [
   },
   {
     id: 3,
-    name: 'Architects Fortune India',
+    name: 'Fortune India',
     issue: 'June 2026 Issue',
     coverImage: '/mags/fortune1.webp',
     featuredImages: ['/mags/fortune2.webp'],
