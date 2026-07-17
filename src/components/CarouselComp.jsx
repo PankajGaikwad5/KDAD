@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState, useCallback } from 'react';
+import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {
   Navigation,
@@ -33,12 +34,13 @@ const MediaRenderer = React.memo(({ url, alt, onLoad, priority = false }) => {
       onLoadedData={onLoad}
     />
   ) : (
-    <img
+    <Image
       src={url}
       alt={alt}
-      loading={priority ? 'eager' : 'lazy'}
+      fill
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+      priority={priority}
       className='max-w-full max-h-full object-contain select-none'
-      decoding='async'
       onLoad={onLoad}
     />
   );
@@ -113,17 +115,17 @@ const CarouselComp = ({ imgArray, notcollab }) => {
         >
           {imgArray.map((img, index) => (
             <SwiperSlide key={index} virtualIndex={index}>
-              <div className='flex items-center h-16 md:h-20 justify-center cursor-pointer'>
-                <img
+              <div className='relative flex items-center w-full h-16 md:h-20 justify-center cursor-pointer'>
+                <Image
                   src={img}
                   alt={`Thumbnail ${index}`}
+                  fill
+                  sizes="120px"
                   className={`w-full h-full object-cover rounded transition-opacity ${
                     currentIndex === index
                       ? 'opacity-100 border-2 border-white'
                       : 'opacity-60'
                   }`}
-                  loading='lazy'
-                  decoding='async'
                 />
               </div>
             </SwiperSlide>
@@ -232,7 +234,7 @@ const CarouselComp = ({ imgArray, notcollab }) => {
       >
         {imgArray.map((img, index) => (
           <SwiperSlide key={index}>
-            <div className='w-full h-full swiper-zoom-container flex items-center justify-center'>
+             <div className='relative w-full h-full swiper-zoom-container flex items-center justify-center'>
               <MediaRenderer
                 url={img}
                 alt={`Slide ${index}`}

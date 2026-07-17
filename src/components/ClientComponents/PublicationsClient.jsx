@@ -184,7 +184,7 @@ export default function PublicationsClient({ articles, features }) {
         ref={magazinesRef}
         className="grid grid-cols-1 gap-y-10 gap-x-8 pb-16 sm:grid-cols-2 lg:grid-cols-3 w-full max-w-[54rem] 2xl:max-w-[80%]"
       >
-        {allMagazines.map((mag) => (
+        {allMagazines.map((mag, index) => (
           <div
             key={mag.id}
             onClick={() => selectMagazine(mag)}
@@ -197,15 +197,17 @@ export default function PublicationsClient({ articles, features }) {
                   <span className="text-[10px] uppercase tracking-widest text-zinc-600">Loading...</span>
                 </div>
               )}
-              <img
+              <Image
                 src={mag.coverImage}
                 alt={`${mag.name} Cover`}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className={`w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${
                   loadedImages[`mag-${mag.id}-cover`] ? 'opacity-100' : 'opacity-0'
                 }`}
                 onLoad={() => handleImageLoad(`mag-${mag.id}-cover`)}
                 onError={() => handleImageLoad(`mag-${mag.id}-cover`)}
-                loading="lazy"
+                priority={index < 3}
               />
 
               {/* Hover action overlay */}
@@ -305,15 +307,16 @@ export default function PublicationsClient({ articles, features }) {
                           <span className="text-[10px] uppercase tracking-widest text-zinc-600">Loading...</span>
                         </div>
                       )}
-                      <img
+                      <Image
                         src={selectedMagazine.coverImage}
                         alt={`${selectedMagazine.name} Spread`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 400px"
                         className={`w-full h-full object-cover ${
                           loadedImages[`modal-${selectedMagazine.id}-cover`] ? 'opacity-100' : 'opacity-0'
                         }`}
                         onLoad={() => handleImageLoad(`modal-${selectedMagazine.id}-cover`)}
                         onError={() => handleImageLoad(`modal-${selectedMagazine.id}-cover`)}
-                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -334,15 +337,16 @@ export default function PublicationsClient({ articles, features }) {
                             <span className="text-[10px] uppercase tracking-widest text-zinc-600">Loading...</span>
                           </div>
                         )}
-                        <img
+                        <Image
                           src={selectedMagazine.coverImage}
                           alt={`${selectedMagazine.name} Cover`}
+                          fill
+                          sizes="320px"
                           className={`w-full h-full object-cover ${
                             loadedImages[`modal-${selectedMagazine.id}-cover`] ? 'opacity-100' : 'opacity-0'
                           }`}
                           onLoad={() => handleImageLoad(`modal-${selectedMagazine.id}-cover`)}
                           onError={() => handleImageLoad(`modal-${selectedMagazine.id}-cover`)}
-                          loading="lazy"
                         />
                       </div>
                     </div>
@@ -367,15 +371,16 @@ export default function PublicationsClient({ articles, features }) {
                                 <span className="text-[10px] uppercase tracking-widest text-zinc-600">Loading...</span>
                               </div>
                             )}
-                            <img
+                            <Image
                               src={selectedMagazine.featuredImages[activeFeaturedIndex]}
                               alt={`${selectedMagazine.name} Feature ${activeFeaturedIndex + 1}`}
+                              fill
+                              sizes="320px"
                               className={`w-full h-full object-cover ${
                                 loadedImages[`modal-${selectedMagazine.id}-feature-${activeFeaturedIndex}`] ? 'opacity-100' : 'opacity-0'
                               }`}
                               onLoad={() => handleImageLoad(`modal-${selectedMagazine.id}-feature-${activeFeaturedIndex}`)}
                               onError={() => handleImageLoad(`modal-${selectedMagazine.id}-feature-${activeFeaturedIndex}`)}
-                              loading="lazy"
                             />
                           </div>
                         </div>
@@ -401,13 +406,19 @@ export default function PublicationsClient({ articles, features }) {
                           <button
                             key={idx}
                             onClick={() => setActiveFeaturedIndex(idx)}
-                            className={`w-10 h-14 rounded overflow-hidden transition-all duration-300 ${
+                            className={`relative w-10 h-14 rounded overflow-hidden transition-all duration-300 ${
                               activeFeaturedIndex === idx
                                 ? 'ring-2 ring-pink-700 scale-105 border-transparent'
                                 : 'opacity-50 hover:opacity-100 border border-zinc-800'
                             }`}
                           >
-                            <img src={img} className="w-full h-full object-cover" alt={`Spread page ${idx + 1}`} />
+                            <Image
+                              src={img}
+                              alt={`Spread page ${idx + 1}`}
+                              fill
+                              sizes="40px"
+                              className="w-full h-full object-cover"
+                            />
                           </button>
                         ))}
                       </div>
@@ -461,9 +472,11 @@ export default function PublicationsClient({ articles, features }) {
                 className={`relative w-full h-full ${isZoomedIn ? 'scale-[1.8] cursor-zoom-out' : 'scale-100 cursor-zoom-in'
                   }`}
               >
-                <img
+                <Image
                   src={zoomedImage}
                   alt="Full View Publication"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 1024px"
                   className="object-contain w-full h-full"
                 />
               </div>

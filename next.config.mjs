@@ -28,6 +28,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'karandesai.in',
       },
+      {
+        protocol: 'https',
+        hostname: 'utfs.io',
+      },
     ],
   },
 
