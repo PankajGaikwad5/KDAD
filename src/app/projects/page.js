@@ -14,6 +14,7 @@ export const metadata = {
     'residential architecture',
     'commercial design',
     'interior design portfolio',
+    'chaitya 777',
     'tdp',
     'the dream project',
     'project 86',

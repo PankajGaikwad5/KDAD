@@ -1,6 +1,274 @@
 export const projects = [
   {
     _id: {
+      $oid: '67c1f5807a5dc4ac2d27e777',
+    },
+    title: 'Chaitya 777',
+    images: [
+      {
+        fileName: '1',
+        fileUrl: '/chaitya/1.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e701',
+        },
+      },
+      {
+        fileName: '2',
+        fileUrl: '/chaitya/2.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e702',
+        },
+      },
+      {
+        fileName: '3',
+        fileUrl: '/chaitya/3.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e703',
+        },
+      },
+      {
+        fileName: '4',
+        fileUrl: '/chaitya/4.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e704',
+        },
+      },
+      {
+        fileName: '5',
+        fileUrl: '/chaitya/5.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e705',
+        },
+      },
+      {
+        fileName: '6',
+        fileUrl: '/chaitya/6.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e706',
+        },
+      },
+      {
+        fileName: '7',
+        fileUrl: '/chaitya/7.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e707',
+        },
+      },
+      {
+        fileName: '8',
+        fileUrl: '/chaitya/8.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e708',
+        },
+      },
+      {
+        fileName: '9',
+        fileUrl: '/chaitya/9.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e709',
+        },
+      },
+      {
+        fileName: '10',
+        fileUrl: '/chaitya/10.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e70a',
+        },
+      },
+      {
+        fileName: '11',
+        fileUrl: '/chaitya/11.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e70b',
+        },
+      },
+      {
+        fileName: '12',
+        fileUrl: '/chaitya/12.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e70c',
+        },
+      },
+      {
+        fileName: '13',
+        fileUrl: '/chaitya/13.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e70d',
+        },
+      },
+      {
+        fileName: '14',
+        fileUrl: '/chaitya/14.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e70e',
+        },
+      },
+      {
+        fileName: '15',
+        fileUrl: '/chaitya/15.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e70f',
+        },
+      },
+      {
+        fileName: '16',
+        fileUrl: '/chaitya/16.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e710',
+        },
+      },
+      {
+        fileName: '17',
+        fileUrl: '/chaitya/17.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e711',
+        },
+      },
+      {
+        fileName: '18',
+        fileUrl: '/chaitya/18.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e712',
+        },
+      },
+      {
+        fileName: '19',
+        fileUrl: '/chaitya/19.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e713',
+        },
+      },
+      {
+        fileName: '20',
+        fileUrl: '/chaitya/20.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e714',
+        },
+      },
+      {
+        fileName: '21',
+        fileUrl: '/chaitya/21.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e715',
+        },
+      },
+      {
+        fileName: '22',
+        fileUrl: '/chaitya/22.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e716',
+        },
+      },
+      {
+        fileName: '23',
+        fileUrl: '/chaitya/23.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e717',
+        },
+      },
+      {
+        fileName: '24',
+        fileUrl: '/chaitya/24.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e718',
+        },
+      },
+      {
+        fileName: '25',
+        fileUrl: '/chaitya/25.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e719',
+        },
+      },
+      {
+        fileName: '26',
+        fileUrl: '/chaitya/26.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e71a',
+        },
+      },
+      {
+        fileName: '27',
+        fileUrl: '/chaitya/27.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e71b',
+        },
+      },
+      {
+        fileName: '28',
+        fileUrl: '/chaitya/28.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e71c',
+        },
+      },
+      {
+        fileName: '29',
+        fileUrl: '/chaitya/29.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e71d',
+        },
+      },
+      {
+        fileName: '30',
+        fileUrl: '/chaitya/30.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e71e',
+        },
+      },
+      {
+        fileName: '31',
+        fileUrl: '/chaitya/31.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e71f',
+        },
+      },
+      {
+        fileName: '32',
+        fileUrl: '/chaitya/32.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e720',
+        },
+      },
+      {
+        fileName: '33',
+        fileUrl: '/chaitya/33.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e721',
+        },
+      },
+      {
+        fileName: '34',
+        fileUrl: '/chaitya/34.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e722',
+        },
+      },
+      {
+        fileName: '35',
+        fileUrl: '/chaitya/35.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e723',
+        },
+      },
+      {
+        fileName: '36',
+        fileUrl: '/chaitya/36.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e724',
+        },
+      },
+      {
+        fileName: '38',
+        fileUrl: '/chaitya/38.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e725',
+        },
+      },
+    ],
+    __v: 0,
+  },
+  {
+    _id: {
       $oid: '6791f5807a5dc4ac2d27e20e',
     },
     title: 'the dream project',

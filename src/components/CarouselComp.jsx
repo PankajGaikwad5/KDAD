@@ -93,16 +93,13 @@ const CarouselComp = ({ imgArray, notcollab }) => {
         }`}
       >
         <Swiper
-          modules={[Thumbs, FreeMode, Virtual]}
+          modules={[Thumbs, FreeMode]}
           onSwiper={setThumbsSwiper}
           spaceBetween={isFullscreen ? 8 : 10}
           slidesPerView={isFullscreen ? 8 : 5}
           className='thumbnail-swiper'
-          watchSlidesProgress={false}
-          virtual={{
-            enabled: true,
-            slides: imgArray,
-          }}
+          watchSlidesProgress={true}
+          slideToClickedSlide={true}
           freeMode={{
             enabled: true,
             momentum: false,
@@ -114,7 +111,7 @@ const CarouselComp = ({ imgArray, notcollab }) => {
           }}
         >
           {imgArray.map((img, index) => (
-            <SwiperSlide key={index} virtualIndex={index}>
+            <SwiperSlide key={index}>
               <div className='relative flex items-center w-full h-16 md:h-20 justify-center cursor-pointer'>
                 <Image
                   src={img}
@@ -229,20 +226,25 @@ const CarouselComp = ({ imgArray, notcollab }) => {
         onSwiper={(swiper) => setCurrentIndex(swiper.realIndex)}
         speed={200}
         lazy={'true'}
-        watchSlidesProgress={false}
+        watchSlidesProgress={true}
         allowTouchMove={true}
       >
-        {imgArray.map((img, index) => (
-          <SwiperSlide key={index}>
-             <div className='relative w-full h-full swiper-zoom-container flex items-center justify-center'>
-              <MediaRenderer
-                url={img}
-                alt={`Slide ${index}`}
-                priority={index === 0}
-              />
-            </div>
-          </SwiperSlide>
-        ))}
+        {imgArray.map((img, index) => {
+          const isNear = Math.abs(index - currentIndex) <= 2;
+          return (
+            <SwiperSlide key={index}>
+              <div className='relative w-full h-full swiper-zoom-container flex items-center justify-center'>
+                {isNear && (
+                  <MediaRenderer
+                    url={img}
+                    alt={`Slide ${index}`}
+                    priority={index === 0}
+                  />
+                )}
+              </div>
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
 
       {renderThumbnails()}
