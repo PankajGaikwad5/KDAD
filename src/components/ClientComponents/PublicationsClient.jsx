@@ -14,6 +14,14 @@ const montserrat = Montserrat({
 const localMagazines = [
   {
     id: 1,
+    name: 'Living Etc',
+    issue: 'July 2026 Issue',
+    coverImage: '/mags/livingetc1.webp',
+    featuredImages: ['/mags/livingetc2.webp', '/mags/livingetc3.webp','/mags/livingetc4.webp','/mags/livingetc5.webp'],
+    description: 'AN ESCAPE IN PLAIN SIGHT',
+  },
+  {
+    id: 2,
     name: 'Cover',
     issue: 'June 2026 Issue',
     coverImage: '/mags/cover1.webp',
@@ -21,7 +29,7 @@ const localMagazines = [
     description: 'A special feature showcasing the unique design details across multiple editorial spreads.',
   },
   {
-    id: 2,
+    id: 3,
     name: 'India Today Home',
     issue: 'June 2026 Issue',
     coverImage: '/mags/ithome1.webp',
@@ -29,7 +37,7 @@ const localMagazines = [
     description: 'Featuring the custom KDH Marble Console collection and minimal design aesthetics in a high-end luxury residence.',
   },
   {
-    id: 3,
+    id: 4,
     name: 'Fortune India',
     issue: 'June 2026 Issue',
     coverImage: '/mags/fortune1.webp',
