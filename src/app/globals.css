@@ -381,3 +381,8 @@ body {
   bottom: 0px !important;
   /* move up if needed */
 }
+
+.swiper-button-disabled {
+  opacity: 0.35 !important;
+  pointer-events: none !important;
+}

@@ -18,7 +18,7 @@ const montserrat = Montserrat({
 
 // Server-side dynamic metadata for each project
 export async function generateMetadata({ params }) {
-  const { id } = params;
+  const { id } = await params;
   const projectData = projects.find((p) => {
     const pid = p._id?.$oid ?? p._id ?? p.id;
     return String(pid) === String(id);
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }) {
     projectData.description ||
     `${projectData.title} — architecture and interior design project by Karan Desai Architecture + Design. Explore images, concept and details.`;
   const firstImage = projectData.images?.[0]?.fileUrl ?? '/og-image.jpg';
-  const url = `https://karandesai.in/projectdetails/${params.id}`;
+  const url = `https://karandesai.in/projectdetails/${id}`;
 
   return {
     title,
@@ -148,7 +148,7 @@ const FeatureDetails = async ({ params }) => {
 
         {/* Visible H1 for SEO and accessibility */}
         <header className='pt-6 pb-4'>
-          <h1 className='text-white text-3xl md:text-4xl font-semibold tracking-wide'>
+          <h1 className='text-white text-3xl md:text-4xl font-semibold tracking-wide uppercase'>
             {title}
           </h1>
           {projectData.location && (

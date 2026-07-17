@@ -200,9 +200,26 @@ const CarouselComp = ({ imgArray, notcollab }) => {
         {currentIndex + 1} / {imgArray.length}
       </div>
 
+      {/* Custom Prev Navigation Button */}
+      <button className='swiper-button-prev-custom absolute left-4 top-1/2 -translate-y-1/2 z-10 p-3 bg-black/40 hover:bg-black/75 border border-white/20 text-white rounded-full transition-all duration-300 backdrop-blur-sm hover:scale-110 flex items-center justify-center select-none cursor-pointer' aria-label="Previous slide">
+        <svg xmlns='http://www.w3.org/2000/svg' className='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+          <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2.5} d='M15 19l-7-7 7-7' />
+        </svg>
+      </button>
+
+      {/* Custom Next Navigation Button */}
+      <button className='swiper-button-next-custom absolute right-4 top-1/2 -translate-y-1/2 z-10 p-3 bg-black/40 hover:bg-black/75 border border-white/20 text-white rounded-full transition-all duration-300 backdrop-blur-sm hover:scale-110 flex items-center justify-center select-none cursor-pointer' aria-label="Next slide">
+        <svg xmlns='http://www.w3.org/2000/svg' className='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+          <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2.5} d='M9 5l7 7-7 7' />
+        </svg>
+      </button>
+
       <Swiper
         modules={[Navigation, Thumbs, Pagination, A11y, Zoom, Keyboard]}
-        navigation
+        navigation={{
+          prevEl: '.swiper-button-prev-custom',
+          nextEl: '.swiper-button-next-custom',
+        }}
         thumbs={{ swiper: thumbsSwiper }}
         spaceBetween={10}
         slidesPerView={1}

@@ -32,7 +32,7 @@ const ProjectCard = ({ img, id, title, projects }) => {
                 <CardItem className='w-full relative'>
                   {/* Overlay: show on hover, allow pointer events to pass through */}
                   <div className='absolute inset-0 z-10 bg-black/70 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none'>
-                    <h2 className='text-white text-xl font-extralight tracking-widest '>
+                    <h2 className='text-white text-xl  font-bold uppercase tracking-widest '>
                       {title}
                     </h2>
                   </div>
