@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Bebas_Neue } from 'next/font/google';
+import { Geist, Geist_Mono, Bebas_Neue, League_Spartan } from 'next/font/google';
 import './globals.css';
 import CursorTrail from '../components/CursorTrail';
 import { Analytics } from '@vercel/analytics/react';
@@ -22,6 +22,13 @@ const bebasNueRegular = Bebas_Neue({
   subsets: ['latin'], // Specify subsets
   weight: '400', // Specify weight
   variable: '--font-bebas-nue', // Custom CSS variable
+});
+
+// Importing League Spartan
+const leagueSpartan = League_Spartan({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-league-spartan',
 });
 
 const jsonLd = {
@@ -234,7 +241,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body className={`${bebasNueRegular.variable} antialiased`}>
+      <body className={`${bebasNueRegular.variable} ${leagueSpartan.variable} antialiased`}>
         {/* JSON-LD Structured Data */}
         <Script
           id='json-ld'
