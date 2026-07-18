@@ -50,6 +50,7 @@ export default function PublicationsClient({ articles, features }) {
   const pageRef = useRef(null);
   const magazinesRef = useRef(null);
   const articlesSectionRef = useRef(null);
+  const podcastRef = useRef(null);
 
   const [selectedMagazine, setSelectedMagazine] = useState(null);
   const [loadedImages, setLoadedImages] = useState({});
@@ -96,12 +97,21 @@ export default function PublicationsClient({ articles, features }) {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
+      if (podcastRef.current) {
+        tl.fromTo(
+          podcastRef.current,
+          { opacity: 0, y: 30 },
+          { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }
+        );
+      }
+
       const magItems = magazinesRef.current?.children;
       if (magItems?.length) {
         tl.fromTo(
           magItems,
           { opacity: 0, y: 30 },
-          { opacity: 1, y: 0, duration: 0.8, stagger: 0.03, ease: 'power2.out' }
+          { opacity: 1, y: 0, duration: 0.8, stagger: 0.03, ease: 'power2.out' },
+          podcastRef.current ? '-=0.4' : undefined
         );
       }
 
@@ -171,6 +181,31 @@ export default function PublicationsClient({ articles, features }) {
       >
         publications
       </h1>
+
+      {/* Featured Podcast Section */}
+      <div
+        ref={podcastRef}
+        className="w-full max-w-[54rem] 2xl:max-w-[80%] mb-12 flex flex-col items-center"
+      >
+        <div className="flex items-center gap-4 mb-8 w-full">
+          <span className={`text-xs uppercase tracking-widest text-zinc-500 whitespace-nowrap ${montserrat.className}`}>
+            Featured Podcast
+          </span>
+          <div className="flex-1 h-px bg-zinc-800" />
+        </div>
+
+        <div className="w-full max-w-3xl aspect-video rounded-2xl overflow-hidden bg-zinc-950 shadow-2xl border border-zinc-900/80 transition-all duration-500 hover:border-zinc-850">
+          <iframe
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/cfiPrdhy_yQ?rel=0"
+            title="Karan Desai Podcast"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </div>
 
       {/* Magazines Section (Unified before articles) */}
       <div className="mt-8 mb-8 flex items-center gap-4 w-full max-w-[54rem] 2xl:max-w-[80%]">
