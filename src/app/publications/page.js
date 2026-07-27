@@ -46,6 +46,12 @@ export const metadata = {
 
 const articles = [
   {
+    id: 30,
+    text: `Someday this would be home — Elle Decor Feature`,
+    image: '/articles/elledecor.webp',
+    link: `https://www.instagram.com/elledecorindia/`,
+  },
+  {
     id: 1,
     text: `KIAHMOI Boutique Salon`,
     image: '/articles/amazingarchitecture.webp',

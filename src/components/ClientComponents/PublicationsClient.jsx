@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, Fragment } from 'react';
 import gsap from 'gsap';
 import { Montserrat } from 'next/font/google';
 import Image from 'next/image';
-import { X, BookOpen, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, BookOpen, ChevronLeft, ChevronRight, Instagram, ExternalLink } from 'lucide-react';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -14,6 +14,16 @@ const montserrat = Montserrat({
 const localMagazines = [
   {
     id: 1,
+    name: 'Elle Decor India',
+    issue: 'Instagram Feature',
+    coverImage: '/mags/elledecor_cover.jpg',
+    featuredImages: ['/mags/elledecor_ig.png'],
+    description: 'Someday this would be home — A 1,300 sq ft apartment in Mumbai overlooking Aarey forest by Karan Desai, featured on @elledecorindia.',
+    externalLink: 'https://www.instagram.com/elledecorindia/',
+    isInstagram: true,
+  },
+  {
+    id: 2,
     name: 'Living Etc',
     issue: 'July 2026 Issue',
     coverImage: '/mags/livingetc1.webp',
@@ -21,7 +31,7 @@ const localMagazines = [
     description: 'AN ESCAPE IN PLAIN SIGHT',
   },
   {
-    id: 2,
+    id: 3,
     name: 'Cover',
     issue: 'June 2026 Issue',
     coverImage: '/mags/cover1.webp',
@@ -29,7 +39,7 @@ const localMagazines = [
     description: 'A special feature showcasing the unique design details across multiple editorial spreads.',
   },
   {
-    id: 3,
+    id: 4,
     name: 'India Today Home',
     issue: 'June 2026 Issue',
     coverImage: '/mags/ithome1.webp',
@@ -37,7 +47,7 @@ const localMagazines = [
     description: 'Featuring the custom KDH Marble Console collection and minimal design aesthetics in a high-end luxury residence.',
   },
   {
-    id: 4,
+    id: 5,
     name: 'Fortune India',
     issue: 'June 2026 Issue',
     coverImage: '/mags/fortune1.webp',
@@ -137,6 +147,8 @@ export default function PublicationsClient({ articles, features }) {
     coverImage: m.coverImage,
     featuredImages: m.featuredImages,
     description: m.description,
+    externalLink: m.externalLink,
+    isInstagram: m.isInstagram,
   }));
 
   const normalizedFeatures = (features || []).map((f, idx) => {
@@ -227,6 +239,11 @@ export default function PublicationsClient({ articles, features }) {
           >
             {/* Image Aspect ratio 3/4 */}
             <div className="relative w-full aspect-[3/4] overflow-hidden bg-zinc-900">
+              {mag.isInstagram && (
+                <div className="absolute top-3 right-3 z-10 p-1.5 bg-gradient-to-tr from-amber-500 via-pink-600 to-purple-600 text-white rounded-full shadow-lg">
+                  <Instagram size={14} />
+                </div>
+              )}
               {!loadedImages[`mag-${mag.id}-cover`] && (
                 <div className="absolute inset-0 bg-zinc-900 animate-pulse flex items-center justify-center">
                   <span className="text-[10px] uppercase tracking-widest text-zinc-600">Loading...</span>
@@ -316,13 +333,27 @@ export default function PublicationsClient({ articles, features }) {
                   {selectedMagazine.issue}
                 </p>
               </div>
-              <button
-                onClick={() => setSelectedMagazine(null)}
-                className="p-2 text-zinc-400 hover:text-white bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 rounded-full transition-colors duration-200"
-                aria-label="Close"
-              >
-                <X size={18} />
-              </button>
+              <div className="flex items-center gap-3">
+                {selectedMagazine.externalLink && (
+                  <a
+                    href={selectedMagazine.externalLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3.5 py-1.5 bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 hover:opacity-90 text-white text-xs font-semibold rounded-full flex items-center gap-2 transition-all duration-300 shadow-md"
+                  >
+                    <Instagram size={14} />
+                    <span className="hidden sm:inline">View on Instagram</span>
+                    <ExternalLink size={12} className="sm:hidden" />
+                  </a>
+                )}
+                <button
+                  onClick={() => setSelectedMagazine(null)}
+                  className="p-2 text-zinc-400 hover:text-white bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 rounded-full transition-colors duration-200"
+                  aria-label="Close"
+                >
+                  <X size={18} />
+                </button>
+              </div>
             </div>
 
             {/* Content Area */}
