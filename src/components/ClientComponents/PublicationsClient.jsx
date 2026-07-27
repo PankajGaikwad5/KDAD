@@ -14,16 +14,26 @@ const montserrat = Montserrat({
 const localMagazines = [
   {
     id: 1,
+    name: 'FOAID India',
+    issue: 'Instagram Feature',
+    coverImage: '/mags/foaid_cover.jpg',
+    featuredImages: ['/mags/foaid_ig.png'],
+    description: 'Chaitya 777 — Designed by @karandesai_a.d transforms the living room into a bold, immersive space where colour becomes architecture.',
+    externalLink: 'https://www.instagram.com/p/DbSOyQDCFk-/',
+    isInstagram: true,
+  },
+  {
+    id: 2,
     name: 'Elle Decor India',
     issue: 'Instagram Feature',
     coverImage: '/mags/elledecor_cover.jpg',
     featuredImages: ['/mags/elledecor_ig.png'],
     description: 'Someday this would be home — A 1,300 sq ft apartment in Mumbai overlooking Aarey forest by Karan Desai, featured on @elledecorindia.',
-    externalLink: 'https://www.instagram.com/elledecorindia/',
+    externalLink: 'https://www.instagram.com/p/DbNFWwFiobQ/',
     isInstagram: true,
   },
   {
-    id: 2,
+    id: 3,
     name: 'Living Etc',
     issue: 'July 2026 Issue',
     coverImage: '/mags/livingetc1.webp',
@@ -31,7 +41,7 @@ const localMagazines = [
     description: 'AN ESCAPE IN PLAIN SIGHT',
   },
   {
-    id: 3,
+    id: 4,
     name: 'Cover',
     issue: 'June 2026 Issue',
     coverImage: '/mags/cover1.webp',
@@ -39,7 +49,7 @@ const localMagazines = [
     description: 'A special feature showcasing the unique design details across multiple editorial spreads.',
   },
   {
-    id: 4,
+    id: 5,
     name: 'India Today Home',
     issue: 'June 2026 Issue',
     coverImage: '/mags/ithome1.webp',
@@ -47,7 +57,7 @@ const localMagazines = [
     description: 'Featuring the custom KDH Marble Console collection and minimal design aesthetics in a high-end luxury residence.',
   },
   {
-    id: 5,
+    id: 6,
     name: 'Fortune India',
     issue: 'June 2026 Issue',
     coverImage: '/mags/fortune1.webp',
@@ -393,7 +403,9 @@ export default function PublicationsClient({ articles, features }) {
                   <div className="w-full flex flex-col md:flex-row gap-8 justify-center items-stretch max-w-4xl">
                     {/* Cover Spread */}
                     <div className="w-full md:flex-1 flex flex-col items-center justify-center">
-                      <span className="text-[10px] uppercase tracking-widest text-zinc-500 mb-2 font-semibold">Magazine Cover</span>
+                      <span className="text-[10px] uppercase tracking-widest text-zinc-500 mb-2 font-semibold">
+                        {selectedMagazine.isInstagram ? 'Project Photo' : 'Magazine Cover'}
+                      </span>
                       <div
                         onClick={() => { setZoomedImage(selectedMagazine.coverImage); setIsZoomedIn(false); }}
                         className="relative w-full max-w-[320px] aspect-[3/4] rounded-lg overflow-hidden border border-zinc-800/80 shadow-2xl cursor-zoom-in hover:opacity-95 transition-opacity duration-300"
@@ -426,7 +438,9 @@ export default function PublicationsClient({ articles, features }) {
                         {/* Feature Spread */}
                         <div className="w-full md:flex-1 flex flex-col items-center justify-center">
                           <span className="text-[10px] uppercase tracking-widest text-zinc-500 mb-2 font-semibold">
-                            Featured Page {selectedMagazine.featuredImages.length > 1 ? activeFeaturedIndex + 1 : ''}
+                            {selectedMagazine.isInstagram
+                              ? 'Instagram Post & Caption'
+                              : `Featured Page ${selectedMagazine.featuredImages.length > 1 ? activeFeaturedIndex + 1 : ''}`}
                           </span>
                           <div
                             onClick={() => { setZoomedImage(selectedMagazine.featuredImages[activeFeaturedIndex]); setIsZoomedIn(false); }}

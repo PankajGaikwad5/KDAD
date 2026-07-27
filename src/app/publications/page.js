@@ -46,6 +46,12 @@ export const metadata = {
 
 const articles = [
   {
+    id: 31,
+    text: `Chaitya 777 — FOAID India Feature`,
+    image: '/articles/elledecor.webp',
+    link: `https://www.instagram.com/p/DbSOyQDCFk-/`,
+  },
+  {
     id: 30,
     text: `Someday this would be home — Elle Decor Feature`,
     image: '/articles/elledecor.webp',
