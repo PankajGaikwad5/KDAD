@@ -1,6 +1,113 @@
 export const projects = [
   {
     _id: {
+      $oid: '67c1f5807a5dc4ac2d27e800',
+    },
+    title: 'KD Lodha Home',
+    images: [
+      {
+        fileName: '1',
+        fileUrl: '/Lodha Home/1.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e801',
+        },
+      },
+      {
+        fileName: 'Karan Desai - Lodha ASH_0002 Shot by Ashish Sahi',
+        fileUrl: '/Lodha Home/Karan Desai - Lodha ASH_0002 Shot by Ashish Sahi.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e802',
+        },
+      },
+      {
+        fileName: 'Karan Desai - Lodha ASH_0016 Shot by Ashish Sahi',
+        fileUrl: '/Lodha Home/Karan Desai - Lodha ASH_0016 Shot by Ashish Sahi.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e804',
+        },
+      },
+      {
+        fileName: 'Karan Desai - Lodha ASH_0082 Shot by Ashish Sahi',
+        fileUrl: '/Lodha Home/Karan Desai - Lodha ASH_0082 Shot by Ashish Sahi.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e80e',
+        },
+      },
+      {
+        fileName: 'Karan Desai - Lodha ASH_0089 Shot by Ashish Sahi',
+        fileUrl: '/Lodha Home/Karan Desai - Lodha ASH_0089 Shot by Ashish Sahi.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e80f',
+        },
+      },
+      {
+        fileName: 'Karan Desai - Lodha ASH_0101 Shot by Ashish Sahi',
+        fileUrl: '/Lodha Home/Karan Desai - Lodha ASH_0101 Shot by Ashish Sahi.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e811',
+        },
+      },
+      {
+        fileName: 'Karan Desai - Lodha ASH_0112 Shot by Ashish Sahi',
+        fileUrl: '/Lodha Home/Karan Desai - Lodha ASH_0112 Shot by Ashish Sahi.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e812',
+        },
+      },
+      {
+        fileName: 'Karan Desai - Lodha ASH_0027 Shot by Ashish Sahi',
+        fileUrl: '/Lodha Home/Karan Desai - Lodha ASH_0027 Shot by Ashish Sahi.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e805',
+        },
+      },
+      {
+        fileName: 'Karan Desai - Lodha ASH_0039 Shot by Ashish Sahi',
+        fileUrl: '/Lodha Home/Karan Desai - Lodha ASH_0039 Shot by Ashish Sahi.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e808',
+        },
+      },
+      {
+        fileName: 'Karan Desai - Lodha ASH_0048 Shot by Ashish Sahi',
+        fileUrl: '/Lodha Home/Karan Desai - Lodha ASH_0048 Shot by Ashish Sahi.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e80a',
+        },
+      },
+      {
+        fileName: 'Karan Desai - Lodha ASH_0053 Shot by Ashish Sahi',
+        fileUrl: '/Lodha Home/Karan Desai - Lodha ASH_0053 Shot by Ashish Sahi.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e80b',
+        },
+      },
+      {
+        fileName: 'Karan Desai - Lodha ASH_0068 Shot by Ashish Sahi',
+        fileUrl: '/Lodha Home/Karan Desai - Lodha ASH_0068 Shot by Ashish Sahi.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e80c',
+        },
+      },
+      {
+        fileName: 'Karan Desai - Lodha ASH_0122 Shot by Ashish Sahi',
+        fileUrl: '/Lodha Home/Karan Desai - Lodha ASH_0122 Shot by Ashish Sahi.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e813',
+        },
+      },
+      {
+        fileName: 'Karan Desai - Lodha ASH_0134 Shot by Ashish Sahi',
+        fileUrl: '/Lodha Home/Karan Desai - Lodha ASH_0134 Shot by Ashish Sahi.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e814',
+        },
+      },
+    ],
+    __v: 0,
+  },
+  {
+    _id: {
       $oid: '67c1f5807a5dc4ac2d27e777',
     },
     title: 'Chaitya 777',
