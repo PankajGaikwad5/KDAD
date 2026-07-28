@@ -133,20 +133,7 @@ export const projects = [
           $oid: '67c1f5807a5dc4ac2d27e703',
         },
       },
-      {
-        fileName: '4',
-        fileUrl: '/chaitya/4.webp',
-        _id: {
-          $oid: '67c1f5807a5dc4ac2d27e704',
-        },
-      },
-      {
-        fileName: '5',
-        fileUrl: '/chaitya/5.webp',
-        _id: {
-          $oid: '67c1f5807a5dc4ac2d27e705',
-        },
-      },
+
       {
         fileName: '6',
         fileUrl: '/chaitya/6.webp',
@@ -161,13 +148,7 @@ export const projects = [
           $oid: '67c1f5807a5dc4ac2d27e707',
         },
       },
-      {
-        fileName: '8',
-        fileUrl: '/chaitya/8.webp',
-        _id: {
-          $oid: '67c1f5807a5dc4ac2d27e708',
-        },
-      },
+
       {
         fileName: '9',
         fileUrl: '/chaitya/9.webp',
@@ -189,13 +170,7 @@ export const projects = [
           $oid: '67c1f5807a5dc4ac2d27e70b',
         },
       },
-      {
-        fileName: '12',
-        fileUrl: '/chaitya/12.webp',
-        _id: {
-          $oid: '67c1f5807a5dc4ac2d27e70c',
-        },
-      },
+
       {
         fileName: '13',
         fileUrl: '/chaitya/13.webp',
@@ -245,20 +220,7 @@ export const projects = [
           $oid: '67c1f5807a5dc4ac2d27e713',
         },
       },
-      {
-        fileName: '20',
-        fileUrl: '/chaitya/20.webp',
-        _id: {
-          $oid: '67c1f5807a5dc4ac2d27e714',
-        },
-      },
-      {
-        fileName: '21',
-        fileUrl: '/chaitya/21.webp',
-        _id: {
-          $oid: '67c1f5807a5dc4ac2d27e715',
-        },
-      },
+
       {
         fileName: '22',
         fileUrl: '/chaitya/22.webp',

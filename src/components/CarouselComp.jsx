@@ -35,6 +35,7 @@ const MediaRenderer = React.memo(({ url, alt, onLoad, priority = false }) => {
     />
   ) : (
     <Image
+      unoptimized
       src={url}
       alt={alt}
       fill
@@ -114,6 +115,7 @@ const CarouselComp = ({ imgArray, notcollab }) => {
             <SwiperSlide key={index}>
               <div className='relative flex items-center w-full h-16 md:h-20 justify-center cursor-pointer'>
                 <Image
+                  unoptimized
                   src={img}
                   alt={`Thumbnail ${index}`}
                   fill

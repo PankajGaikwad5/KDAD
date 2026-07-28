@@ -23,6 +23,7 @@ export default function OptimizedImage({
 }) {
   return (
     <Image
+      unoptimized
       src={src}
       alt={alt}
       width={width}
