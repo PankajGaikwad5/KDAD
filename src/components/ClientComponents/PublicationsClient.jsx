@@ -276,7 +276,7 @@ export default function PublicationsClient({ articles, features }) {
           <div
             key={mag.id}
             onClick={() => selectMagazine(mag)}
-            className="group cursor-pointer relative flex flex-col rounded-xl overflow-hidden bg-zinc-950/40 border border-zinc-900 transition-all duration-500 hover:border-zinc-700/80 hover:shadow-2xl hover:shadow-white/[0.01]"
+            className="group cursor-pointer relative flex flex-col rounded-xl overflow-hidden bg-zinc-950/40  transition-all duration-500 hover:border-zinc-700/80 hover:shadow-2xl hover:shadow-white/[0.01]"
           >
             {/* Image Aspect ratio 3/4 */}
             <div className="relative w-full aspect-[3/4] overflow-hidden bg-zinc-900">
