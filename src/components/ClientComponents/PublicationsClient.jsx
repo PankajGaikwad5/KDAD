@@ -80,6 +80,31 @@ export default function PublicationsClient({ articles, features }) {
   const zoomContainerRef = useRef(null);
   const [activeFeaturedIndex, setActiveFeaturedIndex] = useState(0);
 
+  // Compute all unique images available for the currently selected magazine
+  const magazineImages = selectedMagazine
+    ? Array.from(new Set([selectedMagazine.coverImage, ...(selectedMagazine.featuredImages || [])].filter(Boolean)))
+    : [];
+
+  const currentZoomIndex = magazineImages.indexOf(zoomedImage);
+
+  const prevZoomImage = (e) => {
+    if (e) e.stopPropagation();
+    if (magazineImages.length <= 1) return;
+    const prevIdx = (currentZoomIndex - 1 + magazineImages.length) % magazineImages.length;
+    setZoomedImage(magazineImages[prevIdx]);
+    setIsZoomedIn(false);
+    setMousePos({ x: 0.5, y: 0.5 });
+  };
+
+  const nextZoomImage = (e) => {
+    if (e) e.stopPropagation();
+    if (magazineImages.length <= 1) return;
+    const nextIdx = (currentZoomIndex + 1) % magazineImages.length;
+    setZoomedImage(magazineImages[nextIdx]);
+    setIsZoomedIn(false);
+    setMousePos({ x: 0.5, y: 0.5 });
+  };
+
   const handleImageLoad = (id) => {
     setLoadedImages((prev) => ({ ...prev, [id]: true }));
   };
@@ -100,10 +125,16 @@ export default function PublicationsClient({ articles, features }) {
 
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === 'Escape') {
-        if (zoomedImage) {
+      if (zoomedImage) {
+        if (e.key === 'Escape') {
           closeZoom();
-        } else if (selectedMagazine) {
+        } else if (e.key === 'ArrowLeft') {
+          prevZoomImage();
+        } else if (e.key === 'ArrowRight') {
+          nextZoomImage();
+        }
+      } else if (selectedMagazine) {
+        if (e.key === 'Escape') {
           setSelectedMagazine(null);
         }
       }
@@ -111,7 +142,7 @@ export default function PublicationsClient({ articles, features }) {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [zoomedImage, selectedMagazine]);
+  }, [zoomedImage, selectedMagazine, currentZoomIndex, magazineImages]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -527,14 +558,44 @@ export default function PublicationsClient({ articles, features }) {
           <div className="absolute inset-0 cursor-zoom-out" onClick={closeZoom} />
 
           <div className="relative w-full max-w-5xl max-h-[90vh] z-10 flex flex-col items-center justify-center">
-            {/* Close Button */}
-            <button
-              onClick={closeZoom}
-              className="absolute top-4 right-4 p-2 text-zinc-400 hover:text-white bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 rounded-full transition-colors duration-200 z-20"
-              aria-label="Close zoom view"
-            >
-              <X size={20} />
-            </button>
+            {/* Top Bar with Counter and Close Button */}
+            <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-20 pointer-events-none">
+              {magazineImages.length > 1 && currentZoomIndex !== -1 ? (
+                <div className="px-3.5 py-1.5 bg-zinc-950/80 backdrop-blur-md border border-zinc-800/80 text-zinc-300 text-xs uppercase tracking-widest font-semibold rounded-full shadow-lg pointer-events-auto">
+                  {currentZoomIndex + 1} / {magazineImages.length}
+                </div>
+              ) : <div />}
+
+              <button
+                onClick={closeZoom}
+                className="p-2 text-zinc-400 hover:text-white bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-800 rounded-full transition-colors duration-200 shadow-lg pointer-events-auto"
+                aria-label="Close zoom view"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            {/* Left Navigation Arrow */}
+            {magazineImages.length > 1 && (
+              <button
+                onClick={prevZoomImage}
+                className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 p-3 text-zinc-300 hover:text-white bg-zinc-950/80 hover:bg-zinc-900 border border-zinc-800/80 rounded-full transition-all duration-200 shadow-2xl backdrop-blur-md z-20 group cursor-pointer"
+                aria-label="Previous image"
+              >
+                <ChevronLeft size={24} className="group-hover:-translate-x-0.5 transition-transform duration-200" />
+              </button>
+            )}
+
+            {/* Right Navigation Arrow */}
+            {magazineImages.length > 1 && (
+              <button
+                onClick={nextZoomImage}
+                className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 p-3 text-zinc-300 hover:text-white bg-zinc-950/80 hover:bg-zinc-900 border border-zinc-800/80 rounded-full transition-all duration-200 shadow-2xl backdrop-blur-md z-20 group cursor-pointer"
+                aria-label="Next image"
+              >
+                <ChevronRight size={24} className="group-hover:translate-x-0.5 transition-transform duration-200" />
+              </button>
+            )}
 
             {/* Responsive containment of image with hover panning zoom */}
             <div
