@@ -42,6 +42,14 @@ const localMagazines = [
   },
   {
     id: 4,
+    name: 'Living Etc',
+    issue: 'June 2026 Issue',
+    coverImage: '/mags/livingetcjunecover.webp',
+    featuredImages: ['/mags/livingetcjunefeature.webp'],
+    description: 'Living Etc featuring Jina Shilp Collection',
+  },
+  {
+    id: 5,
     name: 'Cover',
     issue: 'June 2026 Issue',
     coverImage: '/mags/cover1.webp',
@@ -49,7 +57,7 @@ const localMagazines = [
     description: 'A special feature showcasing the unique design details across multiple editorial spreads.',
   },
   {
-    id: 5,
+    id: 6,
     name: 'India Today Home',
     issue: 'June 2026 Issue',
     coverImage: '/mags/ithome1.webp',
@@ -57,7 +65,7 @@ const localMagazines = [
     description: 'Featuring the custom KDH Marble Console collection and minimal design aesthetics in a high-end luxury residence.',
   },
   {
-    id: 6,
+    id: 7,
     name: 'Fortune India',
     issue: 'June 2026 Issue',
     coverImage: '/mags/fortune1.webp',
