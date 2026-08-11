@@ -15,9 +15,9 @@ const localMagazines = [
   {
     id: 1,
     name: 'FOAID India',
-    issue: 'Instagram Feature',
+    issue: 'July 2026 Instagram Feature',
     coverImage: '/mags/foaid_cover.jpg',
-    featuredImages: ['/mags/foaid_ig.png'],
+    featuredImages: ['/mags/foaid_ig.png', '/mags/foaidinsta/2.webp', '/mags/foaidinsta/3.webp', '/mags/foaidinsta/4.webp', '/mags/foaidinsta/5.webp', '/mags/foaidinsta/6.webp', '/mags/foaidinsta/7.webp', '/mags/foaidinsta/8.webp', '/mags/foaidinsta/9.webp', '/mags/foaidinsta/10.webp'],
     description: 'Chaitya 777 — Designed by @karandesai_a.d transforms the living room into a bold, immersive space where colour becomes architecture.',
     externalLink: 'https://www.instagram.com/p/DbSOyQDCFk-/',
     isInstagram: true,
@@ -25,9 +25,9 @@ const localMagazines = [
   {
     id: 2,
     name: 'Elle Decor India',
-    issue: 'Instagram Feature',
+    issue: 'July 2026 Instagram Feature',
     coverImage: '/mags/elledecor_cover.jpg',
-    featuredImages: ['/mags/elledecor_ig.png'],
+    featuredImages: ['/mags/elledecor_ig.png', '/mags/elledecorinsta/2.webp', , '/mags/elledecorinsta/3.webp', '/mags/elledecorinsta/4.webp', '/mags/elledecorinsta/5.webp', '/mags/elledecorinsta/6.webp', '/mags/elledecorinsta/7.webp'],
     description: 'Someday this would be home — A 1,300 sq ft apartment in Mumbai overlooking Aarey forest by Karan Desai, featured on @elledecorindia.',
     externalLink: 'https://www.instagram.com/p/DbNFWwFiobQ/',
     isInstagram: true,
