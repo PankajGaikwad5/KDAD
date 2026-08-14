@@ -12,8 +12,16 @@ const montserrat = Montserrat({
 });
 
 const localMagazines = [
-  {
+   {
     id: 1,
+    name: 'Ezine',
+    issue: 'August 2026 Issue',
+    coverImage: '/mags/ezineaug26cover.webp',
+    featuredImages: ['/mags/ezineaug262.webp','/mags/ezineaug263.webp',],
+    description: 'Ezine Magazine featuring Monster 3.0 Collection',
+  },
+  {
+    id: 2,
     name: 'FOAID India',
     issue: 'July 2026 Instagram Feature',
     coverImage: '/mags/foaid_cover.jpg',
@@ -23,7 +31,7 @@ const localMagazines = [
     isInstagram: true,
   },
   {
-    id: 2,
+    id: 3,
     name: 'Elle Decor India',
     issue: 'July 2026 Instagram Feature',
     coverImage: '/mags/elledecor_cover.jpg',
@@ -33,7 +41,7 @@ const localMagazines = [
     isInstagram: true,
   },
   {
-    id: 3,
+    id: 4,
     name: 'Living Etc',
     issue: 'July 2026 Issue',
     coverImage: '/mags/livingetc1.webp',
@@ -41,7 +49,7 @@ const localMagazines = [
     description: 'AN ESCAPE IN PLAIN SIGHT',
   },
   {
-    id: 4,
+    id: 5,
     name: 'Living Etc',
     issue: 'June 2026 Issue',
     coverImage: '/mags/livingetcjunecover.webp',
@@ -49,7 +57,7 @@ const localMagazines = [
     description: 'Living Etc featuring Jina Shilp Collection',
   },
   {
-    id: 5,
+    id: 6,
     name: 'Cover',
     issue: 'June 2026 Issue',
     coverImage: '/mags/cover1.webp',
@@ -57,7 +65,7 @@ const localMagazines = [
     description: 'A special feature showcasing the unique design details across multiple editorial spreads.',
   },
   {
-    id: 6,
+    id: 7,
     name: 'India Today Home',
     issue: 'June 2026 Issue',
     coverImage: '/mags/ithome1.webp',
@@ -65,7 +73,7 @@ const localMagazines = [
     description: 'Featuring the custom KDH Marble Console collection and minimal design aesthetics in a high-end luxury residence.',
   },
   {
-    id: 7,
+    id: 8,
     name: 'Fortune India',
     issue: 'June 2026 Issue',
     coverImage: '/mags/fortune1.webp',
