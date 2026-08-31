@@ -54,6 +54,15 @@ const Footer = ({ home }) => {
             </a>
           </li>
           <li>
+            <a
+              href='https://www.youtube.com/@KarandesaiAD'
+              target='_blank'
+              className='hover:text-white hover:text-lg transition-all duration-300'
+            >
+              youtube
+            </a>
+          </li>
+          <li>
             <Link
               href='/projects'
               className='hover:text-white hover:text-lg transition-all duration-300'
