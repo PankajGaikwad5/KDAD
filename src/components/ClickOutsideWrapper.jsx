@@ -1,7 +1,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
 
-const ClickOutsideWrapper = ({ children, carouselElement }) => {
+const ClickOutsideWrapper = ({ children, carouselElement, className, innerClassName }) => {
   const router = useRouter();
 
   const handleClick = (e) => {
@@ -13,9 +13,9 @@ const ClickOutsideWrapper = ({ children, carouselElement }) => {
   return (
     <div
       onClick={handleClick}
-      className='w-full h-screen flex items-center justify-center '
+      className={className || 'w-full h-screen flex items-center justify-center '}
     >
-      <div onClick={(e) => e.stopPropagation()}>{children}</div>
+      <div className={innerClassName || ''} onClick={(e) => e.stopPropagation()}>{children}</div>
     </div>
   );
 };

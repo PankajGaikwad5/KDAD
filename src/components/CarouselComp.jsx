@@ -1,46 +1,33 @@
 'use client';
-import React, { useEffect, useState, useCallback } from 'react';
-import Image from 'next/image';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import {
-  Navigation,
-  Thumbs,
-  Pagination,
-  A11y,
-  Zoom,
-  Keyboard,
-  Virtual,
-  FreeMode,
-} from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/thumbs';
-import 'swiper/css/zoom';
-import 'swiper/css/pagination';
-import 'swiper/css/virtual';
-import 'swiper/css/free-mode';
 
-const MediaRenderer = React.memo(({ url, alt, onLoad, priority = false }) => {
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronLeft, ChevronRight, Maximize, X } from 'lucide-react';
+import { createPortal } from 'react-dom';
+
+const MediaRenderer = React.memo(({ url, alt, onLoad }) => {
   const isVideo = /\.(mp4|webm|ogg)$/i.test(url);
 
   return isVideo ? (
     <video
       src={url}
       controls
-      className='max-w-full max-h-full object-contain'
+      className='absolute inset-0 w-full h-full object-contain pointer-events-none'
       playsInline
       preload='metadata'
       onLoadedData={onLoad}
     />
   ) : (
-    <Image
-      unoptimized
+    <motion.img
+      unoptimized={'true'}
       src={url}
       alt={alt}
-      fill
-      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-      priority={priority}
-      className='max-w-full max-h-full object-contain select-none'
+      className="absolute inset-0 w-full h-full object-contain pointer-events-none"
+      initial={{ opacity: 0, scale: 0.98 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.98 }}
+      transition={{ duration: 0.4, ease: [0.76, 0, 0.24, 1] }}
       onLoad={onLoad}
     />
   );
@@ -48,11 +35,12 @@ const MediaRenderer = React.memo(({ url, alt, onLoad, priority = false }) => {
 MediaRenderer.displayName = 'MediaRenderer';
 
 const CarouselComp = ({ imgArray, notcollab }) => {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [imageLoading, setImageLoading] = useState(true);
-  const carouselRef = React.useRef(null);
+  const carouselRef = useRef(null);
+  const thumbRefs = useRef([]);
+  const [bgNode, setBgNode] = useState(null);
 
   useEffect(() => {
     if (imgArray?.length) {
@@ -60,8 +48,9 @@ const CarouselComp = ({ imgArray, notcollab }) => {
     }
   }, [imgArray]);
 
-  const handleSlideChange = useCallback((swiper) => {
-    setCurrentIndex(swiper.realIndex);
+  useEffect(() => {
+    // Find the project-bg container in the parent page to mount the dynamic background
+    setBgNode(document.querySelector('.project-bg'));
   }, []);
 
   const toggleFullscreen = useCallback(() => {
@@ -83,55 +72,47 @@ const CarouselComp = ({ imgArray, notcollab }) => {
     };
   }, []);
 
-  const renderThumbnails = useCallback(() => {
-    if (!notcollab || !imgArray?.length) return null;
+  const nextImage = useCallback(() => {
+    setActiveIndex((prev) => (prev + 1) % imgArray.length);
+  }, [imgArray?.length]);
 
-    return (
-      <div
-        className={`bottom-4 left-0 right-0 z-20 px-4 ${
-          isFullscreen ? 'hidden' : 'mt-2 sm:mt-4'
-        }`}
-      >
-        <Swiper
-          modules={[Thumbs, FreeMode]}
-          onSwiper={setThumbsSwiper}
-          spaceBetween={isFullscreen ? 8 : 10}
-          slidesPerView={isFullscreen ? 8 : 5}
-          className='thumbnail-swiper'
-          watchSlidesProgress={true}
-          slideToClickedSlide={true}
-          freeMode={{
-            enabled: true,
-            momentum: false,
-            momentumBounce: false,
-          }}
-          breakpoints={{
-            640: { slidesPerView: 6 },
-            1024: { slidesPerView: isFullscreen ? 10 : 8 },
-          }}
-        >
-          {imgArray.map((img, index) => (
-            <SwiperSlide key={index}>
-              <div className='relative flex items-center w-full h-16 md:h-20 justify-center cursor-pointer'>
-                <Image
-                  unoptimized
-                  src={img}
-                  alt={`Thumbnail ${index}`}
-                  fill
-                  sizes="120px"
-                  className={`w-full h-full object-cover rounded transition-opacity ${
-                    currentIndex === index
-                      ? 'opacity-100 border-2 border-white'
-                      : 'opacity-60'
-                  }`}
-                />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    );
-  }, [notcollab, isFullscreen, imgArray, currentIndex]);
+  const prevImage = useCallback(() => {
+    setActiveIndex((prev) => (prev - 1 + imgArray.length) % imgArray.length);
+  }, [imgArray?.length]);
+
+  // Centering active thumbnail
+  useEffect(() => {
+    const activeThumb = thumbRefs.current[activeIndex];
+    if (activeThumb && !isFullscreen) {
+      const container = activeThumb.parentElement;
+      if (container) {
+        const containerWidth = container.clientWidth;
+        const thumbLeft = activeThumb.offsetLeft;
+        const thumbWidth = activeThumb.clientWidth;
+        container.scrollTo({
+          left: thumbLeft - containerWidth / 2 + thumbWidth / 2,
+          behavior: 'smooth'
+        });
+      }
+    }
+  }, [activeIndex, isFullscreen]);
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'ArrowRight') {
+        nextImage();
+      } else if (e.key === 'ArrowLeft') {
+        prevImage();
+      } else if (e.key === 'Escape' && isFullscreen) {
+        if (document.fullscreenElement) {
+          document.exitFullscreen?.();
+        }
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isFullscreen, nextImage, prevImage]);
 
   if (!imgArray?.length) {
     return (
@@ -143,13 +124,29 @@ const CarouselComp = ({ imgArray, notcollab }) => {
 
   return (
     <div
-      className={`relative ${
+      className={`relative flex flex-col ${
         isFullscreen
-          ? 'w-screen h-screen'
-          : 'w-screen max-w-screen-lg 2xl:max-w-none m-0 p-0'
+          ? 'fixed inset-0 z-[100] w-screen h-screen bg-black'
+          : 'w-full h-full flex-1 min-h-0'
       }`}
       ref={carouselRef}
     >
+      {bgNode && createPortal(
+        <AnimatePresence>
+          <motion.img
+            key={activeIndex}
+            src={imgArray[activeIndex]}
+            alt="Dynamic Background"
+            className="absolute inset-0 w-full h-full object-cover"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+          />
+        </AnimatePresence>,
+        bgNode
+      )}
+
       {imageLoading && (
         <div className='absolute inset-0 flex items-center justify-center z-30 bg-black/50'>
           <div className='flex flex-col items-center gap-4'>
@@ -159,115 +156,70 @@ const CarouselComp = ({ imgArray, notcollab }) => {
         </div>
       )}
 
-      <button
-        onClick={toggleFullscreen}
-        className='absolute top-4 right-4 z-10 p-2 bg-black/50 rounded-full hover:bg-black/75 transition-colors'
-        aria-label={isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}
-      >
-        {isFullscreen ? (
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            className='h-6 w-6 text-white'
-            fill='none'
-            viewBox='0 0 24 24'
-            stroke='currentColor'
-          >
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              strokeWidth={2}
-              d='M6 18L18 6M6 6l12 12'
-            />
-          </svg>
-        ) : (
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            className='h-6 w-6 text-white'
-            fill='none'
-            viewBox='0 0 24 24'
-            stroke='currentColor'
-          >
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              strokeWidth={2}
-              d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'
-            />
-          </svg>
-        )}
-      </button>
+      {/* Main Image Container */}
+      <div className={`relative w-full select-none ${isFullscreen ? 'h-full' : 'flex-1 min-h-0'}`}>
+        <AnimatePresence mode="wait">
+          <MediaRenderer
+            key={activeIndex}
+            url={imgArray[activeIndex]}
+            alt={`Slide ${activeIndex + 1}`}
+          />
+        </AnimatePresence>
 
-      <div className='absolute top-4 left-4 md:left-auto md:right-16 z-10 bg-black/60 text-white px-3 py-1 rounded-full text-sm font-medium select-none'>
-        {currentIndex + 1} / {imgArray.length}
+        <button
+          onClick={prevImage}
+          className={`absolute left-4 top-1/2 -translate-y-1/2 z-10 p-3 bg-black/40 hover:bg-black/75 border border-white/20 text-white rounded-full transition-all duration-300 backdrop-blur-sm hover:scale-110 flex items-center justify-center select-none cursor-pointer`}
+          aria-label="Previous slide"
+        >
+          <ChevronLeft size={24} />
+        </button>
+        <button
+          onClick={nextImage}
+          className={`absolute right-4 top-1/2 -translate-y-1/2 z-10 p-3 bg-black/40 hover:bg-black/75 border border-white/20 text-white rounded-full transition-all duration-300 backdrop-blur-sm hover:scale-110 flex items-center justify-center select-none cursor-pointer`}
+          aria-label="Next slide"
+        >
+          <ChevronRight size={24} />
+        </button>
+
+        <button
+          onClick={toggleFullscreen}
+          className='absolute top-4 right-4 z-10 p-2 bg-black/50 rounded-full hover:bg-black/75 transition-colors text-white'
+          aria-label={isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}
+        >
+          {isFullscreen ? <X size={24} /> : <Maximize size={24} />}
+        </button>
+
+        <div className='absolute top-4 left-4 md:left-auto md:right-16 z-10 bg-black/60 text-white px-3 py-1 rounded-full text-sm font-medium select-none'>
+          {activeIndex + 1} / {imgArray.length}
+        </div>
       </div>
 
-      {/* Custom Prev Navigation Button */}
-      <button className='swiper-button-prev-custom absolute left-4 top-1/2 -translate-y-1/2 z-10 p-3 bg-black/40 hover:bg-black/75 border border-white/20 text-white rounded-full transition-all duration-300 backdrop-blur-sm hover:scale-110 flex items-center justify-center select-none cursor-pointer' aria-label="Previous slide">
-        <svg xmlns='http://www.w3.org/2000/svg' className='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
-          <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2.5} d='M15 19l-7-7 7-7' />
-        </svg>
-      </button>
-
-      {/* Custom Next Navigation Button */}
-      <button className='swiper-button-next-custom absolute right-4 top-1/2 -translate-y-1/2 z-10 p-3 bg-black/40 hover:bg-black/75 border border-white/20 text-white rounded-full transition-all duration-300 backdrop-blur-sm hover:scale-110 flex items-center justify-center select-none cursor-pointer' aria-label="Next slide">
-        <svg xmlns='http://www.w3.org/2000/svg' className='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
-          <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2.5} d='M9 5l7 7-7 7' />
-        </svg>
-      </button>
-
-      <Swiper
-        modules={[Navigation, Thumbs, Pagination, A11y, Zoom, Keyboard]}
-        navigation={{
-          prevEl: '.swiper-button-prev-custom',
-          nextEl: '.swiper-button-next-custom',
-        }}
-        thumbs={{ swiper: thumbsSwiper }}
-        spaceBetween={10}
-        slidesPerView={1}
-        className={`w-full ${
-          isFullscreen ? 'h-[100vh]' : 'h-[60vh] md:h-[70vh]'
-        }`}
-        pagination={{
-          clickable: true,
-          dynamicBullets: true,
-          dynamicMainBullets: 5,
-        }}
-        zoom={{
-          maxRatio: 3,
-          minRatio: 1,
-        }}
-        keyboard={{
-          enabled: true,
-          onlyInViewport: true,
-        }}
-        onSlideChange={handleSlideChange}
-        onSwiper={(swiper) => setCurrentIndex(swiper.realIndex)}
-        speed={200}
-        lazy={'true'}
-        watchSlidesProgress={true}
-        allowTouchMove={true}
-      >
-        {imgArray.map((img, index) => {
-          const isNear = Math.abs(index - currentIndex) <= 2;
-          return (
-            <SwiperSlide key={index}>
-              <div className='relative w-full h-full swiper-zoom-container flex items-center justify-center'>
-                {isNear && (
-                  <MediaRenderer
-                    url={img}
-                    alt={`Slide ${index}`}
-                    priority={index === 0}
-                  />
+      {/* Thumbnails */}
+      {notcollab && imgArray?.length > 1 && !isFullscreen && (
+        <div className="bottom-4 left-0 right-0 z-20 px-4 mt-2 sm:mt-4">
+          <div className={`relative flex gap-[10px] overflow-x-auto py-2 scroll-smooth select-none scrollbar-none [&::-webkit-scrollbar]:hidden`} style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
+            {imgArray.map((img, idx) => (
+              <button
+                key={idx}
+                ref={(el) => (thumbRefs.current[idx] = el)}
+                onClick={() => setActiveIndex(idx)}
+                className={`relative w-[120px] h-16 md:h-20 shrink-0 overflow-hidden rounded transition-all cursor-pointer ${
+                  idx === activeIndex ? 'border-2 border-white opacity-100' : 'border-2 border-transparent opacity-60 hover:opacity-85'
+                }`}
+              >
+                {/\.(mp4|webm|ogg)$/i.test(img) ? (
+                   <div className="w-full h-full bg-gray-800 flex items-center justify-center text-white text-[10px] tracking-widest uppercase">Video</div>
+                ) : (
+                  <Image src={img} fill sizes="120px" quality={80} className="object-cover pointer-events-none" alt={`Thumb ${idx}`} />
                 )}
-              </div>
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
-
-      {renderThumbnails()}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
 export default React.memo(CarouselComp);
+

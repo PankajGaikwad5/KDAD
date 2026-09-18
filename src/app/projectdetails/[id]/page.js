@@ -125,8 +125,8 @@ const FeatureDetails = async ({ params }) => {
   };
 
   return (
-    <div>
-      <div className='project-bg fixed w-full h-full m-0 p-0 z-0 opacity-25 blur-md'></div>
+    <div className='h-[100dvh] w-full flex flex-col overflow-hidden relative'>
+      <div className='project-bg absolute inset-0 z-0 opacity-25 blur-md pointer-events-none'></div>
 
       {/* inject JSON-LD for search engines */}
       <script
@@ -134,8 +134,8 @@ const FeatureDetails = async ({ params }) => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(ldJson) }}
       />
 
-      <div className='relative text-center w-full'>
-        <div className='absolute left-3 top-3 z-10'>
+      <div className='relative z-10 flex flex-col flex-1 min-h-0 w-full'>
+        <div className='absolute left-3 top-3 z-20'>
           <Link href='/projects' aria-label='Back to projects'>
             <ChevronLeft
               className='text-white'
@@ -147,27 +147,34 @@ const FeatureDetails = async ({ params }) => {
         </div>
 
         {/* Visible H1 for SEO and accessibility */}
-        <header className='pt-6 pb-4'>
-          <h1 className='text-white text-3xl md:text-4xl font-semibold tracking-wide uppercase'>
+        <header className='py-2 md:py-4 flex-shrink-0 text-center relative z-20'>
+          <h1 className='text-white text-2xl md:text-3xl lg:text-4xl font-semibold tracking-wide uppercase'>
             {title}
           </h1>
           {projectData.location && (
-            <p className='text-gray-300 text-sm mt-2'>{projectData.location}</p>
+            <p className='text-gray-300 text-xs md:text-sm mt-1'>{projectData.location}</p>
           )}
         </header>
 
-        <ClickOutsideWrapper>
-          {images && images.length > 0 ? (
-            <CarouselComp
-              imgArray={images.map((image) => image.fileUrl)}
-              notcollab={true}
-            />
-          ) : (
-            <p className='text-gray-500 text-lg'>
-              No images available for this feature.
-            </p>
-          )}
-        </ClickOutsideWrapper>
+        <div className='flex-1 min-h-0 w-full relative z-20 flex flex-col pb-4'>
+          <ClickOutsideWrapper 
+            className='w-full h-full flex flex-col'
+            innerClassName='w-full h-full flex flex-col'
+          >
+            {images && images.length > 0 ? (
+              <CarouselComp
+                imgArray={images.map((image) => image.fileUrl)}
+                notcollab={true}
+              />
+            ) : (
+              <div className="flex-1 flex items-center justify-center">
+                <p className='text-gray-500 text-lg'>
+                  No images available for this feature.
+                </p>
+              </div>
+            )}
+          </ClickOutsideWrapper>
+        </div>
       </div>
     </div>
   );
