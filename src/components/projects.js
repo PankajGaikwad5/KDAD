@@ -1,6 +1,246 @@
 export const projects = [
   {
     _id: {
+      $oid: '67c1f5807a5dc4ac2d27bcr1',
+    },
+    title: 'bcr',
+    images: [
+      {
+        fileName: '1',
+        fileUrl: '/bcr/1.webp',
+        _id: {
+          $oid: 'bcr_img_0',
+        },
+      },
+      {
+        fileName: 'BCR - 01 Front',
+        fileUrl: '/bcr/BCR - 01 Front.webp',
+        _id: {
+          $oid: 'bcr_img_1',
+        },
+      },
+      {
+        fileName: 'BCR - 02 Exterior Back',
+        fileUrl: '/bcr/BCR - 02 Exterior Back.webp',
+        _id: {
+          $oid: 'bcr_img_2',
+        },
+      },
+      {
+        fileName: 'BCR - 03 Living Room',
+        fileUrl: '/bcr/BCR - 03 Living Room.webp',
+        _id: {
+          $oid: 'bcr_img_3',
+        },
+      },
+      {
+        fileName: 'BCR - 04 Living Room',
+        fileUrl: '/bcr/BCR - 04 Living Room.webp',
+        _id: {
+          $oid: 'bcr_img_4',
+        },
+      },
+      {
+        fileName: 'BCR - 05 Living Room',
+        fileUrl: '/bcr/BCR - 05 Living Room.webp',
+        _id: {
+          $oid: 'bcr_img_5',
+        },
+      },
+      {
+        fileName: 'BCR - 06 Kitchen',
+        fileUrl: '/bcr/BCR - 06 Kitchen.webp',
+        _id: {
+          $oid: 'bcr_img_6',
+        },
+      },
+      {
+        fileName: 'BCR - 07 Family Living',
+        fileUrl: '/bcr/BCR - 07 Family Living.webp',
+        _id: {
+          $oid: 'bcr_img_7',
+        },
+      },
+      {
+        fileName: 'BCR - 08 Family Living',
+        fileUrl: '/bcr/BCR - 08 Family Living.webp',
+        _id: {
+          $oid: 'bcr_img_8',
+        },
+      },
+      {
+        fileName: 'BCR - 09 Family Living',
+        fileUrl: '/bcr/BCR - 09 Family Living.webp',
+        _id: {
+          $oid: 'bcr_img_9',
+        },
+      },
+      {
+        fileName: 'BCR - 10 Dining Room',
+        fileUrl: '/bcr/BCR - 10 Dining Room.webp',
+        _id: {
+          $oid: 'bcr_img_10',
+        },
+      },
+      {
+        fileName: 'BCR - 11 Temple',
+        fileUrl: '/bcr/BCR - 11 Temple.webp',
+        _id: {
+          $oid: 'bcr_img_11',
+        },
+      },
+      {
+        fileName: 'BCR - 12 Master Bedroom',
+        fileUrl: '/bcr/BCR - 12 Master Bedroom.webp',
+        _id: {
+          $oid: 'bcr_img_12',
+        },
+      },
+      {
+        fileName: 'BCR - 12 Temple',
+        fileUrl: '/bcr/BCR - 12 Temple.webp',
+        _id: {
+          $oid: 'bcr_img_13',
+        },
+      },
+      {
+        fileName: 'BCR - 13 Master Bedroom',
+        fileUrl: '/bcr/BCR - 13 Master Bedroom.webp',
+        _id: {
+          $oid: 'bcr_img_14',
+        },
+      },
+      {
+        fileName: 'BCR - 14 Master Bedroom',
+        fileUrl: '/bcr/BCR - 14 Master Bedroom.webp',
+        _id: {
+          $oid: 'bcr_img_15',
+        },
+      },
+      {
+        fileName: 'BCR - 15 Master Bathroom',
+        fileUrl: '/bcr/BCR - 15 Master Bathroom.webp',
+        _id: {
+          $oid: 'bcr_img_16',
+        },
+      },
+      {
+        fileName: 'BCR - 16 Master Walkin',
+        fileUrl: '/bcr/BCR - 16 Master Walkin.webp',
+        _id: {
+          $oid: 'bcr_img_17',
+        },
+      },
+      {
+        fileName: 'BCR - 17 Mid Landing',
+        fileUrl: '/bcr/BCR - 17 Mid Landing.webp',
+        _id: {
+          $oid: 'bcr_img_18',
+        },
+      },
+      {
+        fileName: 'BCR - 18 Hall Way',
+        fileUrl: '/bcr/BCR - 18 Hall Way.webp',
+        _id: {
+          $oid: 'bcr_img_19',
+        },
+      },
+      {
+        fileName: 'BCR - 19 Guest Room',
+        fileUrl: '/bcr/BCR - 19 Guest Room.webp',
+        _id: {
+          $oid: 'bcr_img_20',
+        },
+      },
+      {
+        fileName: 'BCR - 20 Guest Bedroom 2',
+        fileUrl: '/bcr/BCR - 20 Guest Bedroom 2.webp',
+        _id: {
+          $oid: 'bcr_img_21',
+        },
+      },
+      {
+        fileName: 'BCR - 21 Guest Bedroom  3',
+        fileUrl: '/bcr/BCR - 21 Guest Bedroom  3.webp',
+        _id: {
+          $oid: 'bcr_img_22',
+        },
+      },
+      {
+        fileName: 'BCR - 22 Master Suite',
+        fileUrl: '/bcr/BCR - 22 Master Suite.webp',
+        _id: {
+          $oid: 'bcr_img_23',
+        },
+      },
+      {
+        fileName: 'BCR - 23 Master Suite',
+        fileUrl: '/bcr/BCR - 23 Master Suite.webp',
+        _id: {
+          $oid: 'bcr_img_24',
+        },
+      },
+      {
+        fileName: 'BCR - 24 Master Suite',
+        fileUrl: '/bcr/BCR - 24 Master Suite.webp',
+        _id: {
+          $oid: 'bcr_img_25',
+        },
+      },
+      {
+        fileName: 'BCR - 25 Master Suite',
+        fileUrl: '/bcr/BCR - 25 Master Suite.webp',
+        _id: {
+          $oid: 'bcr_img_26',
+        },
+      },
+      {
+        fileName: 'BCR - 26 Home Theatre',
+        fileUrl: '/bcr/BCR - 26 Home Theatre.webp',
+        _id: {
+          $oid: 'bcr_img_27',
+        },
+      },
+      {
+        fileName: 'BCR - 27 Indoor Heated Swimming Pool',
+        fileUrl: '/bcr/BCR - 27 Indoor Heated Swimming Pool.webp',
+        _id: {
+          $oid: 'bcr_img_28',
+        },
+      },
+      {
+        fileName: 'BCR - 28 Basement Living',
+        fileUrl: '/bcr/BCR - 28 Basement Living.webp',
+        _id: {
+          $oid: 'bcr_img_29',
+        },
+      },
+      {
+        fileName: 'BCR - 29 Basement Kitchen',
+        fileUrl: '/bcr/BCR - 29 Basement Kitchen.webp',
+        _id: {
+          $oid: 'bcr_img_30',
+        },
+      },
+      {
+        fileName: 'BCR - 30 Man Cave',
+        fileUrl: '/bcr/BCR - 30 Man Cave.webp',
+        _id: {
+          $oid: 'bcr_img_31',
+        },
+      },
+      {
+        fileName: 'BCR',
+        fileUrl: '/bcr/BCR.webp',
+        _id: {
+          $oid: 'bcr_img_32',
+        },
+      },
+    ],
+    __v: 0,
+  },
+  {
+    _id: {
       $oid: '67c1f5807a5dc4ac2d27e800',
     },
     title: 'KD Lodha Home',
