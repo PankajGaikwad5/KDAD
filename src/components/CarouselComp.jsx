@@ -20,7 +20,8 @@ const MediaRenderer = React.memo(({ url, alt, onLoad }) => {
     />
   ) : (
     <motion.img
-      unoptimized={'true'}
+      decoding="async"
+      loading="eager"
       src={url}
       alt={alt}
       className="absolute inset-0 w-full h-full object-contain pointer-events-none"
@@ -29,6 +30,7 @@ const MediaRenderer = React.memo(({ url, alt, onLoad }) => {
       exit={{ opacity: 0, scale: 0.98 }}
       transition={{ duration: 0.4, ease: [0.76, 0, 0.24, 1] }}
       onLoad={onLoad}
+      style={{ willChange: "opacity, transform" }}
     />
   );
 });
@@ -137,11 +139,13 @@ const CarouselComp = ({ imgArray, notcollab }) => {
             key={activeIndex}
             src={imgArray[activeIndex]}
             alt="Dynamic Background"
+            decoding="async"
             className="absolute inset-0 w-full h-full object-cover"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
+            style={{ willChange: "opacity", transform: "translateZ(0)" }}
           />
         </AnimatePresence>,
         bgNode
@@ -197,20 +201,21 @@ const CarouselComp = ({ imgArray, notcollab }) => {
       {/* Thumbnails */}
       {notcollab && imgArray?.length > 1 && !isFullscreen && (
         <div className="bottom-4 left-0 right-0 z-20 px-4 mt-2 sm:mt-4">
-          <div className={`relative flex gap-[10px] overflow-x-auto py-2 scroll-smooth select-none scrollbar-none [&::-webkit-scrollbar]:hidden`} style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
+          <div className={`relative flex gap-[10px] overflow-x-auto py-2 scroll-smooth select-none scrollbar-none [&::-webkit-scrollbar]:hidden`} style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch", willChange: "transform" }}>
             {imgArray.map((img, idx) => (
               <button
                 key={idx}
                 ref={(el) => (thumbRefs.current[idx] = el)}
                 onClick={() => setActiveIndex(idx)}
-                className={`relative w-[120px] h-16 md:h-20 shrink-0 overflow-hidden rounded transition-all cursor-pointer ${
+                style={{ contentVisibility: "auto" }}
+                className={`relative w-[120px] h-16 md:h-20 shrink-0 overflow-hidden rounded transition-opacity duration-200 cursor-pointer ${
                   idx === activeIndex ? 'border-2 border-white opacity-100' : 'border-2 border-transparent opacity-60 hover:opacity-85'
                 }`}
               >
                 {/\.(mp4|webm|ogg)$/i.test(img) ? (
                    <div className="w-full h-full bg-gray-800 flex items-center justify-center text-white text-[10px] tracking-widest uppercase">Video</div>
                 ) : (
-                  <Image src={img} fill sizes="120px" quality={80} className="object-cover pointer-events-none" alt={`Thumb ${idx}`} />
+                  <img src={img} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover pointer-events-none" alt={`Thumb ${idx}`} />
                 )}
               </button>
             ))}

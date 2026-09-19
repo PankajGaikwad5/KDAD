@@ -126,7 +126,7 @@ const FeatureDetails = async ({ params }) => {
 
   return (
     <div className='h-[100dvh] w-full flex flex-col overflow-hidden relative'>
-      <div className='project-bg absolute inset-0 z-0 opacity-25 blur-md pointer-events-none'></div>
+      <div className='project-bg absolute inset-0 z-0 opacity-25 blur-md pointer-events-none' style={{ willChange: "transform", transform: "translateZ(0)" }}></div>
 
       {/* inject JSON-LD for search engines */}
       <script
