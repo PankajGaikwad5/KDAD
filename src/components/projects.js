@@ -253,6 +253,13 @@ export const projects = [
         },
       },
       {
+        fileName: '2',
+        fileUrl: '/Lodha Home/2.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e801',
+        },
+      },
+      {
         fileName: 'Karan Desai - Lodha ASH_0002 Shot by Ashish Sahi',
         fileUrl: '/Lodha Home/Karan Desai - Lodha ASH_0002 Shot by Ashish Sahi.webp',
         _id: {
@@ -357,6 +364,13 @@ export const projects = [
         fileUrl: '/chaitya/1.webp',
         _id: {
           $oid: '67c1f5807a5dc4ac2d27e701',
+        },
+      },
+      {
+        fileName: '2',
+        fileUrl: '/chaitya/112.webp',
+        _id: {
+          $oid: '67c1f5807a5dc4ac2d27e702',
         },
       },
       {
