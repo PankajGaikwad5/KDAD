@@ -19,9 +19,11 @@ const montserrat = Montserrat({
 // Server-side dynamic metadata for each project
 export async function generateMetadata({ params }) {
   const { id } = await params;
+  const decodedId = decodeURIComponent(id);
   const projectData = projects.find((p) => {
     const pid = p._id?.$oid ?? p._id ?? p.id;
-    return String(pid) === String(id);
+    const slugifiedTitle = p.title ? p.title.toLowerCase().replace(/\s+/g, '-') : '';
+    return String(pid) === String(id) || p.title === decodedId || slugifiedTitle === decodedId.toLowerCase();
   });
 
   if (!projectData) {
@@ -87,9 +89,11 @@ export async function generateMetadata({ params }) {
 
 const FeatureDetails = async ({ params }) => {
   const { id } = await params;
+  const decodedId = decodeURIComponent(id);
   const projectData = projects.find((project) => {
     const pid = project._id?.$oid ?? project._id ?? project.id;
-    return String(pid) === String(id);
+    const slugifiedTitle = project.title ? project.title.toLowerCase().replace(/\s+/g, '-') : '';
+    return String(pid) === String(id) || project.title === decodedId || slugifiedTitle === decodedId.toLowerCase();
   });
 
   if (!projectData) {

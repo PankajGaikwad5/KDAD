@@ -20,7 +20,7 @@ const ProjectCard = ({ img, id, title, projects }) => {
       <CardContainer className='relative group rounded-sm overflow-hidden inter-var hover:border'>
         <CardBody className=' relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl border  '>
           {projects ? (
-            <Link href={`/projectdetails/${id.$oid}`}>
+            <Link href={`/projectdetails/${encodeURIComponent(title ? title.toLowerCase().replace(/\s+/g, '-') : '')}`}>
               {/* Placeholder while loading */}
               {!isLoaded && (
                 <div className='flex items-center justify-center rounded-3xl bg-gray-600 animate-pulse aspect-video'>
@@ -49,7 +49,7 @@ const ProjectCard = ({ img, id, title, projects }) => {
               )}
             </Link>
           ) : (
-            <Link href={`/featuredetails/${id.$oid}`}>
+            <Link href={`/featuredetails/${encodeURIComponent(title ? title.toLowerCase().replace(/\s+/g, '-') : '')}`}>
               {!isLoaded && (
                 <div className='flex items-center justify-center bg-gray-600 animate-pulse aspect-[8/11]'>
                   <p className='text-gray-500'>Loading...</p>

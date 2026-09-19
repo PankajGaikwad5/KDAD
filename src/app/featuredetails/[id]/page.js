@@ -21,7 +21,11 @@ import { features } from '../../../components/features';
 
 const FeatureDetails = async ({ params }) => {
   const { id } = await params;
-  const projectData = features.find((project) => project._id.$oid === id);
+  const decodedId = decodeURIComponent(id);
+  const projectData = features.find((project) => {
+    const slugifiedTitle = project.title ? project.title.toLowerCase().replace(/\s+/g, '-') : '';
+    return project._id.$oid === id || project.title === decodedId || slugifiedTitle === decodedId.toLowerCase();
+  });
 
   if (!projectData) {
     return (
