@@ -259,13 +259,13 @@ export const projects = [
           $oid: '67c1f5807a5dc4ac2d27e802',
         },
       },
-      {
-        fileName: 'Karan Desai - Lodha ASH_0016 Shot by Ashish Sahi',
-        fileUrl: '/Lodha Home/Karan Desai - Lodha ASH_0016 Shot by Ashish Sahi.webp',
-        _id: {
-          $oid: '67c1f5807a5dc4ac2d27e804',
-        },
-      },
+      // {
+      //   fileName: 'Karan Desai - Lodha ASH_0016 Shot by Ashish Sahi',
+      //   fileUrl: '/Lodha Home/Karan Desai - Lodha ASH_0016 Shot by Ashish Sahi.webp',
+      //   _id: {
+      //     $oid: '67c1f5807a5dc4ac2d27e804',
+      //   },
+      // },
       {
         fileName: 'Karan Desai - Lodha ASH_0082 Shot by Ashish Sahi',
         fileUrl: '/Lodha Home/Karan Desai - Lodha ASH_0082 Shot by Ashish Sahi.webp',
