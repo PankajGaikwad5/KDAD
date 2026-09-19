@@ -135,7 +135,7 @@ const FeatureDetails = async ({ params }) => {
       />
 
       <div className='relative z-10 flex flex-col flex-1 min-h-0 w-full'>
-        <div className='absolute left-3 top-3 z-20'>
+        <div className='absolute left-3 top-3 z-50'>
           <Link href='/projects' aria-label='Back to projects'>
             <ChevronLeft
               className='text-white'
