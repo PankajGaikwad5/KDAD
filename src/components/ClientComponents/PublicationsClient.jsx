@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import { Montserrat } from 'next/font/google';
 import Image from 'next/image';
 import { X, BookOpen, ChevronLeft, ChevronRight, Instagram, ExternalLink } from 'lucide-react';
+import pressData from '../pressData.json';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -95,6 +96,20 @@ export default function PublicationsClient({ articles, features }) {
   const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 });
   const zoomContainerRef = useRef(null);
   const [activeFeaturedIndex, setActiveFeaturedIndex] = useState(0);
+
+  const pressMagazines = pressData.map((item, idx) => {
+    const isInsta = item.type === 'Instagram Story' || item.type === 'Social Media';
+    const name = item.publication || item.type;
+    return {
+      id: `press-${item.year}-${idx}`,
+      name: name,
+      issue: `${item.month} ${item.year} - ${item.type}`,
+      coverImage: item.images[0],
+      featuredImages: item.images,
+      isInstagram: isInsta,
+      description: 'Press coverage featuring designs by Karan Desai.',
+    };
+  });
 
   // Compute all unique images available for the currently selected magazine
   const magazineImages = selectedMagazine
@@ -227,7 +242,7 @@ export default function PublicationsClient({ articles, features }) {
     };
   });
 
-  const allMagazines = [...normalizedLocal, ...normalizedFeatures];
+  const allMagazines = [...normalizedLocal, ...normalizedFeatures, ...pressMagazines];
 
   // Helper to check if a magazine layout has featured images separate from cover
   const isSinglePage = (mag) => {
@@ -373,6 +388,8 @@ export default function PublicationsClient({ articles, features }) {
           );
         })}
       </div>
+
+
 
       {/* Double-Page Spread Lightbox Modal */}
       {selectedMagazine && (
