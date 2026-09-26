@@ -32,7 +32,7 @@ function generateData() {
         for (const publication of publications) {
            const pubPath = path.join(typePath, publication);
            if (fs.statSync(pubPath).isDirectory()) {
-              const images = fs.readdirSync(pubPath).filter(img => img.endsWith('.webp')).map(img => `/press-coverages/${year}/${month}/${type}/${publication}/${img}`);
+              const images = fs.readdirSync(pubPath).filter(img => img.endsWith('.webp')).map(img => `/press-coverages/${encodeURIComponent(year)}/${encodeURIComponent(month)}/${encodeURIComponent(type)}/${encodeURIComponent(publication)}/${encodeURIComponent(img)}`);
               if (images.length > 0) {
                  data.push({
                    year,
@@ -56,7 +56,7 @@ function generateData() {
                  };
                  data.push(entry);
               }
-              entry.images.push(`/press-coverages/${year}/${month}/${type}/${publication}`);
+              entry.images.push(`/press-coverages/${encodeURIComponent(year)}/${encodeURIComponent(month)}/${encodeURIComponent(type)}/${encodeURIComponent(publication)}`);
            }
         }
       }
