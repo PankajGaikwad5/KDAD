@@ -20,6 +20,7 @@ const localMagazines = [
     coverImage: '/mags/ezineaug26cover.webp',
     featuredImages: ['/mags/ezineaug262.webp','/mags/ezineaug263.webp',],
     description: 'Ezine Magazine featuring Monster 3.0 Collection',
+    brand: 'KDH',
   },
   {
     id: 2,
@@ -30,6 +31,7 @@ const localMagazines = [
     description: 'Chaitya 777 — Designed by @karandesai_a.d transforms the living room into a bold, immersive space where colour becomes architecture.',
     externalLink: 'https://www.instagram.com/p/DbSOyQDCFk-/',
     isInstagram: true,
+    brand: 'KDAD',
   },
   {
     id: 3,
@@ -40,6 +42,7 @@ const localMagazines = [
     description: 'Someday this would be home — A 1,300 sq ft apartment in Mumbai overlooking Aarey forest by Karan Desai, featured on @elledecorindia.',
     externalLink: 'https://www.instagram.com/p/DbNFWwFiobQ/',
     isInstagram: true,
+    brand: 'KDAD',
   },
   {
     id: 4,
@@ -48,6 +51,7 @@ const localMagazines = [
     coverImage: '/mags/livingetc1.webp',
     featuredImages: ['/mags/livingetc2.webp', '/mags/livingetc3.webp','/mags/livingetc4.webp','/mags/livingetc5.webp'],
     description: 'AN ESCAPE IN PLAIN SIGHT',
+    brand: 'KDAD',
   },
   {
     id: 5,
@@ -56,6 +60,7 @@ const localMagazines = [
     coverImage: '/mags/livingetcjunecover.webp',
     featuredImages: ['/mags/livingetcjunefeature.webp'],
     description: 'Living Etc featuring Jina Shilp Collection',
+    brand: 'KDH',
   },
   {
     id: 6,
@@ -64,6 +69,7 @@ const localMagazines = [
     coverImage: '/mags/cover1.webp',
     featuredImages: ['/mags/cover2.webp', '/mags/cover3.webp'],
     description: 'A special feature showcasing the unique design details across multiple editorial spreads.',
+    brand: 'KDH',
   },
   {
     id: 7,
@@ -72,6 +78,7 @@ const localMagazines = [
     coverImage: '/mags/ithome1.webp',
     featuredImages: ['/mags/ithome2.webp'],
     description: 'Featuring the custom KDH Marble Console collection and minimal design aesthetics in a high-end luxury residence.',
+    brand: 'KDH',
   },
   {
     id: 8,
@@ -80,6 +87,7 @@ const localMagazines = [
     coverImage: '/mags/fortune1.webp',
     featuredImages: ['/mags/fortune2.webp'],
     description: 'An exclusive feature highlighting the handcrafted brass details and futuristic design of the new Monster lighting series.',
+    brand: 'KDAD',
   },
 ];
 
@@ -96,6 +104,7 @@ export default function PublicationsClient({ articles, features }) {
   const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 });
   const zoomContainerRef = useRef(null);
   const [activeFeaturedIndex, setActiveFeaturedIndex] = useState(0);
+  const [activeBrand, setActiveBrand] = useState('KDAD'); // State for separating KDAD and KDH
 
   const pressMagazines = pressData.map((item, idx) => {
     const isInsta = item.type === 'Instagram Story' || item.type === 'Social Media';
@@ -108,6 +117,7 @@ export default function PublicationsClient({ articles, features }) {
       featuredImages: item.images,
       isInstagram: isInsta,
       description: 'Press coverage featuring designs by Karan Desai.',
+      brand: item.brand || 'KDAD', 
     };
   });
 
@@ -221,6 +231,7 @@ export default function PublicationsClient({ articles, features }) {
     description: m.description,
     externalLink: m.externalLink,
     isInstagram: m.isInstagram,
+    brand: m.brand || 'KDAD',
   }));
 
   const normalizedFeatures = (features || []).map((f, idx) => {
@@ -239,10 +250,13 @@ export default function PublicationsClient({ articles, features }) {
         ? f.images.slice(1).map((img) => img.fileUrl)
         : [f.images?.[0]?.fileUrl || ''],
       description: 'Press spread featuring designs by Karan Desai.',
+      brand: 'KDAD',
     };
   });
 
   const allMagazines = [...normalizedLocal, ...normalizedFeatures, ...pressMagazines];
+
+  const filteredMagazines = allMagazines.filter(mag => mag.brand === activeBrand);
 
   // Helper to check if a magazine layout has featured images separate from cover
   const isSinglePage = (mag) => {
@@ -292,18 +306,34 @@ export default function PublicationsClient({ articles, features }) {
       </div>
 
       {/* Magazines Section (Unified before articles) */}
-      <div className="mt-8 mb-8 flex items-center gap-4 w-full max-w-[54rem] 2xl:max-w-[80%]">
+      <div className="mt-8 mb-4 flex items-center gap-4 w-full max-w-[54rem] 2xl:max-w-[80%]">
         <span className={`text-xs uppercase tracking-widest text-zinc-500 whitespace-nowrap ${montserrat.className}`}>
           Featured Publications & Magazines
         </span>
         <div className="flex-1 h-px bg-zinc-800" />
       </div>
 
+      {/* Brand Filter Tabs */}
+      <div className="flex gap-4 mb-8 w-full max-w-[54rem] 2xl:max-w-[80%] justify-center sm:justify-start">
+        <button
+          onClick={() => setActiveBrand('KDAD')}
+          className={`px-8 py-2 rounded-full border transition-all duration-300 ${activeBrand === 'KDAD' ? 'bg-zinc-800 border-zinc-500 text-white shadow-lg' : 'bg-transparent border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600'}`}
+        >
+          <span className={`text-sm uppercase tracking-widest font-semibold ${montserrat.className}`}>Architecture + Design</span>
+        </button>
+        <button
+          onClick={() => setActiveBrand('KDH')}
+          className={`px-8 py-2 rounded-full border transition-all duration-300 ${activeBrand === 'KDH' ? 'bg-zinc-800 border-zinc-500 text-white shadow-lg' : 'bg-transparent border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600'}`}
+        >
+          <span className={`text-sm uppercase tracking-widest font-semibold ${montserrat.className}`}>Karan Desai Home</span>
+        </button>
+      </div>
+
       <div
         ref={magazinesRef}
         className="grid grid-cols-1 gap-y-10 gap-x-8 pb-16 sm:grid-cols-2 lg:grid-cols-3 w-full max-w-[54rem] 2xl:max-w-[80%]"
       >
-        {allMagazines.map((mag, index) => (
+        {filteredMagazines.map((mag, index) => (
           <div
             key={mag.id}
             onClick={() => selectMagazine(mag)}

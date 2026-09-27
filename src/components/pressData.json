@@ -1411,7 +1411,8 @@
       "/press-coverages/2024/April/Online/Architect%20and%20Interiors%20India/Architect%20and%20Interiors%20India%20-%20Karan%20Desai%20-%20April%202024%20(6).webp",
       "/press-coverages/2024/April/Online/Architect%20and%20Interiors%20India/Architect%20and%20Interiors%20India%20-%20Karan%20Desai%20-%20April%202024%20(7).webp",
       "/press-coverages/2024/April/Online/Architect%20and%20Interiors%20India/Architect%20and%20Interiors%20India%20-%20Karan%20Desai%20-%20April%202024%20(8).webp"
-    ]
+    ],
+    "brand": "KDH"
   },
   {
     "year": "2024",
@@ -1462,7 +1463,8 @@
       "/press-coverages/2024/April/Online/Luxury%20Facts/Luxury%20Facts%20-%20Karan%20Desai%20-%20April%202024%20(5).webp",
       "/press-coverages/2024/April/Online/Luxury%20Facts/Luxury%20Facts%20-%20Karan%20Desai%20-%20April%202024%20(6).webp",
       "/press-coverages/2024/April/Online/Luxury%20Facts/Luxury%20Facts%20-%20Karan%20Desai%20-%20April%202024%20(7).webp"
-    ]
+    ],
+    "brand": "KDH"
   },
   {
     "year": "2024",
@@ -1484,7 +1486,8 @@
       "/press-coverages/2024/April/Social%20Media/Living%20Etc/Living%20Etc%20-%20Karan%20Desai%20-%2020th%20April%202024%20(1).webp",
       "/press-coverages/2024/April/Social%20Media/Living%20Etc/Living%20Etc%20-%20Karan%20Desai%20-%2020th%20April%202024%20(2).webp",
       "/press-coverages/2024/April/Social%20Media/Living%20Etc/Living%20Etc%20-%20Karan%20Desai%20-%2020th%20April%202024%20(3).webp"
-    ]
+    ],
+    "brand": "KDH"
   },
   {
     "year": "2024",
@@ -1496,7 +1499,8 @@
       "/press-coverages/2024/April/Social%20Media/Luxury%20Facts/Luxury%20Facts%20-%20Karan%20Desai%20-%20April%202024%20(2).webp",
       "/press-coverages/2024/April/Social%20Media/Luxury%20Facts/Luxury%20Facts%20-%20Karan%20Desai%20-%20April%202024%20(3).webp",
       "/press-coverages/2024/April/Social%20Media/Luxury%20Facts/Luxury%20Facts%20-%20Karan%20Desai%20-%20April%202024%20(4).webp"
-    ]
+    ],
+    "brand": "KDH"
   },
   {
     "year": "2024",
@@ -1615,15 +1619,6 @@
       "/press-coverages/2024/February/Online/Rethinking%20The%20Future/Rethinking%20The%20Future%20-%20Karan%20Desai%20-%20February%202024%20(5).webp",
       "/press-coverages/2024/February/Online/Rethinking%20The%20Future/Rethinking%20The%20Future%20-%20Karan%20Desai%20-%20February%202024%20(6).webp",
       "/press-coverages/2024/February/Online/Rethinking%20The%20Future/Rethinking%20The%20Future%20-%20Karan%20Desai%20-%20February%202024%20(7).webp"
-    ]
-  },
-  {
-    "year": "2024",
-    "month": "February",
-    "type": "Social Media",
-    "publication": "Ace Update",
-    "images": [
-      "/press-coverages/2024/February/Social%20Media/Ace%20Update/Ace%20Update%20-%20Karan%20Desai%20-%20February%202024.webp"
     ]
   },
   {
@@ -2098,7 +2093,8 @@
       "/press-coverages/2024/May/Online/Design%20Pataki/Design%20Pataki%20-%20Karan%20Desai%20-%20May%202024%20(3).webp",
       "/press-coverages/2024/May/Online/Design%20Pataki/Design%20Pataki%20-%20Karan%20Desai%20-%20May%202024%20(4).webp",
       "/press-coverages/2024/May/Online/Design%20Pataki/Design%20Pataki%20-%20Karan%20Desai%20-%20May%202024%20(5).webp"
-    ]
+    ],
+    "brand": "KDH"
   },
   {
     "year": "2024",
@@ -2109,7 +2105,8 @@
       "/press-coverages/2024/May/Online/Homes%20India%20Magazine/Homes%20-%20Karan%20Desai%20-%20May%202024%20(1).webp",
       "/press-coverages/2024/May/Online/Homes%20India%20Magazine/Homes%20-%20Karan%20Desai%20-%20May%202024%20(2).webp",
       "/press-coverages/2024/May/Online/Homes%20India%20Magazine/Homes%20-%20Karan%20Desai%20-%20May%202024%20(3).webp"
-    ]
+    ],
+    "brand": "KDH"
   },
   {
     "year": "2024",
@@ -2137,7 +2134,8 @@
       "/press-coverages/2024/May/Online/Scale%2BDesign/Scale%2BDesign%20-%20Karan%20Desai%20-%20May%202024%20(3).webp",
       "/press-coverages/2024/May/Online/Scale%2BDesign/Scale%2BDesign%20-%20Karan%20Desai%20-%20May%202024%20(4).webp",
       "/press-coverages/2024/May/Online/Scale%2BDesign/Scale%2BDesign%20-%20Karan%20Desai%20-%20May%202024%20(5).webp"
-    ]
+    ],
+    "brand": "KDH"
   },
   {
     "year": "2024",
@@ -2172,6 +2170,7 @@
     "publication": "Scale Qatar",
     "images": [
       "/press-coverages/2024/May/Social%20Media/Scale%20Qatar/Scale%20Qatar%20-%20Karan%20Desai%20-%20May%202024.webp"
-    ]
+    ],
+    "brand": "KDH"
   }
 ]
