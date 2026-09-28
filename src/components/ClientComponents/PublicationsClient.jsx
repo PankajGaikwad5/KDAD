@@ -94,7 +94,7 @@ const localMagazines = [
     name: 'Delhi Times',
     issue: 'September 2026 - Instagram Post',
     coverImage: '/mags/delhitimes1.webp',
-    featuredImages: ['/mags/delhitimes2.webp', '/mags/delhitimes3.webp', '/mags/delhitimes4.webp', '/mags/delhitimes5.webp', '/mags/delhitimes6.webp', '/mags/delhitimes7.webp'],
+    featuredImages: ['/mags/delhitimes4.webp'],
     description: 'Totems are taking a stand in contemporary interiors, bringing height, texture and a sculptural sense of character to overlooked corners. Featured in Delhi Times.',
     externalLink: 'https://www.instagram.com/p/DdyLDZ7AFSU/',
     isInstagram: true,
