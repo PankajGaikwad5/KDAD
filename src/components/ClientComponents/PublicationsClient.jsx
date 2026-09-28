@@ -89,6 +89,17 @@ const localMagazines = [
     description: 'An exclusive feature highlighting the handcrafted brass details and futuristic design of the new Monster lighting series.',
     brand: 'KDAD',
   },
+  {
+    id: 9,
+    name: 'Delhi Times',
+    issue: 'September 2026 - Instagram Post',
+    coverImage: '/mags/delhitimes1.webp',
+    featuredImages: ['/mags/delhitimes2.webp', '/mags/delhitimes3.webp', '/mags/delhitimes4.webp', '/mags/delhitimes5.webp', '/mags/delhitimes6.webp', '/mags/delhitimes7.webp'],
+    description: 'Totems are taking a stand in contemporary interiors, bringing height, texture and a sculptural sense of character to overlooked corners. Featured in Delhi Times.',
+    externalLink: 'https://www.instagram.com/p/DdyLDZ7AFSU/',
+    isInstagram: true,
+    brand: 'KDH',
+  },
 ];
 
 export default function PublicationsClient({ articles, features }) {
@@ -109,10 +120,11 @@ export default function PublicationsClient({ articles, features }) {
   const pressMagazines = pressData.map((item, idx) => {
     const isInsta = item.type === 'Instagram Story' || item.type === 'Social Media';
     const name = item.publication || item.type;
+    const issueType = item.type === 'Instagram Story' ? 'Instagram Post' : item.type;
     return {
       id: `press-${item.year}-${idx}`,
       name: name,
-      issue: `${item.month} ${item.year} - ${item.type}`,
+      issue: `${item.month} ${item.year} - ${issueType}`,
       coverImage: item.images[0],
       featuredImages: item.images,
       isInstagram: isInsta,
@@ -254,7 +266,37 @@ export default function PublicationsClient({ articles, features }) {
     };
   });
 
-  const allMagazines = [...normalizedLocal, ...normalizedFeatures, ...pressMagazines];
+  const monthOrder = {
+    "january": 1, "february": 2, "feburary": 2, "march": 3, "april": 4, "may": 5, "june": 6, 
+    "july": 7, "august": 8, "september": 9, "october": 10, "november": 11, "december": 12
+  };
+
+  const parseDate = (issueStr) => {
+    if (!issueStr) return { year: 0, month: 0 };
+    let year = 0;
+    let month = 0;
+    const yearMatch = issueStr.match(/\d{4}/);
+    if (yearMatch) year = parseInt(yearMatch[0], 10);
+    
+    const issueLower = issueStr.toLowerCase();
+    for (const [mName, mNum] of Object.entries(monthOrder)) {
+      if (issueLower.includes(mName)) {
+        month = mNum;
+        break;
+      }
+    }
+    return { year, month };
+  };
+
+  const allMagazines = [...normalizedLocal, ...normalizedFeatures, ...pressMagazines]
+    .map(mag => {
+      const { year, month } = parseDate(mag.issue);
+      return { ...mag, sortYear: year, sortMonth: month };
+    })
+    .sort((a, b) => {
+      if (a.sortYear !== b.sortYear) return b.sortYear - a.sortYear;
+      return b.sortMonth - a.sortMonth;
+    });
 
   const filteredMagazines = allMagazines.filter(mag => mag.brand === activeBrand);
 
