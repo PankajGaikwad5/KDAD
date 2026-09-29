@@ -2206,13 +2206,13 @@ export const projects = [
           $oid: '6792009a7a5dc4ac2d27e2a9',
         },
       },
-      {
-        fileName: 'Kitchen.webp',
-        fileUrl: '/bluehouse/7.webp',
-        _id: {
-          $oid: '6792009a7a5dc4ac2d27e2aa',
-        },
-      },
+      // {
+      //   fileName: 'Kitchen.webp',
+      //   fileUrl: '/bluehouse/7.webp',
+      //   _id: {
+      //     $oid: '6792009a7a5dc4ac2d27e2aa',
+      //   },
+      // },
     ],
     __v: 0,
   },
