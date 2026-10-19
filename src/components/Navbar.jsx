@@ -55,35 +55,30 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
     return () => ctx.revert();
   }, []);
   const newNavTopics = [
-    // {
-    //   id: 1,
-    //   name: 'home',
-    //   path: '/',
-    // },
     {
       id: 2,
       name: 'about us',
-      path: 'about us',
+      path: '/about-us',
     },
     {
       id: 3,
       name: 'projects',
-      path: 'projects',
+      path: '/projects',
     },
     {
       id: 4,
       name: 'collaborations',
-      path: 'collaborations',
+      path: '/collaborations',
     },
     {
       id: 5,
       name: 'publications',
-      path: 'publications',
+      path: '/publications',
     },
     {
       id: 6,
       name: 'contact us',
-      path: 'contact us',
+      path: '/contact-us',
     },
   ];
 
@@ -170,7 +165,7 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
         <Link href='/' ref={logoRef}>
           <Image
             src='/assets/signlogo.png'
-            alt='Logo'
+            alt='Karan Desai Architecture + Design'
             width={120}
             height={120}
             className='object-contain -ml-1 m-0 p-0

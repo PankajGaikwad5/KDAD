@@ -47,77 +47,77 @@ const LogoComp = () => {
           <div className='flex-shrink-0 flex space-x-20'>
             <Image
               src='/features/hello-india2.png'
-              alt='hello india'
+              alt='Hello! India Magazine Feature'
               width={120}
               height={120}
               className='object-contain'
             />
             <Image
               src='/features/living-etc.png'
-              alt='Logo 2'
+              alt='Livingetc India Magazine Feature'
               width={120}
               height={120}
               className='object-contain'
             />
             <Image
               src='/features/elle-decor.png'
-              alt='Logo 2'
+              alt='Elle Decor India Architecture Feature'
               width={100}
               height={100}
               className='object-contain'
             />
             <Image
               src='/features/ad.png'
-              alt='Logo 2'
+              alt='Architectural Digest (AD) India Feature'
               width={80}
               height={80}
               className='object-contain'
             />
             <Image
               src='/features/a+d.png'
-              alt='Logo 2'
+              alt='Architecture + Design (A+D) Magazine'
               width={120}
               height={120}
               className='object-contain'
             />{' '}
             <Image
               src='/features/india-today3.png'
-              alt='Logo 2'
+              alt='India Today Home & Architecture'
               width={120}
               height={120}
               className='object-contain'
             />
             <Image
               src='/features/better-interiors2.png'
-              alt='Logo 2'
+              alt='Better Interiors Magazine'
               width={120}
               height={120}
               className='object-contain'
             />
             <Image
               src='/features/h&d.png'
-              alt='Logo 2'
+              alt='Home & Design Trends'
               width={160}
               height={160}
               className='object-contain'
             />
             <Image
               src='/features/trends.png'
-              alt='Logo 2'
+              alt='Trends Magazine Feature'
               width={120}
               height={120}
               className='object-contain'
             />
             <Image
               src='/features/goodhomes.png'
-              alt='Logo 2'
+              alt='GoodHomes India Magazine'
               width={170}
               height={170}
               className='object-contain'
             />
             <Image
               src='/features/aaii.png'
-              alt='Logo 2'
+              alt='Architect and Interiors India'
               width={170}
               height={170}
               className='object-contain'
@@ -126,77 +126,77 @@ const LogoComp = () => {
           <div className='flex-shrink-0 flex space-x-20'>
             <Image
               src='/features/hello-india2.png'
-              alt='hello india'
+              alt='Hello! India Magazine Feature'
               width={120}
               height={120}
               className='object-contain'
             />
             <Image
               src='/features/living-etc.png'
-              alt='Logo 2'
+              alt='Livingetc India Magazine Feature'
               width={120}
               height={120}
               className='object-contain'
             />
             <Image
               src='/features/elle-decor.png'
-              alt='Logo 2'
+              alt='Elle Decor India Architecture Feature'
               width={100}
               height={100}
               className='object-contain'
             />
             <Image
               src='/features/ad.png'
-              alt='Logo 2'
+              alt='Architectural Digest (AD) India Feature'
               width={80}
               height={80}
               className='object-contain'
             />
             <Image
               src='/features/a+d.png'
-              alt='Logo 2'
+              alt='Architecture + Design (A+D) Magazine'
               width={120}
               height={120}
               className='object-contain'
             />{' '}
             <Image
               src='/features/india-today.png'
-              alt='Logo 2'
+              alt='India Today Home & Architecture'
               width={120}
               height={120}
               className='object-contain'
             />
             <Image
               src='/features/better-interiors.png'
-              alt='Logo 2'
+              alt='Better Interiors Magazine'
               width={120}
               height={120}
               className='object-contain'
             />
             <Image
               src='/features/h&d.png'
-              alt='Logo 2'
+              alt='Home & Design Trends'
               width={160}
               height={160}
               className='object-contain'
             />
             <Image
               src='/features/trends.png'
-              alt='Logo 2'
+              alt='Trends Magazine Feature'
               width={120}
               height={120}
               className='object-contain'
             />
             <Image
               src='/features/goodhomes.png'
-              alt='Logo 2'
+              alt='GoodHomes India Magazine'
               width={170}
               height={170}
               className='object-contain'
             />
             <Image
               src='/features/aii.png'
-              alt='Logo 2'
+              alt='Architect and Interiors India'
               width={170}
               height={170}
               className='object-contain'

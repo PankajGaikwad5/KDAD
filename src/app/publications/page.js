@@ -4,14 +4,34 @@ import PublicationsClient from '../../components/ClientComponents/PublicationsCl
 import { features } from '../../components/features';
 
 export const metadata = {
-  title: 'Karan Desai Publications | Articles and Magazines',
+  title: 'Press & Media Publications | Karan Desai Architecture + Design | KDAD',
   description:
-    'Explore the published articles, magazine features, and media coverage of Karan Desai Architecture + Design. Discover award-winning architectural and interior design projects by Karan Desai, featured in leading publications showcasing innovation, luxury, and timeless design.',
+    'Explore press features, architectural magazine articles, and national media coverage of Karan Desai Architecture + Design in Elle Decor, Architectural Digest, GoodHomes, Livingetc, and FOAID.',
+  alternates: {
+    canonical: 'https://karandesai.in/publications',
+  },
   openGraph: {
-    title: 'Karan Desai Publications | Articles and Magazines',
+    title: 'Press & Media Publications | Karan Desai Architecture + Design',
     description:
-      'Explore the published articles, magazine features, and media coverage of Karan Desai Architecture + Design. Discover award-winning architectural and interior design projects by Karan Desai, featured in leading publications showcasing innovation, luxury, and timeless design.',
+      'Explore published articles, magazine features, and media coverage of Karan Desai Architecture + Design in leading design journals.',
+    url: 'https://karandesai.in/publications',
+    siteName: 'Karan Desai Architecture + Design',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'KDAD Press and Media Publications',
+      },
+    ],
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Press & Publications | KDAD Media Features',
+    description:
+      'Explore published articles and media coverage of Karan Desai Architecture + Design in leading publications.',
+    images: ['/og-image.jpg'],
   },
   keywords: [
     'architecture',

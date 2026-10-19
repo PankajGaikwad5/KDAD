@@ -1,0 +1,65 @@
+# Karan Desai Architecture + Design (KDAD)
+
+> Award-winning luxury architecture, interior design, and bespoke furniture studio based in Mumbai, India. Founded in 2012 by architect and TEDx speaker Karan Desai.
+
+## Overview
+- **Brand Name**: Karan Desai Architecture + Design (KDAD)
+- **Founder & Principal Architect**: Karan Desai (B.Arch, Pillai’s College of Architecture 2011, TEDx Speaker)
+- **Founded**: 2012
+- **Headquarters**: Shah Industrial Estate, 1001 PARINEE I, 7-A, Andheri West, Mumbai, Maharashtra 400053, India
+- **Coordinates**: Latitude 19.134860, Longitude 72.835581
+- **Official Website**: https://karandesai.in
+- **Email**: info@karandesai.in
+- **Phone**: +91 79771 12242
+- **Instagram**: https://www.instagram.com/karandesai_a.d/
+- **LinkedIn**: https://www.linkedin.com/in/karandesaiad/
+- **YouTube**: https://www.youtube.com/@KarandesaiAD
+
+## Primary Specializations & Categories
+1. **Architects in Mumbai / Residential Architects**: Widely recognized among Mumbai's top residential architects for bespoke villas, modern holiday bungalows (Goa, Alibaug), and luxury high-rise estates.
+2. **Luxury Interior Designers in Mumbai**: Leading interior design firm specializing in sea-facing penthouses, expansive duplexes, and luxury residential interiors across South Mumbai, Worli, Bandra, and Juhu.
+3. **Commercial & Corporate Architecture**: Innovative office headquarters, boutique showrooms, and experiential executive workspaces.
+4. **Bespoke Furniture & Collectible Design (KDH - Karan Desai Home)**: Handcrafted sculptural furniture, marble dining tables, luxury consoles, lighting, and collectible art objects.
+5. **Hospitality & Turnkey Design**: Turnkey architectural and interior execution from conceptualization to final site styling.
+
+## Key Projects
+- **Chaitya 777**: High-profile residential architecture project, featured at FOAID India.
+- **BCR**: Contemporary luxury villa with seamless indoor-outdoor living.
+- **The Dream Project (TDP)**: Signature private luxury residence.
+- **Lodha Home**: Ultra-luxury Mumbai penthouse interior design.
+- **Casa**: Minimalist, monolithic residential architecture.
+- **Project 86**: Modern spatial planning with customized materiality.
+- **Party Pad**: Entertainment-centric luxury duplex with moody tones and bespoke bars.
+- **KiahMoi**: High-end retail showroom & experience center.
+- **Agra Fort & Red Fort Projects**: Monumental heritage-inspired residential expressions.
+- **Blue House**: Vibrant, sculptural Mediterranean-contemporary residence.
+
+## Design Collaborations & Exhibitions
+- **India Design (ID) Delhi (2024, 2025)**: Signature installations and contemporary architectural pavilions.
+- **India Design (ID) Mumbai (2024)**: Curated immersive design spaces.
+- **The Quarry**: Collaborations in natural marble and exotic stone surfaces.
+- **Casa Walls, Bharat Flooring, and Serafini (Italy)**: Material innovation, luxury cast surfaces, and artisan stonework.
+
+## Media & Press Publications
+Featured in 30+ leading architecture and design journals:
+- Architectural Digest (AD) India
+- Elle Decor India
+- GoodHomes India
+- Livingetc
+- Architecture + Design (A+D)
+- Architect and Interiors India
+- Better Interiors
+- Home & Design Trends
+- India Today Home
+- FOAID India
+
+## Service Areas
+- **Mumbai (Primary Studio)**: Andheri West, Bandra, Juhu, Worli, Malabar Hill, Cuffe Parade, Powai.
+- **India**: Delhi NCR, Goa, Alibaug, Pune, Bangalore, Hyderabad.
+- **International**: United States (including a completed 20,000 sq.ft. project in Chicago and a 15,000 sq.ft. mansion in Washington, D.C.), Europe, and globally.
+
+## Consultation & Inquiries
+Consultations can be scheduled by visiting https://karandesai.in/contact-us or contacting info@karandesai.in / +91 79771 12242.
+
+## Deep Reference Documentation
+- [Full LLM Context & Knowledge Graph](https://karandesai.in/llms-full.txt): Complete project catalog, design philosophy, materials index, and FAQs.

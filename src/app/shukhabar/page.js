@@ -15,6 +15,47 @@ const montserrat = Montserrat({
   weight: ['400', '600', '700'], // Specify weight
 });
 
+export const metadata = {
+  title: 'Shukhabar with Karan Desai | Design, Culture & Conversations | KDAD',
+  description:
+    'Watch Shukhabar with Karan Desai — an insightful video series exploring architecture, interior design, creativity, and inspiring conversations with leading creators and industry icons.',
+  keywords: [
+    'Shukhabar',
+    'Shukhabar with Karan Desai',
+    'Karan Desai podcast',
+    'architecture talk show',
+    'design podcast India',
+    'KDAD YouTube',
+    'creative conversations',
+  ],
+  alternates: {
+    canonical: 'https://karandesai.in/shukhabar',
+  },
+  openGraph: {
+    title: 'Shukhabar with Karan Desai | Design, Culture & Conversations',
+    description:
+      'Watch Shukhabar with Karan Desai — exploring architecture, design, and inspiring journeys with creators.',
+    url: 'https://karandesai.in/shukhabar',
+    siteName: 'Karan Desai Architecture + Design',
+    images: [
+      {
+        url: '/assets/shukhabar.png',
+        width: 1200,
+        height: 630,
+        alt: 'Shukhabar with Karan Desai',
+      },
+    ],
+    type: 'video.other',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Shukhabar with Karan Desai',
+    description:
+      'Watch Shukhabar with Karan Desai — exploring architecture, design, and inspiring journeys.',
+    images: ['/assets/shukhabar.png'],
+  },
+};
+
 const About = () => {
   const yt =
     'absolute top-0 left-0 w-full h-full transition-transform duration-500 group-hover:scale-105';
@@ -24,13 +65,13 @@ const About = () => {
       <div className='relative overflow-hidden md:pt-14 px-4 tracking-widest z-10'>
         <Navbar isBgBlack={true} />
         <div className='text-white flex flex-col items-center justify-center'>
-          {/* <h1 className='text-3xl font-bold mb-8 tracking-widest font-sans uppercase  border-b-4 border-pink-800'>
-            Shukhabar
-          </h1> */}
+          <h1 className='text-2xl md:text-3xl font-bold mb-4 tracking-widest font-sans uppercase border-b-4 border-pink-800 text-center'>
+            Shukhabar with Karan Desai
+          </h1>
 
           <Image
             src='/assets/shukhabar.png'
-            alt='Logo'
+            alt='Shukhabar with Karan Desai Show Logo'
             width={250}
             height={250}
             className=' flex justify-self-center object-contain m-0 p-0 

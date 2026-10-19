@@ -34,12 +34,13 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const title = `${projectData.title} | Karan Desai Architecture + Design`;
+  const loc = projectData.location || 'Mumbai';
+  const title = `${projectData.title} | Architecture & Interior Design in ${loc} | Karan Desai KDAD`;
   const description =
     projectData.description ||
-    `${projectData.title} — architecture and interior design project by Karan Desai Architecture + Design. Explore images, concept and details.`;
+    `${projectData.title} — bespoke luxury architecture and interior design project by Karan Desai Architecture + Design in ${loc}, India. Explore high-end residential interiors and architectural concepts.`;
   const firstImage = projectData.images?.[0]?.fileUrl ?? '/og-image.jpg';
-  const url = `https://karandesai.in/projectdetails/${id}`;
+  const url = `https://karandesai.in/projectdetails/${encodeURIComponent(id)}`;
 
   return {
     title,
@@ -48,9 +49,13 @@ export async function generateMetadata({ params }) {
       projectData.title,
       'Karan Desai',
       'KDAD',
-      'architecture',
-      'interior design',
-      projectData.location ?? 'Mumbai',
+      'architects in Mumbai',
+      'interior designers in Mumbai',
+      'luxury residential architects',
+      'luxury interior design',
+      'penthouse interior design',
+      'modern villa architecture',
+      loc,
       ...(projectData.tags ?? []).slice(0, 10),
     ].filter(Boolean),
     openGraph: {
@@ -111,20 +116,34 @@ const FeatureDetails = async ({ params }) => {
     '@context': 'https://schema.org',
     '@type': 'CreativeWork',
     name: title,
+    headline: `${title} by Karan Desai Architecture + Design`,
     description:
       projectData.description ||
-      `Project by Karan Desai Architecture + Design: ${title}`,
-    url: `https://karandesai.in/projectdetails/${id}`,
+      `Luxury architecture and interior design project: ${title} by Karan Desai Architecture + Design in ${projectData.location || 'Mumbai, India'}.`,
+    url: `https://karandesai.in/projectdetails/${encodeURIComponent(id)}`,
+    creator: {
+      '@type': 'Person',
+      name: 'Karan Desai',
+      jobTitle: 'Principal Architect',
+      url: 'https://karandesai.in/about-us',
+    },
     author: {
       '@type': 'Organization',
       name: 'Karan Desai Architecture + Design',
       url: 'https://karandesai.in',
     },
-    image: (images || []).map((img) => img.fileUrl).filter(Boolean),
+    locationCreated: projectData.location
+      ? {
+          '@type': 'Place',
+          name: projectData.location,
+        }
+      : undefined,
+    image: (images || []).map((img) => (img.fileUrl.startsWith('http') ? img.fileUrl : `https://karandesai.in${img.fileUrl}`)).filter(Boolean),
     keywords: (projectData.tags || []).slice(0, 10),
     provider: {
       '@type': 'Organization',
       name: 'Karan Desai Architecture + Design',
+      url: 'https://karandesai.in',
     },
   };
 
@@ -155,9 +174,9 @@ const FeatureDetails = async ({ params }) => {
           <h1 className='text-white text-2xl md:text-3xl lg:text-4xl font-semibold tracking-wide uppercase'>
             {title}
           </h1>
-          {projectData.location && (
-            <p className='text-gray-300 text-xs md:text-sm mt-1'>{projectData.location}</p>
-          )}
+          <p className='text-gray-300 text-xs md:text-sm mt-1 uppercase tracking-widest font-medium'>
+            Architecture & Luxury Interior Design {projectData.location ? `— ${projectData.location}` : '— Mumbai, India'}
+          </p>
         </header>
 
         <div className='flex-1 min-h-0 w-full relative z-20 flex flex-col pb-4'>

@@ -1,4 +1,4 @@
-# *
+# robots.txt for https://karandesai.in
 User-agent: *
 Allow: /
 Disallow: /api/
@@ -6,8 +6,71 @@ Disallow: /test/
 Disallow: /example_upload/
 Disallow: /uploadprojects/
 
-# Host
-Host: https://www.karandesai.in
+# Traditional Search Engines
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /test/
+Disallow: /example_upload/
+Disallow: /uploadprojects/
 
-# Sitemaps
-Sitemap: https://www.karandesai.in/sitemap.xml
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /test/
+Disallow: /example_upload/
+Disallow: /uploadprojects/
+
+User-agent: Applebot
+Allow: /
+Disallow: /api/
+Disallow: /test/
+Disallow: /example_upload/
+Disallow: /uploadprojects/
+
+# AI Search & Answer Engines (AEO & GEO Optimization)
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+Disallow: /test/
+Disallow: /example_upload/
+Disallow: /uploadprojects/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /api/
+Disallow: /test/
+Disallow: /example_upload/
+Disallow: /uploadprojects/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /api/
+Disallow: /test/
+Disallow: /example_upload/
+Disallow: /uploadprojects/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+Disallow: /test/
+Disallow: /example_upload/
+Disallow: /uploadprojects/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /api/
+Disallow: /test/
+Disallow: /example_upload/
+Disallow: /uploadprojects/
+
+User-agent: CCBot
+Allow: /
+Disallow: /api/
+Disallow: /test/
+Disallow: /example_upload/
+Disallow: /uploadprojects/
+
+# Host & Sitemap
+Host: https://karandesai.in
+Sitemap: https://karandesai.in/sitemap.xml

@@ -88,7 +88,7 @@ const Footer = ({ home }) => {
           </li>
         </ul>
         <Link
-          href='contact us'
+          href='/contact-us'
           className='hover:text-white hover:text-lg transition-all duration-300 whitespace-nowrap'
         >
           contact us

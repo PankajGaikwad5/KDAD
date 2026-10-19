@@ -60,12 +60,49 @@ export default function Home() {
 
   return (
     <div className='bg-black/90'>
-      <div className='hidden'>{/* …SEO copy unchanged… */}</div>
+      {/* Crawlable semantic section for Search Engines, AI Overviews & Assistive Tech */}
+      <section className='sr-only' aria-label='About Karan Desai Architecture + Design Studio'>
+        <h1>Top Architects in Mumbai & Luxury Interior Designers | Karan Desai (KDAD)</h1>
+        <h2>Award-Winning Architecture Firm & Luxury Interior Design Studio in Mumbai, India</h2>
+        <p>
+          Karan Desai Architecture + Design (KDAD) is a leading architecture firm and luxury interior design studio based in Andheri West, Mumbai. Founded in 2012 by architect Karan Desai (TEDx Speaker and Pillai’s College of Architecture graduate), KDAD has established itself as one of the best architects and interior designers in Mumbai and across India.
+        </p>
 
-      <h1 className='sr-only'>
-        Karan Desai Architecture and Design – Innovative, Modern, Sustainable
-        Design Solutions
-      </h1>
+        <h3>Bespoke Residential Architecture & Luxury Villa Design</h3>
+        <p>
+          As residential architects, we specialize in high-end private villas, luxury bungalows, holiday homes in Goa and Alibaug, and contemporary residential architecture. Our architectural practice balances structural rigor with fluid spatial layouts, natural lighting, and sustainable construction.
+        </p>
+
+        <h3>Luxury Interior Design: Penthouses, Duplexes & Sea-Facing Apartments</h3>
+        <p>
+          Ranked among Mumbai’s top interior designers, KDAD transforms luxury penthouses, high-rise duplexes, and prestigious residences across South Mumbai, Worli, Bandra, Juhu, and Andheri. Our interior design services encompass end-to-end space planning, bespoke material curation, lighting architecture, custom joinery, and styling.
+        </p>
+
+        <h3>Commercial Architecture & Office Interior Design</h3>
+        <p>
+          KDAD delivers cutting-edge commercial architecture, corporate headquarters, executive office interiors, boutique retail showrooms (such as KiahMoi), and hospitality spaces tailored to brand identity and functionality.
+        </p>
+
+        <h3>Custom Collectible Furniture by Karan Desai Home (KDH)</h3>
+        <p>
+          KDH (Karan Desai Home) designs handcrafted sculptural furniture, custom marble dining tables, luxury consoles, and collectible art pieces, collaborating with international stone artisans like Serafini (Italy) and The Quarry.
+        </p>
+
+        <h3>Architects and Interior Designers Serving Mumbai, India & Globally</h3>
+        <p>
+          Located at Shah Industrial Estate, 1001 PARINEE I, 7-A, Andheri West, Mumbai, our architects and interior designers cater to clients across Mumbai, South Mumbai, Bandra, Juhu, Worli, Delhi NCR, Goa, Alibaug, Pune, Bangalore, Hyderabad, and internationally across the United States (including a completed 20,000 sq. ft. project in Chicago and a 15,000 sq. ft. mansion in Washington, D.C.), Europe, and globally.
+        </p>
+
+        <nav aria-label='Quick Links'>
+          <ul>
+            <li><a href='/projects'>Explore Luxury Architecture & Interior Design Portfolio</a></li>
+            <li><a href='/about-us'>About Karan Desai — Founder, Architect & Interior Designer</a></li>
+            <li><a href='/collaborations'>Design Collaborations with India Design and The Quarry</a></li>
+            <li><a href='/publications'>Media Features in Architectural Digest, Elle Decor & GoodHomes</a></li>
+            <li><a href='/contact-us'>Hire Architects & Interior Designers — Book a Consultation</a></li>
+          </ul>
+        </nav>
+      </section>
 
       <div className='relative w-full h-screen overflow-hidden m-0 p-0'>
         <Navbar isBgBlack={true} isHomePage={true} />

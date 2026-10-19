@@ -80,6 +80,42 @@ const nextConfig = {
 
   // Power by header removal
   poweredByHeader: false,
+
+  // 308 Permanent redirects for clean canonical URLs
+  async redirects() {
+    return [
+      {
+        source: '/about%20us',
+        destination: '/about-us',
+        permanent: true,
+      },
+      {
+        source: '/about',
+        destination: '/about-us',
+        permanent: true,
+      },
+      {
+        source: '/contact%20us',
+        destination: '/contact-us',
+        permanent: true,
+      },
+      {
+        source: '/contact',
+        destination: '/contact-us',
+        permanent: true,
+      },
+      {
+        source: '/portfolio',
+        destination: '/projects',
+        permanent: true,
+      },
+      {
+        source: '/oldcollaborations',
+        destination: '/collaborations',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
