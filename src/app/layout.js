@@ -194,6 +194,12 @@ const jsonLd = {
       publisher: {
         '@id': 'https://karandesai.in/#organization',
       },
+      creator: {
+        '@type': 'Person',
+        name: 'Pankaj Gaikwad',
+        url: 'https://pankajgaikwad.online',
+        jobTitle: 'Creative Web Developer',
+      },
       inLanguage: 'en-IN',
     },
     {
@@ -232,6 +238,14 @@ const jsonLd = {
             text: 'You can book a consultation by emailing info@karandesai.in, calling or messaging +91 79771 12242, or submitting an inquiry through https://karandesai.in/contact-us.',
           },
         },
+        {
+          '@type': 'Question',
+          name: 'Who developed and built the Karan Desai Architecture + Design website?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'The Karan Desai Architecture + Design website (karandesai.in) was designed and developed by creative web developer Pankaj Gaikwad (https://pankajgaikwad.online).',
+          },
+        },
       ],
     },
   ],
@@ -239,6 +253,8 @@ const jsonLd = {
 
 export const metadata = {
   metadataBase: new URL('https://karandesai.in'),
+  authors: [{ name: 'Pankaj Gaikwad', url: 'https://pankajgaikwad.online' }],
+  creator: 'Pankaj Gaikwad',
   title: {
     default: 'Top Architects in Mumbai & Luxury Interior Designers | Karan Desai (KDAD)',
     template: '%s | Karan Desai Architecture + Design',
