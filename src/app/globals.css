@@ -374,3 +374,11 @@ body {
   opacity: 0.35 !important;
   pointer-events: none !important;
 }
+/* Carousel: new image fades in over the previous one */
+@keyframes carouselFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.carousel-fade-in {
+  animation: carouselFadeIn 0.18s ease-out both;
+}

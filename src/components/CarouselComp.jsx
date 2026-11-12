@@ -6,40 +6,18 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Maximize, X } from 'lucide-react';
 import { createPortal } from 'react-dom';
 
-const MediaRenderer = React.memo(({ url, alt, onLoad }) => {
-  const isVideo = /\.(mp4|webm|ogg)$/i.test(url);
-
-  return isVideo ? (
-    <video
-      src={url}
-      controls
-      className='absolute inset-0 w-full h-full object-contain pointer-events-none'
-      playsInline
-      preload='metadata'
-      onLoadedData={onLoad}
-    />
-  ) : (
-    <motion.img
-      decoding="async"
-      loading="eager"
-      src={url}
-      alt={alt}
-      className="absolute inset-0 w-full h-full object-contain pointer-events-none"
-      initial={{ opacity: 0, zIndex: 2 }}
-      animate={{ opacity: 1, zIndex: 2 }}
-      exit={{ opacity: 0, zIndex: 1, transition: { delay: 0.15, duration: 0 } }}
-      transition={{ duration: 0.15, ease: 'easeOut' }}
-      onLoad={onLoad}
-      style={{ willChange: "opacity" }}
-    />
-  );
-});
-MediaRenderer.displayName = 'MediaRenderer';
+const isVideoUrl = (url) => /\.(mp4|webm|ogg)$/i.test(url || '');
 
 const CarouselComp = ({ imgArray, notcollab }) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [shownIndex, setShownIndex] = useState(0);
+  // index = image on top (fading in), prev = image kept underneath it
+  const [shown, setShown] = useState({ index: 0, prev: null });
+  const shownIndex = shown.index;
+  const setShownIndex = useCallback(
+    (i) => setShown((s) => (s.index === i ? s : { index: i, prev: s.index })),
+    []
+  );
   const [imageLoading, setImageLoading] = useState(true);
   const carouselRef = useRef(null);
   const thumbRefs = useRef([]);
@@ -88,7 +66,7 @@ const CarouselComp = ({ imgArray, notcollab }) => {
   useEffect(() => {
     const url = imgArray?.[activeIndex];
     if (!url) return;
-    if (/\.(mp4|webm|ogg)$/i.test(url)) {
+    if (isVideoUrl(url)) {
       setShownIndex(activeIndex);
       return;
     }
@@ -103,7 +81,7 @@ const CarouselComp = ({ imgArray, notcollab }) => {
     return () => {
       cancelled = true;
     };
-  }, [activeIndex, imgArray]);
+  }, [activeIndex, imgArray, setShownIndex]);
 
   // Preload neighbouring images so switching is instant
   useEffect(() => {
@@ -176,7 +154,6 @@ const CarouselComp = ({ imgArray, notcollab }) => {
           src={imgArray[shownIndex]}
           alt=""
           aria-hidden="true"
-          decoding="async"
           className="absolute inset-0 w-full h-full object-cover"
         />,
         bgNode
@@ -208,13 +185,33 @@ const CarouselComp = ({ imgArray, notcollab }) => {
           )}
         </AnimatePresence>
 
-        <AnimatePresence initial={false}>
-          <MediaRenderer
-            key={shownIndex}
-            url={imgArray[shownIndex]}
-            alt={`Slide ${shownIndex + 1}`}
+        {/* Only ever two layers: previous image underneath, current fading in on top.
+            No exit animations, so old images can't stack up and flash through. */}
+        {shown.prev !== null && !isVideoUrl(imgArray[shown.prev]) && (
+          <img
+            src={imgArray[shown.prev]}
+            alt=''
+            aria-hidden='true'
+            className='absolute inset-0 z-[1] w-full h-full object-contain pointer-events-none'
           />
-        </AnimatePresence>
+        )}
+        {isVideoUrl(imgArray[shownIndex]) ? (
+          <video
+            key={shownIndex}
+            src={imgArray[shownIndex]}
+            controls
+            playsInline
+            preload='metadata'
+            className='absolute inset-0 z-[2] w-full h-full object-contain bg-black'
+          />
+        ) : (
+          <img
+            key={shownIndex}
+            src={imgArray[shownIndex]}
+            alt={`Slide ${shownIndex + 1}`}
+            className='carousel-fade-in absolute inset-0 z-[2] w-full h-full object-contain pointer-events-none'
+          />
+        )}
 
         <button
           onClick={prevImage}
