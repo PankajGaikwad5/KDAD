@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# experimental lab pages (kept local only, not deployed)
+/src/app/lab/
