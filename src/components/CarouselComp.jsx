@@ -27,10 +27,10 @@ const MediaRenderer = React.memo(({ url, alt, onLoad }) => {
       className="absolute inset-0 w-full h-full object-contain pointer-events-none"
       initial={{ opacity: 0, zIndex: 2 }}
       animate={{ opacity: 1, zIndex: 2 }}
-      exit={{ opacity: 0, zIndex: 1, transition: { delay: 0.25, duration: 0 } }}
-      transition={{ duration: 0.25, ease: 'easeOut' }}
+      exit={{ opacity: 0, zIndex: 1, transition: { delay: 0.15, duration: 0 } }}
+      transition={{ duration: 0.15, ease: 'easeOut' }}
       onLoad={onLoad}
-      style={{ willChange: "opacity, transform" }}
+      style={{ willChange: "opacity" }}
     />
   );
 });
@@ -171,20 +171,14 @@ const CarouselComp = ({ imgArray, notcollab }) => {
       ref={carouselRef}
     >
       {bgNode && createPortal(
-        <AnimatePresence>
-          <motion.img
-            key={shownIndex}
-            src={imgArray[shownIndex]}
-            alt="Dynamic Background"
-            decoding="async"
-            className="absolute inset-0 w-full h-full object-cover"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-            style={{ willChange: "opacity", transform: "translateZ(0)" }}
-          />
-        </AnimatePresence>,
+        // Plain swap (no crossfade): fading two full-screen blurred layers stutters on weaker GPUs
+        <img
+          src={imgArray[shownIndex]}
+          alt=""
+          aria-hidden="true"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover"
+        />,
         bgNode
       )}
 
