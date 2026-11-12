@@ -1,6 +1,155 @@
 export const projects = [
   {
     _id: {
+      $oid: '67c1f5807a5dc4ac2d27p083',
+    },
+    title: 'project 83',
+    images: [
+      {
+        fileName: 'cover',
+        fileUrl: '/project83/cover.webp',
+        _id: {
+          $oid: 'project83_img_0',
+        },
+      },
+      {
+        fileName: '1',
+        fileUrl: '/project83/1.webp',
+        _id: {
+          $oid: 'project83_img_1',
+        },
+      },
+      {
+        fileName: '2',
+        fileUrl: '/project83/2.webp',
+        _id: {
+          $oid: 'project83_img_2',
+        },
+      },
+      {
+        fileName: '3',
+        fileUrl: '/project83/3.webp',
+        _id: {
+          $oid: 'project83_img_3',
+        },
+      },
+      {
+        fileName: '4',
+        fileUrl: '/project83/4.webp',
+        _id: {
+          $oid: 'project83_img_4',
+        },
+      },
+      {
+        fileName: '5',
+        fileUrl: '/project83/5.webp',
+        _id: {
+          $oid: 'project83_img_5',
+        },
+      },
+      {
+        fileName: '6',
+        fileUrl: '/project83/6.webp',
+        _id: {
+          $oid: 'project83_img_6',
+        },
+      },
+      {
+        fileName: '7',
+        fileUrl: '/project83/7.webp',
+        _id: {
+          $oid: 'project83_img_7',
+        },
+      },
+      {
+        fileName: '8',
+        fileUrl: '/project83/8.webp',
+        _id: {
+          $oid: 'project83_img_8',
+        },
+      },
+      {
+        fileName: '9',
+        fileUrl: '/project83/9.webp',
+        _id: {
+          $oid: 'project83_img_9',
+        },
+      },
+      {
+        fileName: '10',
+        fileUrl: '/project83/10.webp',
+        _id: {
+          $oid: 'project83_img_10',
+        },
+      },
+      {
+        fileName: '11',
+        fileUrl: '/project83/11.webp',
+        _id: {
+          $oid: 'project83_img_11',
+        },
+      },
+      {
+        fileName: '12',
+        fileUrl: '/project83/12.webp',
+        _id: {
+          $oid: 'project83_img_12',
+        },
+      },
+      {
+        fileName: '13',
+        fileUrl: '/project83/13.webp',
+        _id: {
+          $oid: 'project83_img_13',
+        },
+      },
+      {
+        fileName: '14',
+        fileUrl: '/project83/14.webp',
+        _id: {
+          $oid: 'project83_img_14',
+        },
+      },
+      {
+        fileName: '15',
+        fileUrl: '/project83/15.webp',
+        _id: {
+          $oid: 'project83_img_15',
+        },
+      },
+      {
+        fileName: '16',
+        fileUrl: '/project83/16.webp',
+        _id: {
+          $oid: 'project83_img_16',
+        },
+      },
+      {
+        fileName: '17',
+        fileUrl: '/project83/17.webp',
+        _id: {
+          $oid: 'project83_img_17',
+        },
+      },
+      {
+        fileName: '18',
+        fileUrl: '/project83/18.webp',
+        _id: {
+          $oid: 'project83_img_18',
+        },
+      },
+      {
+        fileName: '19',
+        fileUrl: '/project83/19.webp',
+        _id: {
+          $oid: 'project83_img_19',
+        },
+      },
+    ],
+    __v: 0,
+  },
+  {
+    _id: {
       $oid: '67c1f5807a5dc4ac2d27bcr1',
     },
     title: 'bcr',

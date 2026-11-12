@@ -28,6 +28,7 @@ export const metadata = {
     'project 704',
     'project 904',
     'blue house project',
+    'project 83',
     'luxury home projects Mumbai',
     'award-winning architecture',
   ],

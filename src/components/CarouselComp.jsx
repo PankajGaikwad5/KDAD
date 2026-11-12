@@ -25,10 +25,10 @@ const MediaRenderer = React.memo(({ url, alt, onLoad }) => {
       src={url}
       alt={alt}
       className="absolute inset-0 w-full h-full object-contain pointer-events-none"
-      initial={{ opacity: 0, scale: 0.98 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.98 }}
-      transition={{ duration: 0.4, ease: [0.76, 0, 0.24, 1] }}
+      initial={{ opacity: 0, zIndex: 2 }}
+      animate={{ opacity: 1, zIndex: 2 }}
+      exit={{ opacity: 0, zIndex: 1, transition: { delay: 0.25, duration: 0 } }}
+      transition={{ duration: 0.25, ease: 'easeOut' }}
       onLoad={onLoad}
       style={{ willChange: "opacity, transform" }}
     />
@@ -39,6 +39,7 @@ MediaRenderer.displayName = 'MediaRenderer';
 const CarouselComp = ({ imgArray, notcollab }) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [shownIndex, setShownIndex] = useState(0);
   const [imageLoading, setImageLoading] = useState(true);
   const carouselRef = useRef(null);
   const thumbRefs = useRef([]);
@@ -81,6 +82,42 @@ const CarouselComp = ({ imgArray, notcollab }) => {
   const prevImage = useCallback(() => {
     setActiveIndex((prev) => (prev - 1 + imgArray.length) % imgArray.length);
   }, [imgArray?.length]);
+
+  // Only swap the displayed image once the next one is downloaded + decoded,
+  // so the centre never goes blank while waiting
+  useEffect(() => {
+    const url = imgArray?.[activeIndex];
+    if (!url) return;
+    if (/\.(mp4|webm|ogg)$/i.test(url)) {
+      setShownIndex(activeIndex);
+      return;
+    }
+    let cancelled = false;
+    const img = new window.Image();
+    img.src = url;
+    const show = () => !cancelled && setShownIndex(activeIndex);
+    (img.decode ? img.decode() : Promise.reject()).then(show, () => {
+      if (img.complete) show();
+      else img.onload = img.onerror = show;
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [activeIndex, imgArray]);
+
+  // Preload neighbouring images so switching is instant
+  useEffect(() => {
+    if (!imgArray?.length) return;
+    const n = imgArray.length;
+    [activeIndex + 1, activeIndex - 1, activeIndex + 2].forEach((i) => {
+      const url = imgArray[(i + n) % n];
+      if (url && !/\.(mp4|webm|ogg)$/i.test(url)) {
+        const img = new window.Image();
+        img.decoding = 'async';
+        img.src = url;
+      }
+    });
+  }, [activeIndex, imgArray]);
 
   // Centering active thumbnail
   useEffect(() => {
@@ -136,15 +173,15 @@ const CarouselComp = ({ imgArray, notcollab }) => {
       {bgNode && createPortal(
         <AnimatePresence>
           <motion.img
-            key={activeIndex}
-            src={imgArray[activeIndex]}
+            key={shownIndex}
+            src={imgArray[shownIndex]}
             alt="Dynamic Background"
             decoding="async"
             className="absolute inset-0 w-full h-full object-cover"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
             style={{ willChange: "opacity", transform: "translateZ(0)" }}
           />
         </AnimatePresence>,
@@ -162,11 +199,26 @@ const CarouselComp = ({ imgArray, notcollab }) => {
 
       {/* Main Image Container */}
       <div className={`relative w-full select-none ${isFullscreen ? 'h-full' : 'flex-1 min-h-0'}`}>
-        <AnimatePresence mode="wait">
+        {/* Small spinner over the current image if the next one takes >150ms to load */}
+        <AnimatePresence>
+          {activeIndex !== shownIndex && (
+            <motion.div
+              key='next-loading'
+              className='absolute inset-0 z-[5] flex items-center justify-center pointer-events-none'
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { delay: 0.15, duration: 0.2 } }}
+              exit={{ opacity: 0, transition: { duration: 0.1 } }}
+            >
+              <div className='h-9 w-9 rounded-full border-2 border-white/25 border-t-white animate-spin bg-black/30' />
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        <AnimatePresence initial={false}>
           <MediaRenderer
-            key={activeIndex}
-            url={imgArray[activeIndex]}
-            alt={`Slide ${activeIndex + 1}`}
+            key={shownIndex}
+            url={imgArray[shownIndex]}
+            alt={`Slide ${shownIndex + 1}`}
           />
         </AnimatePresence>
 

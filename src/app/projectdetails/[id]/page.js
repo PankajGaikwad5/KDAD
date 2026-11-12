@@ -174,7 +174,8 @@ const FeatureDetails = async ({ params }) => {
           <h1 className='text-white text-2xl md:text-3xl lg:text-4xl font-semibold tracking-wide uppercase'>
             {title}
           </h1>
-          <p className='text-gray-300 text-xs md:text-sm mt-1 uppercase tracking-widest font-medium'>
+          {/* Visually hidden, kept in HTML for SEO / screen readers */}
+          <p className='sr-only'>
             Architecture & Luxury Interior Design {projectData.location ? `— ${projectData.location}` : '— Mumbai, India'}
           </p>
         </header>
