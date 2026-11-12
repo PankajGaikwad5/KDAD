@@ -1,34 +1,29 @@
-import { Geist, Geist_Mono, Bebas_Neue, League_Spartan } from 'next/font/google';
+import { Bebas_Neue, League_Spartan, Montserrat } from 'next/font/google';
 import './globals.css';
-import CursorTrail from '../components/CursorTrail';
-import { Analytics } from '@vercel/analytics/react';
-import Script from 'next/script';
 import CookieConsent from '../components/CookieConsent';
-
-// Importing Geist Sans
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-// Importing Geist Mono
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
 
 // Importing Bebas Neue
 const bebasNueRegular = Bebas_Neue({
-  subsets: ['latin'], // Specify subsets
-  weight: '400', // Specify weight
-  variable: '--font-bebas-nue', // Custom CSS variable
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-bebas-nue',
+  display: 'swap',
 });
 
 // Importing League Spartan
 const leagueSpartan = League_Spartan({
   subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  weight: ['300', '400', '500', '600', '700'],
   variable: '--font-league-spartan',
+  display: 'swap',
+});
+
+// Importing Montserrat
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  variable: '--font-montserrat',
+  display: 'swap',
 });
 
 const jsonLd = {
@@ -412,13 +407,37 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body className={`${bebasNueRegular.variable} ${leagueSpartan.variable} antialiased`}>
-        {/* JSON-LD Structured Data */}
-        <Script
+      <head>
+        {/* Preload critical hero images for mobile and desktop for instant LCP */}
+        <link
+          rel='preload'
+          as='image'
+          href='/mobilebg/partypad3.webp'
+          media='(max-width: 768px)'
+          fetchPriority='high'
+        />
+        <link
+          rel='preload'
+          as='image'
+          href='/Picture1.webp'
+          media='(min-width: 769px)'
+          fetchPriority='high'
+        />
+        <link
+          rel='preload'
+          as='image'
+          href='/assets/optimizedsign.gif'
+          fetchPriority='high'
+        />
+      </head>
+      <body
+        className={`${bebasNueRegular.variable} ${leagueSpartan.variable} ${montserrat.variable} antialiased bg-black text-white`}
+      >
+        {/* Native JSON-LD Structured Data - zero JS execution overhead */}
+        <script
           id='json-ld'
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-          strategy='beforeInteractive'
         />
         {children}
         <CookieConsent />

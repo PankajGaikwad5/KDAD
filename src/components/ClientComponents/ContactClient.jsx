@@ -19,24 +19,22 @@ import {
 import { Input } from '../../components/ui/input';
 import { Textarea } from '../../components/ui/textarea';
 import { FaWhatsapp } from 'react-icons/fa';
-import { Poppins, Montserrat, Work_Sans } from 'next/font/google';
+import { Poppins, Montserrat } from 'next/font/google';
 import Link from 'next/link';
 
 // fonts
 const popins = Poppins({
   subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '600', '700'],
+  weight: ['400', '600'],
+  display: 'swap',
 });
 
 const montserrat = Montserrat({
   subsets: ['latin'],
   weight: ['400', '600', '700'],
+  display: 'swap',
 });
 
-const worksans = Work_Sans({
-  subsets: ['latin'],
-  weight: ['400'],
-});
 
 // Updated schema
 const formSchema = z.object({
@@ -313,7 +311,7 @@ const ContactClient = () => {
         <div data-gsap-info className='flex flex-wrap items-center gap-8 text-center'>
           <a
             href='mailto:info@karandesai.in'
-            className={`flex flex-col underline pt-2 text-xl md:text-xs ${worksans.className} font-extralight`}
+            className={`flex flex-col underline pt-2 text-xl md:text-xs ${popins.className} font-extralight`}
           >
             info@karandesai.in
           </a>
@@ -324,7 +322,7 @@ const ContactClient = () => {
 
         <div data-gsap-info className='flex flex-col sm:flex-row gap-4 sm:gap-12 items-start sm:items-center pb-4 text-start sm:text-left'>
           <p
-            className={`flex flex-col ${worksans.className} text-sm md:text-xs font-light`}
+            className={`flex flex-col ${popins.className} text-sm md:text-xs font-light`}
           >
             <a
               href='https://maps.app.goo.gl/LDt3TN9yLwB5n6yg7'
@@ -367,7 +365,7 @@ const ContactClient = () => {
 
         <div
           data-gsap-info
-          className={`flex flex-col gap-4 sm:flex-row sm:gap-6 font-light sm:text-left 2xl:text-lg 2xl:leading-5 ${worksans.className} tracking-widest`}
+          className={`flex flex-col gap-4 sm:flex-row sm:gap-6 font-light sm:text-left 2xl:text-lg 2xl:leading-5 ${popins.className} tracking-widest`}
         >
           <p className='text-green-400'>
             We are not a normal team of architects and interior designers, but a

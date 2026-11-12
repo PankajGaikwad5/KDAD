@@ -1,16 +1,12 @@
 'use client';
 import React, { useState } from 'react';
 import ProjectCard from '../../components/ProjectCard';
-import { Poppins, Montserrat } from 'next/font/google';
-
-const popins = Poppins({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-});
+import { Montserrat } from 'next/font/google';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['400', '600', '700', '800'],
+  weight: ['400', '600', '700'],
+  display: 'swap',
 });
 
 const ProjectsClient = ({ projects }) => {
@@ -24,18 +20,6 @@ const ProjectsClient = ({ projects }) => {
         >
           Architecture & Interior Design Portfolio
         </h1>
-        <p className={`text-xs sm:text-sm md:text-base text-gray-300 leading-relaxed ${popins.className}`}>
-          Award-winning residential villas, luxury penthouses, bespoke apartments, and commercial architecture by Karan Desai Architecture + Design (KDAD) across Mumbai, India, and internationally.
-        </p>
-
-        {/* Semantic Service Badges for Search Context */}
-        <div className='flex flex-wrap justify-center gap-2 mt-4 text-[11px] sm:text-xs text-gray-400 uppercase tracking-widest'>
-          <span className='px-3 py-1 bg-white/5 rounded-full border border-white/10'>Residential Architects</span>
-          <span className='px-3 py-1 bg-white/5 rounded-full border border-white/10'>Luxury Interior Designers</span>
-          <span className='px-3 py-1 bg-white/5 rounded-full border border-white/10'>Villas & Penthouses</span>
-          <span className='px-3 py-1 bg-white/5 rounded-full border border-white/10'>Commercial Workspaces</span>
-          <span className='px-3 py-1 bg-white/5 rounded-full border border-white/10'>Mumbai & Pan-India</span>
-        </div>
       </header>
 
       {loading ? (

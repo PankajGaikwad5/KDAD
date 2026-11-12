@@ -2,20 +2,8 @@
 import Image from 'next/image';
 import React from 'react';
 import { useState, useEffect, useRef } from 'react';
-import { Poppins, Montserrat } from 'next/font/google';
 import Link from 'next/link';
 import { gsap } from 'gsap';
-
-// popins
-// montserrat
-const popins = Poppins({
-  subsets: ['latin'], // Specify subsets
-  weight: ['100', '200', '300', '400', '600', '700'], // Specify weight
-});
-const montserrat = Montserrat({
-  subsets: ['latin'], // Specify subsets
-  weight: ['100', '200', '300', '400', '600', '700'], // Specify weight
-});
 
 const Navbar = ({ isBgBlack, isHomePage }) => {
   const [nav, setNav] = useState(false);
@@ -24,35 +12,31 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
   const hamburgerRef = useRef(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    let ctx;
+    const isMobile = window.innerWidth < 1280;
 
-      // Logo slides in from left + fades in
-      tl.fromTo(
-        logoRef.current,
-        { x: -30, opacity: 0 },
-        { x: 0, opacity: 1, duration: 0.7 }
-      );
+    if (!isMobile) {
+      ctx = gsap.context(() => {
+        const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-      // Nav links stagger up (start slightly below, move to position)
-      tl.fromTo(
-        navLinksRef.current.filter(Boolean),
-        { y: 18, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.5, stagger: 0.07 },
-        '-=0.3'
-      );
-    });
+        // Logo slides in from left + fades in
+        tl.fromTo(
+          logoRef.current,
+          { x: -30, opacity: 0 },
+          { x: 0, opacity: 1, duration: 0.6 }
+        );
 
-    // Hamburger fade in on mobile
-    if (hamburgerRef.current) {
-      gsap.fromTo(
-        hamburgerRef.current,
-        { opacity: 0, y: -10 },
-        { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', delay: 0.2 }
-      );
+        // Nav links stagger up
+        tl.fromTo(
+          navLinksRef.current.filter(Boolean),
+          { y: 14, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.45, stagger: 0.05 },
+          '-=0.25'
+        );
+      });
     }
 
-    return () => ctx.revert();
+    return () => ctx && ctx.revert();
   }, []);
   const newNavTopics = [
     {
@@ -175,7 +159,8 @@ const Navbar = ({ isBgBlack, isHomePage }) => {
         </Link>
 
         <ul
-          className={`flex flex-col ${montserrat.className} font-semibold tracking-widest `}
+          className='flex flex-col font-semibold tracking-widest'
+          style={{ fontFamily: 'var(--font-montserrat), sans-serif' }}
         >
           {newNavTopics.map((items, index) => {
             const { id, name, path } = items;

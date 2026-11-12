@@ -2,12 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Poppins } from 'next/font/google';
 
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
-});
 
 export default function CookieConsent() {
   const [consent, setConsent] = useState(null);
@@ -91,7 +86,7 @@ export default function CookieConsent() {
 
   return (
     <div
-      className={`fixed bottom-6 left-4 right-4 sm:left-auto sm:right-6 z-50 sm:w-auto max-w-md p-4 sm:p-3 bg-black/95 border border-neutral-800 backdrop-blur-md rounded-2xl sm:rounded-full text-white shadow-2xl transition-all duration-500 ease-out flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-6 px-5 text-[11px] font-light ${poppins.className}`}
+      className='fixed bottom-6 left-4 right-4 sm:left-auto sm:right-6 z-50 sm:w-auto max-w-md p-4 sm:p-3 bg-black/95 border border-neutral-800 backdrop-blur-md rounded-2xl sm:rounded-full text-white shadow-2xl transition-all duration-500 ease-out flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-6 px-5 text-[11px] font-light font-sans'
     >
       <p className='text-neutral-300 leading-relaxed sm:leading-none'>
         We use cookies to improve your experience. See our{' '}

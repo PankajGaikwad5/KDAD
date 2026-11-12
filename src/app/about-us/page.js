@@ -9,12 +9,14 @@ import AboutPageAnimations from '../../components/AboutPageAnimations';
 // Fonts
 const poppins = Poppins({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
+  weight: ['400', '600'],
+  display: 'swap',
 });
 
 const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '600', '700'],
+  display: 'swap',
 });
 
 export const metadata = {

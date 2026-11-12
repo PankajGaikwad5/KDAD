@@ -9,7 +9,8 @@ import pressData from '../pressData.json';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '600', '700'],
+  weight: ['400', '600', '700'],
+  display: 'swap',
 });
 
 const localMagazines = [

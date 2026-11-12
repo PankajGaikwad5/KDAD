@@ -19,11 +19,12 @@ const nextConfig = {
 
   // Image optimization configuration
   images: {
+    // Keep unoptimized so images still load if Vercel image-optimization quota is exhausted
     unoptimized: true,
     formats: ['image/avif', 'image/webp'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    minimumCacheTTL: 60,
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256],
+    minimumCacheTTL: 31536000,
     remotePatterns: [
       {
         protocol: 'https',
@@ -36,9 +37,27 @@ const nextConfig = {
     ],
   },
 
-  // Security headers for better SEO and security
+  // Security and performance caching headers
   async headers() {
     return [
+      {
+        source: '/:all*(svg|jpg|jpeg|png|webp|avif|ico|gif|woff2|woff)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/_next/static/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
       {
         source: '/:path*',
         headers: [

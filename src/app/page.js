@@ -1,10 +1,15 @@
 'use client';
+import { useState, useEffect, useRef } from 'react';
+import dynamic from 'next/dynamic';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
-import LogoComp from '../components/LogoComp';
-import { useState, useEffect, useRef } from 'react';
 
-// Define separate image sets
+// Dynamically import LogoComp to keep initial SSR and hydration ultra-light
+const LogoComp = dynamic(() => import('../components/LogoComp'), {
+  ssr: false,
+  loading: () => <div className='h-12 w-full' />,
+});
+
 const IMAGES_DESKTOP = [
   '/Picture1.webp',
   '/desktopbg/tdpextras6.webp',
@@ -22,41 +27,45 @@ const IMAGES_MOBILE = [
 ];
 
 export default function Home() {
-  const [gifKey, setGifKey] = useState('');
-  const [logoLoaded, setLogoLoaded] = useState(false);
+  const [logoDimmed, setLogoDimmed] = useState(false);
   const [currentBg, setCurrentBg] = useState(0);
-  const [images, setImages] = useState(IMAGES_DESKTOP);
-  const bgInterval = useRef();
+  const [isClient, setIsClient] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const bgInterval = useRef(null);
 
   useEffect(() => {
-    // Detect screen size and choose image set
-    const isMobile = () => window.innerWidth <= 768;
+    setIsClient(true);
+    const checkMobile = () => window.innerWidth <= 768;
+    setIsMobile(checkMobile());
 
-    const updateImages = () => {
-      setImages(isMobile() ? IMAGES_MOBILE : IMAGES_DESKTOP);
-    };
+    const handleResize = () => setIsMobile(checkMobile());
+    window.addEventListener('resize', handleResize, { passive: true });
 
-    updateImages(); // run on first load
-    window.addEventListener('resize', updateImages);
+    // Smoothly dim signature logo after initial animation
+    const logoTimer = setTimeout(() => setLogoDimmed(true), 3500);
 
     return () => {
-      window.removeEventListener('resize', updateImages);
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(logoTimer);
+      if (bgInterval.current) clearInterval(bgInterval.current);
     };
   }, []);
 
+  // Cycle background images once hydrated
   useEffect(() => {
-    setGifKey(`?reload=${Date.now()}`);
-    const logoTimer = setTimeout(() => setLogoLoaded(true), 3500);
+    if (!isClient) return;
 
+    const currentList = isMobile ? IMAGES_MOBILE : IMAGES_DESKTOP;
     bgInterval.current = setInterval(() => {
-      setCurrentBg((i) => (i + 1) % images.length);
-    }, 3500);
+      setCurrentBg((prev) => (prev + 1) % currentList.length);
+    }, 4000);
 
     return () => {
-      clearTimeout(logoTimer);
-      clearInterval(bgInterval.current);
+      if (bgInterval.current) clearInterval(bgInterval.current);
     };
-  }, [images]); // restart animation if image set changes
+  }, [isClient, isMobile]);
+
+  const activeImages = isMobile ? IMAGES_MOBILE : IMAGES_DESKTOP;
 
   return (
     <div className='bg-black/90'>
@@ -107,38 +116,49 @@ export default function Home() {
       <div className='relative w-full h-screen overflow-hidden m-0 p-0'>
         <Navbar isBgBlack={true} isHomePage={true} />
 
-        {/* Background image stack */}
-        {images.map((src, idx) => {
-          const isActive = idx === currentBg;
-          const baseOpacity = isActive
-            ? logoLoaded
-              ? 'opacity-90'
-              : 'opacity-20'
-            : 'opacity-0';
+        {/* Primary Hero Slide 0 (Semantic Picture for instant LCP on both mobile and desktop) */}
+        <picture
+          className={`absolute inset-0 z-0 pointer-events-none transition-opacity duration-1000 ${
+            currentBg === 0 ? 'opacity-90' : 'opacity-0'
+          }`}
+        >
+          <source media='(max-width: 768px)' srcSet='/mobilebg/partypad3.webp' />
+          <img
+            src='/Picture1.webp'
+            alt='Karan Desai Architecture + Design luxury interior architecture'
+            className='w-full h-full object-cover'
+            fetchPriority='high'
+            loading='eager'
+          />
+        </picture>
 
-          return (
-            <div
-              key={idx}
-              className={`
-                absolute inset-0 z-0 bg-cover bg-center
-                transition-opacity duration-1000
-                ${baseOpacity}
-              `}
-              style={{ backgroundImage: `url('${src}')` }}
-            />
-          );
-        })}
+        {/* Subsequent Slides (Loaded progressively after hydration to save initial bandwidth) */}
+        {isClient &&
+          activeImages.slice(1).map((src, idx) => {
+            const slideIndex = idx + 1;
+            const isActive = currentBg === slideIndex;
+
+            return (
+              <div
+                key={src}
+                className={`absolute inset-0 z-0 bg-cover bg-center transition-opacity duration-1000 ${
+                  isActive ? 'opacity-90' : 'opacity-0 pointer-events-none'
+                }`}
+                style={{ backgroundImage: `url('${src}')` }}
+              />
+            );
+          })}
 
         {/* Logo animation */}
         <div className='relative z-10 font-semibold text-center top-1/2 -mt-28 lg:-mt-8 -translate-y-1/2 text-3xl sm:text-8xl text-white tracking-widest flex flex-col justify-center items-center mb-0'>
           <img
-            src={`/assets/optimizedsign.gif${gifKey}`}
+            src='/assets/optimizedsign.gif'
             className={`${
-              !logoLoaded ? 'opacity-100' : 'opacity-50'
-            } transition-opacity duration-700`}
+              !logoDimmed ? 'opacity-100' : 'opacity-50'
+            } transition-opacity duration-700 max-w-[85vw] sm:max-w-[480px] md:max-w-[560px] h-auto object-contain`}
             alt='Karan Desai Architecture signature logo - Award-winning architect and TEDx speaker'
-            width='600'
-            height='400'
+            width={800}
+            height={408}
             fetchPriority='high'
           />
         </div>

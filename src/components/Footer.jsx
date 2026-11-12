@@ -1,38 +1,29 @@
 'use client';
 import React, { useEffect, useRef } from 'react';
-import { Poppins, Montserrat } from 'next/font/google';
 import Link from 'next/link';
 import { gsap } from 'gsap';
-
-// popins
-// montserrat
-const popins = Poppins({
-  subsets: ['latin'], // Specify subsets
-  weight: ['100', '200', '300', '400', '600', '700'], // Specify weight
-});
-const montserrat = Montserrat({
-  subsets: ['latin'], // Specify subsets
-  weight: ['100', '200', '300', '400', '600', '700'], // Specify weight
-});
 
 const Footer = ({ home }) => {
   const footerRef = useRef(null);
 
   useEffect(() => {
     if (!footerRef.current) return;
-    const links = footerRef.current.querySelectorAll('a, [href]');
-    gsap.fromTo(
-      links,
-      { y: 16, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.55,
-        stagger: 0.1,
-        ease: 'power3.out',
-        delay: 0.8,
-      }
-    );
+    const timer = setTimeout(() => {
+      if (!footerRef.current) return;
+      const links = footerRef.current.querySelectorAll('a, [href]');
+      gsap.fromTo(
+        links,
+        { y: 16, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          stagger: 0.05,
+          ease: 'power3.out',
+        }
+      );
+    }, 600);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
