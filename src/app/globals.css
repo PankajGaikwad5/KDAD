@@ -382,3 +382,12 @@ body {
 .carousel-fade-in {
   animation: carouselFadeIn 0.18s ease-out both;
 }
+
+/* Previous image fades out at the same time, then is removed */
+@keyframes carouselFadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+.carousel-fade-out {
+  animation: carouselFadeOut 0.18s ease-out both;
+}

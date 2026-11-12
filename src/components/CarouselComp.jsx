@@ -189,10 +189,14 @@ const CarouselComp = ({ imgArray, notcollab }) => {
             No exit animations, so old images can't stack up and flash through. */}
         {shown.prev !== null && !isVideoUrl(imgArray[shown.prev]) && (
           <img
+            key={`prev-${shown.prev}`}
             src={imgArray[shown.prev]}
             alt=''
             aria-hidden='true'
-            className='absolute inset-0 z-[1] w-full h-full object-contain pointer-events-none'
+            className='carousel-fade-out absolute inset-0 z-[1] w-full h-full object-contain pointer-events-none'
+            // Remove the old image entirely once it has faded out, so its edges
+            // never show around a new image with a different shape
+            onAnimationEnd={() => setShown((s) => ({ ...s, prev: null }))}
           />
         )}
         {isVideoUrl(imgArray[shownIndex]) ? (
