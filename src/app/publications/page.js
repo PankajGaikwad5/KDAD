@@ -61,10 +61,25 @@ export const metadata = {
     'india design',
     'house digest',
     'hello india',
+    'archdaily',
+    'designboom',
+    'built99',
   ],
 };
 
 const articles = [
+  {
+    id: 33,
+    text: `built99 positions India's contextual intelligence on the global stage`,
+    image: '/articles/designboom.webp',
+    link: `https://www.designboom.com/architecture/built99-india-contextual-intelligence/`,
+  },
+  {
+    id: 32,
+    text: `Built99 Brings Together 99 Practices in a Survey of Contemporary Indian Architecture`,
+    image: '/articles/archdaily.webp',
+    link: `https://www.archdaily.com/1188574/built99-brings-together-99-practices-in-a-survey-of-contemporary-indian-architecture`,
+  },
   {
     id: 31,
     text: `Chaitya 777 — FOAID India Feature`,

@@ -14,8 +14,6 @@ module.exports = {
     '/oldcollaborations',
     '/about%20us',
     '/contact%20us',
-    '/lab',
-    '/lab/*',
   ],
   transform: async (config, path) => {
     let priority = 0.7;
